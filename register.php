@@ -3,6 +3,7 @@ ini_set('display_errors', 0);
 error_reporting(E_ALL);
 include "connect.php";
 
+
 if ($_POST['register']){
   if($_POST['username'] && $_POST['password'] && $_POST['year'] && $_POST['email']){
     $username = mysql_real_escape_string($_POST['username']);
@@ -46,6 +47,9 @@ if ($_POST['register']){
     email: <input type="text" name="email"><br />
     <input type="submit" name="register" value="Register">
   </form>
+  <a href="logout.php">Logout</a>
+
+
 
   
 </body>
