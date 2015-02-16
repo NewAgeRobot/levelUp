@@ -3,7 +3,6 @@ ini_set('display_errors', 0);
 error_reporting(E_ALL);
 include "connect.php";
 
-
 if ($_POST['register']){
   if($_POST['username'] && $_POST['password'] && $_POST['year'] && $_POST['email']){
     $username = mysql_real_escape_string($_POST['username']);
