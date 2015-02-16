@@ -1,5 +1,16 @@
 <?php
 include "connect.php";
+include "algor.php";
+if($logged == true){
+  echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
+}
+// if (isset($_COOKIE['c_user']) && isset($_COOKIE['c_salt'])) {
+//   $userCookie = $_COOKIE['c_salt'];
+//   $query="SELECT * FROM users WHERE Salt = '$userCookie'";
+//   $results = mysql_query($query);
+//   $row = mysql_fetch_array($results);
+//   echo "<h1>HELLO THERE, " . $row[1] . "</h1>";
+// }
 ?>
 <html lang="en">
 <head>
@@ -12,18 +23,6 @@ include "connect.php";
 <!-- NAVBAR
   ================================================== -->
   <body>
-    <h2 class="featurette-heading">Sales Table Output<span class="text-muted"> Queries in Progress</span></h2>
-    <?php
-    $query="SELECT * FROM testTable WHERE name = 'john'";
-    $results = mysql_query($query);
-    $num_rows = mysql_num_rows($results);
-
-    while ($row = mysql_fetch_array($results)) {
-          echo '<table>';
-          echo '<tr><td>' . $row[1] . '<td>' . $row[2] . '</td><td>' . $row[3] . '</td></tr>';
-          echo '</table>';
-      }
-    ?>
 
     <h2 class="featurette-heading">Products Table Output<span class="text-muted">Queries in Progress</span></h2>
     <?php
