@@ -4,6 +4,9 @@ include "algor.php";
 if($logged == true){
   echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
 }
+else{
+	echo "<h1>You're not logged in</h1>";
+}
 // if (isset($_COOKIE['c_user']) && isset($_COOKIE['c_salt'])) {
 //   $userCookie = $_COOKIE['c_salt'];
 //   $query="SELECT * FROM users WHERE Salt = '$userCookie'";
@@ -21,6 +24,9 @@ if($logged == true){
   <title>test</title>
 </head>
 <body>
-<h2 class="featurette-heading">Products Table Output<span class="text-muted">Queries in Progress</span></h2>
+<a href="login.php">Log in</a>
+<a href="logout.php">Log out</a>
+<a href="register.php">Register</a>
+<a href="restrictTest.php">Restriction Test</a>
 </body>
 </html>
