@@ -8,14 +8,12 @@ else {
 	header('Location: /');
 }
 
-if(isset($_POST['Subject1'])) 
+if(!empty($_POST['subject_list']))
 {
-    echo "Need wheelchair access.";
+	foreach($_POST['subject_list'] as $check) {
+		echo "chosen subjects are: " . $check . "<br />";
+	}
 }
-else
-{
-    echo "Do not Need wheelchair access.";
-}    
 ?>
 <html lang="en">
 <head>
@@ -29,12 +27,35 @@ else
 <?php
 echo 
 	"<form action='' method='post'>
-		English: <input type='checkbox' name='Subject1' value='English' id='checkbox1' /> <br />
-		Maths: <input type='checkbox' name='Subject2' value='Maths' id='checkbox2' /> <br />
-		Irish: <input type='checkbox' name='Subject3' value='Irish' id='checkbox3' /> <br />
-		History: <input type='checkbox' name='Subject4' value='History' id='checkbox4' /> <br />
+		English: <input type='checkbox' name='subject_list[]' value='English' /> <br />
+		Maths: <input type='checkbox' name='subject_list[]' value='Maths' /> <br />
+		Irish: <input type='checkbox' name='subject_list[]' value='Irish' /> <br />
+		History: <input type='checkbox' name='subject_list[]' value='History' /> <br />
 	<input type='submit' name='formSubmit' value='Submit' />
 	</form>";
 ?>
+
+<!--
+<form action="test.php" method="post">
+<input type="checkbox" name="check_list[]" value="value 1">
+<input type="checkbox" name="check_list[]" value="value 2">
+<input type="checkbox" name="check_list[]" value="value 3">
+<input type="checkbox" name="check_list[]" value="value 4">
+<input type="checkbox" name="check_list[]" value="value 5">
+<input type="submit" />
+</form>
+<?php
+
+/*if(!empty($_POST['check_list'])) {
+    foreach($_POST['check_list'] as $check) {
+            echo $check; //echoes the value set in the HTML form for each checked checkbox.
+                         //so, if I were to check 1, 3, and 5 it would echo value 1, value 3, value 5.
+                         //in your case, it would echo whatever $row['Report ID'] is equivalent to.
+    }
+}
+*/
+?>
+
+-->
 </body>
 </html>
