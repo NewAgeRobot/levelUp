@@ -2,14 +2,12 @@
 ini_set('display_errors', 0); 
 error_reporting(E_ALL);
 include "connect.php";
-
 if ($_POST['register']){
   if($_POST['username'] && $_POST['password'] && $_POST['year'] && $_POST['email']){
     $username = mysql_real_escape_string($_POST['username']);
     $password = mysql_real_escape_string(hash("sha512", $_POST['password']));
     $year = ($_POST['year']);
     $email = mysql_real_escape_string($_POST['email']);
-
     $check = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Username`='$username'"));
     if ($check != '0'){
       die("That username already exists! Try another");
@@ -24,7 +22,7 @@ if ($_POST['register']){
     mysql_query("INSERT INTO `users` (`Username`, `Password`, `Year`, `Email`, `Salt`) VALUES ('$username', '$password', '$year', '$email', '$salt')");
     setcookie("c_user", hash("sha512", $username), time() + 24 * 60 * 60, "/");
     setcookie("c_salt", $salt, time() + 24 * 60 * 60, "/");
-    die("Your account has been created and you're now logged in!");
+    header('Location: restrictTest.php');
   }
 };
 ?>

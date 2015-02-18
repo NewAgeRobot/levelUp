@@ -23,7 +23,7 @@ if ($_POST['login']){
 		setcookie("c_salt", $salt, time() + 24 * 60 * 60, "/");
 		$userID = $user['ID'];
 		mysql_query("UPDATE `users` SET `Salt` = '$salt' WHERE `ID`='$userID'");
-		header('Location: /');
+		header('Location: restrictTest.php');
 		//die("You are now logged in as $username!");
 	}
 };
