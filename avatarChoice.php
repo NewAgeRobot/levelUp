@@ -4,6 +4,7 @@ include "algor.php";
 if($logged == false){
 	header('Location: /');
 }
+//add code for when actually submitted?
 if(isset($_POST['avatar'])){
 	$avatar = ($_POST['avatar']);
 	$avatarLink = "avatars/".$avatar.".jpg"; 
