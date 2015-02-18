@@ -10,9 +10,61 @@ else {
 
 if(!empty($_POST['subject_list']))
 {
-	foreach($_POST['subject_list'] as $check) {
-		echo "chosen subjects are: " . $check . "<br />";
-	}
+	
+		//$choices = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Salt`='$csalt'")); //get user by their email
+		//if statements are useless because it's looping the same value through them all initially because they're all empty
+		//within the slots filled - run through and see if the subject already exists in the table
+		if(empty($user['Subject1'])){
+			foreach($_POST['subject_list'] as $check) {
+				if($user['Subject1'] != $check && $user['Subject2'] != $check && $user['Subject3'] != $check && $user['Subject4'] != $check){
+					mysql_query("UPDATE `users` SET `Subject1` = '$check' WHERE `Salt`='$csalt'");
+					echo "fart1";
+					continue;
+				}
+			}
+		}
+		if(empty($user['Subject2'])){
+			foreach($_POST['subject_list'] as $check) {
+				if($user['Subject1'] != $check && $user['Subject2'] != $check && $user['Subject3'] != $check && $user['Subject4'] != $check){
+					mysql_query("UPDATE `users` SET `Subject2` = '$check' WHERE `Salt`='$csalt'");
+					echo "fart2";
+					continue;
+				}
+			}
+		}
+		if(empty($user['Subject3'])){
+			foreach($_POST['subject_list'] as $check) {
+				if($user['Subject1'] != $check && $user['Subject2'] != $check && $user['Subject3'] != $check && $user['Subject4'] != $check){
+					mysql_query("UPDATE `users` SET `Subject3` = '$check' WHERE `Salt`='$csalt'");
+					echo "fart3";
+					continue;
+				}
+			}
+		}
+		if(empty($user['Subject4'])){
+			foreach($_POST['subject_list'] as $check) {
+				if($user['Subject1'] != $check && $user['Subject2'] != $check && $user['Subject3'] != $check && $user['Subject4'] != $check){
+					mysql_query("UPDATE `users` SET `Subject4` = '$check' WHERE `Salt`='$csalt'");
+					echo "fart4";
+					continue;
+				}
+			}
+		}
+		/*if(empty($user['Subject2'])){
+			mysql_query("UPDATE `users` SET `Subject2` = '$check' WHERE `Salt`='$csalt'");
+			echo "fart2";
+		}
+		if(empty($user['Subject3'])){
+			mysql_query("UPDATE `users` SET `Subject3` = '$check' WHERE `Salt`='$csalt'");
+			echo "fart3";
+		}
+		if(empty($user['Subject4'])){
+			mysql_query("UPDATE `users` SET `Subject4` = '$check' WHERE `Salt`='$csalt'");
+			echo "fart4";
+		}
+		else{
+			echo "You do all these subjects already! Silly goose";
+		}*/
 }
 ?>
 <html lang="en">
