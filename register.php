@@ -22,7 +22,7 @@ if ($_POST['register']){
     mysql_query("INSERT INTO `users` (`Username`, `Password`, `Year`, `Email`, `Salt`) VALUES ('$username', '$password', '$year', '$email', '$salt')");
     setcookie("c_user", hash("sha512", $username), time() + 24 * 60 * 60, "/");
     setcookie("c_salt", $salt, time() + 24 * 60 * 60, "/");
-    header('Location: restrictTest.php');
+    header('Location: avatarChoice.php');
   }
 };
 ?>
@@ -36,6 +36,14 @@ if ($_POST['register']){
   <title>test</title>
 </head>
 <body>
+<?php echo
+"<nav><table><tr>
+  <td><a href='login.php'>Log in</a></td>
+  <td><a href='logout.php'>Log out</a></td>
+  <td><a href='register.php'>Register</a></td>
+  <td><a href='restrictTest.php'>Restriction Test</a></td>
+  </tr></table></nav><br />"
+?>
 
   <form action="" method="post">
     username: <input type="text" name="username"><br />

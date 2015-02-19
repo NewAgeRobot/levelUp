@@ -36,6 +36,15 @@ if ($_POST['login']){
 <title>test</title>
 <head>
 <body>
+<?php echo
+"<nav><table><tr>
+  <td><a href='login.php'>Log in</a></td>
+  <td><a href='logout.php'>Log out</a></td>
+  <td><a href='register.php'>Register</a></td>
+  <td><a href='restrictTest.php'>Restriction Test</a></td>
+  </tr></table></nav><br />"
+?>
+
 	<form action="" method="post">
 	username: <input type="text" name="username"><br />
 	password: <input type="password" name="password"><br />

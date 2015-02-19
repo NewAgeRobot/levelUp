@@ -9,7 +9,7 @@ if(isset($_POST['avatar'])){
 	$avatar = ($_POST['avatar']);
 	$avatarLink = "avatars/".$avatar.".jpg"; 
 	mysql_query("UPDATE `users` SET `Avatar` = '$avatarLink' WHERE `Salt`='$csalt'");
-	header('Location: restrictTest.php');
+	header('Location: subjectChoice.php');
 }
 if(!empty($user['Avatar'])){
 	header('Location: restrictTest.php');

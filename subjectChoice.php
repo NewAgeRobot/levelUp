@@ -1,13 +1,9 @@
 <?php
 include "connect.php";
 include "algor.php";
-if($logged == true){
-	echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
-}
-else {
+if($logged == false){
 	header('Location: /');
 }
-
 if(isset($_POST['formSubmit'])){
 	if(!empty($_POST['subject_list'])){
 		if(empty($user['Subject1'])){
@@ -42,6 +38,7 @@ if(isset($_POST['formSubmit'])){
 			$subject8 = $_POST['subject_list'][7];
 			mysql_query("UPDATE `users` SET `Subject8` = '$subject8' WHERE `Salt`='$csalt'");
 		}
+		header('Location: restrictTest.php');
 	}
 	else{
 		die("You haven't chosen any subjects");

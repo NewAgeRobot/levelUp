@@ -24,11 +24,15 @@ else{
   <title>test</title>
 </head>
 <body>
+<?php echo
+"<nav><table><tr>
+  <td><a href='login.php'>Log in</a></td>
+  <td><a href='logout.php'>Log out</a></td>
+  <td><a href='register.php'>Register</a></td>
+  <td><a href='restrictTest.php'>Restriction Test</a></td>
+  </tr></table></nav><br />"
+?>
 <img src="http://www.reactiongifs.com/r/2013/05/Ron-Paul_Its-Happening1.gif"> <br />
-<a href="login.php">Log in</a>
-<a href="logout.php">Log out</a>
-<a href="register.php">Register</a>
-<a href="restrictTest.php">Restriction Test</a>
 
 </body>
 </html>
