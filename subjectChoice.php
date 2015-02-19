@@ -44,7 +44,7 @@ if(isset($_POST['formSubmit'])){
 		}
 	}
 	else{
-		echo "already entered";
+		die("You haven't chosen any subjects");
 	}
 }
 ?>
@@ -61,7 +61,7 @@ if(isset($_POST['formSubmit'])){
 <body>
 <?php
 echo 
-	"<form action='' method='post'>
+	"<form action='' method='post' name='subjectlisting'>
 	<table>
 		<tr>
 			<td>
@@ -328,67 +328,8 @@ echo
 			</td>
 		</tr>
 	</table>
-	<input type='submit' name='formSubmit' value='Submit' />
+	<input type='submit' id='submit' name='formSubmit' value='Submit' disabled />
 	</form>";
 ?>
-
-<!--
-
-
-		Irish: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Irish' />
-		History: <input type='checkbox' name='subject_list[]' class='subjectClass' value='History' />
-		Geography: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Geography' />
-		Home Economics: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Home Economics' />
-		Accounting: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Accounting' />
-		Economics: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Economics' />
-		Business: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Business' />
-		Biology: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Biology' />
-		Physics: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Physics' />
-		Chemistry: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Chemistry' />
-		Art: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Art' />
-		Music: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Music' />
-		Construction Studies: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Construction Studies' />
-		French: <input type='checkbox' name='subject_list[]' class='subjectClass' value='French' />
-		German: <input type='checkbox' name='subject_list[]' class='subjectClass' value='German' />
-		Italian: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Italian' />
-		Spanish: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Spanish' />
-		Arabic: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Arabic' />
-		Classical Studies: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Classical Studies' />
-		Hebrew Studies: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Hebrew Studies' />
-		Ancient Greek: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Ancient Greek' />
-		Latin: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Latin' />
-		Applied Mathematics: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Applied Mathematics' />
-		Physics and Chemistry: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Physics and Chemistry' />
-		Agricultural Economics: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Agricultural Economics' />
-		Engineering: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Engineering' />
-		Design and Communication Graphics: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Design and Communication Graphics' />
-		Religious Education: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Religious Education' />
-		Russian: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Russian' />
-		Japanese: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Japanese' />
-		Technology: <input type='checkbox' name='subject_list[]' class='subjectClass' value='Technology' />
-
-
-
-<form action="test.php" method="post">
-<input type="checkbox" name="check_list[]" value="value 1">
-<input type="checkbox" name="check_list[]" value="value 2">
-<input type="checkbox" name="check_list[]" value="value 3">
-<input type="checkbox" name="check_list[]" value="value 4">
-<input type="checkbox" name="check_list[]" value="value 5">
-<input type="submit" />
-</form>
-<?php
-
-/*if(!empty($_POST['check_list'])) {
-    foreach($_POST['check_list'] as $check) {
-            echo $check; //echoes the value set in the HTML form for each checked checkbox.
-                         //so, if I were to check 1, 3, and 5 it would echo value 1, value 3, value 5.
-                         //in your case, it would echo whatever $row['Report ID'] is equivalent to.
-    }
-}
-*/
-?>
-
--->
 </body>
 </html>
