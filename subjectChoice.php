@@ -21,13 +21,21 @@ LOOP THROUGH COLUMNS AND THEN COMPARE EACH SUBJECT_LIST ARRAY ENTRY. IF IT MATCH
         }
     }
 */
+$result = mysql_query("SELECT * FROM subjectsTable");
+$username = $user['Username'];
+$subjectsTableList = mysql_fetch_array(mysql_query("SELECT * FROM  `subjectsTable` WHERE `Email` = '$username'"));
+
 if(isset($_POST['formSubmit'])){
 	$i = 0;
 	while($row = mysql_fetch_assoc($result)) {   
         foreach ($row as $col => $val) {
         	if ($i++ < 2) continue;
-            if($val) echo $col . "<br />";
-            if($col == $_POST['subject_list'][$i-2]) echo "fart";
+            //if($val) echo $col . "<br />";
+            //echo $_POST['subject_list'][$i-3] . "<br />";
+            $currentSubject = $_POST['subject_list'][$i-3];
+            for($k = 0; $k < 15; $k++){
+				//mysql_query("UPDATE `users` SET `Subject1` = '$subject1' WHERE `Salt`='$csalt'");
+            }
         }
     }
 }
