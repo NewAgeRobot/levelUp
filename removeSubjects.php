@@ -26,7 +26,6 @@ echo
 	<td><a href='logout.php'>Log out</a></td>
 	<td><a href='register.php'>Register</a></td>
 	<td><a href='restrictTest.php'>Restriction Test</a></td>
-	<td><a href='subjectChoice.php'>Subject Choice</a></td>
 	</tr></table></nav><br />
 
  	<h1>Name: " . $user['Username'] . "</h1><br />

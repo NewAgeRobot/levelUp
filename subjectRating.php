@@ -25,9 +25,7 @@ if($logged == false){
 	 while($row = mysql_fetch_assoc($result)) {   
         foreach ($row as $col => $val) {
         	if ($i++ < 2) continue;
-        	echo "<table>";
-            if($val) echo "<tr><td>" . $col . "</td><td><input type='checkbox' name='subject_list[]' class='subjectClass' value='Irish' /></td></tr><br />";
-        	echo "</table>";
+            if($val) echo $col . "<br />";
         }
     }
 ?>
