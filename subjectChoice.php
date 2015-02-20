@@ -21,24 +21,45 @@ LOOP THROUGH COLUMNS AND THEN COMPARE EACH SUBJECT_LIST ARRAY ENTRY. IF IT MATCH
         }
     }
 */
-$result = mysql_query("SELECT * FROM subjectsTable");
-$username = $user['Username'];
-$subjectsTableList = mysql_fetch_array(mysql_query("SELECT * FROM  `subjectsTable` WHERE `Email` = '$username'"));
 
-if(isset($_POST['formSubmit'])){
-	$i = 0;
-	while($row = mysql_fetch_assoc($result)) {   
-        foreach ($row as $col => $val) {
-        	if ($i++ < 2) continue;
-            //if($val) echo $col . "<br />";
+
+
+      //if($val) echo $col . "<br />";
             //echo $_POST['subject_list'][$i-3] . "<br />";
-            $currentSubject = $_POST['subject_list'][$i-3];
-            for($k = 0; $k < 15; $k++){
-				//mysql_query("UPDATE `users` SET `Subject1` = '$subject1' WHERE `Salt`='$csalt'");
-            }
-        }
+            //$currentSubject = $_POST['subject_list'][$i-3];
+            //for($k = 0; $k < 34; $k++){
+            //	if($currentSubject == $col){
+            //		echo "current subject: " . $currentSubject;
+            //		continue;
+            		//mysql_query("UPDATE `subjectsTable` SET `$col` = '1' WHERE `$col`='$currentSubject'");
+            //	}
+            //}
+        //}
+
+
+
+    $result = mysql_query("SELECT * FROM subjectsTable");
+    $username = $user['Email'];
+    $subjectsTableList = mysql_fetch_array(mysql_query("SELECT * FROM  `subjectsTable` WHERE `Email` = '$username'"));
+
+    $i = 0;
+    if(isset($_POST['formSubmit'])){
+    	while($row = mysql_fetch_assoc($result)) {   
+    		foreach ($row as $col => $val) {
+    			if ($i++ < 2) continue;
+    			for($l = 2; $l < 36; $l++){
+    				if($_POST['subject_list'][$i-3] == $col[$l]){
+    					 // continue;
+    					 echo "poop";
+    				}
+    			}
+    			echo $_POST['subject_list'][$i-3];
+    			//echo "column: " . $col . "<br />";
+    			//echo "subject:" . $_POST['subject-list'][$i-3] . "<br />";
+    			//if($col == $_POST['subject_list'][$i-3]) echo "fart";
+    		}
+    	}
     }
-}
 
 
 /*
@@ -103,7 +124,7 @@ if(isset($_POST['formSubmit'])){
 		};
 	};
 	*/
-echo 
+	echo 
 	"<form action='' method='post' name='subjectlisting'>
 	<table>
 		<tr>
@@ -372,7 +393,7 @@ echo
 		</tr>
 	</table>
 	<input type='submit' id='submit' name='formSubmit' value='Submit' disabled />
-	</form>";
-	?>
+</form>";
+?>
 </body>
 </html>
