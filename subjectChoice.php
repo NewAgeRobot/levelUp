@@ -8,6 +8,10 @@ if($logged == false){
 
 /*
 LOOP THROUGH COLUMNS AND THEN COMPARE EACH SUBJECT_LIST ARRAY ENTRY. IF IT MATCHES THEN UPDATE THE RECORD TO PUT A 1 IN THAT COLUMN
+	$result = mysql_query("SELECT * FROM subjectsTable");
+	$username = $user['Username'];
+	$subjectsTableList = mysql_fetch_array(mysql_query("SELECT * FROM  `subjectsTable` WHERE `Email` = '$username'"));
+
 	$i = 0;
 	 while($row = mysql_fetch_assoc($result)) {   
         foreach ($row as $col => $val) {
@@ -17,6 +21,19 @@ LOOP THROUGH COLUMNS AND THEN COMPARE EACH SUBJECT_LIST ARRAY ENTRY. IF IT MATCH
         }
     }
 */
+if(isset($_POST['formSubmit'])){
+	$i = 0;
+	while($row = mysql_fetch_assoc($result)) {   
+        foreach ($row as $col => $val) {
+        	if ($i++ < 2) continue;
+            if($val) echo $col . "<br />";
+            if($col == $_POST['subject_list'][$i-2]) echo "fart";
+        }
+    }
+}
+
+
+/*
 if(isset($_POST['formSubmit'])){
 	if(!empty($_POST['subject_list'])){
 		if(empty($user['Subject1'])){
@@ -56,7 +73,7 @@ if(isset($_POST['formSubmit'])){
 	else{
 		die("You haven't chosen any subjects");
 	}
-}
+}*/
 ?>
 <html lang="en">
 <head>
@@ -70,13 +87,14 @@ if(isset($_POST['formSubmit'])){
 </head>
 <body>
 	<?php
-	$result = mysql_query("SELECT * FROM subjectsTable");
+/*	$result = mysql_query("SELECT * FROM subjectsTable");
 	while($row = mysql_fetch_array($result))
 	{
 		for(var i = 2; i < 20; i++){
 			echo $row[i];
 		};
 	};
+	*/
 echo 
 	"<form action='' method='post' name='subjectlisting'>
 	<table>

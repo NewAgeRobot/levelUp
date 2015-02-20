@@ -22,7 +22,7 @@ if($logged == false){
 	$subjectsTableList = mysql_fetch_array(mysql_query("SELECT * FROM  `subjectsTable` WHERE `Email` = '$username'"));
 
 	$i = 0;
-	 while($row = mysql_fetch_assoc($result)) {   
+	while($row = mysql_fetch_assoc($result)) {   
         foreach ($row as $col => $val) {
         	if ($i++ < 2) continue;
             if($val) echo $col . "<br />";
