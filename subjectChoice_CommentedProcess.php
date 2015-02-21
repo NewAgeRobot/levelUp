@@ -5,24 +5,118 @@ if($logged == false){
 	header('Location: /');
 }
 
-$result = mysql_query("SELECT * FROM subjectsTable");
-$i = 0;
+
+/*
+LOOP THROUGH COLUMNS AND THEN COMPARE EACH SUBJECT_LIST ARRAY ENTRY. IF IT MATCHES THEN UPDATE THE RECORD TO PUT A 1 IN THAT COLUMN
+	$result = mysql_query("SELECT * FROM subjectsTable");
+	$username = $user['Username'];
+	$subjectsTableList = mysql_fetch_array(mysql_query("SELECT * FROM  `subjectsTable` WHERE `Email` = '$username'"));
+
+	$i = 0;
+	 while($row = mysql_fetch_assoc($result)) {   
+        foreach ($row as $col => $val) {
+        	if ($i++ < 2) continue;
+            if($val) echo $col . "<br />";
+            if($col == "Maths") echo "fart";
+        }
+    }
+*/
+
+
+
+      //if($val) echo $col . "<br />";
+            //echo $_POST['subject_list'][$i-3] . "<br />";
+            //$currentSubject = $_POST['subject_list'][$i-3];
+            //for($k = 0; $k < 34; $k++){
+            //	if($currentSubject == $col){
+            //		echo "current subject: " . $currentSubject;
+            //		continue;
+            		//mysql_query("UPDATE `subjectsTable` SET `$col` = '1' WHERE `$col`='$currentSubject'");
+            //	}
+            //}
+        //}
+
+
+//IF IT DOESN'T WORK THEN JUST FUCKING DO LOADS OF IF STATEMENTS TO CHECK EACH ONE!
+
+    $result = mysql_query("SELECT * FROM subjectsTable");
+    $username = $user['Email'];
+    $subjectsTableList = mysql_fetch_array(mysql_query("SELECT * FROM  `subjectsTable` WHERE `Email` = '$username'"));
+
+    $i = 0;
+    if(isset($_POST['formSubmit'])){
+    	$subAmount = count($_POST['subject_list']);
+    	//mysql_query("UPDATE `subjectsTable` SET `English` = '1'");
+    	while($row = mysql_fetch_assoc($result)) {   
+    		foreach ($row as $col => $val) {
+    			if ($i++ < 2) continue;
+    				// if($_POST['subject_list'][$i-3] == $col[$l]){
+    				// 	 // continue;
+    				// }
+    			//echo $_POST['subject_list'][$i-3];
+    			//cho "column: " . $col . "<br />";
+    			//echo "subject:" . $_POST['subject_list'][$i-3] . "<br />";
+    			// $currentSub = $_POST['subject_list'][$i-3];
+    			for($j = 0; $j <= 36; $j++){
+    				for($k = 0; $k < $subAmount;$k++){
+    					$currentSub = $_POST['subject_list'][$k];
+    					if($currentSub == $col){
+    						mysql_query("UPDATE `subjectsTable` SET `$col` = '1'");
+    						//echo "match: " . $currentSub . " and " . $col . "<br />";
+    					}
+    				}
+    				// if($currentSub == $col){
+    				// 	echo "match found! > " . $currentSub . " and " . $col . "<br />";
+    				// }
+    			}
+    			
+    			//if($col == $_POST['subject_list'][$i-3]) echo "fart";
+    		}
+    	}
+    }
+
+
+/*
 if(isset($_POST['formSubmit'])){
-	$subAmount = count($_POST['subject_list']);
-	while($row = mysql_fetch_assoc($result)) {   
-		foreach ($row as $col => $val) {
-			if ($i++ < 2) continue;
-			for($j = 0; $j <= 36; $j++){
-				for($k = 0; $k < $subAmount;$k++){
-					$currentSub = $_POST['subject_list'][$k];
-					if($currentSub == $col){
-						mysql_query("UPDATE `subjectsTable` SET `$col` = '1'");
-					}
-				}
-			}
+	if(!empty($_POST['subject_list'])){
+		if(empty($user['Subject1'])){
+			$subject1 = $_POST['subject_list'][0];
+			mysql_query("UPDATE `users` SET `Subject1` = '$subject1' WHERE `Salt`='$csalt'");
 		}
+		if(empty($user['Subject2'])){
+			$subject2 = $_POST['subject_list'][1];
+			mysql_query("UPDATE `users` SET `Subject2` = '$subject2' WHERE `Salt`='$csalt'");
+		}
+		if(empty($user['Subject3'])){
+			$subject3 = $_POST['subject_list'][2];
+			mysql_query("UPDATE `users` SET `Subject3` = '$subject3' WHERE `Salt`='$csalt'");
+		}
+		if(empty($user['Subject4'])){
+			$subject4 = $_POST['subject_list'][3];
+			mysql_query("UPDATE `users` SET `Subject4` = '$subject4' WHERE `Salt`='$csalt'");
+		}
+		if(empty($user['Subject5'])){
+			$subject5 = $_POST['subject_list'][4];
+			mysql_query("UPDATE `users` SET `Subject5` = '$subject5' WHERE `Salt`='$csalt'");
+		}
+		if(empty($user['Subject6'])){
+			$subject6 = $_POST['subject_list'][5];
+			mysql_query("UPDATE `users` SET `Subject6` = '$subject6' WHERE `Salt`='$csalt'");
+		}
+		if(empty($user['Subject7'])){
+			$subject7 = $_POST['subject_list'][6];
+			mysql_query("UPDATE `users` SET `Subject7` = '$subject7' WHERE `Salt`='$csalt'");
+		}
+		if(empty($user['Subject8'])){
+			$subject8 = $_POST['subject_list'][7];
+			mysql_query("UPDATE `users` SET `Subject8` = '$subject8' WHERE `Salt`='$csalt'");
+		}
+		header('Location: restrictTest.php');
 	}
-}
+	else{
+		die("You haven't chosen any subjects");
+	}
+}*/
 ?>
 <html lang="en">
 <head>
@@ -36,6 +130,14 @@ if(isset($_POST['formSubmit'])){
 </head>
 <body>
 	<?php
+/*	$result = mysql_query("SELECT * FROM subjectsTable");
+	while($row = mysql_fetch_array($result))
+	{
+		for(var i = 2; i < 20; i++){
+			echo $row[i];
+		};
+	};
+	*/
 	echo 
 	"<form action='' method='post' name='subjectlisting'>
 	<table>
