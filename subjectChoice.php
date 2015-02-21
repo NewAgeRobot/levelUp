@@ -17,6 +17,10 @@ if(isset($_POST['formSubmit'])){
 					$currentSub = $_POST['subject_list'][$k];
 					if($currentSub == $col){
 						mysql_query("UPDATE `subjectsTable` SET `$col` = '1'");
+						break;
+					}
+					else{
+						mysql_query("UPDATE `subjectsTable` SET `$col` = '0'");
 					}
 				}
 			}
