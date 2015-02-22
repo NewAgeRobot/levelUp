@@ -5,7 +5,10 @@ if($logged == false){
 	header('Location: /');
 }
 
-$result = mysql_query("SELECT * FROM subjectsTable");
+//test with multiple records to make sure identifier for table records is enouguh/that it works fine.
+//sort out check for if they want to redo thier subject choice.
+$userEmail = $user['Email'];
+$result = mysql_query("SELECT * FROM subjectsTable WHERE `Email` = '$userEmail'");
 $i = 0;
 if(isset($_POST['formSubmit'])){
 	$subAmount = count($_POST['subject_list']);
@@ -16,11 +19,11 @@ if(isset($_POST['formSubmit'])){
 				for($k = 0; $k < $subAmount;$k++){
 					$currentSub = $_POST['subject_list'][$k];
 					if($currentSub == $col){
-						mysql_query("UPDATE `subjectsTable` SET `$col` = '1'");
+						mysql_query("UPDATE `subjectsTable` SET `$col` = '1' WHERE `Email` = '$userEmail'");
 						break;
 					}
 					else{
-						mysql_query("UPDATE `subjectsTable` SET `$col` = '0'");
+						mysql_query("UPDATE `subjectsTable` SET `$col` = '0' WHERE `Email` = '$userEmail'");
 					}
 				}
 			}
@@ -41,7 +44,7 @@ if(isset($_POST['formSubmit'])){
 <body>
 	<?php
 	echo "<form action='' method='post' name='subjectlisting'><table>";
-	$result = mysql_query("SELECT * FROM subjectsTable");
+	$result = mysql_query("SELECT * FROM subjectsTable WHERE `Email` = '$userEmail'");
 	$f = 0;
 	while($row = mysql_fetch_assoc($result)) {   
 		foreach ($row as $col => $val) {
