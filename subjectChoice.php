@@ -40,7 +40,32 @@ if(isset($_POST['formSubmit'])){
 </head>
 <body>
 	<?php
-	echo 
+	echo "<form action='' method='post' name='subjectlisting'><table>";
+	$result = mysql_query("SELECT * FROM subjectsTable");
+	$f = 0;
+	while($row = mysql_fetch_assoc($result)) {   
+		foreach ($row as $col => $val) {
+			if ($f++ < 2) continue;
+			if ($val == 1) {
+				$checkTrue = "checked='true'";
+			}
+			else{
+				$checkTrue = "";
+			}
+			echo "<tr> <td> " . $col . "</td> <td>
+				<input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $col . "'" . $checkTrue . " />
+			</td></tr>";
+		}
+	}
+	echo "</table><input type='submit' id='submit' name='formSubmit' value='Submit' disabled />
+</form>";
+
+
+
+
+
+
+	/*echo
 	"<form action='' method='post' name='subjectlisting'>
 	<table>
 		<tr>
@@ -48,7 +73,7 @@ if(isset($_POST['formSubmit'])){
 				English:
 			</td>
 			<td>
-				<input type='checkbox' name='subject_list[]' class='subjectClass' value='English' />
+				<input type='checkbox' name='subject_list[]' class='subjectClass' value='English' checked='true' />
 			</td>
 		</tr>
 		<tr>
@@ -309,7 +334,7 @@ if(isset($_POST['formSubmit'])){
 		</tr>
 	</table>
 	<input type='submit' id='submit' name='formSubmit' value='Submit' disabled />
-</form>";
+</form>";*/
 ?>
 </body>
 </html>
