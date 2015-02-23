@@ -21,8 +21,12 @@ while($row = mysql_fetch_assoc($result)) {
 	$itemsSize = count($items)-1;
 }
 
-
-$subName = $items[1];
+$subCount = 1;
+$subName = $items[$subCount];
+$catsChosen;
+$subAmount;
+$currentSub;
+$sliderValue;
 
 if(isset($_POST['barThing'])){ //FIGURE OUT IF THEY NEED TO HAVE CHECKED A CATEGORY OR WHETHER THEM SIMPLY INPUTTING A SCORE IS ENOUGH
 //$result2 = mysql_query("SELECT * FROM subjectsGrades WHERE `Email` = '$userEmail'"); //new query for the grade table, remember to add different ID as well as email
@@ -35,11 +39,23 @@ if(isset($_POST['barThing'])){ //FIGURE OUT IF THEY NEED TO HAVE CHECKED A CATEG
 			$catsChosen .= $currentSub . ", ";
 			if($k == $subAmount -1){
 				$catsChosen = rtrim($catsChosen, ", ");
-				mysql_query("INSERT INTO `subjectsCategories` (`Email`, `Date`, `$subName`) VALUES ('$userEmail', '$currentDay', '$catsChosen')");
 			}
 		}
 	}
-	mysql_query("INSERT INTO `subjectsGrades` (`Email`, `Date`, `$subName`) VALUES ('$userEmail', '$currentDay', '$sliderValue')");
+	if($subName == $items[1]){
+		mysql_query("INSERT INTO `subjectsCategories` (`Email`, `Date`, `$subName`) VALUES ('$userEmail', '$currentDay', '$catsChosen')");
+		mysql_query("INSERT INTO `subjectsGrades` (`Email`, `Date`, `$subName`) VALUES ('$userEmail', '$currentDay', '$sliderValue')");
+		//$subCount++;
+		$subName = $items[$subCount];
+	}
+	else{
+		mysql_query("UPDATE `subjectsCategories` SET `$subName` = '$catsChosen' WHERE `Email` = '$userEmail' AND `Date` = '$currentDay'");
+		mysql_query("UPDATE `subjectsGrades` SET `$subName` = '$sliderValue' WHERE `Email` = '$userEmail' AND `Date` = '$currentDay'");
+		//$subCount++;
+		echo "bLAHH" . $subCount;
+		$subName = $items[$subCount];
+	}
+	
 }
 ?>
 <html lang="en">
@@ -69,13 +85,12 @@ if(isset($_POST['barThing'])){ //FIGURE OUT IF THEY NEED TO HAVE CHECKED A CATEG
 </head>
 <body>
 	<?php
-	$subName = $items[1];
 	echo $subName . "<br /> <br />";
 	$cats = mysql_fetch_array(mysql_query("SELECT * FROM `subjects` WHERE `SubjectName` = '$subName'"));
 	//echo $cats['Cat1'];
 	echo "<form action='' method='post' name='subjectlisting'><table>";
 
-	echo "<tr><td><input id='range' type='range' min='0' max='100' value='10' name='barThing'/>
+	echo "<tr><td><input id='range' type='range' min='0' max='100' value='50' name='barThing'/>
 	<canvas id='counter' width='240' height='240'></canvas> </td></tr>";
 
 	echo "<tr> <td> " . $cats['Cat1'] . "</td><td><input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $cats['Cat1'] . "' /></tr>";
