@@ -22,11 +22,12 @@ while($row = mysql_fetch_assoc($result)) {
 }
 
 $subCount = 1;
+echo $subCount;
 $subName = $items[$subCount];
-$catsChosen;
-$subAmount;
-$currentSub;
-$sliderValue;
+// $catsChosen;
+// $subAmount;
+// $currentSub;
+// $sliderValue;
 
 if(isset($_POST['barThing'])){ //FIGURE OUT IF THEY NEED TO HAVE CHECKED A CATEGORY OR WHETHER THEM SIMPLY INPUTTING A SCORE IS ENOUGH
 //$result2 = mysql_query("SELECT * FROM subjectsGrades WHERE `Email` = '$userEmail'"); //new query for the grade table, remember to add different ID as well as email
@@ -42,17 +43,18 @@ if(isset($_POST['barThing'])){ //FIGURE OUT IF THEY NEED TO HAVE CHECKED A CATEG
 			}
 		}
 	}
-	if($subName == $items[1]){
+	if($subName == $items[1]){ //and query that no record for the email and date exist)
+		echo "ticklebonk";
 		mysql_query("INSERT INTO `subjectsCategories` (`Email`, `Date`, `$subName`) VALUES ('$userEmail', '$currentDay', '$catsChosen')");
 		mysql_query("INSERT INTO `subjectsGrades` (`Email`, `Date`, `$subName`) VALUES ('$userEmail', '$currentDay', '$sliderValue')");
-		//$subCount++;
+		$subCount++;
 		$subName = $items[$subCount];
 	}
 	else{
+		echo "fuckwonkz";
 		mysql_query("UPDATE `subjectsCategories` SET `$subName` = '$catsChosen' WHERE `Email` = '$userEmail' AND `Date` = '$currentDay'");
 		mysql_query("UPDATE `subjectsGrades` SET `$subName` = '$sliderValue' WHERE `Email` = '$userEmail' AND `Date` = '$currentDay'");
-		//$subCount++;
-		echo "bLAHH" . $subCount;
+		$subCount++;
 		$subName = $items[$subCount];
 	}
 	
