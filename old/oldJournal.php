@@ -20,26 +20,59 @@ while($row = mysql_fetch_assoc($result)) {
 	}
 	$itemsSize = count($items)-1;
 }
-
-
 $subName = $items[1];
 
 if(isset($_POST['barThing'])){ //FIGURE OUT IF THEY NEED TO HAVE CHECKED A CATEGORY OR WHETHER THEM SIMPLY INPUTTING A SCORE IS ENOUGH
-//$result2 = mysql_query("SELECT * FROM subjectsGrades WHERE `Email` = '$userEmail'"); //new query for the grade table, remember to add different ID as well as email
-	$currentDay = date("Y/m/d"); //currently set to track weeks, not the date
+$result2 = mysql_query("SELECT * FROM subjectsGrades WHERE `Email` = '$userEmail'"); //new query for the grade table, remember to add different ID as well as email
 	$sliderValue = $_POST['barThing'];
+	echo $sliderValue;
 	if(isset($_POST['formSubmit'])){
 		$subAmount = count($_POST['subject_list']);
 		for($k = 0; $k < $subAmount;$k++){
 			$currentSub = $_POST['subject_list'][$k];
-			$catsChosen .= $currentSub . ", ";
+			//echo $currentSub;
+			$subCat = $subName . "Cat";
+			$catsChosen .= $currentSub . ",";
 			if($k == $subAmount -1){
-				$catsChosen = rtrim($catsChosen, ", ");
-				mysql_query("INSERT INTO `subjectsCategories` (`Email`, `Date`, `$subName`) VALUES ('$userEmail', '$currentDay', '$catsChosen')");
+				//echo $catsChosen;
+				mysql_query("INSERT INTO `subjectsGrades` (`Email`, `$subName`, `$subCat`) VALUES ('$userEmail', '$sliderValue', '$catsChosen')");
 			}
+			//mysql_query("INSERT INTO `subjectsGrades` (`Email`, `$subName`, `$subCat`) VALUES ('$userEmail', '$sliderValue', '$currentSub')");
+
+
+
+
+/*
+
+			if($k == 0){
+				mysql_query("INSERT INTO `subjectsGrades` (`Email`, `$subName`, `$subCat`) VALUES ('$userEmail', '$sliderValue', '$currentSub')");
+			}
+			if($k > 0){
+				$prevEntry = $result2['$subCat'];
+				$newEntry = $prevEntry . ", " . $currentSub;
+				echo $newEntry;
+				mysql_query("UPDATE `subjectsGrades` SET `$subCat` = '$newEntry' WHERE `Email` = '$userEmail'");
+			}
+
+*/
+
+
+
+
+
+
+			//mysql_query("UPDATE `subjectsGrades` SET `$col` = '1' WHERE `Email` = '$userEmail'");
+
+			//multiple checks make multiple records. check length > if more than 1 then first add then update? Also, going to have to use something as well as Email to verify the correct row
+
+
+
+			//mysql_query("INSERT INTO `subjectsGrades` (`Email`, `$subName`, `$subCat`) VALUES ('$userEmail', '$sliderValue', '$currentSub')");
+			
+
+			//mysql_query("INSERT INTO `subjectsGrades` (`Email`, `EnglishCat`) VALUES ('$userEmail', '$currentSub')");
 		}
 	}
-	mysql_query("INSERT INTO `subjectsGrades` (`Email`, `Date`, `$subName`) VALUES ('$userEmail', '$currentDay', '$sliderValue')");
 }
 ?>
 <html lang="en">
@@ -69,6 +102,7 @@ if(isset($_POST['barThing'])){ //FIGURE OUT IF THEY NEED TO HAVE CHECKED A CATEG
 </head>
 <body>
 	<?php
+	//print_r($items[1]);
 	$subName = $items[1];
 	echo $subName . "<br /> <br />";
 	$cats = mysql_fetch_array(mysql_query("SELECT * FROM `subjects` WHERE `SubjectName` = '$subName'"));
