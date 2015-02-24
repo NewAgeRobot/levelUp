@@ -27,6 +27,7 @@ if(isset($_POST['formSubmit'])){
 					}
 				}
 			}
+			mysql_query("UPDATE `users` SET `SubAmount` = '$subAmount' WHERE `Email` = '$userEmail'");
 		}
 	}
 }
@@ -60,7 +61,7 @@ if(isset($_POST['formSubmit'])){
 			</td></tr>";
 		}
 	}
-	echo "</table><input type='submit' id='submit' name='formSubmit' value='Submit' disabled />
+	echo "</table><input type='submit' id='submit' name='formSubmit' value='Submit' />
 </form>";
 ?>
 </body>
