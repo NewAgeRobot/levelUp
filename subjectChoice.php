@@ -28,6 +28,7 @@ if(isset($_POST['formSubmit'])){
 				}
 			}
 			mysql_query("UPDATE `users` SET `SubAmount` = '$subAmount' WHERE `Email` = '$userEmail'");
+			header('Location: restrictTest.php');
 		}
 	}
 }

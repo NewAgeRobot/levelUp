@@ -88,7 +88,7 @@ if(isset($_POST['barThing'])){
 	//echo $cats['Cat1'];
 	echo "<form action='' method='post' name='subjectlisting'><table>";
 
-	echo "<tr><td><input id='range' type='range' min='0' max='100' value='50' name='barThing'/>
+	echo "<tr><td><input id='range' type='range' min='0' max='100' value='0' name='barThing'/>
 	<canvas id='counter' width='240' height='240'></canvas> </td></tr>";
 
 	echo "<tr> <td> " . $cats['Cat1'] . "</td><td><input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $cats['Cat1'] . "' /></tr>";
