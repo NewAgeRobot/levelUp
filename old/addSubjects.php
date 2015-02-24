@@ -26,11 +26,7 @@ echo
 	<td><a href='logout.php'>Log out</a></td>
 	<td><a href='register.php'>Register</a></td>
 	<td><a href='restrictTest.php'>Restriction Test</a></td>
-	<td><a href='subjectChoice.php'>Subject Choice</a></td>";
-	if($subCount >= $user['DailyFeedback']){
-		echo "<td><a href='journal.php'>Journal</a></td>";
-	}
-	echo "</tr></table></nav><br />
+	</tr></table></nav><br />
 
  	<h1>Name: " . $user['Username'] . "</h1><br />
 	<h1>Year: " . $user['Year'] . "</h1><br />
