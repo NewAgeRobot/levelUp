@@ -21,8 +21,8 @@ while($row = mysql_fetch_assoc($result)) {
 	$itemsSize = count($items)-1;
 }
 
-$subCount = 1;
-echo $subCount;
+$subCount = $user['DailyFeedback'];
+echo "SUBCOUNT IS : " . $subCount;
 $subName = $items[$subCount];
 // $catsChosen;
 // $subAmount;
@@ -44,18 +44,20 @@ if(isset($_POST['barThing'])){ //FIGURE OUT IF THEY NEED TO HAVE CHECKED A CATEG
 		}
 	}
 	if($subName == $items[1]){ //and query that no record for the email and date exist)
-		echo "ticklebonk";
 		mysql_query("INSERT INTO `subjectsCategories` (`Email`, `Date`, `$subName`) VALUES ('$userEmail', '$currentDay', '$catsChosen')");
 		mysql_query("INSERT INTO `subjectsGrades` (`Email`, `Date`, `$subName`) VALUES ('$userEmail', '$currentDay', '$sliderValue')");
 		$subCount++;
-		$subName = $items[$subCount];
+		mysql_query("UPDATE `users` SET `DailyFeedback` = '$subCount' WHERE `Email` = '$userEmail'");
+		header('Location: journal.php');
+		//$subName = $items[$subCount];
 	}
 	else{
-		echo "fuckwonkz";
 		mysql_query("UPDATE `subjectsCategories` SET `$subName` = '$catsChosen' WHERE `Email` = '$userEmail' AND `Date` = '$currentDay'");
 		mysql_query("UPDATE `subjectsGrades` SET `$subName` = '$sliderValue' WHERE `Email` = '$userEmail' AND `Date` = '$currentDay'");
 		$subCount++;
-		$subName = $items[$subCount];
+		mysql_query("UPDATE `users` SET `DailyFeedback` = '$subCount' WHERE `Email` = '$userEmail'");
+		header('Location: journal.php');
+		//$subName = $items[$subCount];
 	}
 	
 }
