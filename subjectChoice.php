@@ -62,7 +62,7 @@ if(isset($_POST['formSubmit'])){
 			</td></tr>";
 		}
 	}
-	echo "</table><input type='submit' id='submit' name='formSubmit' value='Submit' />
+	echo "</table><input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
 </form>";
 ?>
 </body>
