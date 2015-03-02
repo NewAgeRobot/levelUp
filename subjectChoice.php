@@ -2,7 +2,7 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: /');
+	header('Location: index.php');
 }
 
 //test with multiple records to make sure identifier for table records is enouguh/that it works fine.
@@ -12,7 +12,7 @@ $result = mysql_query("SELECT * FROM subjectsTable WHERE `Email` = '$userEmail'"
 $i = 0;
 if(isset($_POST['formSubmit'])){
 	$subAmount = count($_POST['subject_list']);
-	while($row = mysql_fetch_assoc($result)) {   
+	while($row = mysql_fetch_assoc($result)) {
 		foreach ($row as $col => $val) {
 			if ($i++ < 2) continue;
 			for($j = 0; $j <= 36; $j++){
@@ -40,6 +40,7 @@ if(isset($_POST['formSubmit'])){
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/interactions.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
 	<title>test</title>
 </head>
@@ -58,11 +59,11 @@ if(isset($_POST['formSubmit'])){
 				$checkTrue = "";
 			}
 			echo "<tr> <td> " . $col . "</td> <td>
-				<input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $col . "'" . $checkTrue . " />
-			</td></tr>";
-		}
+			<input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $col . "'" . $checkTrue . " />
+		</td></tr>";
 	}
-	echo "</table><input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
+}
+echo "</table><input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
 </form>";
 ?>
 </body>

@@ -1,0 +1,28 @@
+body{
+	text-align: center;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	font-color: #E44424;
+}
+
+a:link{
+	font-color: #E44424;
+}
+
+a:visited{
+	font-color: #67BCDB;
+}
+
+nav{
+	margin: 0 auto;
+}
+
+table{
+	text-align: center;
+	margin: 0 auto;
+}
+
+#journalTable{
+	margin:0 auto;
+	padding-left: 200px;
+}

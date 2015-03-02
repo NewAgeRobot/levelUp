@@ -2,7 +2,7 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: /');
+	header('Location: index.php');
 }
 //add code for when actually submitted?
 if(isset($_POST['avatar'])){
@@ -26,6 +26,7 @@ else{
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="js/jquery-1.11.1.min.js"></script>
   <script src="js/interactions.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
   <title>test</title>
 </head>
 <body>

@@ -2,7 +2,7 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: /');
+	header('Location: index.php');
 }
 $userEmail = $user['Email'];
 $result = mysql_query("SELECT * FROM subjectsTable WHERE `Email` = '$userEmail'");
@@ -65,6 +65,7 @@ if(isset($_POST['barThing'])){
 	<script type="text/javascript" src="js/moo.js"></script>
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/interactions.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
 	<style type="text/css">
 		canvas {

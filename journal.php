@@ -2,7 +2,7 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: /');
+	header('Location: index.php');
 }
 $userEmail = $user['Email'];
 $result = mysql_query("SELECT * FROM subjectsTable WHERE `Email` = '$userEmail'");
@@ -18,7 +18,7 @@ while($row = mysql_fetch_assoc($result)) {
 	$itemsSize = count($items)-1;
 }
 $subCount = $user['DailyFeedback'];
-echo "SUBCOUNT IS : " . $subCount . "and " . $user['SubAmount'] . "<br />";
+//echo "SUBCOUNT IS : " . $subCount . "and " . $user['SubAmount'] . "<br />";
 $subName = $items[$subCount];
 if(isset($_POST['barThing'])){
 	$currentDay = date("Y/m/d");
@@ -65,6 +65,7 @@ if(isset($_POST['barThing'])){
 	<script type="text/javascript" src="js/moo.js"></script>
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/interactions.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
 	<style type="text/css">
 		canvas {
@@ -86,7 +87,7 @@ if(isset($_POST['barThing'])){
 	echo $subName . "<br /> <br />";
 	$cats = mysql_fetch_array(mysql_query("SELECT * FROM `subjects` WHERE `SubjectName` = '$subName'"));
 	//echo $cats['Cat1'];
-	echo "<form action='' method='post' name='subjectlisting'><table>";
+	echo "<form action='' method='post' name='subjectlisting'><table id='journalTable'>";
 
 	echo "<tr><td><input id='range' type='range' min='0' max='100' value='0' name='barThing'/>
 	<canvas id='counter' width='240' height='240'></canvas> </td></tr>";
