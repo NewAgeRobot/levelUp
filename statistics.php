@@ -83,23 +83,12 @@ if(isset($_POST['barThing'])){
 	<title>test</title>
 </head>
 <body>
+<div id="wrapper">
 	<?php
 	echo $subName . "<br /> <br />";
-	$cats = mysql_fetch_array(mysql_query("SELECT * FROM `subjects` WHERE `SubjectName` = '$subName'"));
-	//echo $cats['Cat1'];
-	echo "<form action='' method='post' name='subjectlisting'><table>";
-
-	echo "<tr><td><input id='range' type='range' min='0' max='100' value='50' name='barThing'/>
-	<canvas id='counter' width='240' height='240'></canvas> </td></tr>";
-
-	echo "<tr> <td> " . $cats['Cat1'] . "</td><td><input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $cats['Cat1'] . "' /></tr>";
-	echo "<tr> <td> " . $cats['Cat2'] . "</td><td><input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $cats['Cat2'] . "' /></tr>";
-	echo "<tr> <td> " . $cats['Cat3'] . "</td><td><input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $cats['Cat3'] . "' /></tr>";
-	echo "<tr> <td> " . $cats['Cat4'] . "</td><td><input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $cats['Cat4'] . "' /></tr>";
-
-	echo "</table><input type='submit' name='formSubmit' value='Submit' />
-</form>";
-//Now separate them out and generate first a non-dynamic way for people to enter feedback to get the calls to the database right. Then make it dynamic. Each submit should generate the same again but with new values etc. and keep a counter to track how many they've entered feedback for.
-?>
+	$statsReadout = mysql_fetch_array(mysql_query("SELECT * FROM `subjects` WHERE `SubjectName` = '$subName'"));
+		
+	?>
+</div>
 </body>
 </html>

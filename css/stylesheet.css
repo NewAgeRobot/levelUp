@@ -3,8 +3,8 @@ body{
 	margin: 0 auto;
 	background-color: #FFFFFF;
 	font-color: #E44424;
+	width:500px;
 }
-
 a:link{
 	font-color: #E44424;
 }
@@ -15,14 +15,5 @@ a:visited{
 
 nav{
 	margin: 0 auto;
-}
-
-table{
 	text-align: center;
-	margin: 0 auto;
-}
-
-#journalTable{
-	margin:0 auto;
-	padding-left: 200px;
 }
