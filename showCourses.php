@@ -6,7 +6,7 @@ if($logged == false){
 }
 
 //test with multiple records to make sure identifier for table records is enouguh/that it works fine.
-//sort out check for if they want to redo thier subject choice.
+//sort out check for if they want to redo their subject choice.
 $userEmail = $user['Email'];
 $result = mysql_query("SELECT * FROM interestsTable");
 $i = 0;

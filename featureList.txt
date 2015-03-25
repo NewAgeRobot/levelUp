@@ -1,0 +1,17 @@
+Have showing courses
+
+Need to somehow store the courses that have just been selected and iterate through the table again to find ones tagged with a 1 in the previous options' columns
+
+Maybe run another query on the database?
+
+
+Have currently opted to save their current three interests into slots on the user table
+
+Next course of action:
+
+! Gather array of courses from the database that match the interests
+	-be able to procedurally iterate through them, have them count down (maybe ignore the counter to just get them going?)
+		-might have to add a counter in the user table that stores the current number of courses to iterate through(!!!), then it just gets them in incrementing order? Another number to store what slot the user is currently at?
+			-This would support returning to the page after exploring elsewhere - can be reset upon new interest selection.
+
+			-Maybe create new table for storing ID/Email/Interest0/Interest1/Interest2/numCourse/currentCourse
