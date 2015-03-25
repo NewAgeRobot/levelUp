@@ -27,7 +27,8 @@ else {
 	<td><a href='logout.php'>Log out</a></td>
 	<td><a href='register.php'>Register</a></td>
 	<td><a href='restrictTest.php'>Restriction Test</a></td>
-	<td><a href='subjectChoice.php'>Subject Choice</a></td>";
+	<td><a href='subjectChoice.php'>Subject Choice</a></td>
+	<td><a href='exploreInterests.php'>Explore Interests</a></td>";
 	if($user['DailyFeedback'] <= $user['SubAmount']){
 		echo "<td><a href='journal.php'>Journal</a></td>";
 	}
