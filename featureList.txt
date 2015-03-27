@@ -16,3 +16,17 @@ Next course of action:
 
 			-Maybe create new table for storing ID/Email/Interest0/Interest1/Interest2/numCourse/currentCourse
 				-generate it when they create an account
+
+
+
+
+
+---------------
+currently have the results showing separately, print_r($array[0]['CourseTitle']);
+
+have the number of courses updating.
+	make the table default to 0 for both of them when created
+Set up so that it shows all the details of the first one
+have a button that updates the table with the incremented number then refreshes current page to show the new iteration
+
+figure out how to store the saved courses. New table? just saving their id's? who knows...

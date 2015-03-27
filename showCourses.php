@@ -23,8 +23,21 @@ $allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'
 // print_r($row['CourseTitle']);
 for($i = 0; $array[$i] = mysql_fetch_assoc($allCourses); $i++);
 array_pop($array);
+$numCourses = sizeOf($array);
+mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
 
-print_r($array[1]);
+
+print_r($array[0]['CourseTitle']);
+echo "<br />";
+print_r($array[1]['CourseTitle']);
+echo "<br />";
+print_r($array[2]['CourseTitle']);
+echo "<br />";
+print_r($array[3]['CourseTitle']);
+echo "<br />";
+print_r($array[4]['CourseTitle']);
+echo "<br />";
+print_r($array[5]['CourseTitle']);
 ?>
 <html lang="en">
 <head>
