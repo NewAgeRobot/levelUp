@@ -34,7 +34,6 @@ if(isset($_POST['formSubmit'])){
 	<title>test</title>
 </head>
 <body>
-<?php
-?>
+sfdsfsd
 </body>
 </html>

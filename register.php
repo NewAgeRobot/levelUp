@@ -21,9 +21,10 @@ if ($_POST['register']){
     $salt = hash("sha512", rand() . rand() . rand());
     mysql_query("INSERT INTO `users` (`Username`, `Password`, `Year`, `Email`, `Salt`) VALUES ('$username', '$password', '$year', '$email', '$salt')");
     mysql_query("INSERT INTO `subjectsTable` (`Email`) VALUES ('$email')");
+    mysql_query("INSERT INTO `storedInterests` (`Email`) VALUES ('$email')");
     setcookie("c_user", hash("sha512", $username), time() + 24 * 60 * 60, "/");
     setcookie("c_salt", $salt, time() + 24 * 60 * 60, "/");
-    header('Location: avatarChoice.php');
+    header('Location: subjectChoice.php');
   }
 };
 ?>

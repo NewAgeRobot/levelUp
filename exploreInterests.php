@@ -4,9 +4,6 @@ include "algor.php";
 if($logged == false){
 	header('Location: index.php');
 }
-
-//test with multiple records to make sure identifier for table records is enouguh/that it works fine.
-//sort out check for if they want to redo thier subject choice.
 $userEmail = $user['Email'];
 $result = mysql_query("SELECT * FROM interestsTable");
 $i = 0;
@@ -17,7 +14,7 @@ if(isset($_POST['formSubmit'])){
 		$currentSub = $_POST['subject_list'][$k];
 		$col = "interest" . $k;
 		//echo $col;
-		mysql_query("UPDATE `users` SET `$col` = '$currentSub' WHERE `Email` = '$userEmail'");
+		mysql_query("UPDATE `storedInterests` SET `$col` = '$currentSub' WHERE `Email` = '$userEmail'");
 		//echo $currentSub;
 		if($k == 0){
 			$interest0 = $currentSub;
@@ -29,24 +26,8 @@ if(isset($_POST['formSubmit'])){
 			$interest2 = $currentSub;
 		};
 	}
-	//generating all courses, saving them to a list here
-	//maybe make a switch statement if its not handling the blank interest1 and interest2 well
-	$courseCheck = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
-	//echo $courseCheck['CourseTitle'];
-	$testArray = array();
-	while($test = mysql_fetch_assoc($courseCheck)) {
-		foreach ($test as $col => $val) {
-			// echo $test['CourseTitle'];
-			$testArray[] = $test['CourseTitle'];
-		}
-	}
-	$testArray = array_unique($testArray, SORT_REGULAR);
-	//echo count($testArray);
-	for($a = 0; $a < count($testArray); $a++){
-		echo $testArray[1];
-	}
 }
-//header('Location: showCourses.php');
+header('Location: showCourses.php');
 ?>
 <html lang="en">
 <head>
@@ -67,7 +48,7 @@ if(isset($_POST['formSubmit'])){
 	while($row = mysql_fetch_assoc($result)) {
 		foreach ($row as $col => $val) {
 			if ($f++ < 7) continue;
-			else if($f > 26) break;
+			else if($f > 28) break;
 			echo "<tr> <td> " . $col . "</td> <td>
 			<input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $col . "'" . $checkTrue . " />
 		</td></tr>";
