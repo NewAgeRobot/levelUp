@@ -4,9 +4,6 @@ include "algor.php";
 if($logged == false){
 	header('Location: index.php');
 }
-
-//test with multiple records to make sure identifier for table records is enouguh/that it works fine.
-//sort out check for if they want to redo their subject choice.
 $userEmail = $user['Email'];
 $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests` WHERE `Email` = '$userEmail'"));
 $interest0 = $userInterests['Interest0'];
@@ -14,37 +11,32 @@ $interest1 = $userInterests['Interest1'];
 $interest2 = $userInterests['Interest2'];
 $currentCourse = $userInterests['CurrentCourse'];
 $allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
-
-// while ($row = mysql_fetch_assoc($result)) 
-// {
-//     echo $row['CourseTitle'];
-// }
-
-// $row = mysql_fetch_assoc($allCourses);
-// print_r($row['CourseTitle']);
 for($i = 0; $array[$i] = mysql_fetch_assoc($allCourses); $i++);
 array_pop($array);
 $numCourses = sizeOf($array);
 mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
-
-
-print_r("Course title: " . $array[0]['CourseTitle']);
+if($currentCourse <= ($numCourses-1)){
+echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
+print_r("Course title: " . $array[$currentCourse]['CourseTitle']);
 echo "<br />";
-print_r("Course Code: " . $array[0]['CourseCode']);
+print_r("Course Code: " . $array[$currentCourse]['CourseCode']);
 echo "<br />";
-print_r("Synopsis: " . $array[0]['Synopsis']);
+print_r("Synopsis: " . $array[$currentCourse]['Synopsis']);
 echo "<br />";
-print_r("Points: " . $array[0]['Points']);
+print_r("Points: " . $array[$currentCourse]['Points']);
 echo "<br />";
-print_r("Institute: " . $array[0]['Institute']);
+print_r("Institute: " . $array[$currentCourse]['Institute']);
 echo "<br />";
-print_r("Hyperlink: " . $array[0]['Hyperlink']);
+print_r("Hyperlink: " . $array[$currentCourse]['Hyperlink']);
 echo "<br />";
-
+echo "<br />";
 $currentCourse++;
 mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
-
-echo "<p><a href='showCourses.php'>Next Course</a></p>"
+echo "<p><a href='exploreInterests.php'>Explore more Interests</a></p>";
+echo "<p><a href='showCourses.php'>Next Course</a></p>";
+} else{
+	header('Location: exploreInterests.php');
+}
 ?>
 <html lang="en">
 <head>
