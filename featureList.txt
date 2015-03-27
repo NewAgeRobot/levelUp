@@ -24,9 +24,12 @@ Next course of action:
 ---------------
 currently have the results showing separately, print_r($array[0]['CourseTitle']);
 
-have the number of courses updating.
-	make the table default to 0 for both of them when created
+have their position in the amount of courses updating.
 Set up so that it shows all the details of the first one
 have a button that updates the table with the incremented number then refreshes current page to show the new iteration
 
 figure out how to store the saved courses. New table? just saving their id's? who knows...
+
+Figure out how to shuffle the courses
+
+look at using iframe so whole page doesn't need to be reloaded to view new course

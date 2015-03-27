@@ -12,6 +12,7 @@ $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests`
 $interest0 = $userInterests['Interest0'];
 $interest1 = $userInterests['Interest1'];
 $interest2 = $userInterests['Interest2'];
+$currentCourse = $userInterests['CurrentCourse'];
 $allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
 
 // while ($row = mysql_fetch_assoc($result)) 
@@ -27,17 +28,23 @@ $numCourses = sizeOf($array);
 mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
 
 
-print_r($array[0]['CourseTitle']);
+print_r("Course title: " . $array[0]['CourseTitle']);
 echo "<br />";
-print_r($array[1]['CourseTitle']);
+print_r("Course Code: " . $array[0]['CourseCode']);
 echo "<br />";
-print_r($array[2]['CourseTitle']);
+print_r("Synopsis: " . $array[0]['Synopsis']);
 echo "<br />";
-print_r($array[3]['CourseTitle']);
+print_r("Points: " . $array[0]['Points']);
 echo "<br />";
-print_r($array[4]['CourseTitle']);
+print_r("Institute: " . $array[0]['Institute']);
 echo "<br />";
-print_r($array[5]['CourseTitle']);
+print_r("Hyperlink: " . $array[0]['Hyperlink']);
+echo "<br />";
+
+$currentCourse++;
+mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
+
+echo "<p><a href='showCourses.php'>Next Course</a></p>"
 ?>
 <html lang="en">
 <head>
