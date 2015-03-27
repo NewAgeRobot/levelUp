@@ -33,3 +33,28 @@ figure out how to store the saved courses. New table? just saving their id's? wh
 Figure out how to shuffle the courses
 
 look at using iframe so whole page doesn't need to be reloaded to view new course
+
+----------------
+collecting badges to be added
+
+added to the top of each page along with algor - popup will be needed for notification that they earned it
+
+get course feedback saving fixed - copy journal basically.
+
+On stats page of it, have button that will go to course generate page but with using top three courses. Add top three to to storedInterests table, have them update whenever interest feedback is given
+
+add a table for the motivation PROMPTS - choosing which PROMPT will be randoming one of the questions tagged with interests/subjects if there are different questions for both. Table will be questions, tag(subject/interest)
+
+get the arrangement reorganisation of journal done - look up jquery rearranging list elements drag and drop
+
+stats and subject feedback is based on semester - get week numbers and use that - rough out basic statistic bar chart/pie chart - make sure that the data is formatted to allow for this
+
+see about wrapping it in some responsive design package so that it all stops looking like shit
+
+see about displaying calendar
+
+add limiter for colleges on the explore interests page, so it is also an option that will limit the scope - allow for multiple to be chosen
+
+when exploring courses = they are refined by more selections (&)
+
+look at how to save courses
