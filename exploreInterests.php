@@ -9,25 +9,26 @@ $result = mysql_query("SELECT * FROM interestsTable");
 $i = 0;
 if(isset($_POST['formSubmit'])){
 	$subAmount = count($_POST['subject_list']);
-	mysql_query("UPDATE `users` SET `interest0`='', `interest1`='', `interest2`='' WHERE `Email` = '$userEmail'");
+	mysql_query("UPDATE `storedInterests` SET `interest0`='', `interest1`='', `interest2`='' WHERE `Email` = '$userEmail'");
 	for($k = 0; $k < $subAmount;$k++){
 		$currentSub = $_POST['subject_list'][$k];
 		$col = "interest" . $k;
 		//echo $col;
 		mysql_query("UPDATE `storedInterests` SET `$col` = '$currentSub' WHERE `Email` = '$userEmail'");
 		//echo $currentSub;
-		if($k == 0){
-			$interest0 = $currentSub;
-		};
-		if($k == 1){
-			$interest1 = $currentSub;
-		};
-		if($k == 2){
-			$interest2 = $currentSub;
-		};
+		// if($k == 0){
+		// 	$interest0 = $currentSub;
+		// };
+		// if($k == 1){
+		// 	$interest1 = $currentSub;
+		// };
+		// if($k == 2){
+		// 	$interest2 = $currentSub;
+		// };
 	}
+	header('Location: showCourses.php');
 }
-header('Location: showCourses.php');
+
 ?>
 <html lang="en">
 <head>

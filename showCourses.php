@@ -8,19 +8,23 @@ if($logged == false){
 //test with multiple records to make sure identifier for table records is enouguh/that it works fine.
 //sort out check for if they want to redo their subject choice.
 $userEmail = $user['Email'];
-$result = mysql_query("SELECT * FROM interestsTable");
-$i = 0;
-if(isset($_POST['formSubmit'])){
-	$subAmount = count($_POST['subject_list']);
-	mysql_query("UPDATE `users` SET `interest0`='', `interest1`='', `interest2`='' WHERE `Email` = '$userEmail'");
-	for($k = 0; $k < $subAmount;$k++){
-		$currentSub = $_POST['subject_list'][$k];
-		$col = "interest" . $k;
-		echo $col;
-		mysql_query("UPDATE `users` SET `$col` = '$currentSub' WHERE `Email` = '$userEmail'");
-		echo $currentSub;
-	}
-}
+$userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests` WHERE `Email` = '$userEmail'"));
+$interest0 = $userInterests['Interest0'];
+$interest1 = $userInterests['Interest1'];
+$interest2 = $userInterests['Interest2'];
+$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+
+// while ($row = mysql_fetch_assoc($result)) 
+// {
+//     echo $row['CourseTitle'];
+// }
+
+// $row = mysql_fetch_assoc($allCourses);
+// print_r($row['CourseTitle']);
+for($i = 0; $array[$i] = mysql_fetch_assoc($allCourses); $i++);
+array_pop($array);
+
+print_r($array[1]);
 ?>
 <html lang="en">
 <head>
@@ -34,6 +38,5 @@ if(isset($_POST['formSubmit'])){
 	<title>test</title>
 </head>
 <body>
-sfdsfsd
 </body>
 </html>
