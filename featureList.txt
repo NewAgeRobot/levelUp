@@ -30,16 +30,12 @@ have a button that updates the table with the incremented number then refreshes 
 
 figure out how to store the saved courses. New table? just saving their id's? who knows...
 
-Figure out how to shuffle the courses
-
-look at using iframe so whole page doesn't need to be reloaded to view new course
-
 ----------------
 collecting badges to be added
 
 added to the top of each page along with algor - popup will be needed for notification that they earned it
 
-get course feedback saving fixed - copy journal basically.
+get interest feedback saving fixed - copy journal basically.
 
 On stats page of it, have button that will go to course generate page but with using top three courses. Add top three to to storedInterests table, have them update whenever interest feedback is given
 
@@ -58,3 +54,16 @@ add limiter for colleges on the explore interests page, so it is also an option 
 when exploring courses = they are refined by more selections (&)
 
 look at how to save courses
+
+
+
+SUPER IMPORTANT
+----------------
+add ajax to current interests exploring
+add in multiple entries to refine search
+figure out how to save courses
+add table with motivation prompts
+get interest feedback working - copy journal
+fix log-out not working
+
+Re-evaluate
