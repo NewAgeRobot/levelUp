@@ -49,7 +49,7 @@ $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests`
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script language="Javascript" type="text/javascript">
 		function nextCourse(cv){
-			$("#myDiv").html("LOADING").show();
+			$("#myDiv").html("<img src='http://media.jumpingjack.com/JumpingJack/loading.gif'>").show();
 			var url="courseList.php";
 			$.post(url, {contentVar: cv}, function(data){
 				$("#myDiv").html(data).show();
