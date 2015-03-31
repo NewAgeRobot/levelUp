@@ -33,7 +33,14 @@ echo "<br />";
 echo "<br />";
 $currentCourse++;
 mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
+echo "<br />";
+echo "<a href='exploreInterests.php'>Explore more Interests</a>";
+echo "<br />";
+echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'>Next Course</a>";
 } else{
-	header('Location: exploreInterests.php');
+	echo "That is all the courses that match your selection, please refine search for more options.";
+	echo "<br />";
+	echo "<br />";
+	echo "<a href='exploreInterests.php'>Explore more Interests</a>";
 }
 ?>

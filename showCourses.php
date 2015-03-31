@@ -89,12 +89,14 @@ $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests`
 			echo "<br />";
 			$currentCourse++;
 			mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
-			} else{
-				header('Location: exploreInterests.php');
+			echo "<br />";
+			echo "<a href='exploreInterests.php'>Explore more Interests</a>";
+			echo "<br />";
+			echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'>Next Course</a>";
 			}
 		?>
 	</div>
-	<a href='exploreInterests.php'>Explore more Interests</a>
+<!-- 	<a href='exploreInterests.php'>Explore more Interests</a>
 	<a href="#" onCLick="return false" onmousedown="javascript:nextCourse('<?php echo $currentCourse ?>');">Next Course</a>
-</body>
+ --></body>
 </html>
