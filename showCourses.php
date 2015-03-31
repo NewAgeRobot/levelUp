@@ -63,40 +63,56 @@ $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests`
 	<!-- pass the nextCourse variable the php of the current course? -->
 	<div id="myDiv">
 		<?php 
-			$interest0 = $userInterests['Interest0'];
-			$interest1 = $userInterests['Interest1'];
-			$interest2 = $userInterests['Interest2'];
-			$currentCourse = $userInterests['CurrentCourse'];
+		$interest0 = $userInterests['Interest0'];
+		$interest1 = $userInterests['Interest1'];
+		$interest2 = $userInterests['Interest2'];
+		$currentCourse = $userInterests['CurrentCourse'];
+			//if statement for selection of multiple ones determinging what $allcourses is given the value of
+		if(!$interest1){
 			$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
-			for($i = 0; $array[$i] = mysql_fetch_assoc($allCourses); $i++);
-				array_pop($array);
-			$numCourses = sizeOf($array);
+		}
+		else if(!$interest2){
+			$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+		}
+		else if($interest2){
+			$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+		}
+			// $allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+		for($i = 0; $array[$i] = mysql_fetch_assoc($allCourses); $i++);
+			array_pop($array);
+		$numCourses = sizeOf($array);
+			//if statement to check the size of the array has at least one course. If it doesn't then a different message is run
+		if(!$numCourses){
+			echo "Apologies, but no courses match your selection. <br /> <a href='exploreInterests.php'>Please choose again </a>";
+		}
+		else{
 			mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
 			if($currentCourse <= ($numCourses-1)){
-			echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
-			print_r("Course title: " . $array[$currentCourse]['CourseTitle']);
-			echo "<br />";
-			print_r("Course Code: " . $array[$currentCourse]['CourseCode']);
-			echo "<br />";
-			print_r("Synopsis: " . $array[$currentCourse]['Synopsis']);
-			echo "<br />";
-			print_r("Points: " . $array[$currentCourse]['Points']);
-			echo "<br />";
-			print_r("Institute: " . $array[$currentCourse]['Institute']);
-			echo "<br />";
-			print_r("Hyperlink: " . $array[$currentCourse]['Hyperlink']);
-			echo "<br />";
-			echo "<br />";
-			$currentCourse++;
-			mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
-			echo "<br />";
-			echo "<a href='exploreInterests.php'>Explore more Interests</a>";
-			echo "<br />";
-			echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'>Next Course</a>";
+				echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
+				print_r("Course title: " . $array[$currentCourse]['CourseTitle']);
+				echo "<br />";
+				print_r("Course Code: " . $array[$currentCourse]['CourseCode']);
+				echo "<br />";
+				print_r("Synopsis: " . $array[$currentCourse]['Synopsis']);
+				echo "<br />";
+				print_r("Points: " . $array[$currentCourse]['Points']);
+				echo "<br />";
+				print_r("Institute: " . $array[$currentCourse]['Institute']);
+				echo "<br />";
+				print_r("Hyperlink: " . $array[$currentCourse]['Hyperlink']);
+				echo "<br />";
+				echo "<br />";
+				$currentCourse++;
+				mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
+				echo "<br />";
+				echo "<a href='exploreInterests.php'>Explore more Interests</a>";
+				echo "<br />";
+				echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'>Next Course</a>";
 			}
+		}
 		?>
 	</div>
 <!-- 	<a href='exploreInterests.php'>Explore more Interests</a>
 	<a href="#" onCLick="return false" onmousedown="javascript:nextCourse('<?php echo $currentCourse ?>');">Next Course</a>
- --></body>
+--></body>
 </html>
