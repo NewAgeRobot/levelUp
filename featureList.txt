@@ -59,9 +59,9 @@ look at how to save courses
 
 SUPER IMPORTANT
 ----------------
-figure out how to save courses
 add table with motivation prompts
 get interest feedback working - copy journal
 fix log-out not working
+show saved courses
 
 Re-evaluate
