@@ -77,6 +77,11 @@ links sorted, headers etc. organised - get navigation bar
 make table for list of dates
 
 once log out is fixed, look at perma-log in or super long cookie
-make it pretty!
+
+make calendar table - id,day,month,year,title
+
+implement badges, to be shown on homepage
+
+make it pretty! - look at implementing a responsive theme such as www.fieldmuseum.org - look at media queries, do test of her design
 
 Re-evaluate
