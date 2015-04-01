@@ -1,3 +1,36 @@
+<script src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script language="Javascript" type="text/javascript">
+	function nextCourse(cv){
+		$("#myDiv").html("<img src='http://media.jumpingjack.com/JumpingJack/loading.gif'>").show();
+		var url="courseList.php";
+		$.post(url, {contentVar: cv}, function(data){
+			$("#myDiv").html(data).show();
+		});
+	}
+
+	$(document).ready(function(){
+		$('.ajax').show();
+		$(".ajax").click(function() {
+			var s = $(".jsCourseTitle").text();
+				//alert(s);
+				$.ajax({
+					method: 'POST' ,
+					url: 'saveCourse.php' ,
+					data: { name: s } ,
+					 success: function(result)
+					 {
+					// $('.ajax').after(result); //replace with .html("saved!"); when working
+					// $('.ajax').after("Course Saved!");
+					$('.ajax').after(result);
+					$('.ajax').hide();
+					}
+				});
+			});
+	});
+
+
+</script>
 <?php
 include "connect.php";
 include "algor.php";
@@ -25,24 +58,19 @@ for($i = 0; $array[$i] = mysql_fetch_assoc($allCourses); $i++);
 $numCourses = sizeOf($array);
 mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
 if($currentCourse <= ($numCourses-1)){
+	echo "<table>";
 	echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
-	print_r("Course title: " . $array[$currentCourse]['CourseTitle']);
-	echo "<br />";
-	print_r("Course Code: " . $array[$currentCourse]['CourseCode']);
-	echo "<br />";
-	print_r("Synopsis: " . $array[$currentCourse]['Synopsis']);
-	echo "<br />";
-	print_r("Points: " . $array[$currentCourse]['Points']);
-	echo "<br />";
-	print_r("Institute: " . $array[$currentCourse]['Institute']);
-	echo "<br />";
-	print_r("Hyperlink: " . $array[$currentCourse]['Hyperlink']);
-	echo "<br />";
+	print_r("<tr><td>Course title: </td><td>" . $array[$currentCourse]['CourseTitle'] . "</td></tr>");
+	print_r("<tr><td>Course Code: </td><td class='jsCourseTitle'>" . $array[$currentCourse]['CourseCode'] . "</td></tr>");
+	print_r("<tr><td>Synopsis: </td><td>" . $array[$currentCourse]['Synopsis'] . "</td></tr>");
+	print_r("<tr><td>Points: </td><td>" . $array[$currentCourse]['Points'] . "</td></tr>");
+	print_r("<tr><td>Institute: </td><td>" . $array[$currentCourse]['Institute'] . "</td></tr>");
+	print_r("<tr><td>Hyperlink: </td><td>" . $array[$currentCourse]['Hyperlink'] . "</td></tr>");
+	echo "</table>";
 	echo "<br />";
 	$currentCourse++;
 	mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
 	echo "<br />";
-	echo "<a href='#' onCLick='return false' onmousedown='javascript:saveCourse(" . $array[$currentCourse] . ");'>Save Course</a>";
 	echo "<br />";
 	echo "<a href='exploreInterests.php'>Explore more Interests</a>";
 	echo "<br />";
@@ -53,4 +81,5 @@ if($currentCourse <= ($numCourses-1)){
 	echo "<br />";
 	echo "<a href='exploreInterests.php'>Explore more Interests</a>";
 }
+echo "<a href='javascript:{}' class='ajax'>Save Course</a>";
 ?>
