@@ -59,8 +59,6 @@ look at how to save courses
 
 SUPER IMPORTANT
 ----------------
-add ajax to current interests exploring
-add in multiple entries to refine search
 figure out how to save courses
 add table with motivation prompts
 get interest feedback working - copy journal

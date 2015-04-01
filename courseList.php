@@ -42,6 +42,8 @@ if($currentCourse <= ($numCourses-1)){
 	$currentCourse++;
 	mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
 	echo "<br />";
+	echo "<a href='#' onCLick='return false' onmousedown='javascript:saveCourse(" . $array[$currentCourse] . ");'>Save Course</a>";
+	echo "<br />";
 	echo "<a href='exploreInterests.php'>Explore more Interests</a>";
 	echo "<br />";
 	echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'>Next Course</a>";
