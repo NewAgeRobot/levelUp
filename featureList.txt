@@ -59,9 +59,24 @@ look at how to save courses
 
 SUPER IMPORTANT
 ----------------
-add table with motivation prompts
+course code, course title, college, hyperlink
+remove save course button from last page where it prompts to refine search
+look at pre-checking current list of interests
+
+add table with motivation prompts - sinead made table
+implement prompts
+
 get interest feedback working - copy journal
 fix log-out not working
-show saved courses
+
+showing the statistics - testing different chart types - one big page - link to saved courses
+
+links sorted, headers etc. organised - get navigation bar
+(Journal, Statitistics, Testimonials, Explore, Saved Courses, Account(subject change, email address, year, log out))
+
+make table for list of dates
+
+once log out is fixed, look at perma-log in or super long cookie
+make it pretty!
 
 Re-evaluate

@@ -10,7 +10,7 @@ $num_rows = mysql_num_rows($saveCheck);
 //make notice for if the user has no saved courses yet
 //echo $num_rows;
 if(!$num_rows){
-	echo "loser";
+	echo "<a href='exploreInterests.php> You have no saved courses. </a>'";
 }
 else{
 	//query the other information or maybe see about just uploading all course info when they save a course, then pasting it here. Just the important bits maybe, like course title, code, synopsis and link? or maybe just code and title
