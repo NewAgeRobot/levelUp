@@ -13,18 +13,8 @@ if(isset($_POST['formSubmit'])){
 	for($k = 0; $k < $subAmount;$k++){
 		$currentSub = $_POST['subject_list'][$k];
 		$col = "interest" . $k;
-		//echo $col;
 		mysql_query("UPDATE `storedInterests` SET `$col` = '$currentSub' WHERE `Email` = '$userEmail'");
-		//echo $currentSub;
-		// if($k == 0){
-		// 	$interest0 = $currentSub;
-		// };
-		// if($k == 1){
-		// 	$interest1 = $currentSub;
-		// };
-		// if($k == 2){
-		// 	$interest2 = $currentSub;
-		// };
+
 	}
 	header('Location: showCourses.php');
 }
