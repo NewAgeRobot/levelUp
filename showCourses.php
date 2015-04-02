@@ -58,22 +58,25 @@ $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests`
 		}
 
 		$(document).ready(function(){
-		$('.ajax').show();
+			$('.ajax').show();
 			$(".ajax").click(function() {
-				var s = $(".jsCourseTitle").text();
+				var code = $(".jsCourseCode").text();
+				var title = $(".jsCourseTitle").text();
+				var college = $(".jsCourseCollege").text();
+				var url = $(".jsCourseURL").text();
 				//alert(s);
 				$.ajax({
 					method: 'POST' ,
 					url: 'saveCourse.php' ,
-					data: { name: s } ,
-					 success: function(result)
-					 {
-					 	//$('.ajax').after(result); //replace with .html("saved!"); when working
-					 	// $('.ajax').after("Course Saved!");
-						$('.ajax').after(result);
-					 	$('.ajax').hide();
-					 }
-				});
+					data: { code: code, title: title, college: college, url: url } ,
+					success: function(result)
+					{
+					//$('.ajax').after(result); //replace with .html("saved!"); when working
+					// $('.ajax').after("Course Saved!");
+					$('.ajax').after(result);
+					$('.ajax').hide();
+				}
+			});
 			});
 		});
 
@@ -113,12 +116,12 @@ $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests`
 			if($currentCourse <= ($numCourses-1)){
 				echo "<table>";
 				echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
-				print_r("<tr><td>Course title: </td><td>" . $array[$currentCourse]['CourseTitle'] . "</td></tr>");
-				print_r("<tr><td>Course Code: </td><td class='jsCourseTitle'>" . $array[$currentCourse]['CourseCode'] . "</td></tr>");
+				print_r("<tr><td>Course Title: </td><td class='jsCourseTitle'>" . $array[$currentCourse]['CourseTitle'] . "</td></tr>");
+				print_r("<tr><td>Course Code: </td><td class='jsCourseCode'>" . $array[$currentCourse]['CourseCode'] . "</td></tr>");
 				print_r("<tr><td>Synopsis: </td><td>" . $array[$currentCourse]['Synopsis'] . "</td></tr>");
 				print_r("<tr><td>Points: </td><td>" . $array[$currentCourse]['Points'] . "</td></tr>");
-				print_r("<tr><td>Institute: </td><td>" . $array[$currentCourse]['Institute'] . "</td></tr>");
-				print_r("<tr><td>Hyperlink: </td><td>" . $array[$currentCourse]['Hyperlink'] . "</td></tr>");
+				print_r("<tr><td>Institute: </td><td class='jsCourseCollege'>" . $array[$currentCourse]['Institute'] . "</td></tr>");
+				print_r("<tr><td>Hyperlink: </td><td class='jsCourseURL'>" . $array[$currentCourse]['Hyperlink'] . "</td></tr>");
 				echo "</table>";
 				echo "<br />";
 				$currentCourse++;
@@ -128,9 +131,10 @@ $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests`
 				echo "<a href='exploreInterests.php'>Explore more Interests</a>";
 				echo "<br />";
 				echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'>Next Course</a>";
+				echo "<br />";
+				echo "<a href='javascript:{}' class='ajax'>Save Course</a>";
 			}
 		}
-		echo "<a href='javascript:{}' class='ajax'>Save Course</a>";
 		?>
 		
 	</div>

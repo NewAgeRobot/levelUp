@@ -55,13 +55,13 @@ when exploring courses = they are refined by more selections (&)
 
 look at how to save courses
 
+look at pre-checking current list of interests
+
 
 
 SUPER IMPORTANT
 ----------------
-course code, course title, college, hyperlink
-remove save course button from last page where it prompts to refine search
-look at pre-checking current list of interests
+adding the option to refine by institution - dropdown menu like dkitmaps - or collapsible checkboxes
 
 add table with motivation prompts - sinead made table
 implement prompts

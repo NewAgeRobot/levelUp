@@ -6,7 +6,11 @@ if($logged == false){
 }
 $userEmail = $user['Email'];
 
-$savedCourse = $_POST["name"];
+$savedCode = $_POST["code"];
+$savedTitle = $_POST["title"];
+$savedCollege = $_POST["college"];
+$savedUrl = $_POST["url"];
+//echo $savedCode . $savedTitle . $savedCollege . $savedUrl;
 // echo $savedCourse;
 
 //run a check of the current alotment of saved courses for this email address, if the current one doesn't exist then add it
@@ -14,13 +18,13 @@ $saveCheck = mysql_query("SELECT CourseTitle FROM savedCourses WHERE `Email` = '
 $j = 0;
 while($row = mysql_fetch_assoc($saveCheck)) {
 	foreach ($row as $col => $val) {
-		if($val === $savedCourse){
+		if($val === $savedTitle){
 			$j++;
 		}
 	}
 }
 if($j == 0){
-	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseTitle`) VALUES ('$userEmail', '$savedCourse')");
+	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseCode`, `CourseTitle`, `CourseCollege`, `CourseURL`) VALUES ('$userEmail', '$savedCode', '$savedTitle', '$savedCollege', '$savedUrl')");
 	echo "Course Saved!";
 }
 else{
