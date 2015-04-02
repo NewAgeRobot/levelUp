@@ -38,8 +38,8 @@ if(isset($_POST['formSubmit'])){
 	$f = 0;
 	while($row = mysql_fetch_assoc($result)) {
 		foreach ($row as $col => $val) {
-			if ($f++ < 7) continue;
-			else if($f > 28) break;
+			if ($f++ < 8) continue;
+			else if($f > 29) break;
 			echo "<tr> <td> " . $col . "</td> <td>
 			<input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $col . "'" . $checkTrue . " />
 		</td></tr>";
