@@ -17,7 +17,8 @@ if(isset($_POST['formSubmit'])){
 		mysql_query("UPDATE `storedInterests` SET `$col` = '$currentSub' WHERE `Email` = '$userEmail'");
 
 	}
-	//header('Location: showCourses.php');
+	header('Location: showCourses.php');
+	//going to have to save the counties somehow as they're not parsed here. Fuuuuuuuck. Make 15 slots in the interest table? just handle it like that? Remember to wipe them before re-searches too.
 	$count = count($_POST['Counties']);
 	echo $count;
 }
@@ -59,6 +60,7 @@ if(isset($_POST['formSubmit'])){
 	
 	echo "<button type='button' id='showCounties'>Show Counties</button>";
 
+	//have one for all? maybe?
 	echo "<div id='countyTable' style='display:none;'><table>";
 	echo "<tr> <td> Louth </td> <td><input type='checkbox' name='Counties[]' class='county' value='Louth' /></td>";
 	echo "<td> Dublin </td> <td><input type='checkbox' name='Counties[]' class='county' value='Dublin' /></td>";
