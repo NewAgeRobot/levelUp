@@ -10,17 +10,22 @@ $i = 0;
 if(isset($_POST['formSubmit'])){
 	$subAmount = count($_POST['subject_list']);
 	echo $subAmount;
-	mysql_query("UPDATE `storedInterests` SET `interest0`='', `interest1`='', `interest2`='', `CurrentCourse` = '0', `NumCourse` = '0' WHERE `Email` = '$userEmail'");
+	mysql_query("UPDATE `storedInterests` SET `interest0`='', `interest1`='', `interest2`='', `CurrentCourse` = '0', `NumCourse` = '0', `County0`='', `County1`='', `County2`='', `County3`='', `County4`='', `County5`='', `County6`='', `County7`='', `County8`='', `County9`='', `County10`='', `County11`='', `County12`='', `County13`='', `County14`='' WHERE `Email` = '$userEmail'");
 	for($k = 0; $k < $subAmount;$k++){
 		$currentSub = $_POST['subject_list'][$k];
 		$col = "interest" . $k;
 		mysql_query("UPDATE `storedInterests` SET `$col` = '$currentSub' WHERE `Email` = '$userEmail'");
 
 	}
-	header('Location: showCourses.php');
-	//going to have to save the counties somehow as they're not parsed here. Fuuuuuuuck. Make 15 slots in the interest table? just handle it like that? Remember to wipe them before re-searches too.
 	$count = count($_POST['Counties']);
 	echo $count;
+	for($j = 0; $j < $count;$j++){
+		$currentCounty = $_POST['Counties'][$j];
+		$countyNumber = "County" . $j;
+		mysql_query("UPDATE `storedInterests` SET `$countyNumber` = '$currentCounty' WHERE `Email` = '$userEmail'");
+
+	}
+	header('Location: showCourses.php');
 }
 ?>
 <html lang="en">
