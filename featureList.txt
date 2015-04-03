@@ -61,7 +61,26 @@ look at pre-checking current list of interests
 
 SUPER IMPORTANT
 ----------------
-adding the option to refine by county - dropdown menu like dkitmaps - or collapsible checkboxes
+
+checktrue variable exists on the exploreinterests page, maybe i had once queried the database for the course name being mentioned and saved it to checkTrue?
+adding the option to refine by county - collapsible checkboxes
+
+Dublin
+Cork
+Galway
+Kildare
+Limerick
+Tipperary
+Sligo
+Roscommon
+Carlow
+Mayo
+Waterford
+Donegal
+Kerry
+Clare
+Cavan
+Louth
 
 add table with motivation prompts - sinead made table
 implement prompts
