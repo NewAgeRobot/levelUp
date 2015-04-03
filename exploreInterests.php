@@ -9,7 +9,7 @@ $result = mysql_query("SELECT * FROM interestsTable");
 $i = 0;
 if(isset($_POST['formSubmit'])){
 	$subAmount = count($_POST['subject_list']);
-	echo $subAmount;
+	//echo $subAmount;
 	mysql_query("UPDATE `storedInterests` SET `interest0`='', `interest1`='', `interest2`='', `CurrentCourse` = '0', `NumCourse` = '0', `County0`='', `County1`='', `County2`='', `County3`='', `County4`='', `County5`='', `County6`='', `County7`='', `County8`='', `County9`='', `County10`='', `County11`='', `County12`='', `County13`='', `County14`='' WHERE `Email` = '$userEmail'");
 	for($k = 0; $k < $subAmount;$k++){
 		$currentSub = $_POST['subject_list'][$k];
@@ -18,7 +18,7 @@ if(isset($_POST['formSubmit'])){
 
 	}
 	$count = count($_POST['Counties']);
-	echo $count;
+	//echo $count;
 	for($j = 0; $j < $count;$j++){
 		$currentCounty = $_POST['Counties'][$j];
 		$countyNumber = "County" . $j;
