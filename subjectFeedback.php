@@ -10,6 +10,8 @@ $result = mysql_query("SELECT * FROM subjectsTable WHERE `Email` = '$userEmail'"
 //adding their chosen subjects to an array
 $f = 0;
 $items[] = array();
+
+
 while($row = mysql_fetch_assoc($result)) {
   foreach ($row as $col => $val) {
     if ($f++ < 2) continue;
@@ -17,8 +19,23 @@ while($row = mysql_fetch_assoc($result)) {
       $items[] = $col;
     }
   }
-  $itemsSize = count($items)-1;
+  $itemsSize = count($items);
 }
+
+
+if(isset($_POST['formSubmit'])){
+  $subAmount = count($_POST['subjectList']);
+  //echo $subAmount;
+  for($k = 0; $k < $subAmount;$k++){
+    $currentSub = $_POST['subjectList'][$k];
+    //upload here to find the relevant columns and assign a grade to them. Bam, done
+    echo $currentSub;
+  }
+};
+
+
+
+
 //query to grab each of the subjects that the user has chosen. 
 //Replace the hard coded ones with the php variables
 //check if submit button is passing the form or should it be placed inside form/outside form
@@ -26,147 +43,185 @@ while($row = mysql_fetch_assoc($result)) {
 //javascript might still have to run ajax call to send the subject names in order.
 //names are used to designate which subject is being referred to(the column) and the order refers to what amount of "points" gets added to that subject so the data being stored under each subject column is actually a number
 //then institute a lockout of a week I guess
-
-}
 ?>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="js/MooTools-Core-1.5.1.js"></script>
-  <script type="text/javascript" src="js/moo.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="js/interactions.js"></script>
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
   <script language="Javascript" type="text/javascript">
-    var arr  = [];
-    var hash = [];
-    var duplicates = [];
+    var main = function(){
+      var arr  = [];
+      var hash = [];
+      var duplicates = [];
 
-    var $first; 
-    var $second; 
-    var $third;
-    var $fourth;
-    var $fifth;
-    var $sixth;
+      var $first; 
+      var $second; 
+      var $third;
+      var $fourth;
+      var $fifth;
+      var $sixth;
 
-    $(".subjectClass").change(function() {
-      $first = $("#first").val();
-      $second = $("#second").val();
-      $third = $("#third").val();
-      $fourth = $("#fourth").val();
-      $fifth = $("#fifth").val();
-      $sixth = $("#sixth").val();
-      $("#submit").removeAttr("disabled");
-    //$("#submit").attr("disabled", "disabled");
-});
+//       $(".subjectClass").change(function() {
+//        $first = $("#first").val();
+//        $second = $("#second").val();
+//        $third = $("#third").val();
+//        $fourth = $("#fourth").val();
+//        $fifth = $("#fifth").val();
+//        $sixth = $("#sixth").val();
+//        $("#submit").removeAttr("disabled");
+//   //$("#submit").attr("disabled", "disabled");
+// });
 
-    $("#submit").click(function() {
-    //alert($first + " + " + $second + " + " + $third + " + " + $fourth + " + " + $fifth + " + " + $sixth);
+//$("#submit").click(function() {
+  $(".subjectClass").change(function() {
     arr = [];
     duplicates = [];
     hash = [];
+    $first = $("#first").val();
+    $second = $("#second").val();
+    $third = $("#third").val();
+    $fourth = $("#fourth").val();
+    $fifth = $("#fifth").val();
+    $sixth = $("#sixth").val();
+
     arr.push($first, $second, $third, $fourth, $fifth, $sixth);
-    //alert(arr);
-    for (var n=arr.length; n--; ){
-      if (typeof hash[arr[n]] === 'undefined') hash[arr[n]] = [];
-      hash[arr[n]].push(n);
-    }
-    
-    for (var key in hash){
-      if (hash.hasOwnProperty(key) && hash[key].length > 1){
-        duplicates.push(key);
-      }
-    }
-    
-    if(duplicates.length > 0){
-      alert("Duplicate entries detected.");
-    }
-    else{
-      alert("Your favourite subjects are: " + $first + ", " + $second + ", " + $third + ", " + $fourth + ", " + $fifth + ", " + $sixth);
-    }
+//alert(arr);
+for (var n=arr.length; n--; ){
+  if (typeof hash[arr[n]] === 'undefined') hash[arr[n]] = [];
+  hash[arr[n]].push(n);
+}
+
+for (var key in hash){
+  if (hash.hasOwnProperty(key) && hash[key].length > 1){
+    duplicates.push(key);
+  }
+}
+
+if(duplicates.length > 0){
+  $("#submit").attr("disabled", "disabled");
+//alert("Duplicate entries detected.");
+}
+else{
+  $("#submit").removeAttr("disabled");
+//alert("Your favourite subjects are: " + $first + ", " + $second + ", " + $third + ", " + $fourth + ", " + $fifth + ", " + $sixth);
+}
 });
+}
 
-  </script>
-  <style type="text/css">
-    canvas {
-      display: block;
-    }
+$(document).ready(main);
 
-    input {
-      width: 200px;
-    }
+</script>
+<style type="text/css">
+  canvas {
+    display: block;
+  }
 
-    body {
-    }
-  </style>
+  input {
+    width: 200px;
+  }
 
-  <title>test</title>
+  body {
+  }
+</style>
+
+<title>test</title>
 </head>
 <body>
   <form action='' method='post' name='subjectFavourites'>
-    <select class="subjectClass" id="first">
-      <option value="Maths">Maths</option>
-      <option value="English">English</option>
-      <option value="Irish">Irish</option>
-      <option value="History">History</option>
-      <option value="Geography">Geography</option>
-      <option value="Home Economics">Home Economics</option>
-    </select>
-    <br />
-    <br />
-    <select class="subjectClass" id="second">
-      <option value="Maths">Maths</option>
-      <option value="English">English</option>
-      <option value="Irish">Irish</option>
-      <option value="History">History</option>
-      <option value="Geography">Geography</option>
-      <option value="Home Economics">Home Economics</option>
-    </select>
-    <br />
-    <br />
-    <select class="subjectClass" id="third">
-      <option value="Maths">Maths</option>
-      <option value="English">English</option>
-      <option value="Irish">Irish</option>
-      <option value="History">History</option>
-      <option value="Geography">Geography</option>
-      <option value="Home Economics">Home Economics</option>
-    </select>
-    <br />
-    <br />
-    <select class="subjectClass" id="fourth">
-      <option value="Maths">Maths</option>
-      <option value="English">English</option>
-      <option value="Irish">Irish</option>
-      <option value="History">History</option>
-      <option value="Geography">Geography</option>
-      <option value="Home Economics">Home Economics</option>
-    </select>
-    <br />
-    <br />
-    <select class="subjectClass" id="fifth">
-      <option value="Maths">Maths</option>
-      <option value="English">English</option>
-      <option value="Irish">Irish</option>
-      <option value="History">History</option>
-      <option value="Geography">Geography</option>
-      <option value="Home Economics">Home Economics</option>
-    </select>
-    <br />
-    <br />
-    <select class="subjectClass" id="sixth">
-      <option value="Maths">Maths</option>
-      <option value="English">English</option>
-      <option value="Irish">Irish</option>
-      <option value="History">History</option>
-      <option value="Geography">Geography</option>
-      <option value="Home Economics">Home Economics</option>
-    </select>
-    <br />
-    <br />
-</form>
+    <select class="subjectClass" id="first" name="subjectList[]">
+      <?php 
+      for($j = 1; $j < $itemsSize; $j++){
+        print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
+      }
+      ?>
+<!--<option value="Maths">Maths</option>
+<option value="English">English</option>
+<option value="Irish">Irish</option>
+<option value="History">History</option>
+<option value="Geography">Geography</option>
+<option value="Home Economics">Home Economics</option> -->
+</select>
+<br />
+<br />
+<select class="subjectClass" id="second" name="subjectList[]">
+  <?php 
+  for($j = 1; $j < $itemsSize; $j++){
+    print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
+  }
+  ?>
+<!--<option value="Maths">Maths</option>
+<option value="English">English</option>
+<option value="Irish">Irish</option>
+<option value="History">History</option>
+<option value="Geography">Geography</option>
+<option value="Home Economics">Home Economics</option>-->
+</select>
+<br />
+<br />
+<select class="subjectClass" id="third" name="subjectList[]">
+  <?php 
+  for($j = 1; $j < $itemsSize; $j++){
+    print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
+  }
+  ?>
+<!--<option value="Maths">Maths</option>
+<option value="English">English</option>
+<option value="Irish">Irish</option>
+<option value="History">History</option>
+<option value="Geography">Geography</option>
+<option value="Home Economics">Home Economics</option>-->
+</select>
+<br />
+<br />
+<select class="subjectClass" id="fourth" name="subjectList[]">
+  <?php 
+  for($j = 1; $j < $itemsSize; $j++){
+    print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
+  }
+  ?>
+<!--<option value="Maths">Maths</option>
+<option value="English">English</option>
+<option value="Irish">Irish</option>
+<option value="History">History</option>
+<option value="Geography">Geography</option>
+<option value="Home Economics">Home Economics</option>-->
+</select>
+<br />
+<br />
+<select class="subjectClass" id="fifth" name="subjectList[]">
+  <?php 
+  for($j = 1; $j < $itemsSize; $j++){
+    print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
+  }
+  ?>
+<!--<option value="Maths">Maths</option>
+<option value="English">English</option>
+<option value="Irish">Irish</option>
+<option value="History">History</option>
+<option value="Geography">Geography</option>
+<option value="Home Economics">Home Economics</option>-->
+</select>
+<br />
+<br />
+<select class="subjectClass" id="sixth" name="subjectList[]">
+  <?php 
+  for($j = 1; $j < $itemsSize; $j++){
+    print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
+  }
+  ?>
+<!--<option value="Maths">Maths</option>
+<option value="English">English</option>
+<option value="Irish">Irish</option>
+<option value="History">History</option>
+<option value="Geography">Geography</option>
+<option value="Home Economics">Home Economics</option>-->
+</select>
+<br />
+<br />
 <input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
+</form>
 </body>
 </html>
