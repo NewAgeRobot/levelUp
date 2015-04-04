@@ -1,7 +1,7 @@
 <?php
 include "connect.php";
 include "algor.php";
-//add redirect for whether they have already entered their feedback for the week. Or do it at the start of every page to query whether the link should be there. - both is better.
+//add redirect for whether they have already entered their feedback for the week or hide tables and show warning and when they can do it again.
 if($logged == false){
   header('Location: index.php');
 }
@@ -25,7 +25,7 @@ while($row = mysql_fetch_assoc($result)) {
 
 
 if(isset($_POST['formSubmit'])){
-  $currentDay = date("Y/m/d");
+  $currentDay = date("Y/m/d"); //Maybe change to week number?
   //$subAmount = count($_POST['subjectList']);
   //echo $subAmount;
   // for($k = 0; $k < 6;$k++){

@@ -6,6 +6,21 @@ if($logged == false){
 }
 $userEmail = $user['Email'];
 $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests` WHERE `Email` = '$userEmail'"));
+
+$counties[] = array();
+$countyNumber = 0;
+
+for($f = 0; $f < 22; $f++){
+	if($f++ < 7) continue;
+		echo $userInterests[$f];
+}
+
+    // if ($f++ < 7) continue;
+    // if ($val) {
+    //   $counties[] = $col;
+    //   echo $col;
+    // }
+  //$countiesSize = count($counties);
 // $interest0 = $userInterests['Interest0'];
 // $interest1 = $userInterests['Interest1'];
 // $interest2 = $userInterests['Interest2'];
@@ -94,7 +109,6 @@ $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests`
 		$interest2 = $userInterests['Interest2'];
 		$currentCourse = $userInterests['CurrentCourse'];
 			//if statement for selection of multiple ones determinging what $allcourses is given the value of
-
 		//figure out how to integrate the county refinement. If County0 is empty then just do these normally. Might be a switch statement case. Maybe approach it at the array level? 
 		//Where I can run through the array and remove entries that aren't equal to the chosen counties 
 		if(!$interest1){
