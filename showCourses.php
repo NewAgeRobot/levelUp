@@ -12,51 +12,57 @@ $countyNumber = 0;
 
 for($f = 7; $f < 22; $f++){
 	if($userInterests[$f] != ""){
+		switch ($f) {
+		    case 7:
+		        $county1 = $userInterests[$f];
+		        break;
+		    case 8:
+		        $county2 = $userInterests[$f];
+		        break;
+		    case 9:
+		        $county3 = $userInterests[$f];
+		        break;
+		    case 10:
+		        $county4 = $userInterests[$f];
+		        break;
+		    case 11:
+		        $county5 = $userInterests[$f];
+		        break;
+		    case 12:
+		        $county6 = $userInterests[$f];
+		        break;
+		    case 13:
+		        $county7 = $userInterests[$f];
+		        break;
+		    case 14:
+		        $county8 = $userInterests[$f];
+		        break;
+		    case 15:
+		        $county9 = $userInterests[$f];
+		        break;
+		    case 16:
+		        $county10 = $userInterests[$f];
+		        break;
+		    case 17:
+		        $county11 = $userInterests[$f];
+		        break;
+		    case 18:
+		        $county12 = $userInterests[$f];
+		        break;
+		    case 19:
+		        $county13 = $userInterests[$f];
+		        break;
+		    case 20:
+		        $county14 = $userInterests[$f];
+		        break;
+		    case 21:
+		        $county15 = $userInterests[$f];
+		        break;
+		}
 		$countyNumber++;
 	}
 		// echo $userInterests[$f];
 }
-
-$firstCounty = $userInterests[7];
-//echo $countyNumber;
-
-    // if ($f++ < 7) continue;
-    // if ($val) {
-    //   $counties[] = $col;
-    //   echo $col;
-    // }
-  //$countiesSize = count($counties);
-// $interest0 = $userInterests['Interest0'];
-// $interest1 = $userInterests['Interest1'];
-// $interest2 = $userInterests['Interest2'];
-// $currentCourse = $userInterests['CurrentCourse'];
-// $allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
-// for($i = 0; $array[$i] = mysql_fetch_assoc($allCourses); $i++);
-// 	array_pop($array);
-// $numCourses = sizeOf($array);
-// mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
-// if($currentCourse <= ($numCourses-1)){
-// echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
-// print_r("Course title: " . $array[$currentCourse]['CourseTitle']);
-// echo "<br />";
-// print_r("Course Code: " . $array[$currentCourse]['CourseCode']);
-// echo "<br />";
-// print_r("Synopsis: " . $array[$currentCourse]['Synopsis']);
-// echo "<br />";
-// print_r("Points: " . $array[$currentCourse]['Points']);
-// echo "<br />";
-// print_r("Institute: " . $array[$currentCourse]['Institute']);
-// echo "<br />";
-// print_r("Hyperlink: " . $array[$currentCourse]['Hyperlink']);
-// echo "<br />";
-// echo "<br />";
-// $currentCourse++;
-// mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
-// echo "<p><a href='exploreInterests.php'>Explore more Interests</a></p>";
-// echo "<p><a href='showCourses.php'>Next Course</a></p>";
-// } else{
-// 	header('Location: exploreInterests.php');
-// }
 ?>
 <html lang="en">
 <head>
@@ -116,30 +122,194 @@ $firstCounty = $userInterests[7];
 			//if statement for selection of multiple ones determinging what $allcourses is given the value of
 		//figure out how to integrate the county refinement. If County0 is empty then just do these normally. Might be a switch statement case. Maybe approach it at the array level? 
 		//Where I can run through the array and remove entries that aren't equal to the chosen counties 
-		switch (n) {
-		    case label1:
-		        code to be executed if n=label1;
+		switch ($countyNumber) {
+		    case 0:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
 		        break;
-		    case label2:
-		        code to be executed if n=label2;
+		    case 1:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `County0` = '$'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
 		        break;
-		    case label3:
-		        code to be executed if n=label3;
+		    case 2:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
 		        break;
-		    ...
-		    default:
-		        code to be executed if n is different from all labels;
+		    case 3:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 4:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 5:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 6:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 7:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 8:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 9:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 10:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 11:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 12:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 13:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 14:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
+		    case 15:
+		        if(!$interest1){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+				}
+				else if(!$interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+				}
+				else if($interest2){
+					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+				}
+		        break;
 		}
 
-		if(!$interest1){
-			$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
-		}
-		else if(!$interest2){
-			$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
-		}
-		else if($interest2){
-			$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
-		}
+		// if(!$interest1){
+		// 	$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
+		// }
+		// else if(!$interest2){
+		// 	$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
+		// }
+		// else if($interest2){
+		// 	$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
+		// }
 			// $allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
 		for($i = 0; $array[$i] = mysql_fetch_assoc($allCourses); $i++);
 			array_pop($array);
