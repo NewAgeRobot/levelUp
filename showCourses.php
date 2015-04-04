@@ -10,10 +10,15 @@ $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests`
 $counties[] = array();
 $countyNumber = 0;
 
-for($f = 0; $f < 22; $f++){
-	if($f++ < 7) continue;
-		echo $userInterests[$f];
+for($f = 7; $f < 22; $f++){
+	if($userInterests[$f] != ""){
+		$countyNumber++;
+	}
+		// echo $userInterests[$f];
 }
+
+$firstCounty = $userInterests[7];
+//echo $countyNumber;
 
     // if ($f++ < 7) continue;
     // if ($val) {
@@ -111,6 +116,21 @@ for($f = 0; $f < 22; $f++){
 			//if statement for selection of multiple ones determinging what $allcourses is given the value of
 		//figure out how to integrate the county refinement. If County0 is empty then just do these normally. Might be a switch statement case. Maybe approach it at the array level? 
 		//Where I can run through the array and remove entries that aren't equal to the chosen counties 
+		switch (n) {
+		    case label1:
+		        code to be executed if n=label1;
+		        break;
+		    case label2:
+		        code to be executed if n=label2;
+		        break;
+		    case label3:
+		        code to be executed if n=label3;
+		        break;
+		    ...
+		    default:
+		        code to be executed if n is different from all labels;
+		}
+
 		if(!$interest1){
 			$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
 		}
