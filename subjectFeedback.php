@@ -1,6 +1,7 @@
 <?php
 include "connect.php";
 include "algor.php";
+//add redirect for whether they have already entered their feedback for the week. Or do it at the start of every page to query whether the link should be there. - both is better.
 if($logged == false){
   header('Location: index.php');
 }
@@ -24,13 +25,21 @@ while($row = mysql_fetch_assoc($result)) {
 
 
 if(isset($_POST['formSubmit'])){
-  $subAmount = count($_POST['subjectList']);
+  $currentDay = date("Y/m/d");
+  //$subAmount = count($_POST['subjectList']);
   //echo $subAmount;
-  for($k = 0; $k < $subAmount;$k++){
-    $currentSub = $_POST['subjectList'][$k];
-    //upload here to find the relevant columns and assign a grade to them. Bam, done
-    echo $currentSub;
-  }
+  // for($k = 0; $k < 6;$k++){
+  //   //$currentSub = $_POST['subjectList'][$k];
+  //   //upload here to find the relevant columns and assign a grade to them. Bam, done
+  //   echo $currentSub;
+  // }
+  $first = $_POST['subjectList'][0];
+  $second = $_POST['subjectList'][1];
+  $third = $_POST['subjectList'][2];
+  $fourth = $_POST['subjectList'][3];
+  $fifth = $_POST['subjectList'][4];
+  $sixth = $_POST['subjectList'][5];
+  mysql_query("INSERT INTO `subjectFeedback` (`Date`, `Email`, `$first`, `$second`, `$third`, `$fourth`, `$fifth`, `$sixth`) VALUES ('$currentDay', '$userEmail', '6', '5', '4', '3', '2', '1')");
 };
 
 
