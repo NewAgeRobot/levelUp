@@ -27,6 +27,11 @@ if(isset($_POST['formSubmit'])){
 	}
 	header('Location: showCourses.php');
 }
+
+$prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `Interests` = '1' ORDER BY rand() 
+   LIMIT 1"));
+echo $prompts['Prompt'];
+
 ?>
 <html lang="en">
 <head>

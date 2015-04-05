@@ -43,6 +43,9 @@ if(isset($_POST['formSubmit'])){
 };
 
 
+$prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `Subjects` = '1' ORDER BY rand() 
+   LIMIT 1"));
+echo $prompts['Prompt'];
 
 
 //query to grab each of the subjects that the user has chosen. 
