@@ -344,7 +344,7 @@ for($f = 7; $f < 22; $f++){
 				print_r("<tr><td>Synopsis: </td><td>" . $array[$currentCourse]['Synopsis'] . "</td></tr>");
 				print_r("<tr><td>Points: </td><td>" . $array[$currentCourse]['Points'] . "</td></tr>");
 				print_r("<tr><td>Institute: </td><td class='jsCourseCollege'>" . $array[$currentCourse]['Institute'] . "</td></tr>");
-				print_r("<tr><td>Hyperlink: </td><td class='jsCourseURL'><a href='" . $array[$currentCourse]['Hyperlink'] . "'target='_blank'>Find out more</a></td></tr>"); //not working
+				print_r("<tr><td>Hyperlink: </td><td class='jsCourseURL'><a href='" . $array[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></td></tr>"); //not working
 				echo "</table>";
 				echo "<br />";
 				$currentCourse++;
