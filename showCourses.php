@@ -76,8 +76,6 @@ for($f = 7; $f < 22; $f++){
 		}
 		$countyNumber++;
 	}
-		//echo $countyNumber;
-		//echo $county1;
 }
 ?>
 <html lang="en">
