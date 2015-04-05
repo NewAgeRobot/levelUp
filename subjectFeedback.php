@@ -9,13 +9,13 @@ $userEmail = $user['Email'];
 $result = mysql_query("SELECT * FROM subjectsTable WHERE `Email` = '$userEmail'");
 
 //adding their chosen subjects to an array
-$f = 0;
+// $f = 0;
 $items[] = array();
 
 
 while($row = mysql_fetch_assoc($result)) {
   foreach ($row as $col => $val) {
-    if ($f++ < 2) continue;
+    // if ($f++ < 2) continue;
     if ($val == 1) {
       $items[] = $col;
     }

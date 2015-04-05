@@ -61,24 +61,22 @@ look at pre-checking current list of interests
 
 SUPER IMPORTANT
 ----------------
-get interest feedback working - copy journal/exploreInterests page
-
 showing the statistics - testing different chart types - one big page - link to saved courses
 
-checktrue variable exists on the exploreinterests page, maybe i had once queried the database for the course name being mentioned and saved it to checkTrue?
+checktrue variable exists on the exploreinterests page, maybe i had once queried the database for the course name being mentioned and saved it to checkTrue? to see which ones are currently saved? do the same for counties but as a separate page maybe - refine - maybe add a slot to the storedInterests column to track if they hit refine?
 
-links sorted, headers etc. organised - get navigation bar
+links sorted, headers etc. organised - get navigation bar - basic css - standardise headers for each page
 (Journal, Statitistics, Testimonials, Explore, Saved Courses, Account(subject change, email address, year, log out))
 
-make table for list of dates
+make calendar table - id,day,month,year,title - add calendar to main page
+
+figure out how badges are being implemented - create table for their trackers - add relevant updates to one page to test - use saved courses to test - to be shown on homepage
+
+fix log-out not working
 
 once log out is fixed, look at perma-log in or super long cookie
 
-make calendar table - id,day,month,year,title
-
-implement badges, to be shown on homepage
-
-fix log-out not working
+add in date limiter for both feedback pages
 
 make it pretty! - look at implementing a responsive theme such as www.fieldmuseum.org - look at media queries, do test of her design
 
