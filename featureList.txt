@@ -61,6 +61,8 @@ look at pre-checking current list of interests
 
 SUPER IMPORTANT
 ----------------
+add more college courses, update pages for the numbers involved in the columns etc. as more interests have been added. Make post on facebook group and update it with which colleges I add.
+
 showing the statistics - testing different chart types - one big page - link to saved courses
 
 checktrue variable exists on the exploreinterests page, maybe i had once queried the database for the course name being mentioned and saved it to checkTrue? to see which ones are currently saved? do the same for counties but as a separate page maybe - refine - maybe add a slot to the storedInterests column to track if they hit refine?
