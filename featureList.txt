@@ -61,7 +61,7 @@ look at pre-checking current list of interests
 
 SUPER IMPORTANT
 ----------------
-add table with motivation prompts - sinead made table
+add table with motivation prompts - sinead made table - exploreinterests page and subject feedback page
 implement prompts
 
 get interest feedback working - copy journal
