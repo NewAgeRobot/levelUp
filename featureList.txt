@@ -81,3 +81,5 @@ add in date limiter for both feedback pages
 make it pretty! - look at implementing a responsive theme such as www.fieldmuseum.org - look at media queries, do test of her design
 
 Re-evaluate
+
+go through and make everything safe

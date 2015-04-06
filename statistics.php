@@ -26,14 +26,28 @@ while($row = mysql_fetch_assoc($subjectScores)) {
   // $subjectAmount = count($subjectArray);
 }
 
-$test = 1;
-$tester = "English";
-$tester2 = "Accounting";
-$testQuery = mysql_query("SELECT sum($tester) as total, sum($tester2) as total2 FROM subjectFeedback WHERE `Email` = '$userEmail'");
+$subject1 = $subjectArray[1];
+$subject2 = $subjectArray[2];
+$subject3 = $subjectArray[3];
+$subject4 = $subjectArray[4];
+$subject5 = $subjectArray[5];
+$subject6 = $subjectArray[6];
+// $subject7 = $subjectArray[7];
+// $subject8 = $subjectArray[8];
+// $subject9 = $subjectArray[9];
+
+$testQuery = mysql_query("SELECT sum($subject1) as totalSub1, sum($subject2) as totalSub2, sum($subject3) as totalSub3, sum($subject4) as totalSub4, sum($subject5) as totalSub5, sum($subject6) as totalSub6 FROM subjectFeedback WHERE `Email` = '$userEmail'");
 $row = mysql_fetch_assoc($testQuery);
-echo $row['total'];
-echo $row['total2'];
-print_r($subjectArray);
+echo $row['totalSub1'];
+echo $row['totalSub2'];
+echo $row['totalSub3'];
+echo $row['totalSub4'];
+echo $row['totalSub5'];
+echo $row['totalSub6'];
+// echo $row['totalSub7'];
+// echo $row['totalSub8'];
+// echo $row['totalSub9'];
+// print_r($subjectArray);
 ?>
 <!DOCTYPE HTML>
 <html>
