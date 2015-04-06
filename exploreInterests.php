@@ -70,13 +70,13 @@ echo $prompts['Prompt'];
 	
 	echo "<button type='button' id='showCounties'>Show Counties</button>";
 
-	//have one for all? maybe?
 	echo "<div id='countyTable' style='display:none;'><table>";
 	echo "<tr> <td> Louth </td> <td><input type='checkbox' name='Counties[]' class='county' value='Louth' /></td>";
 	echo "<td> Dublin </td> <td><input type='checkbox' name='Counties[]' class='county' value='Dublin' /></td>";
 	echo "<td> Cork </td> <td><input type='checkbox' name='Counties[]' class='county' value='Cork' /></td>";
 	echo "<td> Kildare </td> <td><input type='checkbox' name='Counties[]' class='county' value='Kildare' /></td>";
-	echo "<td> Galway </td> <td><input type='checkbox' name='Counties[]' class='county' value='Galway' /></td></tr>";
+	echo "<td> Galway </td> <td><input type='checkbox' name='Counties[]' class='county' value='Galway' /></td>";
+	echo "<td> Wexford </td> <td><input type='checkbox' name='Counties[]' class='county' value='Wexford' /></td></tr>";
 	echo "<tr> <td> Limerick </td> <td><input type='checkbox' name='Counties[]' class='county' value='Limerick' /></td>";
 	echo "<td> Sligo </td> <td><input type='checkbox' name='Counties[]' class='county' value='Sligo' /></td>";
 	echo "<td> Tipperary </td> <td><input type='checkbox' name='Counties[]' class='county' value='Tipperary' /></td>";
@@ -96,7 +96,7 @@ echo $prompts['Prompt'];
 	while($row = mysql_fetch_assoc($result)) {
 		foreach ($row as $col => $val) {
 			if ($f++ < 8) continue;
-			else if($f > 29) break;
+			else if($f > 30) break;
 			//use checktrue to query current interests, and make them checked if they exist
 			echo "<tr> <td> " . $col . "</td> <td>
 			<input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $col . "'" . $checkTrue . " />
