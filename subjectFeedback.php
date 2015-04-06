@@ -39,6 +39,7 @@ if(isset($_POST['formSubmit'])){
   $fourth = $_POST['subjectList'][3];
   $fifth = $_POST['subjectList'][4];
   $sixth = $_POST['subjectList'][5];
+  echo $first;
   mysql_query("INSERT INTO `subjectFeedback` (`Date`, `Email`, `$first`, `$second`, `$third`, `$fourth`, `$fifth`, `$sixth`) VALUES ('$currentDay', '$userEmail', '6', '5', '4', '3', '2', '1')");
 };
 
