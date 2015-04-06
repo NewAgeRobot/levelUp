@@ -6,6 +6,7 @@ if($logged == false){
 }
 $userEmail = $user['Email'];
 $subjectAmount = $user['SubAmount'];
+// echo $subjectAmount;
 
 $subjectScores = mysql_query("SELECT * FROM subjectFeedback WHERE `Email` = '$userEmail'");
 $subjectArray[] = array();
@@ -26,27 +27,80 @@ while($row = mysql_fetch_assoc($subjectScores)) {
   // $subjectAmount = count($subjectArray);
 }
 
-$subject1 = $subjectArray[1];
-$subject2 = $subjectArray[2];
-$subject3 = $subjectArray[3];
-$subject4 = $subjectArray[4];
-$subject5 = $subjectArray[5];
-$subject6 = $subjectArray[6];
+switch ($subjectAmount){
+	case 6: 
+		$subject1 = $subjectArray[1];
+		$subject2 = $subjectArray[2];
+		$subject3 = $subjectArray[3];
+		$subject4 = $subjectArray[4];
+		$subject5 = $subjectArray[5];
+		$subject6 = $subjectArray[6];
+		
+		$testQuery = mysql_query("SELECT sum($subject1) as $subjectArray[1], sum($subject2) as $subjectArray[2], sum($subject3) as $subjectArray[3], sum($subject4) as $subjectArray[4], sum($subject5) as $subjectArray[5], sum($subject6) as $subjectArray[6] FROM subjectFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 7: 
+		$subject1 = $subjectArray[1];
+		$subject2 = $subjectArray[2];
+		$subject3 = $subjectArray[3];
+		$subject4 = $subjectArray[4];
+		$subject5 = $subjectArray[5];
+		$subject6 = $subjectArray[6];
+		$subject7 = $subjectArray[7];
+		
+		$testQuery = mysql_query("SELECT sum($subject1) as $subjectArray[1], sum($subject2) as $subjectArray[2], sum($subject3) as $subjectArray[3], sum($subject4) as $subjectArray[4], sum($subject5) as $subjectArray[5], sum($subject6) as $subjectArray[6], sum($subject7) as $subjectArray[7] FROM subjectFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 8: 
+		$subject1 = $subjectArray[1];
+		$subject2 = $subjectArray[2];
+		$subject3 = $subjectArray[3];
+		$subject4 = $subjectArray[4];
+		$subject5 = $subjectArray[5];
+		$subject6 = $subjectArray[6];
+		$subject7 = $subjectArray[7];
+		$subject8 = $subjectArray[8];
+		
+		$testQuery = mysql_query("SELECT sum($subject1) as $subjectArray[1], sum($subject2) as $subjectArray[2], sum($subject3) as $subjectArray[3], sum($subject4) as $subjectArray[4], sum($subject5) as $subjectArray[5], sum($subject6) as $subjectArray[6], sum($subject7) as $subjectArray[7], sum($subject8) as $subjectArray[8] FROM subjectFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 9: 
+		$subject1 = $subjectArray[1];
+		$subject2 = $subjectArray[2];
+		$subject3 = $subjectArray[3];
+		$subject4 = $subjectArray[4];
+		$subject5 = $subjectArray[5];
+		$subject6 = $subjectArray[6];
+		$subject7 = $subjectArray[7];
+		$subject8 = $subjectArray[8];
+		$subject9 = $subjectArray[9];
+
+		$testQuery = mysql_query("SELECT sum($subject1) as $subjectArray[1], sum($subject2) as $subjectArray[2], sum($subject3) as $subjectArray[3], sum($subject4) as $subjectArray[4], sum($subject5) as $subjectArray[5], sum($subject6) as $subjectArray[6], sum($subject7) as $subjectArray[7], sum($subject8) as $subjectArray[8], sum($subject9) as $subjectArray[9] FROM subjectFeedback WHERE `Email` = '$userEmail'");
+	break;
+}
+
+// $subject1 = $subjectArray[1];
+// $subject2 = $subjectArray[2];
+// $subject3 = $subjectArray[3];
+// $subject4 = $subjectArray[4];
+// $subject5 = $subjectArray[5];
+// $subject6 = $subjectArray[6];
 // $subject7 = $subjectArray[7];
 // $subject8 = $subjectArray[8];
 // $subject9 = $subjectArray[9];
 
-$testQuery = mysql_query("SELECT sum($subject1) as totalSub1, sum($subject2) as totalSub2, sum($subject3) as totalSub3, sum($subject4) as totalSub4, sum($subject5) as totalSub5, sum($subject6) as totalSub6 FROM subjectFeedback WHERE `Email` = '$userEmail'");
-$row = mysql_fetch_assoc($testQuery);
-echo $row['totalSub1'];
-echo $row['totalSub2'];
-echo $row['totalSub3'];
-echo $row['totalSub4'];
-echo $row['totalSub5'];
-echo $row['totalSub6'];
-// echo $row['totalSub7'];
-// echo $row['totalSub8'];
-// echo $row['totalSub9'];
+// $testQuery = mysql_query("SELECT sum($subject1) as totalSub1, sum($subject2) as $subjectArray[2], sum($subject3) as $subjectArray[3], sum($subject4) as $subjectArray[4], sum($subject5) as $subjectArray[5], sum($subject6) as $subjectArray[6] FROM subjectFeedback WHERE `Email` = '$userEmail'");
+$listOfTotals = mysql_fetch_assoc($testQuery);
+// echo $listOfTotals;
+// echo $listOfTotals[$subjectArray[1]];
+// echo $listOfTotals[$subjectArray[2]];
+// echo $listOfTotals[$subjectArray[3]];
+// echo $listOfTotals[$subjectArray[4]];
+// echo $listOfTotals[$subjectArray[5]];
+// echo $listOfTotals[$subjectArray[6]];
+// echo $listOfTotals[$subjectArray[7]];
+// echo $listOfTotals[$subjectArray[8]];
+// echo $listOfTotals[$subjectArray[9]];
 // print_r($subjectArray);
 ?>
 <!DOCTYPE HTML>
@@ -67,7 +121,7 @@ echo $row['totalSub6'];
          dataPoints: [
            <?php
          for($j = 1; $j <= $subjectAmount; $j++){
-         	echo "{ label: '" . $subjectArray[$j] . "', y: " . $test . "},";
+         	echo "{ label: '" . $subjectArray[$j] . "', y: " . $listOfTotals[$subjectArray[$j]] . "},";
          	// if($j < $subjectAmount - 1){
          	// 	echo ",";
          	// }
