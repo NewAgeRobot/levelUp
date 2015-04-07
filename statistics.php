@@ -6,6 +6,7 @@ if($logged == false){
 }
 $userEmail = $user['Email'];
 $subjectAmount = $user['SubAmount'];
+
 $subjectScores = mysql_query("SELECT * FROM subjectFeedback WHERE `Email` = '$userEmail'");
 $subjectArray[] = array();
 
@@ -76,40 +77,87 @@ switch ($subjectAmount){
 }
 
 $listOfTotals = mysql_fetch_assoc($testQuery);
+
+
+
+
+
+
+
+
+
+$interestScores = mysql_query("SELECT * FROM interestFeedback WHERE `Email` = '$userEmail'");
+$interestArray[] = array();
+
+while($row = mysql_fetch_assoc($interestScores)) {
+	foreach ($row as $col => $val) {
+		if ($col == 'ID' || $col == 'Date' || $col == 'Email') continue;
+		if ($val > 0) {
+			echo $col;
+			// $interestArray[] = $col;
+		}
+	}
+}
+
+
+
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
 	<script type="text/javascript">
 		window.onload = function () {
-			var chart = new CanvasJS.Chart("chartContainer", {
+			var subjectChart = new CanvasJS.Chart("chartContainer", {
 
 				title:{
 					text: "Overall Subject Enjoyment"              
 				},
-      data: [//array of dataSeries              
-        { //dataSeries object
+data: [//array of dataSeries              
+{ //dataSeries object
 
-        	/*** Change type "column" to "bar", "area", "line" or "pie"***/
-        	type: "column",
-        	dataPoints: [
-        	<?php
-        	for($j = 1; $j <= $subjectAmount; $j++){
-        		echo "{ label: '" . $subjectArray[$j] . " - " . $listOfTotals[$subjectArray[$j]] . "', y: " . $listOfTotals[$subjectArray[$j]] . "},";
-        	} 
-        	?>
-        	]
-        }
-        ]
-    });
+	/*** Change type "column" to "bar", "area", "line" or "pie"***/
+	type: "column",
+	dataPoints: [
+	<?php
+	for($j = 1; $j <= $subjectAmount; $j++){
+		echo "{ label: '" . $subjectArray[$j] . " - " . $listOfTotals[$subjectArray[$j]] . "', y: " . $listOfTotals[$subjectArray[$j]] . "},";
+	} 
+	?>
+	]
+}
+]
+});
+			var interestChart = new CanvasJS.Chart("chartContainer2", {
 
-			chart.render();
+				title:{
+					text: "Overall Interest Enjoyment"              
+				},
+data: [//array of dataSeries              
+{ //dataSeries object
+
+	/*** Change type "column" to "bar", "area", "line" or "pie"***/
+	type: "column",
+	dataPoints: [
+	<?php
+	for($j = 1; $j <= 12; $j++){
+		echo "{ label: '" . $interestArray[$j] . "', y: 1},";
+	} 
+	?>
+	]
+}
+]
+});
+
+			subjectChart.render();
+			interestChart.render();
 		}
 	</script>
 	<script type="text/javascript" src="js/canvasjs.min.js"></script>
 </head>
 <body>
 	<div id="chartContainer" style="height: 300px; width: 100%;">
+	</div>
+	<div id="chartContainer2" style="height: 300px; width: 100%;">
 	</div>
 </body>
 </html>
