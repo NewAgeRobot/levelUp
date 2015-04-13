@@ -42,14 +42,42 @@ else{
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script src="js/interactions2.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
-	<title>test</title>
+	<title>Saved Courses</title>
 </head>
 <body>
+	<ul id="menu" >
+		<li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
+		</li>
+		<li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
+		</li>
+		<li class="sub"><a href="statistics.php">Statistics</a>
+		</li>
+		<li class="sub"><a href="">Testimonials</a>
+		</li>
+		<li class="sub"><a href="exploreInterests.php">Explore Courses</a>
+		</li>
+		<li class="sub"><a href="savedCourses.php">Saved Courses</a>
+		</li>
+		<li class="sub"><a href="logout.php">Log Out</a>
+		</li>
+	</ul>
+
+	<?php
+	if(!$numCourses){
+	echo "You have yet to save any courses.";
+}
+else{
+	echo "<table><tr><td>Course Code</td><td>Course Title</td><td>Institute</td><td>More Information</td></tr>";
+	//might have to save amount of courses they've saved
+	for($counter = 0; $counter < $num_rows; $counter++){
+		print_r("<tr><td>" . $array[$counter]['CourseCode'] . "</td><td>" . $array[$counter]['CourseTitle'] . "</td><td>" . $array[$counter]['CourseCollege'] . "</td><td><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'>Find out more</a></td></tr>"); //not working
+	}
+	echo "</table>";
+}
+?>
 
 </body>
 </html>

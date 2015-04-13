@@ -140,9 +140,26 @@ $(document).ready(main);
   }
 </style>
 
-<title>test</title>
+<title>Subject Feedback</title>
 </head>
 <body>
+  <ul id="menu" >
+    <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
+    </li>
+    <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
+    </li>
+    <li class="sub"><a href="statistics.php">Statistics</a>
+    </li>
+    <li class="sub"><a href="">Testimonials</a>
+    </li>
+    <li class="sub"><a href="exploreInterests.php">Explore Courses</a>
+    </li>
+    <li class="sub"><a href="savedCourses.php">Saved Courses</a>
+    </li>
+    <li class="sub"><a href="logout.php">Log Out</a>
+    </li>
+  </ul>
+
   <form action='' method='post' name='subjectFavourites'>
     <select class="subjectClass" id="first" name="subjectList[]">
       <?php 

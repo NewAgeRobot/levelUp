@@ -457,6 +457,12 @@ $interestTotals = mysql_fetch_assoc($interestQuery);
 <!DOCTYPE HTML>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+  <title>Statistics</title>
 	<script type="text/javascript">
 		window.onload = function () {
 			var subjectChart = new CanvasJS.Chart("chartContainer", {
@@ -488,7 +494,7 @@ data: [//array of dataSeries
 { //dataSeries object
 
 	/*** Change type "column" to "bar", "area", "line" or "pie"***/
-	type: "bar",
+	type: "pie",
 	dataPoints: [
 	<?php
 	for($o = 1; $o <= $interestAmount; $o++){
@@ -507,6 +513,23 @@ data: [//array of dataSeries
 	<script type="text/javascript" src="js/canvasjs.min.js"></script>
 </head>
 <body>
+  <ul id="menu" >
+    <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
+    </li>
+    <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
+    </li>
+    <li class="sub"><a href="statistics.php">Statistics</a>
+    </li>
+    <li class="sub"><a href="">Testimonials</a>
+    </li>
+    <li class="sub"><a href="exploreInterests.php">Explore Courses</a>
+    </li>
+    <li class="sub"><a href="savedCourses.php">Saved Courses</a>
+    </li>
+    <li class="sub"><a href="logout.php">Log Out</a>
+    </li>
+  </ul>
+  
 	<div id="chartContainer" style="height: 300px; width: 100%;">
 	</div>
 	<div id="chartContainer2" style="height: 300px; width: 100%;">

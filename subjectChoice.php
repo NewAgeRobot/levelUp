@@ -28,7 +28,7 @@ if(isset($_POST['formSubmit'])){
 				}
 			}
 			mysql_query("UPDATE `users` SET `SubAmount` = '$subAmount' WHERE `Email` = '$userEmail'");
-			header('Location: restrictTest.php');
+			header('Location: index.php');
 		}
 	}
 }
@@ -45,6 +45,22 @@ if(isset($_POST['formSubmit'])){
 	<title>test</title>
 </head>
 <body>
+  <ul id="menu" >
+    <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
+    </li>
+    <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
+    </li>
+    <li class="sub"><a href="statistics.php">Statistics</a>
+    </li>
+    <li class="sub"><a href="">Testimonials</a>
+    </li>
+    <li class="sub"><a href="exploreInterests.php">Explore Courses</a>
+    </li>
+    <li class="sub"><a href="savedCourses.php">Saved Courses</a>
+    </li>
+    <li class="sub"><a href="logout.php">Log Out</a>
+    </li>
+  </ul>
 	<?php
 	echo "<form action='' method='post' name='subjectlisting'><table>";
 	$result = mysql_query("SELECT * FROM subjectsTable WHERE `Email` = '$userEmail'");

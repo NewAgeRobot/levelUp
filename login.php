@@ -30,19 +30,33 @@ if ($_POST['login']){
 ?>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-<title>test</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<title>Login</title>
 <head>
 <body>
+	<ul id="menu" >
+		<li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
+		</li>
+		<li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
+		</li>
+		<li class="sub"><a href="statistics.php">Statistics</a>
+		</li>
+		<li class="sub"><a href="">Testimonials</a>
+		</li>
+		<li class="sub"><a href="exploreInterests.php">Explore Courses</a>
+		</li>
+		<li class="sub"><a href="savedCourses.php">Saved Courses</a>
+		</li>
+		<li class="sub"><a href="logout.php">Log Out</a>
+		</li>
+	</ul>
 <?php echo
 "<nav><table><tr>
-  <td><a href='login.php'>Log in</a></td>
-  <td><a href='logout.php'>Log out</a></td>
   <td><a href='register.php'>Register</a></td>
-  <td><a href='restrictTest.php'>Restriction Test</a></td>
   </tr></table></nav><br />"
 ?>
 

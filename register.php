@@ -1,4 +1,4 @@
-<?php
+  <?php
 ini_set('display_errors', 0); 
 error_reporting(E_ALL);
 include "connect.php";
@@ -34,17 +34,31 @@ if ($_POST['register']){
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
-  <title>test</title>
+  <title>Register</title>
 </head>
 <body>
+  <ul id="menu" >
+    <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
+    </li>
+    <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
+    </li>
+    <li class="sub"><a href="statistics.php">Statistics</a>
+    </li>
+    <li class="sub"><a href="">Testimonials</a>
+    </li>
+    <li class="sub"><a href="exploreInterests.php">Explore Courses</a>
+    </li>
+    <li class="sub"><a href="savedCourses.php">Saved Courses</a>
+    </li>
+    <li class="sub"><a href="logout.php">Log Out</a>
+    </li>
+  </ul>
 <?php echo
 "<nav><table><tr>
   <td><a href='login.php'>Log in</a></td>
-  <td><a href='logout.php'>Log out</a></td>
-  <td><a href='register.php'>Register</a></td>
-  <td><a href='restrictTest.php'>Restriction Test</a></td>
   </tr></table></nav><br />"
 ?>
 

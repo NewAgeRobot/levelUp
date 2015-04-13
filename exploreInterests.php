@@ -29,8 +29,8 @@ if(isset($_POST['formSubmit'])){
 }
 
 $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `Interests` = '1' ORDER BY rand() 
-   LIMIT 1"));
-echo $prompts['Prompt'];
+	LIMIT 1"));
+
 
 ?>
 <html lang="en">
@@ -62,10 +62,28 @@ echo $prompts['Prompt'];
 			$('#countyTable').toggle();
 		});
 	</script>
-	<title>test</title>
+	<title>Exploring Interests</title>
 </head>
 <body>
+	<ul id="menu" >
+		<li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
+		</li>
+		<li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
+		</li>
+		<li class="sub"><a href="statistics.php">Statistics</a>
+		</li>
+		<li class="sub"><a href="">Testimonials</a>
+		</li>
+		<li class="sub"><a href="exploreInterests.php">Explore Courses</a>
+		</li>
+		<li class="sub"><a href="savedCourses.php">Saved Courses</a>
+		</li>
+		<li class="sub"><a href="logout.php">Log Out</a>
+		</li>
+	</ul>
 	<?php
+	echo $prompts['Prompt'];
+
 	echo "<form action='' method='post' name='subjectlisting'>";
 	
 	echo "<button type='button' id='showCounties'>Show Counties</button>";

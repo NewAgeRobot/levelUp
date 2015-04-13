@@ -1,12 +1,7 @@
 <?php
 include "connect.php";
 include "algor.php";
-if($logged == true){
-  echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
-}
-else{
-	echo "<h1>You're not logged in</h1>";
-}
+
 // if (isset($_COOKIE['c_user']) && isset($_COOKIE['c_salt'])) {
 //   $userCookie = $_COOKIE['c_salt'];
 //   $query="SELECT * FROM users WHERE Salt = '$userCookie'";
@@ -20,20 +15,41 @@ else{
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
-  <title>test</title>
+  <title>LevelUp</title>
 </head>
 <body>
-<?php echo
-"<nav><table><tr>
-  <td><a href='login.php'>Log in</a></td>
-  <td><a href='logout.php'>Log out</a></td>
-  <td><a href='register.php'>Register</a></td>
-  <td><a href='restrictTest.php'>Restriction Test</a></td>
-  </tr></table></nav><br />"
-?>
-<img src="http://www.reactiongifs.com/r/2013/05/Ron-Paul_Its-Happening1.gif"> <br />
+  <ul id="menu" >
+    <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
+    </li>
+    <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
+    </li>
+    <li class="sub"><a href="statistics.php">Statistics</a>
+    </li>
+    <li class="sub"><a href="">Testimonials</a>
+    </li>
+    <li class="sub"><a href="exploreInterests.php">Explore Courses</a>
+    </li>
+    <li class="sub"><a href="savedCourses.php">Saved Courses</a>
+    </li>
+    <li class="sub"><a href="logout.php">Log Out</a>
+    </li>
+  </ul>
 
+<nav><table><tr>
+  <td><a href='login.php'>Log in</a></td>
+  <td><a href='register.php'>Register</a></td>
+  </tr></table></nav>
+
+<?php echo
+if($logged == true){
+  echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
+}
+else{
+  echo "<h1>You're not logged in</h1>";
+}
+?>
 </body>
 </html>

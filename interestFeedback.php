@@ -27,7 +27,7 @@ if(isset($_POST['formSubmit'])){
   $second = $_POST['subjectList'][1];
   $third = $_POST['subjectList'][2];
   mysql_query("INSERT INTO `interestFeedback` (`Date`, `Email`, `$first`, `$second`, `$third`) VALUES ('$currentDay', '$userEmail', '1', '1', '1')");
-  header('Location: restrictTest.php');
+  header('Location: index.php');
 };
 
 
@@ -103,6 +103,21 @@ if(isset($_POST['formSubmit'])){
   <title>test</title>
 </head>
 <body>
+  <ul id="menu" >
+    <li class="sub">Enter Feedback
+    </li>
+    <li class="sub">Statistics
+    </li>
+    <li class="sub">Testimonials
+    </li>
+    <li class="sub">Explore
+    </li>
+    <li class="sub">Saved Courses
+    </li>
+    <li class="sub">Account
+    </li>
+  </ul>
+
   <form action='' method='post' name='subjectFavourites'>
     <select class="subjectClass" id="first" name="subjectList[]">
       <?php 
