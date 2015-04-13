@@ -90,7 +90,7 @@ for($f = 7; $f < 22; $f++){
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 	<script language="Javascript" type="text/javascript">
 		function nextCourse(cv){
-			$("#myDiv").html("<img src='http://media.jumpingjack.com/JumpingJack/loading.gif'>").show();
+			$("#myDiv").html("<img src='https://33.media.tumblr.com/bec5933eea5043acf6a37bb1394384ab/tumblr_mj0xxeyLhy1s7or0ro1_400.gif'>").show();
 			var url="courseList.php";
 			$.post(url, {contentVar: cv}, function(data){
 				$("#myDiv").html(data).show();

@@ -61,9 +61,6 @@ look at pre-checking current list of interests
 
 SUPER IMPORTANT
 ----------------
-links sorted, headers etc. organised - get navigation bar - basic css - standardise headers for each page
-(Journal, Statitistics, Testimonials, Explore, Saved Courses, Account(subject change, email address, year, log out))
-
 Change index based on login
 
 checktrue variable exists on the exploreinterests page, maybe i had once queried the database for the course name being mentioned and saved it to checkTrue? to see which ones are currently saved? do the same for counties but as a separate page maybe - refine - maybe add a slot to the storedInterests column to track if they hit refine?
@@ -73,6 +70,11 @@ make calendar table - id,day,month,year,title - add calendar to main page
 figure out how badges are being implemented - create table for their trackers - add relevant updates to one page to test - use saved courses to test - to be shown on homepage
 
 fix log-out not working
+
+set up reminders and trackers to tell users what they still have to do this week
+
+links sorted, headers etc. organised - get navigation bar - basic css - standardise headers for each page
+(Journal, Statitistics, Testimonials, Explore, Saved Courses, Account(subject change, email address, year, log out))
 
 once log out is fixed, look at perma-log in or super long cookie
 

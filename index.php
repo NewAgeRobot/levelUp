@@ -1,12 +1,12 @@
 <?php
 include "connect.php";
 include "algor.php";
-if($logged == true){
-  echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
-}
-else{
-  echo "<h1>You're not logged in</h1>";
-}
+// if($logged == true){
+//   echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
+// }
+// else{
+//   echo "<h1>You're not logged in</h1>";
+// }
 
 
 // if (isset($_COOKIE['c_user']) && isset($_COOKIE['c_salt'])) {
@@ -28,6 +28,7 @@ else{
   <title>LevelUp</title>
 </head>
 <body>
+
   <ul id="menu" >
     <li class="sub"><a href="index.php">Home</a>
     </li>
@@ -47,10 +48,21 @@ else{
     </li>
   </ul>
 
-<nav><table><tr>
-  <td><a href='login.php'>Log in</a></td>
-  <td><a href='register.php'>Register</a></td>
-  </tr></table></nav>
+  <?php
+if($logged == true){
+  echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
+  echo "You can start logging your enjoyment by going to subject Feedback or Interest Feedback, this will start to be gathered and analysed and you can see the results in Statistics.";
+}
+else{
+  echo "<h1>You're not logged in</h1>
+      <nav><table><tr>
+      <td><a href='login.php'>Log in</a></td>
+      <td><a href='register.php'>Register</a></td>
+      </tr></table></nav>";
+}
+?>
+
+
 
 
 </body>

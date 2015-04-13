@@ -88,27 +88,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 
 	echo "<form action='' method='post' name='subjectlisting'>";
 	
-	echo "<button type='button' id='showCounties'>Show Counties</button>";
-
-	echo "<div id='countyTable' style='display:none;'><table>";
-	echo "<tr> <td> Louth </td> <td><input type='checkbox' name='Counties[]' class='county' value='Louth' /></td>";
-	echo "<td> Dublin </td> <td><input type='checkbox' name='Counties[]' class='county' value='Dublin' /></td>";
-	echo "<td> Cork </td> <td><input type='checkbox' name='Counties[]' class='county' value='Cork' /></td>";
-	echo "<td> Kildare </td> <td><input type='checkbox' name='Counties[]' class='county' value='Kildare' /></td>";
-	echo "<td> Galway </td> <td><input type='checkbox' name='Counties[]' class='county' value='Galway' /></td>";
-	echo "<td> Wexford </td> <td><input type='checkbox' name='Counties[]' class='county' value='Wexford' /></td></tr>";
-	echo "<tr> <td> Limerick </td> <td><input type='checkbox' name='Counties[]' class='county' value='Limerick' /></td>";
-	echo "<td> Sligo </td> <td><input type='checkbox' name='Counties[]' class='county' value='Sligo' /></td>";
-	echo "<td> Tipperary </td> <td><input type='checkbox' name='Counties[]' class='county' value='Tipperary' /></td>";
-	echo "<td> Roscommon </td> <td><input type='checkbox' name='Counties[]' class='county' value='Roscommon' /></td>";
-	echo "<td> Carlow </td> <td><input type='checkbox' name='Counties[]' class='county' value='Carlow' /></td></tr> ";
-	echo "<tr> <td> Mayo </td> <td><input type='checkbox' name='Counties[]' class='county' value='Mayo' /></td>";
-	echo "<td> Waterford </td> <td><input type='checkbox' name='Counties[]' class='county' value='Waterford' /></td>";
-	echo "<td> Kerry </td> <td><input type='checkbox' name='Counties[]' class='county' value='Kerry' /></td>";
-	echo "<td> Clare </td> <td><input type='checkbox' name='Counties[]' class='county' value='Clare' /></td>";
-	echo "<td> Cavan </td> <td><input type='checkbox' name='Counties[]' class='county' value='Cavan' /></td></tr>";
-	echo "</table></div>";
-
+	
 
 	echo "<table>";
 	$result = mysql_query("SELECT * FROM interestsTable");
@@ -123,7 +103,31 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 		</td></tr>";
 	}
 }
-echo "</table><input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
+
+echo "</table>";
+
+	echo "<br /><button type='button' id='showCounties'>Show Counties</button>";
+
+	echo "<div id='countyTable' style='display:none;'><table>";
+	echo "<tr> <td> Louth </td> <td><input type='checkbox' name='Counties[]' class='county' value='Louth' /></td>";
+	echo "<td> Dublin </td> <td><input type='checkbox' name='Counties[]' class='county' value='Dublin' /></td>";
+	echo "<td> Cork </td> <td><input type='checkbox' name='Counties[]' class='county' value='Cork' /></td>";
+	echo "<td> Kildare </td> <td><input type='checkbox' name='Counties[]' class='county' value='Kildare' /></td>";
+	echo "<td> Galway </td> <td><input type='checkbox' name='Counties[]' class='county' value='Galway' /></td>";
+	echo "<td> Wexford </td> <td><input type='checkbox' name='Counties[]' class='county' value='Wexford' /></td></tr>";
+	echo "<tr> <td> Limerick </td> <td><input type='checkbox' name='Counties[]' class='county' value='Limerick' /></td>";
+	echo "<td> Sligo </td> <td><input type='checkbox' name='Counties[]' class='county' value='Sligo' /></td>";
+	echo "<td> Tipperary </td> <td><input type='checkbox' name='Counties[]' class='county' value='Tipperary' /></td>";
+	echo "<td> Roscommon </td> <td><input type='checkbox' name='Counties[]' class='county' value='Roscommon' /></td>";
+	echo "<td> Carlow </td> <td><input type='checkbox' name='Counties[]' class='county' value='Carlow' /></td>";
+	echo "<td> Mayo </td> <td><input type='checkbox' name='Counties[]' class='county' value='Mayo' /></td></tr> ";
+	echo "<tr> <td> Waterford </td> <td><input type='checkbox' name='Counties[]' class='county' value='Waterford' /></td>";
+	echo "<td> Kerry </td> <td><input type='checkbox' name='Counties[]' class='county' value='Kerry' /></td>";
+	echo "<td> Clare </td> <td><input type='checkbox' name='Counties[]' class='county' value='Clare' /></td>";
+	echo "<td> Cavan </td> <td><input type='checkbox' name='Counties[]' class='county' value='Cavan' /></td></tr>";
+	echo "</table></div><br /> <br />";
+
+echo "<input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
 </form>";
 ?>	
 </body>

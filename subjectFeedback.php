@@ -39,14 +39,14 @@ if(isset($_POST['formSubmit'])){
   $fourth = $_POST['subjectList'][3];
   $fifth = $_POST['subjectList'][4];
   $sixth = $_POST['subjectList'][5];
-  echo $first;
+  // echo $first;
   mysql_query("INSERT INTO `subjectFeedback` (`Date`, `Email`, `$first`, `$second`, `$third`, `$fourth`, `$fifth`, `$sixth`) VALUES ('$currentDay', '$userEmail', '6', '5', '4', '3', '2', '1')");
 };
 
 
 $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `Subjects` = '1' ORDER BY rand() 
    LIMIT 1"));
-echo $prompts['Prompt'];
+// echo $prompts['Prompt'];
 
 
 //query to grab each of the subjects that the user has chosen. 
@@ -162,6 +162,8 @@ $(document).ready(main);
     </li>
   </ul>
 
+
+<?php echo $prompts['Prompt']; ?>
   <form action='' method='post' name='subjectFavourites'>
     <select class="subjectClass" id="first" name="subjectList[]">
       <?php 
