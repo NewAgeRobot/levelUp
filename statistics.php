@@ -121,12 +121,337 @@ switch ($interestAmount){
 
 	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4] FROM interestFeedback WHERE `Email` = '$userEmail'");
 	break;
-}
 
-//do out the rest for the possible amoounts they can have - 20 or so? all the interests
+	case 5: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 6: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 7: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 8: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 9: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 10: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 11: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 12: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 13: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+	$interest13 = $interestsSorted[13];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12], sum($interest13) as $interestsSorted[13] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 14: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+	$interest13 = $interestsSorted[13];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12], sum($interest13) as $interestsSorted[13], sum($interest14) as $interestsSorted[14] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 15: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+	$interest13 = $interestsSorted[13];
+	$interest14 = $interestsSorted[14];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12], sum($interest13) as $interestsSorted[13], sum($interest14) as $interestsSorted[14], sum($interest15) as $interestsSorted[15] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 16: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+	$interest13 = $interestsSorted[13];
+	$interest14 = $interestsSorted[14];
+	$interest15 = $interestsSorted[15];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12], sum($interest13) as $interestsSorted[13], sum($interest14) as $interestsSorted[14], sum($interest15) as $interestsSorted[15], sum($interest16) as $interestsSorted[16] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 17: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+	$interest13 = $interestsSorted[13];
+	$interest14 = $interestsSorted[14];
+	$interest15 = $interestsSorted[15];
+	$interest16 = $interestsSorted[16];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12], sum($interest13) as $interestsSorted[13], sum($interest14) as $interestsSorted[14], sum($interest15) as $interestsSorted[15], sum($interest16) as $interestsSorted[16], sum($interest17) as $interestsSorted[17] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 18: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+	$interest13 = $interestsSorted[13];
+	$interest14 = $interestsSorted[14];
+	$interest15 = $interestsSorted[15];
+	$interest16 = $interestsSorted[16];
+	$interest17 = $interestsSorted[17];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12], sum($interest13) as $interestsSorted[13], sum($interest14) as $interestsSorted[14], sum($interest15) as $interestsSorted[15], sum($interest16) as $interestsSorted[16], sum($interest17) as $interestsSorted[17], sum($interest18) as $interestsSorted[18] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 19: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+	$interest13 = $interestsSorted[13];
+	$interest14 = $interestsSorted[14];
+	$interest15 = $interestsSorted[15];
+	$interest16 = $interestsSorted[16];
+	$interest17 = $interestsSorted[17];
+	$interest18 = $interestsSorted[18];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12], sum($interest13) as $interestsSorted[13], sum($interest14) as $interestsSorted[14], sum($interest15) as $interestsSorted[15], sum($interest16) as $interestsSorted[16], sum($interest17) as $interestsSorted[17], sum($interest18) as $interestsSorted[18], sum($interest19) as $interestsSorted[19] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 20: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+	$interest13 = $interestsSorted[13];
+	$interest14 = $interestsSorted[14];
+	$interest15 = $interestsSorted[15];
+	$interest16 = $interestsSorted[16];
+	$interest17 = $interestsSorted[17];
+	$interest18 = $interestsSorted[18];
+	$interest19 = $interestsSorted[19];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12], sum($interest13) as $interestsSorted[13], sum($interest14) as $interestsSorted[14], sum($interest15) as $interestsSorted[15], sum($interest16) as $interestsSorted[16], sum($interest17) as $interestsSorted[17], sum($interest18) as $interestsSorted[18], sum($interest19) as $interestsSorted[19], sum($interest20) as $interestsSorted[20] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 21: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+	$interest13 = $interestsSorted[13];
+	$interest14 = $interestsSorted[14];
+	$interest15 = $interestsSorted[15];
+	$interest16 = $interestsSorted[16];
+	$interest17 = $interestsSorted[17];
+	$interest18 = $interestsSorted[18];
+	$interest19 = $interestsSorted[19];
+	$interest20 = $interestsSorted[20];
+	$interest20 = $interestsSorted[21];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12], sum($interest13) as $interestsSorted[13], sum($interest14) as $interestsSorted[14], sum($interest15) as $interestsSorted[15], sum($interest16) as $interestsSorted[16], sum($interest17) as $interestsSorted[17], sum($interest18) as $interestsSorted[18], sum($interest19) as $interestsSorted[19], sum($interest20) as $interestsSorted[20], sum($interest21) as $interestsSorted[21] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+
+	case 22: 
+	$interest1 = $interestsSorted[1];
+	$interest2 = $interestsSorted[2];
+	$interest3 = $interestsSorted[3];
+	$interest4 = $interestsSorted[4];
+	$interest5 = $interestsSorted[5];
+	$interest6 = $interestsSorted[6];
+	$interest7 = $interestsSorted[7];
+	$interest8 = $interestsSorted[8];
+	$interest9 = $interestsSorted[9];
+	$interest10 = $interestsSorted[10];
+	$interest11 = $interestsSorted[11];
+	$interest12 = $interestsSorted[12];
+	$interest13 = $interestsSorted[13];
+	$interest14 = $interestsSorted[14];
+	$interest15 = $interestsSorted[15];
+	$interest16 = $interestsSorted[16];
+	$interest17 = $interestsSorted[17];
+	$interest18 = $interestsSorted[18];
+	$interest19 = $interestsSorted[19];
+	$interest20 = $interestsSorted[20];
+	$interest21 = $interestsSorted[21];
+	$interest22 = $interestsSorted[22];
+
+	$interestQuery = mysql_query("SELECT sum($interest1) as $interestsSorted[1], sum($interest2) as $interestsSorted[2], sum($interest3) as $interestsSorted[3], sum($interest4) as $interestsSorted[4], sum($interest5) as $interestsSorted[5], sum($interest6) as $interestsSorted[6], sum($interest7) as $interestsSorted[7], sum($interest8) as $interestsSorted[8], sum($interest9) as $interestsSorted[9], sum($interest10) as $interestsSorted[10], sum($interest11) as $interestsSorted[11], sum($interest12) as $interestsSorted[12], sum($interest13) as $interestsSorted[13], sum($interest14) as $interestsSorted[14], sum($interest15) as $interestsSorted[15], sum($interest16) as $interestsSorted[16], sum($interest17) as $interestsSorted[17], sum($interest18) as $interestsSorted[18], sum($interest19) as $interestsSorted[19], sum($interest20) as $interestsSorted[20], sum($interest21) as $interestsSorted[21], sum($interest22) as $interestsSorted[22] FROM interestFeedback WHERE `Email` = '$userEmail'");
+	break;
+}
 
 $interestTotals = mysql_fetch_assoc($interestQuery);
 
+//errors when handling phrases with spaces
 
 ?>
 <!DOCTYPE HTML>
@@ -143,7 +468,7 @@ data: [//array of dataSeries
 { //dataSeries object
 
 	/*** Change type "column" to "bar", "area", "line" or "pie"***/
-	type: "column",
+	type: "bar",
 	dataPoints: [
 	<?php
 	for($j = 1; $j <= $subjectAmount; $j++){
@@ -163,7 +488,7 @@ data: [//array of dataSeries
 { //dataSeries object
 
 	/*** Change type "column" to "bar", "area", "line" or "pie"***/
-	type: "column",
+	type: "pie",
 	dataPoints: [
 	<?php
 	for($o = 1; $o <= $interestAmount; $o++){
