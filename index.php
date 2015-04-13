@@ -1,6 +1,13 @@
 <?php
 include "connect.php";
 include "algor.php";
+if($logged == true){
+  echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
+}
+else{
+  echo "<h1>You're not logged in</h1>";
+}
+
 
 // if (isset($_COOKIE['c_user']) && isset($_COOKIE['c_salt'])) {
 //   $userCookie = $_COOKIE['c_salt'];
@@ -22,6 +29,8 @@ include "algor.php";
 </head>
 <body>
   <ul id="menu" >
+    <li class="sub"><a href="index.php">Home</a>
+    </li>
     <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
     </li>
     <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
@@ -43,13 +52,6 @@ include "algor.php";
   <td><a href='register.php'>Register</a></td>
   </tr></table></nav>
 
-<?php echo
-if($logged == true){
-  echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
-}
-else{
-  echo "<h1>You're not logged in</h1>";
-}
-?>
+
 </body>
 </html>

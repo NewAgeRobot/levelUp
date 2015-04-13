@@ -38,3 +38,27 @@ li{
 	display:inline-block;
 	padding-right: 10px;
 }
+
+/* unvisited link */
+a:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #B1B1B1;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: #2F2F2F;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: #E2E2E2;
+    text-decoration: none;
+}

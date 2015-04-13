@@ -123,10 +123,12 @@ for($f = 7; $f < 22; $f++){
 		
 	</script>
 
-	<title>test</title>
+	<title>Show Courses</title>
 </head>
 <body>
   <ul id="menu" >
+	<li class="sub"><a href="index.php">Home</a>
+	</li>
     <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
     </li>
     <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>

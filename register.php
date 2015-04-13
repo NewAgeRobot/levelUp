@@ -41,6 +41,8 @@ if ($_POST['register']){
 </head>
 <body>
   <ul id="menu" >
+    <li class="sub"><a href="index.php">Home</a>
+    </li>
     <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
     </li>
     <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>

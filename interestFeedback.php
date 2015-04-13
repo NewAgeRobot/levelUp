@@ -100,21 +100,25 @@ if(isset($_POST['formSubmit'])){
     }
   </style>
 
-  <title>test</title>
+  <title>Interest Feedback</title>
 </head>
 <body>
   <ul id="menu" >
-    <li class="sub">Enter Feedback
+    <li class="sub"><a href="index.php">Home</a>
     </li>
-    <li class="sub">Statistics
+    <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
     </li>
-    <li class="sub">Testimonials
+    <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
     </li>
-    <li class="sub">Explore
+    <li class="sub"><a href="statistics.php">Statistics</a>
     </li>
-    <li class="sub">Saved Courses
+    <li class="sub"><a href="">Testimonials</a>
     </li>
-    <li class="sub">Account
+    <li class="sub"><a href="exploreInterests.php">Explore Courses</a>
+    </li>
+    <li class="sub"><a href="savedCourses.php">Saved Courses</a>
+    </li>
+    <li class="sub"><a href="logout.php">Log Out</a>
     </li>
   </ul>
 
