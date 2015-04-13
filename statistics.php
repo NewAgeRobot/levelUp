@@ -488,7 +488,7 @@ data: [//array of dataSeries
 { //dataSeries object
 
 	/*** Change type "column" to "bar", "area", "line" or "pie"***/
-	type: "pie",
+	type: "bar",
 	dataPoints: [
 	<?php
 	for($o = 1; $o <= $interestAmount; $o++){
