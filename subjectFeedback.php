@@ -3,7 +3,7 @@ include "connect.php";
 include "algor.php";
 //add redirect for whether they have already entered their feedback for the week or hide tables and show warning and when they can do it again.
 if($logged == false){
-  header('Location: index.php');
+  header('Location: index.html');
 }
 $userEmail = $user['Email'];
 $result = mysql_query("SELECT * FROM subjectsTable WHERE `Email` = '$userEmail'");
@@ -144,7 +144,7 @@ $(document).ready(main);
 </head>
 <body>
   <ul id="menu" >
-    <li class="sub"><a href="index.php">Home</a>
+    <li class="sub"><a href="index.html">Home</a>
     </li>
     <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
     </li>

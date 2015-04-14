@@ -2,7 +2,7 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: index.php');
+	header('Location: index.html');
 }
 $userEmail = $user['Email'];
 $saveCheck = mysql_query("SELECT * FROM savedCourses WHERE `Email` = '$userEmail'");
@@ -49,7 +49,7 @@ $numCourses = sizeOf($array);
 </head>
 <body>
 	<ul id="menu" >
-		<li class="sub"><a href="index.php">Home</a>
+		<li class="sub"><a href="index.html">Home</a>
 		</li>
 		<li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
 		</li>

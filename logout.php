@@ -7,10 +7,10 @@ if (isset($_COOKIE['c_user']) && isset($_COOKIE['c_salt'])) {
 	unset($_SESSION);
 	session_destroy();
 	session_write_close();
-	header('Location: index.php');
+	header('Location: index.html');
 	die;
 }
 else{
-	header('Location: index.php');
+	header('Location: index.html');
 }
 ?>

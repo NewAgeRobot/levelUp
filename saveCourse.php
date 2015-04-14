@@ -2,7 +2,7 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: index.php');
+	header('Location: index.html');
 }
 $userEmail = $user['Email'];
 

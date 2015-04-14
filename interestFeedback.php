@@ -3,7 +3,7 @@ include "connect.php";
 include "algor.php";
 //add redirect for whether they have already entered their feedback for the week or hide tables and show warning and when they can do it again.
 if($logged == false){
-  header('Location: index.php');
+  header('Location: index.html');
 }
 $userEmail = $user['Email'];
 $result = mysql_query("SELECT `COLUMN_NAME` 
@@ -27,7 +27,7 @@ if(isset($_POST['formSubmit'])){
   $second = $_POST['subjectList'][1];
   $third = $_POST['subjectList'][2];
   mysql_query("INSERT INTO `interestFeedback` (`Date`, `Email`, `$first`, `$second`, `$third`) VALUES ('$currentDay', '$userEmail', '1', '1', '1')");
-  header('Location: index.php');
+  header('Location: index.html');
 };
 
 
@@ -104,7 +104,7 @@ if(isset($_POST['formSubmit'])){
 </head>
 <body>
   <ul id="menu" >
-    <li class="sub"><a href="index.php">Home</a>
+    <li class="sub"><a href="index.html">Home</a>
     </li>
     <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
     </li>

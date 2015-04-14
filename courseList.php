@@ -38,7 +38,7 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: index.php');
+	header('Location: index.html');
 }
 $userEmail = $user['Email'];
 $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests` WHERE `Email` = '$userEmail'"));
