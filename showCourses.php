@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 include "connect.php";
 include "algor.php";
@@ -78,17 +79,35 @@ for($f = 7; $f < 22; $f++){
 	}
 }
 ?>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script src="js/interactions2.js"></script>
-	<!--<script src="js/jquery.js"></script>  link to the app javascript file -->
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-	<script language="Javascript" type="text/javascript">
+ <html lang="en">
+ <head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Level Up</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+  <script language="Javascript" type="text/javascript">
 		function nextCourse(cv){
 			$("#myDiv").html("<img src='https://33.media.tumblr.com/bec5933eea5043acf6a37bb1394384ab/tumblr_mj0xxeyLhy1s7or0ro1_400.gif'>").show();
 			var url="courseList.php";
@@ -104,15 +123,12 @@ for($f = 7; $f < 22; $f++){
 				var title = $(".jsCourseTitle").text();
 				var college = $(".jsCourseCollege").text();
 				var url = $(".jsCourseURL").text();
-				//alert(s);
 				$.ajax({
 					method: 'POST' ,
 					url: 'saveCourse.php' ,
 					data: { code: code, title: title, college: college, url: url } ,
 					success: function(result)
 					{
-					//$('.ajax').after(result); //replace with .html("saved!"); when working
-					// $('.ajax').after("Course Saved!");
 					$('.ajax').after(result);
 					$('.ajax').hide();
 				}
@@ -122,39 +138,34 @@ for($f = 7; $f < 22; $f++){
 
 		
 	</script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
-	<title>Show Courses</title>
 </head>
 <body>
-  <ul id="menu" >
-	<li class="sub"><a href="index.html">Home</a>
-	</li>
-    <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
-    </li>
-    <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
-    </li>
-    <li class="sub"><a href="statistics.php">Statistics</a>
-    </li>
-    <li class="sub"><a href="">Testimonials</a>
-    </li>
-    <li class="sub"><a href="exploreInterests.php">Explore Courses</a>
-    </li>
-    <li class="sub"><a href="savedCourses.php">Saved Courses</a>
-    </li>
-    <li class="sub"><a href="logout.php">Log Out</a>
-    </li>
-  </ul>
-	<!-- pass the nextCourse variable the php of the current course? -->
-	<div id="myDiv">
+
+    <!-- Primary Page Layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+
+    <div id="navigationBar">
+      <div id="logo"><img src="images/header-logo.png"></div>
+      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a></nav>
+    </div>
+
+    <div class="section hero">
+      <div class="container">
+        <div class="row">
+          <div class="offset-by-one column">
+            <div id="myDiv">
 		<?php 
 		$interest0 = $userInterests['Interest0'];
 		$interest1 = $userInterests['Interest1'];
 		$interest2 = $userInterests['Interest2'];
 		$currentCourse = $userInterests['CurrentCourse'];
-			//if statement for selection of multiple ones determinging what $allcourses is given the value of
-		//figure out how to integrate the county refinement. If County0 is empty then just do these normally. Might be a switch statement case. Maybe approach it at the array level? 
-		//Where I can run through the array and remove entries that aren't equal to the chosen counties 
-		switch ($countyNumber) {
+	switch ($countyNumber) {
 		    case 0:
 		        if(!$interest1){
 					$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
@@ -332,21 +343,9 @@ for($f = 7; $f < 22; $f++){
 				}
 		        break;
 		}
-
-		// if(!$interest1){
-		// 	$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1'");
-		// }
-		// else if(!$interest2){
-		// 	$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1'");
-		// }
-		// else if($interest2){
-		// 	$allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
-		// }
-			// $allCourses = mysql_query("SELECT * FROM interestsTable WHERE `$interest0` = '1' AND `$interest1` = '1' AND `$interest2` = '1'");
-		for($i = 0; $array[$i] = mysql_fetch_assoc($allCourses); $i++);
+	for($i = 0; $array[$i] = mysql_fetch_assoc($allCourses); $i++);
 			array_pop($array);
 		$numCourses = sizeOf($array);
-			//if statement to check the size of the array has at least one course. If it doesn't then a different message is run
 		if(!$numCourses){
 			echo "Apologies, but no matches were found. <br /> <a href='exploreInterests.php'>Please choose again </a>";
 		}
@@ -377,5 +376,11 @@ for($f = 7; $f < 22; $f++){
 		?>
 		
 	</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End Document
+  ––––––––––––––––––––––––––––––––––––––––––––––––––-->
 </body>
 </html>

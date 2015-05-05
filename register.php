@@ -28,53 +28,97 @@ if ($_POST['register']){
   }
 };
 ?>
-
 <html lang="en">
-<head>
+ <head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Level Up</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
-  <title>Register</title>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
 </head>
 <body>
-  <ul id="menu" >
-    <li class="sub"><a href="index.html">Home</a>
-    </li>
-    <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
-    </li>
-    <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
-    </li>
-    <li class="sub"><a href="statistics.php">Statistics</a>
-    </li>
-    <li class="sub"><a href="">Testimonials</a>
-    </li>
-    <li class="sub"><a href="exploreInterests.php">Explore Courses</a>
-    </li>
-    <li class="sub"><a href="savedCourses.php">Saved Courses</a>
-    </li>
-    <li class="sub"><a href="logout.php">Log Out</a>
-    </li>
-  </ul>
-<?php echo
-"<nav><table><tr>
-  <td><a href='login.php'>Log in</a></td>
-  </tr></table></nav><br />"
-?>
 
-  <form action="" method="post">
-    username: <input type="text" name="username"><br />
-    password: <input type="password" name="password"><br />
-    year: <input type="number" name="year"><br />
-    email: <input type="text" name="email"><br />
+    <!-- Primary Page Layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+
+    <div id="navigationBar">
+      <div id="logo"><img src="images/header-logo.png"></div>
+      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a></nav>
+    </div>
+
+    <div class="section hero">
+      <div class="container">
+        <div class="row">
+          <div class="offset-by-five column">
+<form action="" method="post">
+<table>
+<tr>
+<td>
+username: 
+</td>
+<td>
+<input type="text" name="username" class='formText'>
+</td>
+</tr>
+<tr>
+<td>
+password: 
+</td>
+<td>
+<input type="password" name="password" class='formText'>
+</td>
+</tr>
+<tr>
+<td>
+year: 
+</td>
+<td>
+<input type="number" name="year" class='formText'>
+</td>
+</tr>
+<tr>
+<td>
+email: 
+</td>
+<td>
+<input type="text" name="email" class='formText'>
+</td>
+</tr>
+</table>
     <input type="submit" name="register" value="Register">
   </form>
-  <a href="logout.php">Logout</a>
-
-
-
-  
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End Document
+  ––––––––––––––––––––––––––––––––––––––––––––––––––-->
 </body>
 </html>
