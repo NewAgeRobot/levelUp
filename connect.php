@@ -1,9 +1,9 @@
 <?php
-$mysql_host = "localhost";
+$mysql_host = "mysql2272int.cp.blacknight.com";
 $mysql_database = "db1296121_levelUpApp";
-$mysql_user = "root";
-$mysql_password = "";
-$db = mysql_connect($mysql_host, $mysql_user, $mysql_password, $mysql_database);
+$mysql_user = "u1296121_admin";
+$mysql_password = "()()dkitlevelUP1";
+$db = mysql_connect($mysql_host, $mysql_user, $mysql_password);
  if (!$db) {
  die("Database connection failed miserably: " . mysql_error());
  }
