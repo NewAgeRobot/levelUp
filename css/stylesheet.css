@@ -9,6 +9,11 @@ body{
   color: #000000;
 }
 
+.resizeImage{
+	max-width: 950px;
+}
+
+
 .hiddenTag{
 	visibility:hidden;
 }

@@ -43,11 +43,11 @@
       <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
     </div>
 
-    <div class="section hero">
+    <div class="section">
       <div class="container">
         <div class="row">
           <div class="twelve column">
-          <img src="images/homepage.jpg">
+            <img class="resizeImage" src="images/homepage.jpg">
           <em>Example of homepage</em>
           </div>
         </div>
