@@ -2,7 +2,7 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: index.html');
+	header('Location: index.php');
 }
 
 //test with multiple records to make sure identifier for table records is enouguh/that it works fine.
@@ -28,7 +28,7 @@ if(isset($_POST['formSubmit'])){
 				}
 			}
 			mysql_query("UPDATE `users` SET `SubAmount` = '$subAmount' WHERE `Email` = '$userEmail'");
-			header('Location: index.html');
+			header('Location: index.php');
 		}
 	}
 }
@@ -75,14 +75,15 @@ if(isset($_POST['formSubmit'])){
 
 
     <div id="navigationBar">
-      <div id="logo"><img src="images/header-logo.png"></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a></nav>
-    </div>
+      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
+      <nav class="hiddenTag"><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
+   </div>
 
     <div class="section hero">
       <div class="container">
         <div class="row">
           <div class="offset-by-two column">
+          <h4>Tick all the subjects you do to finalise your registration then we can get started!</h4>
 	<?php
 	echo "<form action='' method='post' name='subjectlisting'><table>";
 	$result = mysql_query("SELECT * FROM subjectsTable WHERE `Email` = '$userEmail'");

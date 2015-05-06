@@ -1,69 +1,123 @@
 <?php
 include "connect.php";
 include "algor.php";
-// if($logged == true){
-//   echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
-// }
-// else{
-//   echo "<h1>You're not logged in</h1>";
-// }
-
-
-// if (isset($_COOKIE['c_user']) && isset($_COOKIE['c_salt'])) {
-//   $userCookie = $_COOKIE['c_salt'];
-//   $query="SELECT * FROM users WHERE Salt = '$userCookie'";
-//   $results = mysql_query($query);
-//   $row = mysql_fetch_array($results);
-//   echo "<h1>HELLO THERE, " . $row[1] . "</h1>";
-// }
+if($logged == true){
+  header('Location: homepage.php');
+}
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
-  <title>LevelUp</title>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Level Up</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
 </head>
 <body>
 
-  <ul id="menu" >
-    <li class="sub"><a href="index.html">Home</a>
-    </li>
-    <li class="sub"><a href="subjectFeedback.php">Subject Feedback</a>
-    </li>
-    <li class="sub"><a href="interestFeedback.php">Interest Feedback</a>
-    </li>
-    <li class="sub"><a href="statistics.php">Statistics</a>
-    </li>
-    <li class="sub"><a href="">Testimonials</a>
-    </li>
-    <li class="sub"><a href="exploreInterests.php">Explore Courses</a>
-    </li>
-    <li class="sub"><a href="savedCourses.php">Saved Courses</a>
-    </li>
-    <li class="sub"><a href="logout.php">Log Out</a>
-    </li>
-  </ul>
-
-  <?php
-if($logged == true){
-  echo "<h1>you're logged in as " . $user['Username'] . "!</h1>";
-  echo "You can start logging your enjoyment by going to subject Feedback or Interest Feedback, this will start to be gathered and analysed and you can see the results in Statistics.";
-}
-else{
-  echo "<h1>You're not logged in</h1>
-      <nav><table><tr>
-      <td><a href='login.php'>Log in</a></td>
-      <td><a href='register.php'>Register</a></td>
-      </tr></table></nav>";
-}
-?>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 
 
+  <div id="navigationBar">
+      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
+    <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a></nav>
+  </div>
 
+  <div class="section hero">
+    <div class="container">
+      <div class="row">
+        <div class="one-half column">
+          <h4 class="hero-heading">Explore courses that actually interest you, not just what's popular.</h4>
+          <a class="button button-primary" href="register.php">Register</a>
+          <a class="button button-primary" href="login.php">Log In</a>
+        </div>
+        <div class="one-half column phones">
+          <img class="phone" src="images/iphone-new.png">
+          <img class="phone" src="images/iphone-new.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section values">
+    <div class="container">
+      <div class="row">
+        <div class="one-third column value">
+          <h2 class="value-multiplier">10%</h2>
+          <h5 class="value-heading">Secondary School Students</h5>
+          <p class="value-description">Drop out before the Leaving Certificate.</p>
+        </div>
+        <div class="one-third column value">
+          <h2 class="value-multiplier">10%</h2>
+          <h5 class="value-heading">Third Level Students</h5>
+          <p class="value-description">Drop out of College each year.</p>
+        </div>
+        <div class="one-third column value">
+          <h2 class="value-multiplier">100%</h2>
+          <h5 class="value-heading">People</h5>
+          <p class="value-description">Would rather be doing what they love.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section get-help">
+    <div class="container">
+      <h3 class="section-heading">Need help getting started?</h3>
+      <p class="section-description">We're here to help you! Just register, and get using the app. See the feedback within days, and track your progress towards happiness!</p>
+      <a class="button button-primary" href="register.php">Register</a>
+    </div>
+  </div>
+
+  <div class="section categories">
+    <div class="container">
+      <h3 class="section-heading">Testimonials</h3>
+      <p class="section-description">Just an example of some of the options other than College.</p>
+      <div class="row">
+        <div class="one-half column category">
+          <a href=""><img class="u-max-full-width" src="images/test1.jpg"></a>
+          <a class="button button-primary" href="">Further Reading</a>
+        </div>
+        <div class="one-half column category">
+          <a href=""><img class="u-max-full-width" src="images/test2.jpg"></a>
+          <a class="button button-primary" href="">Further Reading</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>

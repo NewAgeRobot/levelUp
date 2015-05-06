@@ -2,12 +2,13 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: index.html');
+	header('Location: index.php');
 }
 $userEmail = $user['Email'];
 
 $savedCode = $_POST["code"];
 $savedTitle = $_POST["title"];
+$savedPoints = $_POST["points"];
 $savedCollege = $_POST["college"];
 $savedUrl = $_POST["url"];
 //echo $savedCode . $savedTitle . $savedCollege . $savedUrl;
@@ -24,7 +25,7 @@ while($row = mysql_fetch_assoc($saveCheck)) {
 	}
 }
 if($j == 0){
-	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseCode`, `CourseTitle`, `CourseCollege`, `CourseURL`) VALUES ('$userEmail', '$savedCode', '$savedTitle', '$savedCollege', '$savedUrl')");
+	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseCode`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`) VALUES ('$userEmail', '$savedCode', '$savedTitle', '$savedPoints', '$savedCollege', '$savedUrl')");
 	echo "Course Saved!";
 }
 else{

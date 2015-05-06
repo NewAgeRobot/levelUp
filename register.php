@@ -1,4 +1,4 @@
-  <?php
+<?php
 ini_set('display_errors', 0); 
 error_reporting(E_ALL);
 include "connect.php";
@@ -69,7 +69,7 @@ if ($_POST['register']){
 
 
     <div id="navigationBar">
-      <div id="logo"><img src="images/header-logo.png"></div>
+      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
       <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a></nav>
     </div>
 

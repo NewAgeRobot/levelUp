@@ -14,13 +14,14 @@
 		$(".ajax").click(function() {
 			var code = $(".jsCourseCode").text();
 			var title = $(".jsCourseTitle").text();
+			var points = $(".jsCoursePoints").text();
 			var college = $(".jsCourseCollege").text();
 			var url = $(".jsCourseURL").text();
 				//alert(s);
 				$.ajax({
 					method: 'POST' ,
 					url: 'saveCourse.php' ,
-					data: { code: code, title: title, college: college, url: url } ,
+					data: { code: code, title: title, points: points, college: college, url: url } ,
 					success: function(result)
 					{
 					 	//$('.ajax').after(result); //replace with .html("saved!"); when working
@@ -38,7 +39,7 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: index.html');
+	header('Location: index.php');
 }
 $userEmail = $user['Email'];
 $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests` WHERE `Email` = '$userEmail'"));
@@ -310,7 +311,7 @@ if($currentCourse <= ($numCourses-1)){
 	print_r("<tr><td>Course Title: </td><td class='jsCourseTitle'>" . $array[$currentCourse]['CourseTitle'] . "</td></tr>");
 	print_r("<tr><td>Course Code: </td><td class='jsCourseCode'>" . $array[$currentCourse]['CourseCode'] . "</td></tr>");
 	print_r("<tr><td>Synopsis: </td><td>" . $array[$currentCourse]['Synopsis'] . "</td></tr>");
-	print_r("<tr><td>Points: </td><td>" . $array[$currentCourse]['Points'] . "</td></tr>");
+	print_r("<tr><td>Points: </td><td class='jsCoursePoints'>" . $array[$currentCourse]['Points'] . "</td></tr>");
 	print_r("<tr><td>Institute: </td><td class='jsCourseCollege'>" . $array[$currentCourse]['Institute'] . "</td></tr>");
 	print_r("<tr><td>Hyperlink: </td><td class='jsCourseURL'><a href='" . $array[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></td></tr>");
 	echo "</table>";

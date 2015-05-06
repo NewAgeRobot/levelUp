@@ -23,7 +23,7 @@ if ($_POST['login']){
 		setcookie("c_salt", $salt, time() + 24 * 60 * 60, "/");
 		$userID = $user['ID'];
 		mysql_query("UPDATE `users` SET `Salt` = '$salt' WHERE `ID`='$userID'");
-		header('Location: index.html');
+		header('Location: index.php');
 		//die("You are now logged in as $username!");
 	}
 };
@@ -69,7 +69,7 @@ if ($_POST['login']){
 
 
     <div id="navigationBar">
-      <div id="logo"><img src="images/header-logo.png"></div>
+      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
       <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a></nav>
     </div>
 

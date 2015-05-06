@@ -2,7 +2,7 @@
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: index.html');
+	header('Location: index.php');
 }
 $userEmail = $user['Email'];
 $saveCheck = mysql_query("SELECT * FROM savedCourses WHERE `Email` = '$userEmail'");
@@ -78,23 +78,24 @@ $numCourses = sizeOf($array);
 
 
     <div id="navigationBar">
-      <div id="logo"><img src="images/header-logo.png"></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a></nav>
+      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
+      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
     </div>
 
     <div class="section hero">
       <div class="container">
         <div class="row">
-          <div class="offset-by-two column">
+          <div class="offset-by-one column">
+          <h4>These are where courses you save while exploring are listed. Get exploring! </h4>
 	<?php
 	if(!$numCourses){
 	echo "You have yet to save any courses.";
 }
 else{
-	echo "<table><tr><td>Course Code</td><td>Course Title</td><td>Institute</td><td>More Information</td></tr>";
+	echo "<table><tr><td>Course Code</td><td>Course Title</td><td>Course Points</td><td>Institute</td><td>More Information</td></tr>";
 	//might have to save amount of courses they've saved
 	for($counter = 0; $counter < $num_rows; $counter++){
-		print_r("<tr><td>" . $array[$counter]['CourseCode'] . "</td><td>" . $array[$counter]['CourseTitle'] . "</td><td>" . $array[$counter]['CourseCollege'] . "</td><td><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'>Find out more</a></td></tr>"); //not working
+		print_r("<tr><td>" . $array[$counter]['CourseCode'] . "</td><td>" . $array[$counter]['CourseTitle'] . "</td><td>" . $array[$counter]['CoursePoints'] . "</td><td>" . $array[$counter]['CourseCollege'] . "</td><td><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'>Find out more</a></td></tr>"); //not working
 	}
 	echo "</table>";
 }

@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <?php
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: index.html');
+	header('Location: index.php');
 }
 $userEmail = $user['Email'];
 $result = mysql_query("SELECT * FROM interestsTable");
@@ -97,14 +96,15 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 
 
     <div id="navigationBar">
-      <div id="logo"><img src="images/header-logo.png"></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a></nav>
+      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
+      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
     </div>
 
     <div class="section hero">
       <div class="container">
         <div class="row">
           <div class="offset-by-two column">
+          <h4>Select up to three categories to refine your search for courses! Best to get searching and explore!</h4>
             <?php
 	echo $prompts['Prompt'];
 

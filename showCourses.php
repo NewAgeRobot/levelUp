@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <?php
 include "connect.php";
 include "algor.php";
 if($logged == false){
-	header('Location: index.html');
+	header('Location: index.php');
 }
 $userEmail = $user['Email'];
 $userInterests = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests` WHERE `Email` = '$userEmail'"));
@@ -121,12 +120,13 @@ for($f = 7; $f < 22; $f++){
 			$(".ajax").click(function() {
 				var code = $(".jsCourseCode").text();
 				var title = $(".jsCourseTitle").text();
+				var points = $(".jsCoursePoints").text();
 				var college = $(".jsCourseCollege").text();
 				var url = $(".jsCourseURL").text();
 				$.ajax({
 					method: 'POST' ,
 					url: 'saveCourse.php' ,
-					data: { code: code, title: title, college: college, url: url } ,
+					data: { code: code, title: title, points: points, college: college, url: url } ,
 					success: function(result)
 					{
 					$('.ajax').after(result);
@@ -151,8 +151,8 @@ for($f = 7; $f < 22; $f++){
 
 
     <div id="navigationBar">
-      <div id="logo"><img src="images/header-logo.png"></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a></nav>
+      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
+      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
     </div>
 
     <div class="section hero">
@@ -357,7 +357,7 @@ for($f = 7; $f < 22; $f++){
 				print_r("<tr><td>Course Title: </td><td class='jsCourseTitle'>" . $array[$currentCourse]['CourseTitle'] . "</td></tr>");
 				print_r("<tr><td>Course Code: </td><td class='jsCourseCode'>" . $array[$currentCourse]['CourseCode'] . "</td></tr>");
 				print_r("<tr><td>Synopsis: </td><td>" . $array[$currentCourse]['Synopsis'] . "</td></tr>");
-				print_r("<tr><td>Points: </td><td>" . $array[$currentCourse]['Points'] . "</td></tr>");
+				print_r("<tr><td>Points: </td><td class='jsCoursePoints'>" . $array[$currentCourse]['Points'] . "</td></tr>");
 				print_r("<tr><td>Institute: </td><td class='jsCourseCollege'>" . $array[$currentCourse]['Institute'] . "</td></tr>");
 				print_r("<tr><td>Hyperlink: </td><td class='jsCourseURL'><a href='" . $array[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></td></tr>"); //not working
 				echo "</table>";
