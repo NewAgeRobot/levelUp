@@ -103,12 +103,15 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
     <div class="section hero">
       <div class="container">
         <div class="row">
-          <div class="offset-by-two column">
+          <div class="offset-by-one column">
           <h4>Select up to three categories to refine your search for courses! Best to get searching and explore!</h4>
+            
             <?php
 	echo $prompts['Prompt'];
-
-	echo "<form action='' method='post' name='subjectlisting'>";
+?>
+</div>
+          <div class="offset-by-four column">
+<?php	echo "<form action='' method='post' name='subjectlisting'>";
 	
 	
 
@@ -117,8 +120,8 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 	$f = 0;
 	while($row = mysql_fetch_assoc($result)) {
 		foreach ($row as $col => $val) {
-			if ($f++ < 8) continue;
-			else if($f > 30) break;
+			if ($f++ < 9) continue;
+			else if($f > 31) break;
 			//use checktrue to query current interests, and make them checked if they exist
 			echo "<tr> <td> " . $col . "</td> <td>
 			<input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $col . "'" . $checkTrue . " />

@@ -7,6 +7,7 @@ if($logged == false){
 $userEmail = $user['Email'];
 
 $savedCode = $_POST["code"];
+$savedLevel = $_POST["level"];
 $savedTitle = $_POST["title"];
 $savedPoints = $_POST["points"];
 $savedCollege = $_POST["college"];
@@ -24,8 +25,8 @@ while($row = mysql_fetch_assoc($saveCheck)) {
 		}
 	}
 }
-if($j == 0){
-	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseCode`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`) VALUES ('$userEmail', '$savedCode', '$savedTitle', '$savedPoints', '$savedCollege', '$savedUrl')");
+if($j == 0){ 
+	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseCode`, `CourseLevel`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`) VALUES ('$userEmail', '$savedCode', '$savedLevel', '$savedTitle', '$savedPoints', '$savedCollege', '$savedUrl')");
 	echo "Course Saved!";
 }
 else{

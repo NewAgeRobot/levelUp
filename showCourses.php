@@ -107,26 +107,29 @@ for($f = 7; $f < 22; $f++){
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
   <script language="Javascript" type="text/javascript">
-		function nextCourse(cv){
-			$("#myDiv").html("<img src='https://33.media.tumblr.com/bec5933eea5043acf6a37bb1394384ab/tumblr_mj0xxeyLhy1s7or0ro1_400.gif'>").show();
-			var url="courseList.php";
-			$.post(url, {contentVar: cv}, function(data){
-				$("#myDiv").html(data).show();
-			});
-		}
 
-		$(document).ready(function(){
-			$('.ajax').show();
-			$(".ajax").click(function() {
-				var code = $(".jsCourseCode").text();
-				var title = $(".jsCourseTitle").text();
-				var points = $(".jsCoursePoints").text();
-				var college = $(".jsCourseCollege").text();
-				var url = $(".jsCourseURL").text();
+
+	function nextCourse(cv){
+		$("#myDiv").html("<img src='https://33.media.tumblr.com/bec5933eea5043acf6a37bb1394384ab/tumblr_mj0xxeyLhy1s7or0ro1_400.gif'>").show();
+		var url="courseList.php";
+		$.post(url, {contentVar: cv}, function(data){
+			$("#myDiv").html(data).show();
+		});
+	}
+
+	$(document).ready(function(){
+		$('.ajax').show();
+		$(".ajax").click(function() {
+			var code = $(".jsCourseCode").text();
+			var level = $(".jsCourseLevel").text();
+			var title = $(".jsCourseTitle").text();
+			var points = $(".jsCoursePoints").text();
+			var college = $(".jsCourseCollege").text();
+			var url = $(".jsCourseURL").text();
 				$.ajax({
 					method: 'POST' ,
 					url: 'saveCourse.php' ,
-					data: { code: code, title: title, points: points, college: college, url: url } ,
+					data: { code: code, level: level, title: title, points: points, college: college, url: url } ,
 					success: function(result)
 					{
 					$('.ajax').after(result);
@@ -356,6 +359,7 @@ for($f = 7; $f < 22; $f++){
 				echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
 				print_r("<tr><td>Course Title: </td><td class='jsCourseTitle'>" . $array[$currentCourse]['CourseTitle'] . "</td></tr>");
 				print_r("<tr><td>Course Code: </td><td class='jsCourseCode'>" . $array[$currentCourse]['CourseCode'] . "</td></tr>");
+				print_r("<tr><td>Level: </td><td class='jsCourseLevel'>" . $array[$currentCourse]['CourseLevel'] . "</td></tr>");
 				print_r("<tr><td>Synopsis: </td><td>" . $array[$currentCourse]['Synopsis'] . "</td></tr>");
 				print_r("<tr><td>Points: </td><td class='jsCoursePoints'>" . $array[$currentCourse]['Points'] . "</td></tr>");
 				print_r("<tr><td>Institute: </td><td class='jsCourseCollege'>" . $array[$currentCourse]['Institute'] . "</td></tr>");

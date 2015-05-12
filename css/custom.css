@@ -173,20 +173,20 @@
 /* Bigger than 1000 */
 @media (min-width: 1000px) {
   .section {
-    padding: 20rem 0 19rem;
+    padding: 10rem 0 19rem;
   }
   .hero {
-    padding: 22rem 0;
+    padding: 10rem 0;
   }
   .hero-heading {
     font-size: 3.0rem;
   }
   .phone {
-    top: -16rem;
-    max-height: 615px;
+    top: -9rem;
+    max-height: 400px;
   }
   .phone + .phone {
-    top: -14rem;
-    max-height: 570px;
+    top: -8rem;
+    max-height: 366px;
   }
 }

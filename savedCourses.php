@@ -65,6 +65,35 @@ $numCourses = sizeOf($array);
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="js/test.js"></script>
+  <script language="Javascript" type="text/javascript">
+$(document).ready(function(){
+    $('.ajax').show();
+    $(".ajax").click(function() {
+      // var position = $(".posNum").text();
+      var position = $(this).closest('tr').find('td:eq(0)').text();
+      var code = $(".jsCourseCode").eq(position).text();
+        // alert(code);
+        //alert(s);
+        $.ajax({
+          method: 'POST' ,
+          url: 'deleteCourse.php' ,
+          data: { code: code } ,
+          success: function(result)
+          {
+            //$('.ajax').after(result); //replace with .html("saved!"); when working
+            // $('.ajax').after("Course Saved!");
+            $('.ajax').after(result);
+            $('.ajax').hide();
+            window.location.reload();
+           }
+          });
+      });
+  });
+
+</script>
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -92,12 +121,17 @@ $numCourses = sizeOf($array);
 	echo "You have yet to save any courses.";
 }
 else{
-	echo "<table><tr><td>Course Code</td><td>Course Title</td><td>Course Points</td><td>Institute</td><td>More Information</td></tr>";
+	echo "<table id='sort' class='grid'>
+  <thead><tr><th>No.</th><th>Course Code</th><th>Course Title</th><th>Level</th><th>Course Points</th><th>Institute</th><th>More Information</th><th>Delete?</th></tr>
+  </thead>
+  <tbody>";
+ 
 	//might have to save amount of courses they've saved
 	for($counter = 0; $counter < $num_rows; $counter++){
-		print_r("<tr><td>" . $array[$counter]['CourseCode'] . "</td><td>" . $array[$counter]['CourseTitle'] . "</td><td>" . $array[$counter]['CoursePoints'] . "</td><td>" . $array[$counter]['CourseCollege'] . "</td><td><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'>Find out more</a></td></tr>"); //not working
+		print_r("<tr><td class='index'></td><td class='jsCourseCode'>" . $array[$counter]['CourseCode'] . "</td><td>" . $array[$counter]['CourseTitle'] . "</td><td>" . $array[$counter]['CourseLevel'] . "</td><td>" . $array[$counter]['CoursePoints'] . "</td><td>" . $array[$counter]['CourseCollege'] . "</td><td><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'><font color='lightblue'>Find out more</font></a></td><td><a href='javascript:{}' class='ajax'><font color='red'>Delete Course</font></a></td></tr>"); //not working
 	}
-	echo "</table>";
+	echo "</tbody></table>";
+  echo "<button id='reorder'>Reorder Courses</button><button id='reorderDone'>Save Order</button>";
 }
 ?>
           </div>

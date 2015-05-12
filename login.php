@@ -8,10 +8,10 @@ if($logged == true){
 	echo "<h1>you're logged in!</h1>";
 }
 if ($_POST['login']){
-	if($_POST['username'] && $_POST['password']){
-		$username = mysql_real_escape_string($_POST['username']);
+	if($_POST['email'] && $_POST['password']){
+		$email = mysql_real_escape_string($_POST['email']);
 		$password = mysql_real_escape_string(hash("sha512", $_POST['password']));
-		$user = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Username`='$username'")); //get user by their email
+		$user = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Email`='$email'")); //get user by their email
 		if($user == '0'){
 			die("That account doesn't exist, sorry!");
 		}
@@ -19,10 +19,11 @@ if ($_POST['login']){
 			die("Incorrect password, sorry brah");
 		}
 		$salt = hash("sha512", rand() . rand() . rand());
-		setcookie("c_user", hash("sha512", $username), time() + 24 * 60 * 60, "/");
-		setcookie("c_salt", $salt, time() + 24 * 60 * 60, "/");
+		setcookie("c_user", hash("sha512", $email), time() + 12 * 60 * 60, "/");
+		setcookie("c_salt", $salt, time() + 12 * 60 * 60, "/");
 		$userID = $user['ID'];
 		mysql_query("UPDATE `users` SET `Salt` = '$salt' WHERE `ID`='$userID'");
+    mysql_query("INSERT INTO `visitStats` (`Email`) VALUES ('$email')");
 		header('Location: index.php');
 		//die("You are now logged in as $username!");
 	}
@@ -78,8 +79,9 @@ if ($_POST['login']){
         <div class="row">
           <div class="offset-by-five column">
  	<form action="" method="post">
-	username:<input type="text" name="username" class="formText"><br />
-	password: <input type="password" name="password" class="formText"><br />
+	<table>
+  <tr><td>email:</td><td><input type="text" name="email" class="formText"></td></tr>
+	<tr><td>password: </td><td><input type="password" name="password" class="formText"></td></tr></table><br />
 	<input type="submit" name="login" value="Log in">
 	</form>
           </div>
