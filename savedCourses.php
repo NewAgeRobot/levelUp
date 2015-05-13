@@ -7,35 +7,9 @@ if($logged == false){
 $userEmail = $user['Email'];
 $saveCheck = mysql_query("SELECT * FROM savedCourses WHERE `Email` = '$userEmail'");
 $num_rows = mysql_num_rows($saveCheck);
-//make notice for if the user has no saved courses yet
-//echo $num_rows;
-
-// if(!$num_rows){
-// 	echo "<a href='exploreInterests.php> You have no saved courses. </a>'";
-// }
-// else{
-// 	//query the other information or maybe see about just uploading all course info when they save a course, then pasting it here. Just the important bits maybe, like course title, code, synopsis and link? or maybe just code and title
-// 	while($row = mysql_fetch_assoc($saveCheck)) {
-// 		foreach ($row as $col => $val) {
-// 			echo $row['CourseTitle'];
-// 			echo "<br />";
-// 		}
-// 	}
-// }
 for($i = 0; $array[$i] = mysql_fetch_assoc($saveCheck); $i++);
 array_pop($array);
 $numCourses = sizeOf($array);
-// if(!$numCourses){
-// 	echo "You have yet to save any courses.";
-// }
-// else{
-// 	echo "<table><tr><td>Course Code</td><td>Course Title</td><td>Institute</td><td>More Information</td></tr>";
-// 	//might have to save amount of courses they've saved
-// 	for($counter = 0; $counter < $num_rows; $counter++){
-// 		print_r("<tr><td>" . $array[$counter]['CourseCode'] . "</td><td>" . $array[$counter]['CourseTitle'] . "</td><td>" . $array[$counter]['CourseCollege'] . "</td><td><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'>Find out more</a></td></tr>"); //not working
-// 	}
-// 	echo "</table>";
-// }
 ?>
 <html lang="en">
  <head>
@@ -72,25 +46,26 @@ $numCourses = sizeOf($array);
 $(document).ready(function(){
     $('.ajax').show();
     $(".ajax").click(function() {
-      // var position = $(".posNum").text();
       var position = $(this).closest('tr').find('td:eq(0)').text();
       var code = $(".jsCourseCode").eq(position).text();
-        // alert(code);
-        //alert(s);
         $.ajax({
           method: 'POST' ,
           url: 'deleteCourse.php' ,
           data: { code: code } ,
           success: function(result)
           {
-            //$('.ajax').after(result); //replace with .html("saved!"); when working
-            // $('.ajax').after("Course Saved!");
             $('.ajax').after(result);
             $('.ajax').hide();
             window.location.reload();
            }
           });
       });
+
+/* this is to be used to send the ajax calls to the savedCourseOrder.php page
+GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH INSIDE ANOTHER FUNCTION
+*/
+    
+
   });
 
 </script>
@@ -128,10 +103,10 @@ else{
  
 	//might have to save amount of courses they've saved
 	for($counter = 0; $counter < $num_rows; $counter++){
-		print_r("<tr><td class='index'></td><td class='jsCourseCode'>" . $array[$counter]['CourseCode'] . "</td><td>" . $array[$counter]['CourseTitle'] . "</td><td>" . $array[$counter]['CourseLevel'] . "</td><td>" . $array[$counter]['CoursePoints'] . "</td><td>" . $array[$counter]['CourseCollege'] . "</td><td><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'><font color='lightblue'>Find out more</font></a></td><td><a href='javascript:{}' class='ajax'><font color='red'>Delete Course</font></a></td></tr>"); //not working
+		print_r("<tr><td class='index'>" . $counter . "</td><td class='jsCourseCode'>" . $array[$counter]['CourseCode'] . "</td><td>" . $array[$counter]['CourseTitle'] . "</td><td>" . $array[$counter]['CourseLevel'] . "</td><td>" . $array[$counter]['CoursePoints'] . "</td><td>" . $array[$counter]['CourseCollege'] . "</td><td><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'><font color='lightblue'>Find out more</font></a></td><td><a href='javascript:{}' class='ajax'><font color='red'>Delete Course</font></a></td></tr>"); //not working
 	}
 	echo "</tbody></table>";
-  echo "<button id='reorder'>Reorder Courses</button><button id='reorderDone'>Save Order</button>";
+  echo "<button id='reorder'>Reorder Courses</button><a href='javascript:{}' class='reorderDone'><button>Save Order</button></a>";
 }
 ?>
           </div>

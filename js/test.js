@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#reorder").click(function(){
-            var fixHelperModified = function(e, tr) {
+        var fixHelperModified = function(e, tr) {
             var $originals = tr.children();
             var $helper = tr.clone();
             $helper.children().each(function(index) {
@@ -20,8 +20,26 @@ $(document).ready(function(){
         }).disableSelection();
     })
 
+    $('.reorderDone').show();
+    $(".reorderDone").click(function() { //SAVE COURSE ORDER BUTTON CLICKED
+    var amountSaved = $(".index").length;
+    var firstInstance = $(".index").eq(0).text();
+    var firstCode = $(".jsCourseCode").eq(firstInstance).text();
+      $.ajax({
+          method: 'POST' ,
+          url: 'savedCourseOrder.php' ,
+          data: { amountSaved: amountSaved, firstCode: firstCode } ,
+          success: function(result)
+          {
+            $('.reorderDone').after(result);
+            $('.reorderDone').hide();
+            window.location.reload();
+        }
+    });
+  });
+
+
     $("#reorderDone").click(function(){
-        var amountSaved = $(".index").length;
         /*this is only javascript so can't do server stuff, going to have to bring in ajax
         
         I have how many courses there are and can call each one by their position
@@ -42,9 +60,10 @@ $(document).ready(function(){
 
 
 
-        var thingy = $(".index").eq(0).text();
-        alert($(".jsCourseCode").eq(thingy).text());
+        
         window.location.reload();
     });
+
+    
     
 });
