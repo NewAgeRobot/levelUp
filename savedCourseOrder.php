@@ -6,8 +6,15 @@ if($logged == false){
 }
 $userEmail = $user['Email'];
 
-$firstCode = $_POST["firstCode"];
-$amountSaved = $_POST["amountSaved"];
+$listOfCourses = $_POST["codeArray"];
+$arraySize = sizeof($listOfCourses);
 
-echo "<script type='text/javascript'>alert('first code: $firstCode,amount: $amountSaved');</script>";
+for($counter = 0; $counter < $arraySize; $counter++){ //LOOP THROUGH THE ARRAY AND GET EACH CODE
+	// echo $listOfCourses[$counter];
+	$tempCode = $listOfCourses[$counter];
+	// echo "<script type='text/javascript'>console.log('$listOfCourses[$counter]');</script>";
+	mysql_query("UPDATE `savedCourses` SET `Position` = '$counter' WHERE `Email` = '$userEmail' AND `CourseCode` = '$tempCode'");
+}
+
+// echo "<script type='text/javascript'>console.log('$listOfCourses[$counter]');</script>";
 ?>
