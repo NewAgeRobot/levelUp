@@ -33,8 +33,8 @@ $(document).ready(function(){
 
 
 
-    var firstInstance = $(".index").eq(0).text();
-    var firstCode = $(".jsCourseCode").eq(firstInstance).text();
+    // var firstInstance = $(".index").eq(0).text();
+    // var firstCode = $(".jsCourseCode").eq(firstInstance).text();
 
 
 

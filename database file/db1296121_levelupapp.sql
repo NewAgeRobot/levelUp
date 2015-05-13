@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 13, 2015 at 01:49 AM
+-- Generation Time: May 13, 2015 at 07:11 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -254,10 +254,10 @@ CREATE TABLE IF NOT EXISTS `savedCourses` (
 --
 
 INSERT INTO `savedCourses` (`ID`, `Email`, `CourseCode`, `CourseLevel`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`, `SavedDate`, `Position`) VALUES
-(61, 'sean@gmail.com', 'DK770', 7, 'Theatre and Film Practice', 0, 'DkIT', 'https://www.dkit.ie/programmes/ba-theatre-film-practice', '2015-05-12 22:54:59', 0),
+(61, 'sean@gmail.com', 'DK770', 7, 'Theatre and Film Practice', 0, 'DkIT', 'https://www.dkit.ie/programmes/ba-theatre-film-practice', '2015-05-12 22:54:59', 2),
 (56, 'sean@gmail.com', 'DK650', 6, 'Higher Certificate in Arts in Culinary Arts', 240, 'DkIT', 'https://www.dkit.ie/courses/dk650', '2015-05-12 19:56:52', 0),
-(62, 'sean@gmail.com', 'DK812', 8, 'Marketing', 305, 'DkIT', 'https://www.dkit.ie/courses/dk812', '2015-05-12 22:55:01', 0),
-(63, 'sean@gmail.com', 'DK860', 8, 'Applied Music (Restricted)', 0, 'DkIT', 'https://www.dkit.ie/courses/dk860', '2015-05-12 22:55:02', 0);
+(62, 'sean@gmail.com', 'DK812', 8, 'Marketing', 305, 'DkIT', 'https://www.dkit.ie/courses/dk812', '2015-05-12 22:55:01', 1),
+(63, 'sean@gmail.com', 'DK860', 8, 'Applied Music (Restricted)', 0, 'DkIT', 'https://www.dkit.ie/courses/dk860', '2015-05-12 22:55:02', 3);
 
 -- --------------------------------------------------------
 
@@ -417,7 +417,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`ID`, `Username`, `Password`, `Year`, `Email`, `Salt`, `SubAmount`, `DailyFeedback`, `CurrentDate`, `PrevDate`) VALUES
-(26, 'sean', 'd1e72debd219906b7c4b7b96c2645a71929d1705d3c6f209b56bf145bdba5e9af605dd2a0646d70f62b3834cc4398d9c7ea8aa17a10afdae912b86c3f92169b7', 5, 'sean@gmail.com', 'a14b587cd67929af7c66c30384607ce79d9fbf2a316d449fbe3cd00ab8a22c3bbbe860da7fa63b30eaae4a7145152bbf02bb586a096c1631240a4c25b35a262a', 6, 1, '', '');
+(26, 'sean', 'd1e72debd219906b7c4b7b96c2645a71929d1705d3c6f209b56bf145bdba5e9af605dd2a0646d70f62b3834cc4398d9c7ea8aa17a10afdae912b86c3f92169b7', 5, 'sean@gmail.com', '33a79ae6769b5302cf9421ce207711b4e02ec17f110130ea85c49b402fd0197dee07af1f0b9f805c92d0dde63ca414ecd836b7be399d2df0903452635dc176a5', 6, 1, '', '');
 
 -- --------------------------------------------------------
 
@@ -431,7 +431,7 @@ CREATE TABLE IF NOT EXISTS `visitStats` (
   `LoginTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ExploreTime` text NOT NULL,
   `ExploreAmount` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `visitStats`
@@ -440,7 +440,8 @@ CREATE TABLE IF NOT EXISTS `visitStats` (
 INSERT INTO `visitStats` (`ID`, `Email`, `LoginTime`, `ExploreTime`, `ExploreAmount`) VALUES
 (1, 'sean@gmail.com', '2015-05-11 12:10:38', '', 0),
 (2, 'sean@gmail.com', '2015-05-11 23:01:51', '', 0),
-(3, 'sean@gmail.com', '2015-05-12 15:30:09', '', 0);
+(3, 'sean@gmail.com', '2015-05-12 15:30:09', '', 0),
+(4, 'sean@gmail.com', '2015-05-13 12:06:42', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -548,7 +549,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitStats`
 --
 ALTER TABLE `visitStats`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

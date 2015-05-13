@@ -10,6 +10,18 @@ $num_rows = mysql_num_rows($saveCheck);
 for($i = 0; $array[$i] = mysql_fetch_assoc($saveCheck); $i++);
 array_pop($array);
 $numCourses = sizeOf($array);
+// print_r($array[2]);
+
+
+
+
+$testArray = array();
+foreach ($array as $key => $row)
+{
+    $testArray[$key] = $row['Position'];
+}
+array_multisort($testArray, SORT_ASC, $array);
+
 ?>
 <html lang="en">
  <head>
