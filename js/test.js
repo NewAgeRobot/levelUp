@@ -23,9 +23,23 @@ $(document).ready(function(){
     $('.reorderDone').show();
     $(".reorderDone").click(function() { //SAVE COURSE ORDER BUTTON CLICKED
     var amountSaved = $(".index").length;
+    var codeArray = []; //CREATES AN ARRAY THAT IS THE LENGTH OF THE AMOUNT OF ENTRIES
+    for (var j = 0; j < amountSaved; j++){
+        var codeTest = $(".jsCourseCode").eq(j).text(); //GRABS THE CURRENT CODE FOR THE INSTANCE OF .JSCOURSECODE CLASS THAT IS EQUAL TO THE EQ VALUE
+        console.log(codeTest); //PRINTS IT TO THE CONSOLE
+    }
+
+
+
+
     var firstInstance = $(".index").eq(0).text();
     var firstCode = $(".jsCourseCode").eq(firstInstance).text();
-      $.ajax({
+
+
+
+
+
+      /*$.ajax({
           method: 'POST' ,
           url: 'savedCourseOrder.php' ,
           data: { amountSaved: amountSaved, firstCode: firstCode } ,
@@ -35,7 +49,7 @@ $(document).ready(function(){
             $('.reorderDone').hide();
             window.location.reload();
         }
-    });
+    });*/
   });
 
 
