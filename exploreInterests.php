@@ -25,6 +25,16 @@ if(isset($_POST['formSubmit'])){
 		mysql_query("UPDATE `storedInterests` SET `$countyNumber` = '$currentCounty' WHERE `Email` = '$userEmail'");
 
 	}
+// THIS IS TO BE TURNED INTO THE CODE FOR SENDING WHAT LEVELS HAVE BEEN SELECTED
+	// $count = count($_POST['Counties']);
+	// //echo $count;
+	// for($j = 0; $j < $count;$j++){
+	// 	$currentCounty = $_POST['Counties'][$j];
+	// 	$countyNumber = "County" . $j;
+	// 	mysql_query("UPDATE `storedInterests` SET `$countyNumber` = '$currentCounty' WHERE `Email` = '$userEmail'");
+
+	// }
+
 	header('Location: showCourses.php');
 }
 
@@ -82,6 +92,10 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 		$(document).on("click", "#showCounties", function() {
 			$('#countyTable').toggle();
 		});
+
+		$(document).on("click", "#showLevel", function() {
+			$('#levelTable').toggle();
+		});
 	</script>
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -130,6 +144,15 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 }
 
 echo "</table>";
+
+	echo "<br /><button type='button' id='showLevel'>Course Level</button>";
+
+	echo "<div id='levelTable' style='display:none;'><table>";
+	echo "<tr> <td> 6 </td> <td><input type='checkbox' name='courseLevel[]' class='county' value='6' /></td>";
+	echo "<td> 7 </td> <td><input type='checkbox' name='courseLevel[]' class='county' value='7' /></td>";
+	echo "<td> 8 </td> <td><input type='checkbox' name='courseLevel[]' class='county' value='8' /></td></tr>";
+	echo "</table></div><br /> <br />";
+
 
 	echo "<br /><button type='button' id='showCounties'>Show Counties</button>";
 
