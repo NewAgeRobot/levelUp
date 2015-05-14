@@ -365,7 +365,11 @@ for($f = 7; $f < 22; $f++){
     					// echo "<br /><br /><br />";
     					// $arr = array(1,2,3,4,5,6);
 
-    					mt_srand('123');
+
+    					$randomSeed = rand(1, 50);
+    					$randomSeed = (string)$randomSeed;
+    					//STORE THE RANDOM NUMBER HERE
+    					mt_srand($randomSeed);
     					$order = array_map(create_function('$val', 'return mt_rand();'), range(1, count($array)));
     					array_multisort($order, $array);
 
