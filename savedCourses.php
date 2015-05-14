@@ -15,12 +15,12 @@ $numCourses = sizeOf($array);
 
 
 
-$testArray = array();
+$sortedArray = array();
 foreach ($array as $key => $row)
 {
-    $testArray[$key] = $row['Position'];
+    $sortedArray[$key] = $row['Position'];
 }
-array_multisort($testArray, SORT_ASC, $array);
+array_multisort($sortedArray, SORT_ASC, $array);
 
 ?>
 <html lang="en">

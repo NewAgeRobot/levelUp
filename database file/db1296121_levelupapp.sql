@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 13, 2015 at 07:11 PM
+-- Generation Time: May 14, 2015 at 02:06 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -247,17 +247,19 @@ CREATE TABLE IF NOT EXISTS `savedCourses` (
   `CourseURL` text NOT NULL,
   `SavedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Position` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `savedCourses`
 --
 
 INSERT INTO `savedCourses` (`ID`, `Email`, `CourseCode`, `CourseLevel`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`, `SavedDate`, `Position`) VALUES
-(61, 'sean@gmail.com', 'DK770', 7, 'Theatre and Film Practice', 0, 'DkIT', 'https://www.dkit.ie/programmes/ba-theatre-film-practice', '2015-05-12 22:54:59', 2),
-(56, 'sean@gmail.com', 'DK650', 6, 'Higher Certificate in Arts in Culinary Arts', 240, 'DkIT', 'https://www.dkit.ie/courses/dk650', '2015-05-12 19:56:52', 0),
-(62, 'sean@gmail.com', 'DK812', 8, 'Marketing', 305, 'DkIT', 'https://www.dkit.ie/courses/dk812', '2015-05-12 22:55:01', 1),
-(63, 'sean@gmail.com', 'DK860', 8, 'Applied Music (Restricted)', 0, 'DkIT', 'https://www.dkit.ie/courses/dk860', '2015-05-12 22:55:02', 3);
+(65, 'sean@gmail.com', 'DK863', 8, 'Communications in Creative Media', 300, 'DkIT', 'https://www.dkit.ie/cmedia', '2015-05-14 00:04:45', 4),
+(66, 'sean@gmail.com', 'DK864', 8, 'Film and TV Production', 300, 'DkIT', 'https://www.dkit.ie/filmtv', '2015-05-14 00:05:48', 3),
+(61, 'sean@gmail.com', 'DK770', 7, 'Theatre and Film Practice', 0, 'DkIT', 'https://www.dkit.ie/programmes/ba-theatre-film-practice', '2015-05-12 22:54:59', 5),
+(56, 'sean@gmail.com', 'DK650', 6, 'Higher Certificate in Arts in Culinary Arts', 240, 'DkIT', 'https://www.dkit.ie/courses/dk650', '2015-05-12 19:56:52', 1),
+(62, 'sean@gmail.com', 'DK812', 8, 'Marketing', 305, 'DkIT', 'https://www.dkit.ie/courses/dk812', '2015-05-12 22:55:01', 0),
+(64, 'sean@gmail.com', 'DK781', 7, 'Science - Applied Bioscience', 215, 'DkIT', 'https://www.dkit.ie/courses/dk781', '2015-05-13 23:54:24', 2);
 
 -- --------------------------------------------------------
 
@@ -295,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `storedInterests` (
 --
 
 INSERT INTO `storedInterests` (`ID`, `Email`, `Interest0`, `Interest1`, `Interest2`, `NumCourse`, `CurrentCourse`, `County0`, `County1`, `County2`, `County3`, `County4`, `County5`, `County6`, `County7`, `County8`, `County9`, `County10`, `County11`, `County12`, `County13`, `County14`) VALUES
-(25, 'sean@gmail.com', 'Creativity', '', '', 18, 6, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+(25, 'sean@gmail.com', 'Creativity', '', '', 18, 8, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -524,7 +526,7 @@ ALTER TABLE `interestsTable`
 -- AUTO_INCREMENT for table `savedCourses`
 --
 ALTER TABLE `savedCourses`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=64;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT for table `storedInterests`
 --

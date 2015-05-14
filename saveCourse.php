@@ -26,7 +26,18 @@ while($row = mysql_fetch_assoc($saveCheck)) {
 	}
 }
 if($j == 0){ 
-	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseCode`, `CourseLevel`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`) VALUES ('$userEmail', '$savedCode', '$savedLevel', '$savedTitle', '$savedPoints', '$savedCollege', '$savedUrl')");
+	$saveCheck = mysql_query("SELECT Position FROM savedCourses WHERE `Email` = '$userEmail'");
+	$k = 0;
+	$newPosition = 0;
+	while($row = mysql_fetch_assoc($saveCheck)) {
+		foreach ($row as $col => $val) {
+			if($val >= $newPosition){
+				$newPosition = $val + 1;
+				echo $newPosition;
+			}
+		}
+	}
+	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseCode`, `CourseLevel`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`, `Position`) VALUES ('$userEmail', '$savedCode', '$savedLevel', '$savedTitle', '$savedPoints', '$savedCollege', '$savedUrl', '$newPosition')");
 	echo "Course Saved!";
 }
 else{
