@@ -151,7 +151,7 @@ echo "</table>";
 	echo "<tr> <td> 6 </td> <td><input type='checkbox' name='courseLevel[]' class='county' value='6' /></td>";
 	echo "<td> 7 </td> <td><input type='checkbox' name='courseLevel[]' class='county' value='7' /></td>";
 	echo "<td> 8 </td> <td><input type='checkbox' name='courseLevel[]' class='county' value='8' /></td></tr>";
-	echo "</table></div><br /> <br />";
+	echo "</table></div><br />";
 
 
 	echo "<br /><button type='button' id='showCounties'>Show Counties</button>";
