@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 14, 2015 at 02:06 AM
+-- Generation Time: May 15, 2015 at 09:59 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -247,19 +247,20 @@ CREATE TABLE IF NOT EXISTS `savedCourses` (
   `CourseURL` text NOT NULL,
   `SavedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Position` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `savedCourses`
 --
 
 INSERT INTO `savedCourses` (`ID`, `Email`, `CourseCode`, `CourseLevel`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`, `SavedDate`, `Position`) VALUES
-(65, 'sean@gmail.com', 'DK863', 8, 'Communications in Creative Media', 300, 'DkIT', 'https://www.dkit.ie/cmedia', '2015-05-14 00:04:45', 4),
-(66, 'sean@gmail.com', 'DK864', 8, 'Film and TV Production', 300, 'DkIT', 'https://www.dkit.ie/filmtv', '2015-05-14 00:05:48', 3),
-(61, 'sean@gmail.com', 'DK770', 7, 'Theatre and Film Practice', 0, 'DkIT', 'https://www.dkit.ie/programmes/ba-theatre-film-practice', '2015-05-12 22:54:59', 5),
-(56, 'sean@gmail.com', 'DK650', 6, 'Higher Certificate in Arts in Culinary Arts', 240, 'DkIT', 'https://www.dkit.ie/courses/dk650', '2015-05-12 19:56:52', 1),
+(65, 'sean@gmail.com', 'DK863', 8, 'Communications in Creative Media', 300, 'DkIT', 'https://www.dkit.ie/cmedia', '2015-05-14 00:04:45', 6),
+(66, 'sean@gmail.com', 'DK864', 8, 'Film and TV Production', 300, 'DkIT', 'https://www.dkit.ie/filmtv', '2015-05-14 00:05:48', 5),
+(67, 'sean@gmail.com', 'DK860', 8, 'Applied Music (Restricted)', 0, 'DkIT', 'https://www.dkit.ie/courses/dk860', '2015-05-15 12:51:10', 3),
+(61, 'sean@gmail.com', 'DK770', 7, 'Theatre and Film Practice', 0, 'DkIT', 'https://www.dkit.ie/programmes/ba-theatre-film-practice', '2015-05-12 22:54:59', 1),
+(56, 'sean@gmail.com', 'DK650', 6, 'Higher Certificate in Arts in Culinary Arts', 240, 'DkIT', 'https://www.dkit.ie/courses/dk650', '2015-05-12 19:56:52', 2),
 (62, 'sean@gmail.com', 'DK812', 8, 'Marketing', 305, 'DkIT', 'https://www.dkit.ie/courses/dk812', '2015-05-12 22:55:01', 0),
-(64, 'sean@gmail.com', 'DK781', 7, 'Science - Applied Bioscience', 215, 'DkIT', 'https://www.dkit.ie/courses/dk781', '2015-05-13 23:54:24', 2);
+(64, 'sean@gmail.com', 'DK781', 7, 'Science - Applied Bioscience', 215, 'DkIT', 'https://www.dkit.ie/courses/dk781', '2015-05-13 23:54:24', 4);
 
 -- --------------------------------------------------------
 
@@ -289,15 +290,19 @@ CREATE TABLE IF NOT EXISTS `storedInterests` (
   `County11` text NOT NULL,
   `County12` text NOT NULL,
   `County13` text NOT NULL,
-  `County14` text NOT NULL
+  `County14` text NOT NULL,
+  `Level0` int(11) NOT NULL,
+  `Level1` int(11) NOT NULL,
+  `Level2` int(11) NOT NULL,
+  `Seed` text NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `storedInterests`
 --
 
-INSERT INTO `storedInterests` (`ID`, `Email`, `Interest0`, `Interest1`, `Interest2`, `NumCourse`, `CurrentCourse`, `County0`, `County1`, `County2`, `County3`, `County4`, `County5`, `County6`, `County7`, `County8`, `County9`, `County10`, `County11`, `County12`, `County13`, `County14`) VALUES
-(25, 'sean@gmail.com', 'Creativity', '', '', 18, 8, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `storedInterests` (`ID`, `Email`, `Interest0`, `Interest1`, `Interest2`, `NumCourse`, `CurrentCourse`, `County0`, `County1`, `County2`, `County3`, `County4`, `County5`, `County6`, `County7`, `County8`, `County9`, `County10`, `County11`, `County12`, `County13`, `County14`, `Level0`, `Level1`, `Level2`, `Seed`) VALUES
+(25, 'sean@gmail.com', 'Creativity', '', '', 5, 5, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 6, 7, 0, '47');
 
 -- --------------------------------------------------------
 
@@ -419,7 +424,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`ID`, `Username`, `Password`, `Year`, `Email`, `Salt`, `SubAmount`, `DailyFeedback`, `CurrentDate`, `PrevDate`) VALUES
-(26, 'sean', 'd1e72debd219906b7c4b7b96c2645a71929d1705d3c6f209b56bf145bdba5e9af605dd2a0646d70f62b3834cc4398d9c7ea8aa17a10afdae912b86c3f92169b7', 5, 'sean@gmail.com', '33a79ae6769b5302cf9421ce207711b4e02ec17f110130ea85c49b402fd0197dee07af1f0b9f805c92d0dde63ca414ecd836b7be399d2df0903452635dc176a5', 6, 1, '', '');
+(26, 'sean', 'd1e72debd219906b7c4b7b96c2645a71929d1705d3c6f209b56bf145bdba5e9af605dd2a0646d70f62b3834cc4398d9c7ea8aa17a10afdae912b86c3f92169b7', 5, 'sean@gmail.com', '3d74a5bde43c19810c7e20bc93bd0369317fb2d3149abad049ecbdafbd4d05a5618beafbc4cb85818f24519f0ff860e65db5b29c9facce3acd439070f4fec076', 6, 1, '', '');
 
 -- --------------------------------------------------------
 
@@ -433,7 +438,7 @@ CREATE TABLE IF NOT EXISTS `visitStats` (
   `LoginTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ExploreTime` text NOT NULL,
   `ExploreAmount` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `visitStats`
@@ -443,7 +448,9 @@ INSERT INTO `visitStats` (`ID`, `Email`, `LoginTime`, `ExploreTime`, `ExploreAmo
 (1, 'sean@gmail.com', '2015-05-11 12:10:38', '', 0),
 (2, 'sean@gmail.com', '2015-05-11 23:01:51', '', 0),
 (3, 'sean@gmail.com', '2015-05-12 15:30:09', '', 0),
-(4, 'sean@gmail.com', '2015-05-13 12:06:42', '', 0);
+(4, 'sean@gmail.com', '2015-05-13 12:06:42', '', 0),
+(5, 'sean@gmail.com', '2015-05-14 00:13:43', '', 0),
+(6, 'sean@gmail.com', '2015-05-15 12:50:33', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -526,7 +533,7 @@ ALTER TABLE `interestsTable`
 -- AUTO_INCREMENT for table `savedCourses`
 --
 ALTER TABLE `savedCourses`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=67;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
 --
 -- AUTO_INCREMENT for table `storedInterests`
 --
@@ -551,7 +558,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitStats`
 --
 ALTER TABLE `visitStats`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
