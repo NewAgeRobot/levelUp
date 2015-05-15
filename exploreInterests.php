@@ -10,7 +10,7 @@ $i = 0;
 if(isset($_POST['formSubmit'])){
 	$subAmount = count($_POST['subject_list']);
 	//echo $subAmount;
-	mysql_query("UPDATE `storedInterests` SET `interest0`='', `interest1`='', `interest2`='', `CurrentCourse` = '0', `NumCourse` = '0', `County0`='', `County1`='', `County2`='', `County3`='', `County4`='', `County5`='', `County6`='', `County7`='', `County8`='', `County9`='', `County10`='', `County11`='', `County12`='', `County13`='', `County14`='' WHERE `Email` = '$userEmail'");
+	mysql_query("UPDATE `storedInterests` SET `interest0`='', `interest1`='', `interest2`='', `CurrentCourse` = '0', `NumCourse` = '0', `County0`='', `County1`='', `County2`='', `County3`='', `County4`='', `County5`='', `County6`='', `County7`='', `County8`='', `County9`='', `County10`='', `County11`='', `County12`='', `County13`='', `County14`='', `Seed` = '0', `Level0` = '', `Level1` = '', `Level2` = '' WHERE `Email` = '$userEmail'");
 	for($k = 0; $k < $subAmount;$k++){
 		$currentSub = $_POST['subject_list'][$k];
 		$col = "interest" . $k;
@@ -26,14 +26,18 @@ if(isset($_POST['formSubmit'])){
 
 	}
 // THIS IS TO BE TURNED INTO THE CODE FOR SENDING WHAT LEVELS HAVE BEEN SELECTED
-	// $count = count($_POST['Counties']);
-	// //echo $count;
-	// for($j = 0; $j < $count;$j++){
-	// 	$currentCounty = $_POST['Counties'][$j];
-	// 	$countyNumber = "County" . $j;
-	// 	mysql_query("UPDATE `storedInterests` SET `$countyNumber` = '$currentCounty' WHERE `Email` = '$userEmail'");
+	$levelCount = count($_POST['courseLevel']);
+	//echo $count;
+	for($l = 0; $l < $levelCount;$l++){
+		$currentLevel = $_POST['courseLevel'][$l];
+		$levelNumber = "Level" . $l;
+		mysql_query("UPDATE `storedInterests` SET `$levelNumber` = '$currentLevel' WHERE `Email` = '$userEmail'");
 
-	// }
+	}
+
+	$randomSeed = rand(1, 50);
+	$randomSeed = (string)$randomSeed;
+	mysql_query("UPDATE `storedInterests` SET `Seed` = '$randomSeed' WHERE `Email` = '$userEmail'");
 
 	header('Location: showCourses.php');
 }
