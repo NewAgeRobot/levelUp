@@ -81,3 +81,15 @@ a:active {
   padding-top: 100px;
   margin: 0 auto;
 }
+
+.complete{
+    display:none;
+}
+
+.teaser{
+}
+
+.more{
+    color:navy;
+    cursor:pointer;
+}
