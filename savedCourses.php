@@ -53,6 +53,7 @@ array_multisort($sortedArray, SORT_ASC, $array);
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
 <script src="js/test.js"></script>
   <script language="Javascript" type="text/javascript">
 $(document).ready(function(){
