@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 15, 2015 at 09:59 PM
+-- Generation Time: May 16, 2015 at 02:51 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -247,13 +247,16 @@ CREATE TABLE IF NOT EXISTS `savedCourses` (
   `CourseURL` text NOT NULL,
   `SavedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Position` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `savedCourses`
 --
 
 INSERT INTO `savedCourses` (`ID`, `Email`, `CourseCode`, `CourseLevel`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`, `SavedDate`, `Position`) VALUES
+(70, 'sean@gmail.com', 'DK685', 6, 'Agriculture', 330, 'DkIT', 'https://www.dkit.ie/courses/dk685', '2015-05-16 00:48:41', 9),
+(69, 'sean@gmail.com', 'DK783', 7, 'Science - Pharmaceutical Science', 335, 'DkIT', 'https://www.dkit.ie/courses/dk783', '2015-05-16 00:48:40', 8),
+(68, 'sean@gmail.com', 'AD101', 8, '1st Year Art and Design (Common Entry) (Restricted)', 0, 'National College of Art and Design', 'http://www.ncad.ie/undergraduate/first-year/', '2015-05-16 00:48:08', 7),
 (65, 'sean@gmail.com', 'DK863', 8, 'Communications in Creative Media', 300, 'DkIT', 'https://www.dkit.ie/cmedia', '2015-05-14 00:04:45', 6),
 (66, 'sean@gmail.com', 'DK864', 8, 'Film and TV Production', 300, 'DkIT', 'https://www.dkit.ie/filmtv', '2015-05-14 00:05:48', 5),
 (67, 'sean@gmail.com', 'DK860', 8, 'Applied Music (Restricted)', 0, 'DkIT', 'https://www.dkit.ie/courses/dk860', '2015-05-15 12:51:10', 3),
@@ -302,7 +305,7 @@ CREATE TABLE IF NOT EXISTS `storedInterests` (
 --
 
 INSERT INTO `storedInterests` (`ID`, `Email`, `Interest0`, `Interest1`, `Interest2`, `NumCourse`, `CurrentCourse`, `County0`, `County1`, `County2`, `County3`, `County4`, `County5`, `County6`, `County7`, `County8`, `County9`, `County10`, `County11`, `County12`, `County13`, `County14`, `Level0`, `Level1`, `Level2`, `Seed`) VALUES
-(25, 'sean@gmail.com', 'Creativity', '', '', 5, 5, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 6, 7, 0, '47');
+(25, 'sean@gmail.com', 'Science', '', '', 15, 2, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '4');
 
 -- --------------------------------------------------------
 
@@ -416,15 +419,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `SubAmount` int(11) NOT NULL,
   `DailyFeedback` int(11) NOT NULL DEFAULT '1',
   `CurrentDate` text NOT NULL,
-  `PrevDate` text NOT NULL
+  `PrevDate` text NOT NULL,
+  `CoursesSaved` int(11) NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `Username`, `Password`, `Year`, `Email`, `Salt`, `SubAmount`, `DailyFeedback`, `CurrentDate`, `PrevDate`) VALUES
-(26, 'sean', 'd1e72debd219906b7c4b7b96c2645a71929d1705d3c6f209b56bf145bdba5e9af605dd2a0646d70f62b3834cc4398d9c7ea8aa17a10afdae912b86c3f92169b7', 5, 'sean@gmail.com', '3d74a5bde43c19810c7e20bc93bd0369317fb2d3149abad049ecbdafbd4d05a5618beafbc4cb85818f24519f0ff860e65db5b29c9facce3acd439070f4fec076', 6, 1, '', '');
+INSERT INTO `users` (`ID`, `Username`, `Password`, `Year`, `Email`, `Salt`, `SubAmount`, `DailyFeedback`, `CurrentDate`, `PrevDate`, `CoursesSaved`) VALUES
+(26, 'sean', 'd1e72debd219906b7c4b7b96c2645a71929d1705d3c6f209b56bf145bdba5e9af605dd2a0646d70f62b3834cc4398d9c7ea8aa17a10afdae912b86c3f92169b7', 5, 'sean@gmail.com', '3d74a5bde43c19810c7e20bc93bd0369317fb2d3149abad049ecbdafbd4d05a5618beafbc4cb85818f24519f0ff860e65db5b29c9facce3acd439070f4fec076', 6, 1, '', '', 10);
 
 -- --------------------------------------------------------
 
@@ -533,7 +537,7 @@ ALTER TABLE `interestsTable`
 -- AUTO_INCREMENT for table `savedCourses`
 --
 ALTER TABLE `savedCourses`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=71;
 --
 -- AUTO_INCREMENT for table `storedInterests`
 --

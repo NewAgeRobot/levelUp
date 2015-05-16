@@ -33,12 +33,14 @@ if($j == 0){
 		foreach ($row as $col => $val) {
 			if($val >= $newPosition){
 				$newPosition = $val + 1;
-				echo $newPosition;
+				// echo $newPosition;
 			}
 		}
 	}
 	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseCode`, `CourseLevel`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`, `Position`) VALUES ('$userEmail', '$savedCode', '$savedLevel', '$savedTitle', '$savedPoints', '$savedCollege', '$savedUrl', '$newPosition')");
 	echo "Course Saved!";
+	$newAmountSaved = ($user['CoursesSaved'] + 1);
+	mysql_query("UPDATE `users` SET `CoursesSaved` = '$newAmountSaved' WHERE `Email` = '$userEmail'");
 }
 else{
 	echo "Already saved this course!";

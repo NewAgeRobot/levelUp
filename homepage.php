@@ -1,5 +1,17 @@
+<?php
+/*
+badges for amount of courses saved
+*/
+include "connect.php";
+include "algor.php";
+if($logged == false){
+  header('Location: index.php');
+}
+$userEmail = $user['Email'];
+$amountSaved = $user['CoursesSaved'];
+?>
 <html lang="en">
- <head>
+<head>
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -48,7 +60,23 @@
         <div class="row">
           <div class="twelve column">
             <img class="resizeImage" src="images/homepage.jpg">
-          <em>Example of homepage</em>
+            <em>Example of homepage</em>
+          </div>
+          <div class="twelve column">
+            <?php
+              if ($amountSaved > 0){
+              $oneBadge = true;
+              echo "<img src='images/savedCourse1.png' height='50px' width='50px'>";
+              }
+              if ($amountSaved >= 5){
+              $fiveBadge = true;
+              echo "<img src='images/savedCourse2.png' height='50px' width='50px'>";
+              }
+              if ($amountSaved >= 10){
+              $tenBadge = true;
+              echo "<img src='images/savedCourse3.png' height='50px' width='50px'>";
+              }
+            ?>
           </div>
         </div>
       </div>

@@ -128,12 +128,12 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 	echo $prompts['Prompt'];
 ?>
 </div>
-          <div class="offset-by-four column">
+          <div class="offset-by-three column">
 <?php	echo "<form action='' method='post' name='subjectlisting'>";
 	
 	
 
-	echo "<table>";
+	echo "<table><tr> ";
 	$result = mysql_query("SELECT * FROM interestsTable");
 	$f = 0;
 	while($row = mysql_fetch_assoc($result)) {
@@ -141,9 +141,12 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 			if ($f++ < 9) continue;
 			else if($f > 31) break;
 			//use checktrue to query current interests, and make them checked if they exist
-			echo "<tr> <td> " . $col . "</td> <td>
+			echo "<td> " . $col . "</td> <td>
 			<input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $col . "'" . $checkTrue . " />
-		</td></tr>";
+		</td>";
+		if($f % 2){
+			echo "</tr><tr>";
+		}
 	}
 }
 
