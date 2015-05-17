@@ -503,7 +503,10 @@ $(function () { //change to have different name than container
         		plotShadow: false
         	},
         	title: {
-        		text: 'Interest enjoyment over time'
+        		text: 'Interest enjoyment over time',
+        		style: {
+	                color: '#FFF'
+	            }
         	},
         	tooltip: {
         		pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -518,6 +521,9 @@ $(function () { //change to have different name than container
         			showInLegend: true
         		}
         	},
+        	legend: {
+            backgroundColor: 'grey'
+        },
 
 
             // series: [{
@@ -579,7 +585,10 @@ $(function () { //change to have different name than container
         		plotShadow: false
         	},
         	title: {
-        		text: 'Subject enjoyment over time'
+        		text: 'Subject enjoyment over time',
+        		style: {
+	                color: '#FFF'
+	            }
         	},
         	tooltip: {
         		pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -594,6 +603,9 @@ $(function () { //change to have different name than container
         			showInLegend: true
         		}
         	},
+        	legend: {
+            backgroundColor: 'grey'
+        },
 
 
             // series: [{
@@ -664,7 +676,7 @@ $(function () { //change to have different name than container
     <div class="section hero">
     	<div class="container">
     		<div class="row">
-    			<div class="offset-by-two column">
+    			<div class="offset-by-one column">
           <!--<h4>These statistics show your enjoyment of interests and subjects over time. Might be a good idea to consider these when exploring courses!</h4>
           <img src="images/test.gif">
           <p><em>Example of feature</em></p>
