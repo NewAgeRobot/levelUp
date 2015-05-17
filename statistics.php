@@ -451,11 +451,14 @@ switch ($interestAmount){
 
 $interestTotals = mysql_fetch_assoc($interestQuery);
 
+// print_r($interestTotals);
+// print_r($subjectTotals);
+
 //errors when handling phrases with spaces
 
 ?>
 <html lang="en">
- <head>
+<head>
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -483,53 +486,164 @@ $interestTotals = mysql_fetch_assoc($interestQuery);
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
   <script type="text/javascript" src="js/canvasjs.min.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/data.js"></script>
+  <script src="http://code.highcharts.com/modules/drilldown.js"></script>
   <script type="text/javascript">
-		window.onload = function () {
-			var subjectChart = new CanvasJS.Chart("chartContainer", {
+$(function () { //change to have different name than container
 
-				title:{
-					text: "Overall Subject Enjoyment"              
-				},
-data: [//array of dataSeries              
-{ //dataSeries object
+	$(document).ready(function () {
 
-	/*** Change type "column" to "bar", "area", "line" or "pie"***/
-	type: "bar",
-	dataPoints: [
-	<?php
-	for($j = 1; $j <= $subjectAmount; $j++){
-		echo "{ label: '" . $subjectArray[$j] . " - " . $subjectTotals[$subjectArray[$j]] . "', y: " . $subjectTotals[$subjectArray[$j]] . "},";
-	} 
-	?>
-	]
-}
-]
+        // Build the chart
+        $('#interestChart').highcharts({
+        	chart: {
+        		backgroundColor: '#1b1b27',
+        		plotBackgroundColor: null,
+        		plotBorderWidth: null,
+        		plotShadow: false
+        	},
+        	title: {
+        		text: 'Interest enjoyment over time'
+        	},
+        	tooltip: {
+        		pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        	},
+        	plotOptions: {
+        		pie: {
+        			allowPointSelect: true,
+        			cursor: 'pointer',
+        			dataLabels: {
+        				enabled: false
+        			},
+        			showInLegend: true
+        		}
+        	},
+
+
+            // series: [{
+            //     type: 'pie',
+            //     name: 'Browser share',
+            //     data: [
+            //         [<?php echo "'" . $interest1 . "' , " . 5;?>],
+            //         ['IE',       26.8],
+            //         {
+            //             name: 'Chrome',
+            //             y: 12.8,
+            //             sliced: true,
+            //             selected: true
+            //         },
+            //         ['Safari',    8.5],
+            //         ['Opera',     6.2],
+            //         ['Others',   0.7]
+            //     ]
+            // }]
+
+            series: [{
+            	type: 'pie',
+            	name: 'Interest percentage',
+            	data: [
+            	<?php
+            	for($o = 1; $o <= $interestAmount; $o++){
+            		echo "['" . $interestsSorted[$o] . "' , " . $interestTotals[$interestsSorted[$o]] . "],";
+            	} 
+            	?>
+
+                    // ['IE',       26.8],
+                    // {
+                    //     name: 'Chrome',
+                    //     y: 12.8,
+                    //     sliced: true,
+                    //     selected: true
+                    // },
+                    // ['Safari',    8.5],
+                    // ['Opera',     6.2],
+                    // ['Others',   0.7]
+                    ]
+                }]
+            });
 });
-			var interestChart = new CanvasJS.Chart("chartContainer2", {
 
-				title:{
-					text: "Overall Interest Enjoyment"              
-				},
-data: [//array of dataSeries              
-{ //dataSeries object
-
-	/*** Change type "column" to "bar", "area", "line" or "pie"***/
-	type: "pie",
-	dataPoints: [
-	<?php
-	for($o = 1; $o <= $interestAmount; $o++){
-		echo "{ label: '" . $interestsSorted[$o] . " - " . $interestTotals[$interestsSorted[$o]] . "', y: " . $interestTotals[$interestsSorted[$o]] . "},";
-	} 
-	?>
-	]
-}
-]
 });
 
-			subjectChart.render();
-			interestChart.render();
-		}
-	</script>
+
+$(function () { //change to have different name than container
+
+	$(document).ready(function () {
+
+        // Build the chart
+        $('#subjectChart').highcharts({
+        	chart: {
+        		backgroundColor: '#1b1b27',
+        		plotBackgroundColor: null,
+        		plotBorderWidth: null,
+        		plotShadow: false
+        	},
+        	title: {
+        		text: 'Subject enjoyment over time'
+        	},
+        	tooltip: {
+        		pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        	},
+        	plotOptions: {
+        		pie: {
+        			allowPointSelect: true,
+        			cursor: 'pointer',
+        			dataLabels: {
+        				enabled: false
+        			},
+        			showInLegend: true
+        		}
+        	},
+
+
+            // series: [{
+            //     type: 'pie',
+            //     name: 'Browser share',
+            //     data: [
+            //         [<?php echo "'" . $interest1 . "' , " . 5;?>],
+            //         ['IE',       26.8],
+            //         {
+            //             name: 'Chrome',
+            //             y: 12.8,
+            //             sliced: true,
+            //             selected: true
+            //         },
+            //         ['Safari',    8.5],
+            //         ['Opera',     6.2],
+            //         ['Others',   0.7]
+            //     ]
+            // }]
+
+            series: [{
+            	type: 'pie',
+            	name: 'Interest percentage',
+            	data: [
+            	<?php
+            	for($o = 1; $o <= $subjectAmount; $o++){
+            		echo "['" . $subjectArray[$o] . "' , " . $subjectTotals[$subjectArray[$o]] . "],";
+            	} 
+            	?>
+
+                    // ['IE',       26.8],
+                    // {
+                    //     name: 'Chrome',
+                    //     y: 12.8,
+                    //     sliced: true,
+                    //     selected: true
+                    // },
+                    // ['Safari',    8.5],
+                    // ['Opera',     6.2],
+                    // ['Others',   0.7]
+                    ]
+                }]
+            });
+});
+
+});
+
+
+
+</script>
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -543,25 +657,23 @@ data: [//array of dataSeries
 
 
     <div id="navigationBar">
-      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
+    	<div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
+    	<nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
     </div>
 
     <div class="section hero">
-      <div class="container">
-        <div class="row">
-          <div class="offset-by-two column">
-          <h4>These statistics show your enjoyment of interests and subjects over time. Might be a good idea to consider these when exploring courses!</h4>
+    	<div class="container">
+    		<div class="row">
+    			<div class="offset-by-two column">
+          <!--<h4>These statistics show your enjoyment of interests and subjects over time. Might be a good idea to consider these when exploring courses!</h4>
           <img src="images/test.gif">
           <p><em>Example of feature</em></p>
-	<!--<div id="chartContainer" style="height: 300px; width: 100%;">
-	</div>
-	<div id="chartContainer2" style="height: 300px; width: 100%;">
-	</div> -->
-          </div>
-        </div>
-      </div>
-    </div>
+      </div>-->
+      <div id="interestChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+      <div id="subjectChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+  </div>
+</div>
+</div>
   <!-- End Document
   ––––––––––––––––––––––––––––––––––––––––––––––––––-->
 </body>
