@@ -29,6 +29,7 @@ if(isset($_POST['formSubmit'])){
   $fifth = $_POST['subjectList'][4];
   $sixth = $_POST['subjectList'][5];
   mysql_query("INSERT INTO `subjectFeedback` (`Date`, `Email`, `$first`, `$second`, `$third`, `$fourth`, `$fifth`, `$sixth`) VALUES ('$currentDay', '$userEmail', '6', '5', '4', '3', '2', '1')");
+  header('Location: statistics.php');
 };
 
 
@@ -124,7 +125,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
 
     <div id="navigationBar">
       <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
+      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Weekly Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
     </div>
 
     <div class="section hero">

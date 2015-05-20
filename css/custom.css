@@ -19,7 +19,7 @@
 }
 #navigationBar #logo {
   display: table-cell;
-  text-align: right;
+  text-align: left;
 }
 
 #navigationBar nav{

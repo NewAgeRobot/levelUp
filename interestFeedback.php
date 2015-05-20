@@ -26,6 +26,7 @@ if(isset($_POST['formSubmit'])){
   $second = $_POST['subjectList'][1];
   $third = $_POST['subjectList'][2];
   mysql_query("INSERT INTO `interestFeedback` (`Date`, `Email`, `$first`, `$second`, `$third`) VALUES ('$currentDay', '$userEmail', '1', '1', '1')");
+  header('Location: subjectFeedback.php');
 };
 ?>
 <html lang="en">
@@ -115,7 +116,7 @@ if(isset($_POST['formSubmit'])){
 
     <div id="navigationBar">
       <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
+      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Weekly Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
     </div>
 
     <div class="section hero">

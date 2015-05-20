@@ -96,8 +96,8 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
 
     <div id="navigationBar">
       <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Interest Feedback</a>&nbsp;&nbsp;<a href="subjectFeedback.php">Subject Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
-    </div>
+      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Weekly Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
+    </div></div>
 
     <div class="section hero">
       <div class="container">
