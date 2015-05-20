@@ -6,6 +6,16 @@ if($logged == false){
 }
 $userEmail = $user['Email'];
 $result = mysql_query("SELECT * FROM interestsTable");
+
+$currentLogin = mysql_query("SELECT * FROM visitStats WHERE `Email` = '$userEmail' AND `CurrentLogin` = '1'");
+
+while($row = mysql_fetch_array($currentLogin)){
+	$currentLoginTime = $row['LoginTime'];
+}
+
+print_r($currentLogin['LoginTime']);
+
+
 $i = 0;
 if(isset($_POST['formSubmit'])){
 	$subAmount = count($_POST['subject_list']);
@@ -37,6 +47,8 @@ if(isset($_POST['formSubmit'])){
 	$randomSeed = rand(1, 50);
 	$randomSeed = (string)$randomSeed;
 	mysql_query("UPDATE `storedInterests` SET `Seed` = '$randomSeed' WHERE `Email` = '$userEmail'");
+
+	mysql_query("UPDATE `visitStats` SET `ExploreAmount` = ExploreAmount + 1 WHERE `Email` = '$userEmail' AND `LoginTime` = '$currentLoginTime'");
 
 	header('Location: showCourses.php');
 }

@@ -23,7 +23,10 @@ if ($_POST['login']){
 		setcookie("c_salt", $salt, time() + 12 * 60 * 60, "/");
 		$userID = $user['ID'];
 		mysql_query("UPDATE `users` SET `Salt` = '$salt' WHERE `ID`='$userID'");
-    mysql_query("INSERT INTO `visitStats` (`Email`) VALUES ('$email')");
+
+
+    mysql_query("UPDATE `visitStats` SET `CurrentLogin` = '0' WHERE `Email`='$email'");
+    mysql_query("INSERT INTO `visitStats` (`Email`, `CurrentLogin`) VALUES ('$email', '1')");
 		header('Location: index.php');
 		//die("You are now logged in as $username!");
 	}
