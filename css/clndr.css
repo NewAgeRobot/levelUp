@@ -124,7 +124,7 @@ p {
   text-align: center;
   /*border-left: 1px solid #000000;
   border-top: 1px solid #000000;*/
-  color: #00;
+  color: #000;
 }
 .cal1 .clndr .clndr-table .header-days .header-day:last-child {
   /*border-right: 1px solid #000000;*/
@@ -175,6 +175,7 @@ p {
 .cal1 .clndr .clndr-table tr .day .day-contents {
   box-sizing: border-box;
   padding: 8px;
+  color: #1b1b1b;
   font-size: 12px;
   text-align: right;
 }

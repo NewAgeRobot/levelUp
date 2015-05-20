@@ -68,19 +68,27 @@
   "<% _.each(eventsThisMonth, function(event) { %>" +
      " <div class='event-item'>" +
        " <div class='event-item-name'><%= moment(event.date).format('DD/MM/YYYY') %> : <%= event.title %></div>" +
-      "  <div class='event-item-location'><%= event.location %></div>" +
      " </div>" +
     "<% }); %>" +
 "</div>";
 
-  "<div class='event-listing'>" +
-    "<div class='event-listing-title'>List of events</div>" +
-   "<% _.each(eventsThisMonth, function(event) { %>" +
-    "<div class='event-item'>" +
-        "<div class='event-item-name'><%= moment(event.date).format('DD/MM/YYYY') %> : <%= event.title %></div>" +
-    "</div>" +
-    "<% }); %>" +
-"</div>";
+//  "<div class='event-listing'>" +
+//   "<div class='event-listing-title'>EVENTS THIS MONTH</div>" +
+//   "<% _.each(eventsThisMonth, function(event) { %>" +
+//      " <div class='event-item'>" +
+//        " <div class='event-item-name'><%= moment(event.date).format('DD/MM/YYYY') %> : <%= event.title %></div>" +
+//      " </div>" +
+//     "<% }); %>" +
+// "</div>";
+
+//   "<div class='event-listing'>" +
+//     "<div class='event-listing-title'>List of events</div>" +
+//    "<% _.each(eventsThisMonth, function(event) { %>" +
+//     "<div class='event-item'>" +
+//         "<div class='event-item-name'><%= moment(event.date).format('DD/MM/YYYY') %> : <%= event.title %></div>" +
+//     "</div>" +
+//     "<% }); %>" +
+// "</div>";
 
   var pluginName = 'clndr';
 
