@@ -7,7 +7,7 @@
   line-height: 0;
   height: 0;
 }
-body{
+/*body{
   background-color: #f79941;
 }
 .clearfix {
@@ -21,11 +21,8 @@ html[xmlns] .clearfix {
 }
 .noselect {
   -webkit-user-select: none;
-  /* Chrome/Safari */
   -moz-user-select: none;
-  /* Firefox */
   -ms-user-select: none;
-  /* IE10+ */
 }
 h4 {
   width: 75%;
@@ -46,17 +43,22 @@ p {
   padding-bottom: 0.5em;
   border-bottom: 2px solid #414141;
   background: #f4f4f4;
-}
+}*/
 .cal1 {
   margin: 30px auto;
   max-width: 600px;
   font-family: 'Droid Sans Mono';
   font-size: 14px;
+  background-color: #f79941;
+  text-align: left;
+  padding: 15px;
 }
 .cal1 .clndr .clndr-controls {
   display: inline-block;
   width: 100%;
   position: relative;
+  color: #1b1b1b;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 .cal1 .clndr .clndr-controls .month {
@@ -82,7 +84,7 @@ p {
   /* IE10+ */
 }
 .cal1 .clndr .clndr-controls .clndr-control-button .clndr-next-button:hover {
-  background: #ddd;
+  color: #ddd;
 }
 .cal1 .clndr .clndr-controls .clndr-control-button .clndr-next-button.inactive {
   opacity: 0.5;
@@ -101,7 +103,7 @@ p {
   /* IE10+ */
 }
 .cal1 .clndr .clndr-controls .clndr-control-button .clndr-previous-button:hover {
-  background: #ddd;
+  color: #ddd;
 }
 .cal1 .clndr .clndr-controls .clndr-control-button .clndr-previous-button.inactive {
   opacity: 0.5;
