@@ -15,12 +15,11 @@ $l = 0;
 while($row = mysql_fetch_assoc($subjectScores)) {
 	foreach ($row as $col => $val) {
 		if ($col == 'ID' || $col == 'Date' || $col == 'Email') continue;
-		if($l <= $subjectAmount+1){
+
 			if ($val > 0) {
 				$subjectArray[] = $col;
+				// echo $col . "<br />";
 			}
-			$l++;
-		}
 	}
 }
 
@@ -77,6 +76,7 @@ switch ($subjectAmount){
 }
 
 $subjectTotals = mysql_fetch_assoc($subjectQuery);
+// echo $subjectTotals[$subjectArray[1]];
 
 
 
@@ -456,6 +456,8 @@ $interestTotals = mysql_fetch_assoc($interestQuery);
 
 //errors when handling phrases with spaces
 
+
+
 ?>
 <html lang="en">
 <head>
@@ -549,8 +551,8 @@ $(function () { //change to have different name than container
             	name: 'Interest percentage',
             	data: [
             	<?php
-            	for($o = 1; $o <= $interestAmount; $o++){
-            		echo "['" . $interestsSorted[$o] . "' , " . $interestTotals[$interestsSorted[$o]] . "],";
+            	for($o = 1; $o <= intval($interestAmount); $o++){
+            		echo "['" . $interestsSorted[$o] . "' , " . floatval($interestTotals[$interestsSorted[$o]]) . "],";
             	} 
             	?>
 
@@ -631,8 +633,8 @@ $(function () { //change to have different name than container
             	name: 'Interest percentage',
             	data: [
             	<?php
-            	for($o = 1; $o <= $subjectAmount; $o++){
-            		echo "['" . $subjectArray[$o] . "' , " . $subjectTotals[$subjectArray[$o]] . "],";
+            	for($o = 1; $o <= intval($subjectAmount); $o++){
+            		echo "['" . $subjectArray[$o] . "' , " . intval($subjectTotals[$subjectArray[$o]]) . "],";
             	} 
             	?>
 
