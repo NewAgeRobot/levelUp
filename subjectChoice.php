@@ -4,6 +4,9 @@ include "algor.php";
 if($logged == false){
 	header('Location: index.php');
 }
+if($user['CoursesPicked']){
+	header('Location: homepage.php');
+}
 
 //test with multiple records to make sure identifier for table records is enouguh/that it works fine.
 //sort out check for if they want to redo thier subject choice.
@@ -27,7 +30,7 @@ if(isset($_POST['formSubmit'])){
 					}
 				}
 			}
-			mysql_query("UPDATE `users` SET `SubAmount` = '$subAmount' WHERE `Email` = '$userEmail'");
+			mysql_query("UPDATE `users` SET `SubAmount` = '$subAmount', `CoursesPicked` = '1' WHERE `Email` = '$userEmail'");
 			header('Location: index.php');
 		}
 	}

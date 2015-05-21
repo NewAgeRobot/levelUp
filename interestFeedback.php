@@ -4,6 +4,9 @@ include "algor.php";
 if($logged == false){
   header('Location: index.php');
 }
+if(!$user['CoursesPicked']){
+  header('Location: subjectChoice.php');
+}
 $userEmail = $user['Email'];
 $result = mysql_query("SELECT `COLUMN_NAME` 
   FROM `INFORMATION_SCHEMA`.`COLUMNS` 

@@ -7,6 +7,9 @@ include "algor.php";
 if($logged == false){
   header('Location: index.php');
 }
+if(!$user['CoursesPicked']){
+  header('Location: subjectChoice.php');
+}
 $userEmail = $user['Email'];
 $amountSaved = $user['CoursesSaved'];
 ?>

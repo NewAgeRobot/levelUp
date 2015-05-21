@@ -4,6 +4,9 @@ include "algor.php";
 if($logged == false){
   header('Location: index.php');
 }
+if(!$user['CoursesPicked']){
+  header('Location: subjectChoice.php');
+}
 $userEmail = $user['Email'];
 $calendarGrab = mysql_query("SELECT * FROM  calendarDates");
 $numberOfEvents = 0;
