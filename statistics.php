@@ -13,6 +13,13 @@ $subjectAmount = $user['SubAmount'];
 $subjectScores = mysql_query("SELECT * FROM subjectFeedback WHERE `Email` = '$userEmail'");
 $subjectArray[] = array();
 
+if (mysql_num_rows($subjectScores) > 0) {
+	$noSubjects = 1;
+}
+else{
+	$noSubjects = 0;
+}
+
 $l = 0;
 
 while($row = mysql_fetch_assoc($subjectScores)) {
@@ -91,6 +98,13 @@ $subjectTotals = mysql_fetch_assoc($subjectQuery);
 
 $interestScores = mysql_query("SELECT * FROM interestFeedback WHERE `Email` = '$userEmail'");
 $interestArray[] = array();
+
+if (mysql_num_rows($interestScores) > 0) {
+	$noInterests = 1;
+}
+else{
+	$noInterests = 0;
+}
 
 while($row = mysql_fetch_assoc($interestScores)) {
 	foreach ($row as $col => $val) {
@@ -696,8 +710,20 @@ $(function () { //change to have different name than container
           <img src="images/test.gif">
           <p><em>Example of feature</em></p>
       </div>-->
-      <div id="interestChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-      <div id="subjectChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+      <?php 
+      	if ($noInterests) {
+      		echo "<div id='interestChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>";
+      	}
+      	else {
+      		echo "<p>You must fill out some feedback on your interests before we can display the statistics.</p>";
+      	}
+      	if ($noSubjects) {
+      		echo "<div id='subjectChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>";
+      	}
+      	else {
+      		echo "<p>You must fill out some feedback on your subjects before we can display the statistics.</p>";
+      	}
+      ?>
   </div>
 </div>
 </div>
