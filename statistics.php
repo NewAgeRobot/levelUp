@@ -496,7 +496,7 @@ $interestTotals = mysql_fetch_assoc($interestQuery);
   <script src="http://code.highcharts.com/modules/drilldown.js"></script>
   <script type="text/javascript">
 $(function () { //change to have different name than container
-
+	
 	$(document).ready(function () {
 
         // Build the chart
@@ -507,6 +507,7 @@ $(function () { //change to have different name than container
         		plotBorderWidth: null,
         		plotShadow: false
         	},
+        	colors: ['#00C5CD','#00E5EE','#00F5FF','#67E6EC','#00CDCD','#05EDFF','#70DBDB','#73B1B7','#79CDCD','#7AC5CD','#8EE5EE','#05B8CC','#98F5FF','#B0E0E6','#39B7CD','#0EBFE9','#C1F0F6','#5F9EA0','#00CED1','#97FFFF','#BBFFFF','#8DEEEE','#66CCCC'],
         	title: {
         		text: 'Interest enjoyment over time',
         		style: {
@@ -524,7 +525,11 @@ $(function () { //change to have different name than container
         				enabled: false
         			},
         			showInLegend: true
-        		}
+        		},
+        		series: {
+                	borderWidth: 0,
+                	shadow: false
+            	}
         	},
         	legend: {
             backgroundColor: 'grey'
@@ -589,6 +594,7 @@ $(function () { //change to have different name than container
         		plotBorderWidth: null,
         		plotShadow: false
         	},
+        	colors: ['#FA1D2F','#D41A1F','#F54D70','#FF0033','#CC4E5C','#F64D54','#FFB6C1','#F54D70','#FF82AB','#EEA2AD','#FFAEB9','#AF1E2D','#C82536','#B81324'],
         	title: {
         		text: 'Subject enjoyment over time',
         		style: {
@@ -606,7 +612,11 @@ $(function () { //change to have different name than container
         				enabled: false
         			},
         			showInLegend: true
-        		}
+        		},
+        		series: {
+                	borderWidth: 0,
+                	shadow: false
+            	}
         	},
         	legend: {
             backgroundColor: 'grey'
