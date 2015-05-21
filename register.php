@@ -8,12 +8,9 @@ if ($_POST['register']){
     $password = mysql_real_escape_string(hash("sha512", $_POST['password']));
     $year = ($_POST['year']);
     $email = mysql_real_escape_string($_POST['email']);
-    $check = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Username`='$username'"));
+    $check = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Email`='$email'"));
     if ($check != '0'){
-      die("That username already exists! Try another");
-    }
-    if(!ctype_alnum($username)){
-      die("Username can only contain letters");
+      die("That Email address is already in use.");
     }
     if(strlen($username) > 20){
       die("Username can't be more than 20 characters, sorry");
