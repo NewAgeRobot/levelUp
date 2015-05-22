@@ -61,12 +61,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 
 
 ?>
-
-<!--[if lt IE 7 ]> <html lang="en" class="ie ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="ie ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
 
 <meta charset="utf-8" />
@@ -82,6 +77,11 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 <script src="http://use.typekit.com/daz7uli.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/jquery-mobile.css" />
+<script src="js/jquery-mobile.js"></script>
+
+
+
   <script type="text/javascript">
 		var main = function(){
 			$("input[name='subject_list[]']:checkbox").click(function() {
@@ -143,63 +143,110 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 			<div class="main">
 				<div class="article">
 					<div class="header">
-						<h1 class="title"><a href="#">Tick up to 3 interests</a></h1>
+						<h1 class="title">Tick up to 3 interests</h1>
 					</div><!-- /end .header -->
 
 					<!-- http://www.gutenberg.org/files/31611/31611-h/31611-h.htm -->
 
 					<div class="intro">
-						<?php	echo "<form action='' method='post' name='subjectlisting'>";
+<?php	echo "<form action='' method='post' name='subjectlisting' data-ajax='false'>";
 	
 	
-
+	echo "<div id='subjectDiv'>";
+	echo "<fieldset data-role='controlgroup'>";
 	$result = mysql_query("SELECT * FROM interestsTable");
+	$counter = 0;
 	$f = 0;
 	while($row = mysql_fetch_assoc($result)) {
 		foreach ($row as $col => $val) {
 			if ($f++ < 9) continue;
 			else if($f > 31) break;
 			//use checktrue to query current interests, and make them checked if they exist
-			echo $col . "<input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $col . "'" . $checkTrue . " />";
-		if($f % 2){
-			echo "<br />";
+			echo "<input type='checkbox' name='subject_list[]' class='subjectClass' id='" . $col . "' value='" . $col . "'" . $checkTrue . " data-theme='b' />";
+			echo "<label for='" . $col . "'>" . $col . "</label>";
+			$counter++;
+			// if($counter == 3){
+			// 	$counter = 0;
+			// 	echo "</fieldset>";
+			// 	echo "<fieldset data-role='controlgroup' data-type='horizontal'>";
+			// }
 		}
 	}
-}
+	echo "</fieldset>";
+	echo "</div>";
 
 	echo "<br /><button type='button' id='showLevel'>Course Level</button>";
 
 	echo "<div id='levelTable' style='display:none;'>";
-	echo " 6 <input type='checkbox' name='courseLevel[]' class='county' value='6' />";
-	echo " 7 <input type='checkbox' name='courseLevel[]' class='county' value='7' />";
-	echo " 8 <input type='checkbox' name='courseLevel[]' class='county' value='8' />";
+	echo "<fieldset data-role='controlgroup' data-type='horizontal' data-theme='b'>";
+	echo "<input type='checkbox' name='courseLevel[]' class='county' id='6' value='6' />";
+	echo "<label for='6'>Level 6</label>";
+	echo "<input type='checkbox' name='courseLevel[]' class='county' id='7' value='7' />";
+	echo "<label for='7'>Level 7</label>";
+	echo "<input type='checkbox' name='courseLevel[]' class='county' id='8' value='8' />";
+	echo "<label for='8'>Level 8</label>";
+	echo "</fieldset>";
 	echo "</div><br />";
 
 
 	echo "<br /><button type='button' id='showCounties'>Show Counties</button>";
 
 	echo "<div id='countyTable' style='display:none;'>";
-	echo "  Louth  <input type='checkbox' name='Counties[]' class='county' value='Louth' />";
-	echo " Dublin  <input type='checkbox' name='Counties[]' class='county' value='Dublin' />";
-	echo " Cork  <input type='checkbox' name='Counties[]' class='county' value='Cork' />";
-	echo " Kildare  <input type='checkbox' name='Counties[]' class='county' value='Kildare' />";
-	echo " Galway  <input type='checkbox' name='Counties[]' class='county' value='Galway' />";
-	echo " Wexford  <input type='checkbox' name='Counties[]' class='county' value='Wexford' />";
-	echo "  Limerick  <input type='checkbox' name='Counties[]' class='county' value='Limerick' />";
-	echo " Sligo  <input type='checkbox' name='Counties[]' class='county' value='Sligo' />";
-	echo " Tipperary  <input type='checkbox' name='Counties[]' class='county' value='Tipperary' />";
-	echo " Roscommon  <input type='checkbox' name='Counties[]' class='county' value='Roscommon' />";
-	echo " Carlow  <input type='checkbox' name='Counties[]' class='county' value='Carlow' />";
-	echo " Mayo  <input type='checkbox' name='Counties[]' class='county' value='Mayo' /> ";
-	echo "  Waterford  <input type='checkbox' name='Counties[]' class='county' value='Waterford' />";
-	echo " Kerry  <input type='checkbox' name='Counties[]' class='county' value='Kerry' />";
-	echo " Clare  <input type='checkbox' name='Counties[]' class='county' value='Clare' />";
-	echo " Cavan  <input type='checkbox' name='Counties[]' class='county' value='Cavan' />";
+	echo "<fieldset data-role='controlgroup' data-type='horizontal' data-theme='b'>";
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Louth' value='Louth' />";
+	echo "<label for='Louth'>Louth</label>";
+
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Dublin' value='Dublin' />";
+	echo "<label for='Dublin'>Dublin</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Cork' value='Cork' />";
+	echo "<label for='Cork'>Cork</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Kildare' value='Kildare' />";
+	echo "<label for='Kildare'>Kildare</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Galway' value='Galway' />";
+	echo "<label for='Galway'>Galway</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Wexford' value='Wexford' />";
+	echo "<label for='Wexford'>Wexford</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Limerick' value='Limerick' />";
+	echo "<label for='Limerick'>Limerick</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Sligo' value='Sligo' />";
+	echo "<label for='Sligo'>Sligo</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Tipperary' value='Tipperary' />";
+	echo "<label for='Tipperary'>Tipperary</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Roscommon' value='Roscommon' />";
+	echo "<label for='Roscommon'>Roscommon</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Carlow' value='Carlow' />";
+	echo "<label for='Carlow'>Carlow</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Mayo' value='Mayo' />";
+	echo "<label for='Mayo'>Mayo</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Waterford' value='Waterford' />";
+	echo "<label for='Waterford'>Waterford</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Kerry' value='Kerry' />";
+	echo "<label for='Kerry'>Kerry</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Clare' value='Clare' />";
+	echo "<label for='Clare'>Clare</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Cavan' value='Cavan' />";
+	echo "<label for='Cavan'>Cavan</label>";
+	
+	echo "</fieldset>";
 	echo "</div><br /> <br />";
 
-echo "<input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
+echo "<input type='submit' id='submit' name='formSubmit' value='Submit'/>
 </form>";
-?>	
+?>
 
 					<!-- <div class="meta section">
 						<h1>Posted on 10 October 2010 by <cite><a href="http://www.gutenberg.org/ebooks/31611">Mari Wolf</a></cite></h1>
