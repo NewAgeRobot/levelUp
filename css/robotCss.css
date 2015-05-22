@@ -166,13 +166,20 @@ img {
 	display: block;
 }
 .nav-primary {
-	background: #1b1b27 url("../img/nav-bg.jpg");
+	background: #1b1b27;
 	font: bold 14px "pill-gothic-300mg-1","pill-gothic-300mg-2", Calibri, Candara, "Gill Sans", "Gill Sans MT", sans-serif;
 	padding: 1.2em 1em 1em;
 	text-transform: uppercase;
 	text-align: right;
 	top: 100px;
 	z-index: 99;
+}
+
+
+.smallMenu img{
+	position: absolute;
+    right: 325px;
+    top: 0px;
 }
 
 
@@ -492,10 +499,11 @@ html {
 	}
 	.nav-primary {
 		padding: 1.2em 0 1em;
+		padding-left: 30px;
 		margin-bottom: 20px;
 		top: auto;
-		right:0;
-		text-align: right;
+		left:0;
+		text-align: left;
 	}
 	.nav-primary:after {
 		-moz-box-shadow: -1px 1px 0 #484852, -2px 2px 0 #484852, -3px 3px 0 #484852, -4px 4px 0 #484852, -5px 5px 0 #484852, -6px 6px 0 #484852, -7px 7px 0 #484852, -8px 8px 0 #484852, -9px 9px 0 #484852, -10px 10px 0 #484852, -11px 11px 0 #484852;
@@ -513,15 +521,38 @@ html {
 		position: absolute;
 		bottom:0;
 	}
+	.smallMenu img{
+	    right: 250px;
+	}
+	.lede{
+		z-index: 50;
+	}
 }
 
 /*
 	Nav wrap fix
 */
+@media screen and (max-width: 655px) {
+	
+	.smallMenu img{
+	    right: 200px;
+	}
+	.lede{
+		z-index: 50;
+	}
+}
+
+
 @media screen and (max-width: 520px) {
 	
 	.bigMenu {
 		display: none;
+	}
+	.smallMenu img{
+	    right: 100px;
+	}
+	.lede{
+		z-index: 50;
 	}
 }
 
@@ -541,6 +572,12 @@ html {
 	.bigMenu {
 		display: none;
 	}
+	.smallMenu img{
+	    right: 100px;
+	}
+	.lede{
+		z-index: 50;
+	}
 }
 
 /*
@@ -552,6 +589,12 @@ html {
 	}
 	.bigMenu {
 		display: none;
+	}
+	.smallMenu img{
+	    right: 100px;
+	}
+	.lede{
+		z-index: 50;
 	}
 }
 
@@ -681,3 +724,44 @@ html {
 .ie .lede {
 	zoom: 1;
 }
+
+
+.cd-primary-nav {
+  /* by default it's hidden - on top of the viewport */
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateY(-100%);
+  transition-property: transform;
+  transition-duration: 0.4s;
+}
+ 
+.cd-primary-nav.is-visible {
+  transform: translateY(0);
+}
+
+.cd-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  height: 80px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+ 
+.cd-header.is-fixed {
+  /* when the user scrolls down, we hide the header right above the viewport */
+  position: fixed;
+  top: -80px;
+  background-color: rgba(2, 23, 37, 0.96);
+  transition: transform 0.3s;
+}
+ 
+.cd-header.is-visible {
+  /* if the user changes the scrolling direction, we show the header */
+  transform: translate3d(0, 100%, 0);
+}
+
