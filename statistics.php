@@ -541,6 +541,8 @@ $(function () { //change to have different name than container
         			showInLegend: true
         		},
         		series: {
+                	// borderColor: '#00E5EE',
+                	// borderWidth: 1,
                 	borderWidth: 0,
                 	shadow: false
             	}
@@ -628,6 +630,8 @@ $(function () { //change to have different name than container
         			showInLegend: true
         		},
         		series: {
+        			// borderColor: '#F54D70',
+           //      	borderWidth: 1,
                 	borderWidth: 0,
                 	shadow: false
             	}

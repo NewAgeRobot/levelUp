@@ -1,0 +1,46 @@
+body{
+	background-color: #2f3945;
+}
+
+nav {
+	background-color: #1b1b27;
+	text-align:right;
+	height: 100px;
+}
+
+#logo{
+	background-color: #ff0000;
+	float:left;
+}
+nav .navLink{
+	color: #fff;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	left:-2px;
+}
+
+#first{
+	border-bottom: 10px solid #d2ff9e;
+	left:-2px;
+}
+#second{
+	border-bottom: 10px solid #f1b78f;
+}
+#third{
+	border-bottom: 10px solid #ed7d7c;
+}
+#fourth{
+	border-bottom: 10px solid #a1e9f4;
+}
+#fifth{
+	border-bottom: 10px solid #e3aef8;
+}
+#sixth{
+	border-bottom: 10px solid #f7f08a;
+}
+
+a:link { color: #fff;text-decoration: none}
+a:visited { color: #fff;text-decoration: none}
+a:hover { color: #fff;text-decoration: none}
+a:active { color: #fff;text-decoration: none}
