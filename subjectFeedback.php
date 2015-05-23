@@ -42,31 +42,31 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
  <html lang="en">
  <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Level Up</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta charset="utf-8" />
+  <title>LevelUp</title>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="DC.creator" content="Ethan Marcotte - http://ethanmarcotte.com" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="A demonstration site for Ethan Marcotte's book, RESPONSIVE WEB DESIGN" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-
-  <!-- Scripts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="http://use.typekit.com/daz7uli.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="css/jquery-mobile.css" />
+  <script src="js/jquery-mobile.js"></script>
+  <link rel="stylesheet" href="css/dropit.css" />
+  <script src="js/dropit.js"></script>
+  <script src="js/redirect.js"></script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.menu').dropit();
+    });
+  </script>
   <script language="Javascript" type="text/javascript">
     var main = function(){
       var arr  = [];
@@ -114,33 +114,60 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
     $(document).ready(main);
 
   </script>
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
 </head>
+
 <body>
 
-    <!-- Primary Page Layout
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="site">
+
+    <div class="page">
+
+      
+      <h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1>
+
+      <ul class="nav nav-primary bigMenu">
+        <li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>Explore</a></li>
+        <li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>Weekly Feedback</a></li>
+        <li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>Statistics</a></li>
+        <li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>Testimonials</a></li>
+        <li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>Saved Courses</a></li>
+        <li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>Log Out</a></li>
+      </ul><!-- /end ul#nav-primary.nav -->
+
+      
+      <ul class="nav nav-primary smallMenu">
+        <img src="images/text-logo.png"></li><ul class="menu">
+        <li>
+          <a href="#">&#9776; Menu</a>
+          <ul>
+            <li><a href="exploreInterests.php" data-ajax='false'><img src="images/explore-icon.png">Explore</a></li>
+            <li><a href="interestFeedback.php" data-ajax='false'><img src="images/feedback-icon.png">Weekly Feedback</a></li>
+            <li><a href="statistics.php" data-ajax='false'><img src="images/stats-icon.png">Statistics</a></li>
+            <li><a href="testimonials.php" data-ajax='false'><img src="images/testimonials-icon.png">Testimonials</a></li>
+            <li><a href="savedCourses.php" data-ajax='false'><img src="images/saved-icon.png">Saved Courses</a></li>
+            <li><a href="logout.php" data-ajax='false'><img src="images/account-icon.png">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </ul><!-- /end ul#nav-primary.nav -->
 
 
+    
+    <hr />
 
-    <div id="navigationBar">
-      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Weekly Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
-    </div>
+    <div class="blog section">
+      <h1 class="lede"><?php echo $prompts['Prompt']; ?></h4>
+      </h1>
 
-    <div class="section hero">
-      <div class="container">
-        <div class="row">
-          <div class="offset-by-one column">
-          <h4>Rank your six favourite subjects to keep track of your enjoyment. Check out the statistics page to see what you liked all year round!</h4>
-          <?php echo $prompts['Prompt']; ?>
-          </div>
-          <div class="offset-by-five column">
-            
-            <form action='' method='post' name='subjectFavourites' class = 'formText'>
+      <div class="main">
+        <div class="article">
+          <div class="header">
+            <h1 class="title">Rank your six favourite subjects to keep track of your enjoyment. Check out the statistics page to see what you liked all year round!</h1>
+          </div><!-- /end .header -->
+
+          <div class="intro">
+
+            <form action='' method='post' name='subjectFavourites' class = 'formText' data-ajax='false'>
               <select class="subjectClass" id="first" name="subjectList[]">
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
@@ -148,8 +175,6 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 }
                 ?>
               </select>
-              <br />
-              <br />
               <select class="subjectClass" id="second" name="subjectList[]">
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
@@ -157,8 +182,6 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 }
                 ?>
               </select>
-              <br />
-              <br />
               <select class="subjectClass" id="third" name="subjectList[]">
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
@@ -166,8 +189,6 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 }
                 ?>
               </select>
-              <br />
-              <br />
               <select class="subjectClass" id="fourth" name="subjectList[]">
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
@@ -175,8 +196,6 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 }
                 ?>
               </select>
-              <br />
-              <br />
               <select class="subjectClass" id="fifth" name="subjectList[]">
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
@@ -184,8 +203,6 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 }
                 ?>
               </select>
-              <br />
-              <br />
               <select class="subjectClass" id="sixth" name="subjectList[]">
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
@@ -193,15 +210,26 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 }
                 ?>
               </select>
-              <br />
-              <br />
-              <input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  <!-- End Document
-  ––––––––––––––––––––––––––––––––––––––––––––––––––-->
+
+              <div class="meta section">
+                
+                <input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
+              </form>
+            </div> <!-- /end .meta.section -->
+          </div><!-- /end .article -->
+        </div><!-- /end .main -->
+      </div><!-- /end .blog.section -->
+
+      <div id="footer">
+      <!-- <p>Images &copy; their respective copyright holders.</p>
+
+      <p>The design and code is &copy; 2014 <a href="http://unstoppablerobotninja.com/">Ethan Marcotte</a>, supporting his book <cite><a href="http://www.abookapart.com/products/responsive-web-design">Responsive Web Design</a></cite>.</p>
+
+      <p>Beep boop beep.</p> -->
+    </div><!-- /end #footer -->
+  </div><!-- /end .page -->
+
+</div><!-- /end .site -->
+
 </body>
 </html>

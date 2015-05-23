@@ -19,7 +19,7 @@ $savedUrl = $_POST["url"];
 // echo $savedCourse;
 
 //run a check of the current alotment of saved courses for this email address, if the current one doesn't exist then add it
-$saveCheck = mysql_query("SELECT CourseTitle FROM savedCourses WHERE `Email` = '$userEmail'");
+$saveCheck = mysql_query("SELECT CourseCode FROM savedCourses WHERE `Email` = '$userEmail'");
 $j = 0;
 while($row = mysql_fetch_assoc($saveCheck)) {
 	foreach ($row as $col => $val) {

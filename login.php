@@ -4,92 +4,151 @@ error_reporting(E_ALL);
 include "connect.php";
 include "algor.php";
 if($logged == true){
-	die("You are already logged in!");
-	echo "<h1>you're logged in!</h1>";
+  die("You are already logged in!");
+  echo "<h1>you're logged in!</h1>";
 }
 if ($_POST['login']){
-	if($_POST['email'] && $_POST['password']){
-		$email = mysql_real_escape_string($_POST['email']);
-		$password = mysql_real_escape_string(hash("sha512", $_POST['password']));
-		$user = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Email`='$email'")); //get user by their email
-		if($user == '0'){
-			die("That account doesn't exist, sorry!");
-		}
-		if( $user['Password'] != $password){
-			die("Incorrect password, sorry brah");
-		}
-		$salt = hash("sha512", rand() . rand() . rand());
-		setcookie("c_user", hash("sha512", $email), time() + 12 * 60 * 60, "/");
-		setcookie("c_salt", $salt, time() + 12 * 60 * 60, "/");
-		$userID = $user['ID'];
-		mysql_query("UPDATE `users` SET `Salt` = '$salt' WHERE `ID`='$userID'");
+  if($_POST['email'] && $_POST['password']){
+    $email = mysql_real_escape_string($_POST['email']);
+    $password = mysql_real_escape_string(hash("sha512", $_POST['password']));
+    $user = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Email`='$email'")); //get user by their email
+    if($user == '0'){
+      die("That account doesn't exist, sorry!");
+    }
+    if( $user['Password'] != $password){
+      die("Incorrect password, sorry brah");
+    }
+    $salt = hash("sha512", rand() . rand() . rand());
+    setcookie("c_user", hash("sha512", $email), time() + 12 * 60 * 60, "/");
+    setcookie("c_salt", $salt, time() + 12 * 60 * 60, "/");
+    $userID = $user['ID'];
+    mysql_query("UPDATE `users` SET `Salt` = '$salt' WHERE `ID`='$userID'");
 
 
     mysql_query("UPDATE `visitStats` SET `CurrentLogin` = '0' WHERE `Email`='$email'");
     mysql_query("INSERT INTO `visitStats` (`Email`, `CurrentLogin`) VALUES ('$email', '1')");
-		header('Location: index.php');
-		//die("You are now logged in as $username!");
-	}
+    header('Location: index.php');
+    //die("You are now logged in as $username!");
+  }
 };
 ?>
 <html lang="en">
- <head>
+<head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Level Up</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta charset="utf-8" />
+  <title>LevelUp</title>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="DC.creator" content="Ethan Marcotte - http://ethanmarcotte.com" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="A demonstration site for Ethan Marcotte's book, RESPONSIVE WEB DESIGN" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-
-  <!-- Scripts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="http://use.typekit.com/daz7uli.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/jquery-mobile.css" />
+  <script src="js/jquery-mobile.js"></script>
+  <link rel="stylesheet" href="css/dropit.css" />
+  <script src="js/dropit.js"></script>
+  <script src="js/redirect.js"></script>
 
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.menu').dropit();
+    });
+  </script>
 </head>
+
 <body>
 
-    <!-- Primary Page Layout
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="site">
+
+    <div class="page">
 
 
+      <h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1>
 
-    <div id="navigationBar">
-      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div></div>
+      <ul class="nav nav-primary bigMenu">
+        <li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>Explore</a></li>
+        <li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>Weekly Feedback</a></li>
+        <li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>Statistics</a></li>
+        <li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>Testimonials</a></li>
+        <li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>Saved Courses</a></li>
+        <li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>Log Out</a></li>
+      </ul><!-- /end ul#nav-primary.nav -->
 
-    <div class="section hero">
-      <div class="container">
-        <div class="row">
-          <div class="offset-by-five column">
- 	<form action="" method="post">
-	<table>
-  <tr><td>email:</td><td><input type="text" name="email" class="formText"></td></tr>
-	<tr><td>password: </td><td><input type="password" name="password" class="formText"></td></tr></table><br />
-	<input type="submit" name="login" value="Log in">
-	</form>
-          </div>
-        </div>
-      </div>
-    </div>
-  <!-- End Document
-  ––––––––––––––––––––––––––––––––––––––––––––––––––-->
+
+      <ul class="nav nav-primary smallMenu">
+        <img src="images/text-logo.png"></li><ul class="menu">
+        <li>
+          <a href="#">&#9776; Menu</a>
+          <ul>
+            <li><a href="exploreInterests.php" data-ajax='false'><img src="images/explore-icon.png">Explore</a></li>
+            <li><a href="interestFeedback.php" data-ajax='false'><img src="images/feedback-icon.png">Weekly Feedback</a></li>
+            <li><a href="statistics.php" data-ajax='false'><img src="images/stats-icon.png">Statistics</a></li>
+            <li><a href="testimonials.php" data-ajax='false'><img src="images/testimonials-icon.png">Testimonials</a></li>
+            <li><a href="savedCourses.php" data-ajax='false'><img src="images/saved-icon.png">Saved Courses</a></li>
+            <li><a href="logout.php" data-ajax='false'><img src="images/account-icon.png">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </ul><!-- /end ul#nav-primary.nav -->
+
+
+    
+    <hr />
+
+    <div class="blog section">
+      <h1 class="lede"></h1>
+
+      <div class="main">
+        <div class="article">
+          <div class="header">
+            <h1 class="title"></h1>
+          </div><!-- /end .header -->
+
+          <div class="intro">
+            <form action="" method="post" data-ajax='false'>
+              <table>
+                <tr>
+                <td>
+                Email:
+                </td>
+                <td>
+                <input type="text" name="email">
+                </td>
+                </tr>
+                <tr>
+                <td>
+                Password:
+                </td>
+                <td>
+                <input type="password" name="password">
+                </td>
+                </tr>
+              </table>
+
+              <div class="meta section">
+                <input type="submit" name="login" value="Log in">
+              </form>
+            </div> <!-- /end .meta.section -->
+          </div><!-- /end .article -->
+        </div><!-- /end .main -->
+      </div><!-- /end .blog.section -->
+
+      <div id="footer">
+      <!-- <p>Images &copy; their respective copyright holders.</p>
+
+      <p>The design and code is &copy; 2014 <a href="http://unstoppablerobotninja.com/">Ethan Marcotte</a>, supporting his book <cite><a href="http://www.abookapart.com/products/responsive-web-design">Responsive Web Design</a></cite>.</p>
+
+      <p>Beep boop beep.</p> -->
+    </div><!-- /end #footer -->
+  </div><!-- /end .page -->
+
+</div><!-- /end .site -->
+
 </body>
 </html>

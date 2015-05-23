@@ -16,103 +16,120 @@ $amountSaved = $user['CoursesSaved'];
 <html lang="en">
 <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Level Up</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta charset="utf-8" />
+  <title>LevelUp</title>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="DC.creator" content="Ethan Marcotte - http://ethanmarcotte.com" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="A demonstration site for Ethan Marcotte's book, RESPONSIVE WEB DESIGN" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
-  <!-- <link rel="stylesheet" href="css/skeleton.css"> -->
-  <!-- <link rel="stylesheet" href="css/custom.css"> -->
-  <link rel="stylesheet" href="css/clndr.css">
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-
-  <!-- Scripts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="http://use.typekit.com/daz7uli.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
-
+  <link rel="stylesheet" href="css/jquery-mobile.css" />
+  <script src="js/jquery-mobile.js"></script>
+  <link rel="stylesheet" href="css/dropit.css" />
+  <script src="js/dropit.js"></script>
+  <script src="js/redirect.js"></script>
+  <link rel="stylesheet" href="css/clndr.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.js"></script>
 
   <script language="Javascript" type="text/javascript">
 
-       var eventsArray = [
-        { date: moment().format('2015-11-05'), title: 'CAO online application & Change of Course Choices facilities open.' },
-        { date: moment().format('2015-1-20'), title: 'CAO - Apply before this date to avail of discounted fee of €25' },
-        { date: moment().format('2015-02-01'), title: 'CAO - Normal closing date for applications - 5:15pm' },
-        { date: moment().format('2015-02-05'), title: 'CAO - Change of Course Choices online facility opens - €10 fee' },
-        { date: moment().format('2015-02-15'), title: 'CAO - All Paper Applicants should have received a Statement of Course Choices by this date' },
+   var eventsArray = [
+   { date: moment().format('2015-11-05'), title: 'CAO online application & Change of Course Choices facilities open.' },
+   { date: moment().format('2015-1-20'), title: 'CAO - Apply before this date to avail of discounted fee of €25' },
+   { date: moment().format('2015-02-01'), title: 'CAO - Normal closing date for applications - 5:15pm' },
+   { date: moment().format('2015-02-05'), title: 'CAO - Change of Course Choices online facility opens - €10 fee' },
+   { date: moment().format('2015-02-15'), title: 'CAO - All Paper Applicants should have received a Statement of Course Choices by this date' },
 
-        { date: moment().format('2015-02-28'), title: 'HPAT Test -  Undergraduate Entry to Medicine' },
-        { date: moment().format('2015-03-01'), title: 'CAO - Change of Course Choices CLOSES - 5:15pm' },
-        { date: moment().format('2015-03-01'), title: 'CAO - Final completion date for online HEAR/DARE forms - 5:15pm' },
-        { date: moment().format('2015-04-01'), title: 'CAO - Latest date for HEAR/DARE supporting documentation to arrive - 5:15pm' },
-        { date: moment().format('2015-05-01'), title: 'CAO - Last day for LATE applications - 5:15pm' },
+   { date: moment().format('2015-02-28'), title: 'HPAT Test -  Undergraduate Entry to Medicine' },
+   { date: moment().format('2015-03-01'), title: 'CAO - Change of Course Choices CLOSES - 5:15pm' },
+   { date: moment().format('2015-03-01'), title: 'CAO - Final completion date for online HEAR/DARE forms - 5:15pm' },
+   { date: moment().format('2015-04-01'), title: 'CAO - Latest date for HEAR/DARE supporting documentation to arrive - 5:15pm' },
+   { date: moment().format('2015-05-01'), title: 'CAO - Last day for LATE applications - 5:15pm' },
 
-        { date: moment().format('2015-05-05'), title: 'CAO - Online Change of Mind facility opens (free)' },
-        { date: moment().format('2015-05-15'), title: 'CAO - All LATE Paper Applicants should have received a Statement of Course Choices by this date' },
-        { date: moment().format('2015-05-31'), title: 'CAO - All applicants should have received a Statement of Application Record by this date' },
-        { date: moment().format('2015-07-01'), title: 'CAO - Change of Mind  closes - 5:15pm' },
-        { date: moment().format('2015-08-15'), title: 'Leaving Certificate results issued' },
+   { date: moment().format('2015-05-05'), title: 'CAO - Online Change of Mind facility opens (free)' },
+   { date: moment().format('2015-05-15'), title: 'CAO - All LATE Paper Applicants should have received a Statement of Course Choices by this date' },
+   { date: moment().format('2015-05-31'), title: 'CAO - All applicants should have received a Statement of Application Record by this date' },
+   { date: moment().format('2015-07-01'), title: 'CAO - Change of Mind  closes - 5:15pm' },
+   { date: moment().format('2015-08-15'), title: 'Leaving Certificate results issued' },
 
-        { date: moment().format('2015-08-17'), title: 'CAO - Round 1 offers issued' },
-        { date: moment().format('2015-08-24'), title: 'CAO - Round 1 acceptance closing date - 5:15pm' },
-        { date: moment().format('2015-08-26'), title: 'CAO - Round 2 offers issued' },
-        { date: moment().format('2015-09-02'), title: 'CAO - Round 2 acceptance closing date - 5:15pm' }
-      ];
+   { date: moment().format('2015-08-17'), title: 'CAO - Round 1 offers issued' },
+   { date: moment().format('2015-08-24'), title: 'CAO - Round 1 acceptance closing date - 5:15pm' },
+   { date: moment().format('2015-08-26'), title: 'CAO - Round 2 offers issued' },
+   { date: moment().format('2015-09-02'), title: 'CAO - Round 2 acceptance closing date - 5:15pm' }
+   ];
 
-      </script>
+ </script>
 
-  <script type="text/javascript" src="js/clndr.js"></script>
+ <script type="text/javascript" src="js/clndr.js"></script>
 
-  <script src="js/clndrTest.js"></script>
+ <script src="js/clndrTest.js"></script>
 
-  <script type="text/javascript">
-  // $(document).ready(function () {
-  //   $('#testCalendar').clndr();
-  // });
-  </script>
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
+ <script type="text/javascript">
+  $(document).ready(function() {
+    $('.menu').dropit();
+  });
+</script>
 </head>
+
 <body>
 
-    <!-- Primary Page Layout
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="site">
+
+    <div class="page">
+
+      
+      <h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1>
+
+      <ul class="nav nav-primary bigMenu">
+        <li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>Explore</a></li>
+        <li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>Weekly Feedback</a></li>
+        <li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>Statistics</a></li>
+        <li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>Testimonials</a></li>
+        <li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>Saved Courses</a></li>
+        <li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>Log Out</a></li>
+      </ul><!-- /end ul#nav-primary.nav -->
+
+      
+      <ul class="nav nav-primary smallMenu">
+        <img src="images/text-logo.png"></li><ul class="menu">
+        <li>
+          <a href="#">&#9776; Menu</a>
+          <ul>
+            <li><a href="exploreInterests.php" data-ajax='false'><img src="images/explore-icon.png">Explore</a></li>
+            <li><a href="interestFeedback.php" data-ajax='false'><img src="images/feedback-icon.png">Weekly Feedback</a></li>
+            <li><a href="statistics.php" data-ajax='false'><img src="images/stats-icon.png">Statistics</a></li>
+            <li><a href="testimonials.php" data-ajax='false'><img src="images/testimonials-icon.png">Testimonials</a></li>
+            <li><a href="savedCourses.php" data-ajax='false'><img src="images/saved-icon.png">Saved Courses</a></li>
+            <li><a href="logout.php" data-ajax='false'><img src="images/account-icon.png">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </ul><!-- /end ul#nav-primary.nav -->
 
 
+    
+    <hr />
 
-    <div id="navigationBar">
-      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Weekly Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
-    </div>
+    <div class="blog section">
+      <h1 class="lede"></h1>
 
-    <div class="section">
-      <div class="container">
-        <div class="row">
-     <!--      <div class="twelve column">
-            <img class="resizeImage" src="images/homepage.jpg">
-          </div> -->
-          <div class="twelve column">
-           <!-- <div class="twelve column" id="testCalendar"></div> -->
-           <div id="pass-in-events" class="cal1"></div>
-          </div>
-            <div class="twelve column">
+      <div class="main">
+        <div class="article">
+          <div class="header">
+            <h1 class="title"></h1>
+          </div><!-- /end .header -->
+
+          <div class="intro">
+            <div id="pass-in-events" class="cal1"></div>
+            <div class="meta section">
               <?php
               if ($amountSaved > 0){
                 $oneBadge = true;
@@ -127,10 +144,21 @@ $amountSaved = $user['CoursesSaved'];
                 echo "<img src='images/savedCourse3.png' height='50px' width='50px'>";
               }
               ?>
-            </div>
-        </div>
-      </div>
-  <!-- End Document
-  ––––––––––––––––––––––––––––––––––––––––––––––––––-->
+            </div> <!-- /end .meta.section -->
+          </div><!-- /end .article -->
+        </div><!-- /end .main -->
+      </div><!-- /end .blog.section -->
+
+      <div id="footer">
+      <!-- <p>Images &copy; their respective copyright holders.</p>
+
+      <p>The design and code is &copy; 2014 <a href="http://unstoppablerobotninja.com/">Ethan Marcotte</a>, supporting his book <cite><a href="http://www.abookapart.com/products/responsive-web-design">Responsive Web Design</a></cite>.</p>
+
+      <p>Beep boop beep.</p> -->
+    </div><!-- /end #footer -->
+  </div><!-- /end .page -->
+
+</div><!-- /end .site -->
+
 </body>
 </html>
