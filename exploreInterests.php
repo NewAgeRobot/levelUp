@@ -62,33 +62,36 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 
 ?>
 <html lang="en">
- <head>
+<head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Level Up</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+<meta charset="utf-8" />
+<title>LevelUp</title>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="DC.creator" content="Ethan Marcotte - http://ethanmarcotte.com" />
+<meta name="robots" content="index, follow" />
+<meta name="description" content="A demonstration site for Ethan Marcotte's book, RESPONSIVE WEB DESIGN" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-
-  <!-- Scripts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="http://use.typekit.com/daz7uli.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/jquery-mobile.css" />
+<script src="js/jquery-mobile.js"></script>
+<link rel="stylesheet" href="css/dropit.css" />
+<script src="js/dropit.js"></script>
+<script src="js/redirect.js"></script>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.menu').dropit();
+});
+</script>
+
+
+
   <script type="text/javascript">
 		var main = function(){
 			$("input[name='subject_list[]']:checkbox").click(function() {
@@ -115,95 +118,176 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 			$('#levelTable').toggle();
 		});
 	</script>
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
+
 <body>
 
-    <!-- Primary Page Layout
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="site">
+
+	<div class="page">
+
+	
+		<h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1>
+
+		<ul class="nav nav-primary bigMenu">
+			<li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>Explore</a></li>
+			<li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>Weekly Feedback</a></li>
+			<li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>Statistics</a></li>
+			<li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>Testimonials</a></li>
+			<li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>Saved Courses</a></li>
+			<li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>Log Out</a></li>
+		</ul><!-- /end ul#nav-primary.nav -->
+
+		
+		<ul class="nav nav-primary smallMenu">
+		<img src="images/text-logo.png"></li><ul class="menu">
+				    <li>
+				        <a href="#">&#9776; Menu</a>
+				        <ul>
+				            <li><a href="exploreInterests.php" data-ajax='false'><img src="images/explore-icon.png">Explore</a></li>
+				            <li><a href="interestFeedback.php" data-ajax='false'><img src="images/feedback-icon.png">Weekly Feedback</a></li>
+				            <li><a href="statistics.php" data-ajax='false'><img src="images/stats-icon.png">Statistics</a></li>
+				            <li><a href="testimonials.php" data-ajax='false'><img src="images/testimonials-icon.png">Testimonials</a></li>
+				            <li><a href="savedCourses.php" data-ajax='false'><img src="images/saved-icon.png">Saved Courses</a></li>
+				            <li><a href="logout.php" data-ajax='false'><img src="images/account-icon.png">Log Out</a></li>
+				        </ul>
+				    </li>
+				</ul>
+		</ul><!-- /end ul#nav-primary.nav -->
 
 
+		
+		<hr />
 
-    <div id="navigationBar">
-      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
-      <nav><a href="savedCourses.php">Saved Courses</a>&nbsp;&nbsp;<a href="exploreInterests.php">Explore Courses</a>&nbsp;&nbsp;<a href="interestFeedback.php">Weekly Feedback</a>&nbsp;&nbsp;<a href="statistics.php">Statistics</a>&nbsp;&nbsp;<a href="logout.php">Log out</a></nav>
-    </div>
+		<div class="blog section">
+			<h1 class="lede"><?php echo $prompts['Prompt'];?></h1>
 
-    <div class="section hero">
-      <div class="container">
-        <div class="row">
-          <div class="offset-by-one column">
-          <h4>Select up to three categories to refine your search for courses! Best to get searching and explore!</h4>
-            
-            <?php
-	echo $prompts['Prompt'];
-?>
-</div>
-          <div class="offset-by-three column">
-<?php	echo "<form action='' method='post' name='subjectlisting'>";
+			<div class="main">
+				<div class="article">
+					<div class="header">
+						<h1 class="title">Tick up to 3 interests</h1>
+					</div><!-- /end .header -->
+
+					<!-- http://www.gutenberg.org/files/31611/31611-h/31611-h.htm -->
+
+					<div class="intro">
+<?php	echo "<form action='' method='post' name='subjectlisting' data-ajax='false'>";
 	
 	
-
-	echo "<table><tr> ";
+	echo "<div id='subjectDiv'>";
+	echo "<fieldset data-role='controlgroup'>";
 	$result = mysql_query("SELECT * FROM interestsTable");
+	$counter = 0;
 	$f = 0;
 	while($row = mysql_fetch_assoc($result)) {
 		foreach ($row as $col => $val) {
 			if ($f++ < 9) continue;
 			else if($f > 31) break;
 			//use checktrue to query current interests, and make them checked if they exist
-			echo "<td> " . $col . "</td> <td>
-			<input type='checkbox' name='subject_list[]' class='subjectClass' value='" . $col . "'" . $checkTrue . " />
-		</td>";
-		if($f % 2){
-			echo "</tr><tr>";
+			echo "<input type='checkbox' name='subject_list[]' class='subjectClass' id='" . $col . "' value='" . $col . "'" . $checkTrue . " data-theme='b' />";
+			echo "<label for='" . $col . "'>" . $col . "</label>";
+			$counter++;
+			// if($counter == 3){
+			// 	$counter = 0;
+			// 	echo "</fieldset>";
+			// 	echo "<fieldset data-role='controlgroup' data-type='horizontal'>";
+			// }
 		}
 	}
-}
+	echo "</fieldset>";
+	echo "</div>";
 
-echo "</table>";
+?>
 
-	echo "<br /><button type='button' id='showLevel'>Course Level</button>";
+					 <div class="meta section">
+							<?php echo "<button type='button' id='showLevel'>Course Level</button>";
 
-	echo "<div id='levelTable' style='display:none;'><table>";
-	echo "<tr> <td> 6 </td> <td><input type='checkbox' name='courseLevel[]' class='county' value='6' /></td>";
-	echo "<td> 7 </td> <td><input type='checkbox' name='courseLevel[]' class='county' value='7' /></td>";
-	echo "<td> 8 </td> <td><input type='checkbox' name='courseLevel[]' class='county' value='8' /></td></tr>";
-	echo "</table></div><br />";
+	echo "<div id='levelTable' style='display:none;'>";
+	echo "<fieldset data-role='controlgroup' data-type='horizontal' data-theme='b'>";
+	echo "<input type='checkbox' name='courseLevel[]' class='county' id='6' value='6' />";
+	echo "<label for='6'>Level 6</label>";
+	echo "<input type='checkbox' name='courseLevel[]' class='county' id='7' value='7' />";
+	echo "<label for='7'>Level 7</label>";
+	echo "<input type='checkbox' name='courseLevel[]' class='county' id='8' value='8' />";
+	echo "<label for='8'>Level 8</label>";
+	echo "</fieldset>";
+	echo "</div><br />";
 
 
-	echo "<br /><button type='button' id='showCounties'>Show Counties</button>";
+	echo "<button type='button' id='showCounties'>Show Counties</button>";
 
-	echo "<div id='countyTable' style='display:none;'><table>";
-	echo "<tr> <td> Louth </td> <td><input type='checkbox' name='Counties[]' class='county' value='Louth' /></td>";
-	echo "<td> Dublin </td> <td><input type='checkbox' name='Counties[]' class='county' value='Dublin' /></td>";
-	echo "<td> Cork </td> <td><input type='checkbox' name='Counties[]' class='county' value='Cork' /></td>";
-	echo "<td> Kildare </td> <td><input type='checkbox' name='Counties[]' class='county' value='Kildare' /></td>";
-	echo "<td> Galway </td> <td><input type='checkbox' name='Counties[]' class='county' value='Galway' /></td>";
-	echo "<td> Wexford </td> <td><input type='checkbox' name='Counties[]' class='county' value='Wexford' /></td></tr>";
-	echo "<tr> <td> Limerick </td> <td><input type='checkbox' name='Counties[]' class='county' value='Limerick' /></td>";
-	echo "<td> Sligo </td> <td><input type='checkbox' name='Counties[]' class='county' value='Sligo' /></td>";
-	echo "<td> Tipperary </td> <td><input type='checkbox' name='Counties[]' class='county' value='Tipperary' /></td>";
-	echo "<td> Roscommon </td> <td><input type='checkbox' name='Counties[]' class='county' value='Roscommon' /></td>";
-	echo "<td> Carlow </td> <td><input type='checkbox' name='Counties[]' class='county' value='Carlow' /></td>";
-	echo "<td> Mayo </td> <td><input type='checkbox' name='Counties[]' class='county' value='Mayo' /></td></tr> ";
-	echo "<tr> <td> Waterford </td> <td><input type='checkbox' name='Counties[]' class='county' value='Waterford' /></td>";
-	echo "<td> Kerry </td> <td><input type='checkbox' name='Counties[]' class='county' value='Kerry' /></td>";
-	echo "<td> Clare </td> <td><input type='checkbox' name='Counties[]' class='county' value='Clare' /></td>";
-	echo "<td> Cavan </td> <td><input type='checkbox' name='Counties[]' class='county' value='Cavan' /></td></tr>";
-	echo "</table></div><br /> <br />";
+	echo "<div id='countyTable' style='display:none;'>";
+	echo "<fieldset data-role='controlgroup' data-type='horizontal' data-theme='b'>";
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Louth' value='Louth' />";
+	echo "<label for='Louth'>Louth</label>";
 
-echo "<input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Dublin' value='Dublin' />";
+	echo "<label for='Dublin'>Dublin</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Cork' value='Cork' />";
+	echo "<label for='Cork'>Cork</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Kildare' value='Kildare' />";
+	echo "<label for='Kildare'>Kildare</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Galway' value='Galway' />";
+	echo "<label for='Galway'>Galway</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Wexford' value='Wexford' />";
+	echo "<label for='Wexford'>Wexford</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Limerick' value='Limerick' />";
+	echo "<label for='Limerick'>Limerick</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Sligo' value='Sligo' />";
+	echo "<label for='Sligo'>Sligo</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Tipperary' value='Tipperary' />";
+	echo "<label for='Tipperary'>Tipperary</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Roscommon' value='Roscommon' />";
+	echo "<label for='Roscommon'>Roscommon</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Carlow' value='Carlow' />";
+	echo "<label for='Carlow'>Carlow</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Mayo' value='Mayo' />";
+	echo "<label for='Mayo'>Mayo</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Waterford' value='Waterford' />";
+	echo "<label for='Waterford'>Waterford</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Kerry' value='Kerry' />";
+	echo "<label for='Kerry'>Kerry</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Clare' value='Clare' />";
+	echo "<label for='Clare'>Clare</label>";
+	
+	echo "<input type='checkbox' name='Counties[]' class='county' id='Cavan' value='Cavan' />";
+	echo "<label for='Cavan'>Cavan</label>";
+	
+	echo "</fieldset>";
+	echo "</div><br /> <br />";
+
+echo "<input type='submit' id='submit' name='formSubmit' value='Submit'/>
 </form>";
-?>	
-          </div>
-        </div>
-      </div>
-    </div>
-  <!-- End Document
-  ––––––––––––––––––––––––––––––––––––––––––––––––––-->
+?>
+					</div> <!-- /end .meta.section -->
+				</div><!-- /end .article -->
+			</div><!-- /end .main -->
+		</div><!-- /end .blog.section -->
+
+		<div id="footer">
+			<!-- <p>Images &copy; their respective copyright holders.</p>
+
+			<p>The design and code is &copy; 2014 <a href="http://unstoppablerobotninja.com/">Ethan Marcotte</a>, supporting his book <cite><a href="http://www.abookapart.com/products/responsive-web-design">Responsive Web Design</a></cite>.</p>
+
+			<p>Beep boop beep.</p> -->
+		</div><!-- /end #footer -->
+	</div><!-- /end .page -->
+
+</div><!-- /end .site -->
+
 </body>
 </html>

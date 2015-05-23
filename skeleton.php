@@ -1,66 +1,3 @@
-<?php
-include "connect.php";
-include "algor.php";
-if($logged == false){
-	header('Location: index.php');
-}
-if(!$user['CoursesPicked']){
-	header('Location: subjectChoice.php');
-}
-$userEmail = $user['Email'];
-$result = mysql_query("SELECT * FROM interestsTable");
-
-$currentLogin = mysql_query("SELECT * FROM visitStats WHERE `Email` = '$userEmail' AND `CurrentLogin` = '1'");
-
-while($row = mysql_fetch_array($currentLogin)){
-	$currentLoginTime = $row['LoginTime'];
-}
-
-print_r($currentLogin['LoginTime']);
-
-
-$i = 0;
-if(isset($_POST['formSubmit'])){
-	$subAmount = count($_POST['subject_list']);
-	//echo $subAmount;
-	mysql_query("UPDATE `storedInterests` SET `interest0`='', `interest1`='', `interest2`='', `CurrentCourse` = '0', `NumCourse` = '0', `County0`='', `County1`='', `County2`='', `County3`='', `County4`='', `County5`='', `County6`='', `County7`='', `County8`='', `County9`='', `County10`='', `County11`='', `County12`='', `County13`='', `County14`='', `Seed` = '0', `Level0` = '', `Level1` = '', `Level2` = '' WHERE `Email` = '$userEmail'");
-	for($k = 0; $k < $subAmount;$k++){
-		$currentSub = $_POST['subject_list'][$k];
-		$col = "interest" . $k;
-		mysql_query("UPDATE `storedInterests` SET `$col` = '$currentSub' WHERE `Email` = '$userEmail'");
-
-	}
-	$count = count($_POST['Counties']);
-	//echo $count;
-	for($j = 0; $j < $count;$j++){
-		$currentCounty = $_POST['Counties'][$j];
-		$countyNumber = "County" . $j;
-		mysql_query("UPDATE `storedInterests` SET `$countyNumber` = '$currentCounty' WHERE `Email` = '$userEmail'");
-
-	}
-// THIS IS TO BE TURNED INTO THE CODE FOR SENDING WHAT LEVELS HAVE BEEN SELECTED
-	$levelCount = count($_POST['courseLevel']);
-	//echo $count;
-	for($l = 0; $l < $levelCount;$l++){
-		$currentLevel = $_POST['courseLevel'][$l];
-		$levelNumber = "Level" . $l;
-		mysql_query("UPDATE `storedInterests` SET `$levelNumber` = '$currentLevel' WHERE `Email` = '$userEmail'");
-	}
-
-	$randomSeed = rand(1, 50);
-	$randomSeed = (string)$randomSeed;
-	mysql_query("UPDATE `storedInterests` SET `Seed` = '$randomSeed' WHERE `Email` = '$userEmail'");
-
-	mysql_query("UPDATE `visitStats` SET `ExploreAmount` = ExploreAmount + 1 WHERE `Email` = '$userEmail' AND `LoginTime` = '$currentLoginTime'");
-
-	header('Location: showCourses.php');
-}
-
-$prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `Interests` = '1' ORDER BY rand() 
-	LIMIT 1"));
-
-
-?>
 <html lang="en">
 <head>
 
@@ -89,35 +26,6 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
     $('.menu').dropit();
 });
 </script>
-
-
-
-  <script type="text/javascript">
-		var main = function(){
-			$("input[name='subject_list[]']:checkbox").click(function() {
-				var bol = $("input[name='subject_list[]']:checkbox:checked").length >= 3;
-				$("input[name='subject_list[]']:checkbox").not(":checked").attr("disabled",bol);
-			});
-
-			$(".subjectClass").change(function() {
-				if($(".subjectClass:checked").length >= 1) {
-					$("#submit").removeAttr("disabled");
-				} else {
-					$("#submit").attr("disabled", "disabled");
-				}
-			});
-		};
-
-		$(document).ready(main);
-
-		$(document).on("click", "#showCounties", function() {
-			$('#countyTable').toggle();
-		});
-
-		$(document).on("click", "#showLevel", function() {
-			$('#levelTable').toggle();
-		});
-	</script>
 
 </head>
 
@@ -171,19 +79,11 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 
 					<!-- http://www.gutenberg.org/files/31611/31611-h/31611-h.htm -->
 
-					<div class="intro">
+				<div class="intro">
 
-
-					<!-- <div class="meta section">
-						<h1>Posted on 10 October 2010 by <cite><a href="http://www.gutenberg.org/ebooks/31611">Mari Wolf</a></cite></h1>
-
-						<h2>Tagged with:</h2>
-						<ul>
-							<li><a href="#">beep</a></li>
-							<li><a href="#">boop</a></li>
-							<li><a href="#">asimovsucks</a></li>
-						</ul>
-					</div> --><!-- /end .meta.section -->
+					 <div class="meta section">
+							
+					</div> <!-- /end .meta.section -->
 				</div><!-- /end .article -->
 			</div><!-- /end .main -->
 		</div><!-- /end .blog.section -->
