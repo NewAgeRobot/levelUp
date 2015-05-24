@@ -73,6 +73,7 @@ if(isset($_POST['formSubmit'])){
       var $fifth;
       var $sixth;
 
+          $("#submit").attr("disabled", "disabled");
       $(".subjectClass").change(function() {
         arr = [];
         duplicates = [];
@@ -180,7 +181,7 @@ if(isset($_POST['formSubmit'])){
               </select>
 
               <div class="meta section">
-                <input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
+                <input type='submit' id='submit' name='formSubmit' value='Submit'/>
               </form>
             </div> <!-- /end .meta.section -->
           </div><!-- /end .article -->

@@ -79,6 +79,8 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
       var $fourth;
       var $fifth;
       var $sixth;
+
+      $("#submit").attr("disabled", "disabled");
       $(".subjectClass").change(function() {
         arr = [];
         duplicates = [];
@@ -213,7 +215,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
 
               <div class="meta section">
                 
-                <input type='submit' id='submit' name='formSubmit' value='Submit' disabled/>
+                <input type='submit' id='submit' name='formSubmit' value='Submit'/>
               </form>
             </div> <!-- /end .meta.section -->
           </div><!-- /end .article -->

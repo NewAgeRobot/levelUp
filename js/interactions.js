@@ -9,6 +9,7 @@ var main = function(){
 		$("input:checkbox").not(":checked").attr("disabled",bol);
 	});
 
+	$("#submit").attr("disabled", "disabled");
 	$("input[type=checkbox]").change(function() {
 		if($("input[type=checkbox]:checked").length >= 6) {
 			$("#submit").removeAttr("disabled");

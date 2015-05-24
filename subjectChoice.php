@@ -139,7 +139,7 @@ if(isset($_POST['formSubmit'])){
 						echo "</div>";
 						?>
 						<div class="meta section">
-							<?php echo "<input type='submit' id='submit' name='formSubmit' value='Submit' disabled/></form>";?>	
+							<?php echo "<input type='submit' id='submit' name='formSubmit' value='Submit'/></form>";?>	
 						</div> <!-- /end .meta.section -->
 					</div><!-- /end .article -->
 				</div><!-- /end .main -->
