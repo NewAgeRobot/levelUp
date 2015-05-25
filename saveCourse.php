@@ -23,7 +23,7 @@ $saveCheck = mysql_query("SELECT CourseCode FROM savedCourses WHERE `Email` = '$
 $j = 0;
 while($row = mysql_fetch_assoc($saveCheck)) {
 	foreach ($row as $col => $val) {
-		if($val === $savedTitle){
+		if($val === $savedCode){
 			$j++;
 		}
 	}

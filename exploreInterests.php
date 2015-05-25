@@ -161,15 +161,16 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 			<hr />
 
 			<div class="blog section">
-				<h1 class="lede"><?php echo $prompts['Prompt'];?></h1>
+				<h1 class="lede">Tick up to 3 interests</h1>
 
 				<div class="main">
 					<div class="article">
 						<div class="header">
-							<h1 class="title">Tick up to 3 interests</h1>
+							<h1 class="title"><?php echo $prompts['Prompt'];?></h1>
 						</div><!-- /end .header -->
 
 						<div class="intro">
+						<div class="centeredIntro">
 							<?php	echo "<form action='' method='post' name='subjectlisting' data-ajax='false'>";
 
 
@@ -266,6 +267,8 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 							</form>";
 							?>
 						</div> <!-- /end .meta.section -->
+						
+							</div>
 					</div><!-- /end .article -->
 				</div><!-- /end .main -->
 			</div><!-- /end .blog.section -->

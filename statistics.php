@@ -95,7 +95,7 @@ $subjectTotals = mysql_fetch_assoc($subjectQuery);
 // echo $subjectArray[1];
 arsort($subjectTotals);
 // print_r($subjectTotals);
-$newSubjectArray = [];
+// $newSubjectArray = [];
 foreach($subjectTotals as $key => $value)
 {
   $newSubjectArray[] = $key;
@@ -492,7 +492,7 @@ $interestTotals = mysql_fetch_assoc($interestQuery);
 
 arsort($interestTotals);
 
-$newInterestsSortedArray = [];
+// $newInterestsSortedArray = [];
 foreach($interestTotals as $key => $value)
 {
   $newInterestsSortedArray[] = $key;

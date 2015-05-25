@@ -337,6 +337,19 @@ img {
 .intro table{
 	text-align: right;
 }
+
+
+
+
+
+.intro .showCourses{
+	text-align: left;
+	width: 100%;
+}
+
+
+
+
 blockquote,
 .blog .figure {
 	float: right;
