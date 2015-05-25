@@ -41,7 +41,7 @@ if($j == 0){
 		}
 	}
 	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseCode`, `CourseLevel`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`, `Position`) VALUES ('$userEmail', '$savedCode', '$savedLevel', '$savedTitle', '$savedPoints', '$savedCollege', '$savedUrl', '$newPosition')");
-	echo "Course Saved!";
+	echo "<img src='images/savedCourse.png'>";
 	$newAmountSaved = ($user['CoursesSaved'] + 1);
 	mysql_query("UPDATE `users` SET `CoursesSaved` = '$newAmountSaved' WHERE `Email` = '$userEmail'");
 }

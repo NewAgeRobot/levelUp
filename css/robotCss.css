@@ -303,6 +303,16 @@ img {
 
 
 
+.saveNextButtons td{
+	text-align: center;
+}
+.saveNextButtons img{
+	width:20%;
+	min-width: 75px;
+}
+
+
+
 
 
 .date {
@@ -337,6 +347,9 @@ img {
 .intro table{
 	text-align: right;
 }
+.intro table td{
+	padding: 8px 25px 8px 25px;
+}
 
 
 
@@ -345,8 +358,53 @@ img {
 .intro .showCourses{
 	text-align: left;
 	width: 100%;
+	background-color: white;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	margin: 15px;
+	color:#000;
 }
 
+.intro .showCourses{
+	text-align: left;
+	width: 100%;
+	background-color: white;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	margin: 15px;
+	color:#000;
+}
+
+.openQuotes img{
+	width: 8%;
+	min-width: 75px;
+}
+
+.closeQuotes{
+	text-align: right;
+}
+.closeQuotes img{
+	width: 8%;
+	min-width: 75px;
+}
+.visitWebsite img{
+	width: 20%;
+	min-width: 150px;
+}
+.hiddenLink{
+	visibility: hidden;
+}
+.backArrow img{
+	width: 5%;
+	min-width: 75px;
+}
+
+.thinnerCourses{
+	width:60%;
+	margin: 0 auto;
+}
 
 
 

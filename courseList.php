@@ -1,5 +1,10 @@
-<script src="js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
+
+  <script>try{Typekit.load();}catch(e){}</script>
+  <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="css/jquery-mobile.css" />
+  <link rel="stylesheet" href="css/dropit.css" />
+
   <style type="text/css">
   .completeSynopsis{
     display:none;
@@ -13,14 +18,16 @@
     cursor:pointer;
 }
 </style>
+
+
 <script language="Javascript" type="text/javascript">
 
 
 	function nextCourse(cv){
-		$("#myDiv").html("<img src='images/loader.gif'>").show();
+		// $("#myDiv").html("<img src='images/loader.gif'>").show();
 		var url="courseList.php";
 		$.post(url, {contentVar: cv}, function(data){
-			$("#myDiv").html(data).show();
+			$(".thinnerCourses").html(data).show();
 		});
 	}
 
@@ -746,56 +753,55 @@ $seededArray = sortArrayByArray($array, $newTest);
 
 
 mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
-if($currentCourse <= ($numCourses-1)){
-	if(($currentCourse + 1)%8 === 0){
-		echo "<h4>Remember to check out the testimonials to see the paths that others followed.</h4>";
-	}
-	echo "<table>";
-	echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
-	print_r("<tr><td>Course Title: </td><td class='jsCourseTitle'>" . $seededArray[$currentCourse]['CourseTitle'] . "</td></tr>");
-	print_r("<tr><td>Course Code: </td><td class='jsCourseCode'>" . $seededArray[$currentCourse]['CourseCode'] . "</td></tr>");
-	print_r("<tr><td>Level: </td><td class='jsCourseLevel'>" . $seededArray[$currentCourse]['CourseLevel'] . "</td></tr>");
+              if($currentCourse <= ($numCourses-1)){
+                print_r("<div class='hiddenLink'><div class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></div></div>");
+                echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/backArrow.png'></a>";
+                echo "<br />";
+                echo "<table class='showCourses'>";
+                echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
+                print_r("<tr><td class='jsCourseCode'><b>" . $seededArray[$currentCourse]['CourseCode'] . "</b></td></tr>");
+                print_r("<tr><td class='jsCourseTitle'><b>" . $seededArray[$currentCourse]['CourseTitle'] . "</b></td></tr>");
+                print_r("<tr><td class='jsCourseLevel'>" . $seededArray[$currentCourse]['CourseLevel'] . "</td></tr>");
+                print_r("<tr><td class='jsCourseCollege'>" . $seededArray[$currentCourse]['Institute'] . "</td></tr>");
+                print_r("<tr><td class='jsCoursePoints'>" . $seededArray[$currentCourse]['Points'] . "</td></tr>");
+                echo "<tr><td class='openQuotes'><img src='images/openQuotes.png'></td></tr>";
 
 
-
-	$synopsisSpaceCount =  substr_count($seededArray[$currentCourse]['Synopsis'], ' ');
-              // echo $synopsisSpaceCount;
-              if($synopsisSpaceCount > 34){
-                $lastSpacePosition = strpos($seededArray[$currentCourse]['Synopsis'], ' ', 250);
-                $synopsisLength = strlen($seededArray[$currentCourse]['Synopsis']);
-                if($synopsisLength < 250){
-                  print_r("<tr><td>Synopsis: </td><td>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</td></tr>");
+                $synopsisSpaceCount =  substr_count($seededArray[$currentCourse]['Synopsis'], '.');
+// echo $synopsisSpaceCount;
+                if($synopsisSpaceCount >= 5){
+                  $lastPeriodPosition = strpos($seededArray[$currentCourse]['Synopsis'], '.', 400); //there's no space after the 250 mark / this works but sometimes all you're seeing is 1 character more. Check if length is within 20
+                  $synopsisLength = strlen($seededArray[$currentCourse]['Synopsis']);
+                  if($synopsisLength <= 430){
+                    print_r("<tr><td>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</td></tr>");
+                  }
+                  else{
+                    echo "<tr><td>";
+                    print_r("<span class='teaserSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition) . "</span><span class='showMore'><font color='lightblue' style='cursor: pointer;'>...Show more</font></span>");
+                    print_r("<span class='completeSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</span><span class='showLess'><font color='lightblue' style='cursor: pointer;'>...Show less</font></span>");
+                    echo "</td></tr>";
+                  }
                 }
                 else{
-                  echo "<tr><td>Synopsis: </td><td>";
-                  print_r("<span class='teaserSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $lastSpacePosition) . "</span><span class='showMore'><font color='lightblue' style='cursor: pointer;'>...Show more</font></span>");
-                  print_r("<span class='completeSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</span><span class='showLess'><font color='lightblue' style='cursor: pointer;'>...Show less</font></span>");
-                  echo "</td></tr>";
+                  print_r("<tr><td>" . $seededArray[$currentCourse]['Synopsis'] . "</td></tr>");
                 }
-              }
-              else{
-                print_r("<tr><td>Synopsis: </td><td>" . $seededArray[$currentCourse]['Synopsis'] . "</td></tr>");
-              }
 
-
-	print_r("<tr><td>Points: </td><td class='jsCoursePoints'>" . $seededArray[$currentCourse]['Points'] . "</td></tr>");
-	print_r("<tr><td>Institute: </td><td class='jsCourseCollege'>" . $seededArray[$currentCourse]['Institute'] . "</td></tr>");
-	print_r("<tr><td>Hyperlink: </td><td class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $seededArray[$currentCourse]['Hyperlink'] . "</a></td></tr>");
-	echo "</table>";
-	echo "<br />";
-	$currentCourse++;
-	mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
-	echo "<br />";
-	echo "<br />";
-	echo "<a href='exploreInterests.php'>Explore more Interests</a>";
-	echo "<br />";
-	echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'>Next Course</a>";
-	echo "<br />";
-	echo "<a href='javascript:{}' class='ajax'>Save Course</a>";
-} else{
+                echo "<tr><td class='closeQuotes'><img src='images/closeQuotes.png'></td></tr>";
+                // print_r("<tr class='hiddenLink'><td class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></td></tr>"); //not working
+                //MAYBE JUST HIDE THIS? LIKE, HAVE IT ECHO OUT BUT MAKE IT HIDDEN AND SHOW THE BUTTON INSTEAD?
+                print_r("<tr><td class='visitWebsite'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'><img src='images/visitWebsite.png'></a></td></tr>");
+                echo "</table>";
+                $currentCourse++;
+                mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
+                echo "<table class='saveNextButtons'><tr><td>";
+                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/nextCourse.png'></a>";
+                echo "</td><td>";
+                echo "<a href='javascript:{}' class='ajax'><img src='images/saveCourse.png'></a>";
+                echo "</td></tr></table>";
+              } else{
 	echo "That is all the courses that match your selection, please refine search for more options.";
 	echo "<br />";
 	echo "<br />";
-	echo "<a href='exploreInterests.php'>Explore more Interests</a>";
+	echo "<a href='exploreInterests.php' data-ajax='false'>Explore more Interests</a>";
 }
-?>
+            ?>
