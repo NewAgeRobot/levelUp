@@ -755,16 +755,17 @@ $seededArray = sortArrayByArray($array, $newTest);
 mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
               if($currentCourse <= ($numCourses-1)){
                 print_r("<div class='hiddenLink'><div class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></div></div>");
-                echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/backArrow.png'></a>";
+                echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/goBack_btn.png'></a>";
                 echo "<br />";
-                echo "<table class='showCourses'>";
                 echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
+                echo "<div class='showCoursesBorder'>";
+                echo "<table class='showCourses'>";
                 print_r("<tr><td class='jsCourseCode'><b>" . $seededArray[$currentCourse]['CourseCode'] . "</b></td></tr>");
                 print_r("<tr><td class='jsCourseTitle'><b>" . $seededArray[$currentCourse]['CourseTitle'] . "</b></td></tr>");
-                print_r("<tr><td class='jsCourseLevel'>" . $seededArray[$currentCourse]['CourseLevel'] . "</td></tr>");
+                print_r("<tr><td class='jsCourseLevel'><b>Level: </b>" . $seededArray[$currentCourse]['CourseLevel'] . "</td></tr>");
                 print_r("<tr><td class='jsCourseCollege'>" . $seededArray[$currentCourse]['Institute'] . "</td></tr>");
-                print_r("<tr><td class='jsCoursePoints'>" . $seededArray[$currentCourse]['Points'] . "</td></tr>");
-                echo "<tr><td class='openQuotes'><img src='images/openQuotes.png'></td></tr>";
+                print_r("<tr><td class='jsCoursePoints'><b>Points: </b>" . $seededArray[$currentCourse]['Points'] . "</td></tr>");
+                echo "<tr><td class='openQuotes'><img src='images/icons/LeftQuotation.jpg'></td></tr>";
 
 
                 $synopsisSpaceCount =  substr_count($seededArray[$currentCourse]['Synopsis'], '.');
@@ -777,8 +778,8 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                   }
                   else{
                     echo "<tr><td>";
-                    print_r("<span class='teaserSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition) . "</span><span class='showMore'><font color='lightblue' style='cursor: pointer;'>...Show more</font></span>");
-                    print_r("<span class='completeSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</span><span class='showLess'><font color='lightblue' style='cursor: pointer;'>...Show less</font></span>");
+                    print_r("<span class='teaserSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition) . "</span><span class='showMore'><font color='#ed7d7c' style='cursor: pointer;'>...Show more</font></span>");
+                    print_r("<span class='completeSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</span><span class='showLess'><font color='#ed7d7c' style='cursor: pointer;'>...Show less</font></span>");
                     echo "</td></tr>";
                   }
                 }
@@ -786,22 +787,24 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                   print_r("<tr><td>" . $seededArray[$currentCourse]['Synopsis'] . "</td></tr>");
                 }
 
-                echo "<tr><td class='closeQuotes'><img src='images/closeQuotes.png'></td></tr>";
+                echo "<tr><td class='closeQuotes'><img src='images/icons/RightQuotation.jpg'></td></tr>";
                 // print_r("<tr class='hiddenLink'><td class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></td></tr>"); //not working
                 //MAYBE JUST HIDE THIS? LIKE, HAVE IT ECHO OUT BUT MAKE IT HIDDEN AND SHOW THE BUTTON INSTEAD?
                 print_r("<tr><td class='visitWebsite'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'><img src='images/visitWebsite.png'></a></td></tr>");
+                
                 echo "</table>";
+                echo "</div>";
                 $currentCourse++;
                 mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
                 echo "<table class='saveNextButtons'><tr><td>";
-                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/nextCourse.png'></a>";
+                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png'></a>";
                 echo "</td><td>";
-                echo "<a href='javascript:{}' class='ajax'><img src='images/saveCourse.png'></a>";
+                echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
                 echo "</td></tr></table>";
               } else{
-	echo "That is all the courses that match your selection, please refine search for more options.";
-	echo "<br />";
-	echo "<br />";
-	echo "<a href='exploreInterests.php' data-ajax='false'>Explore more Interests</a>";
-}
+				echo "That is all the courses that match your selection, please refine search for more options.";
+				echo "<br />";
+				echo "<br />";
+				echo "<a href='exploreInterests.php' data-ajax='false'>Explore more Interests</a>";
+			}
             ?>

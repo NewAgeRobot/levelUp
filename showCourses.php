@@ -88,14 +88,12 @@ for($f = 7; $f < 22; $f++){
   <meta charset="utf-8" />
   <title>LevelUp</title>
 
-  <meta name="DC.creator" content="Ethan Marcotte - http://ethanmarcotte.com" />
-  <meta name="robots" content="index, follow" />
-  <meta name="description" content="A demonstration site for Ethan Marcotte's book, RESPONSIVE WEB DESIGN" /> 
+  <meta name="LevelUp" content="Level Up - http://www.Levelup.ie" />
+  <meta name="description" content="A website to help students better discover what they enjoy and want to pursue after second level." /> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
 
-  <script>try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="css/jquery-mobile.css" />
   <script src="js/jquery-mobile.js"></script>
@@ -166,27 +164,27 @@ for($f = 7; $f < 22; $f++){
     <div class="page">
 
 
-      <div class="navigationBar">
+            <div class="navigationBar">
         <!-- <h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1> -->
 
         <ul class="nav nav-primary bigMenu">
-          <div class="logoTest"><li id="logoImage"><a href="homepage.php" data-ajax='false'><img src="images/header-logo.png"></a></li></div>
-          <li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>&nbsp;&nbsp;Explore&nbsp;&nbsp;&nbsp;</a></li><li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>|&nbsp;&nbsp;Weekly Feedback&nbsp;&nbsp;</a></li><li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>|&nbsp;&nbsp;Statistics&nbsp;&nbsp;</a></li><li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>|&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>|&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>|&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
+          <div class="logoTest"><li id="logoImage"><a href="homepage.php" data-ajax='false'><img src="images/icons/LOGO_withFont.png"></a></li></div>
+          <li id="nav-explore"><a href="exploreInterests.php" data-ajax='false'><b class="currentPage">&nbsp;&nbsp;Explore&nbsp;&nbsp;</b></a></li><li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>|&nbsp;&nbsp;Weekly Feedback&nbsp;&nbsp;</a></li><li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>|&nbsp;&nbsp;Statistics&nbsp;&nbsp;</a></li><li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>|&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>|&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>|&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
         </ul><!-- /end ul#nav-primary.nav -->
 
 
-        <ul class="nav nav-primary smallMenu">
-          <img src="images/text-logo.png">
+       <ul class="nav nav-primary smallMenu">
+          <img src="images/icons/LOGO_ForMobile.png">
           <ul class="menu">
             <li>
               <a href="#">&#9776; Menu</a>
               <ul>
-                <li><a href="exploreInterests.php" data-ajax='false'><img src="images/explore-icon.png">Explore</a></li>
-                <li><a href="interestFeedback.php" data-ajax='false'><img src="images/feedback-icon.png">Weekly Feedback</a></li>
-                <li><a href="statistics.php" data-ajax='false'><img src="images/stats-icon.png">Statistics</a></li>
-                <li><a href="testimonials.php" data-ajax='false'><img src="images/testimonials-icon.png">Testimonials</a></li>
-                <li><a href="savedCourses.php" data-ajax='false'><img src="images/saved-icon.png">Saved Courses</a></li>
-                <li><a href="logout.php" data-ajax='false'><img src="images/account-icon.png">Log Out</a></li>
+                <li><a href="exploreInterests.php" data-ajax='false'><img src="images/icons/icon_ExploreCourses.jpg">Explore</a></li>
+                <li><a href="interestFeedback.php" data-ajax='false'><img src="images/icons/icon_MyRecords.jpg">Weekly Feedback</a></li>
+                <li><a href="statistics.php" data-ajax='false'><img src="images/icons/icon_Statistics.jpg">Statistics</a></li>
+                <li><a href="testimonials.php" data-ajax='false'><img src="images/icons/icon_Testimonials.jpg">Testimonials</a></li>
+                <li><a href="savedCourses.php" data-ajax='false'><img src="images/icons/icon_SavedCourses.jpg">Saved Courses</a></li>
+                <li><a href="logout.php" data-ajax='false'><img src="images/icons/icon_LogOut.jpg">Log Out</a></li>
               </ul>
             </li>
           </ul>
@@ -805,16 +803,17 @@ for($f = 7; $f < 22; $f++){
               mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
               if($currentCourse <= ($numCourses-1)){
                 print_r("<div class='hiddenLink'><div class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></div></div>");
-                echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/backArrow.png'></a>";
+                echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/goBack_btn.png'></a>";
                 echo "<br />";
-                echo "<table class='showCourses'>";
                 echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
+                echo "<div class='showCoursesBorder'>";
+                echo "<table class='showCourses'>";
                 print_r("<tr><td class='jsCourseCode'><b>" . $seededArray[$currentCourse]['CourseCode'] . "</b></td></tr>");
                 print_r("<tr><td class='jsCourseTitle'><b>" . $seededArray[$currentCourse]['CourseTitle'] . "</b></td></tr>");
-                print_r("<tr><td class='jsCourseLevel'>" . $seededArray[$currentCourse]['CourseLevel'] . "</td></tr>");
+                print_r("<tr><td class='jsCourseLevel'><b>Level: </b>" . $seededArray[$currentCourse]['CourseLevel'] . "</td></tr>");
                 print_r("<tr><td class='jsCourseCollege'>" . $seededArray[$currentCourse]['Institute'] . "</td></tr>");
-                print_r("<tr><td class='jsCoursePoints'>" . $seededArray[$currentCourse]['Points'] . "</td></tr>");
-                echo "<tr><td class='openQuotes'><img src='images/openQuotes.png'></td></tr>";
+                print_r("<tr><td class='jsCoursePoints'><b>Points: </b>" . $seededArray[$currentCourse]['Points'] . "</td></tr>");
+                echo "<tr><td class='openQuotes'><img src='images/icons/LeftQuotation.jpg'></td></tr>";
 
 
                 $synopsisSpaceCount =  substr_count($seededArray[$currentCourse]['Synopsis'], '.');
@@ -827,8 +826,8 @@ for($f = 7; $f < 22; $f++){
                   }
                   else{
                     echo "<tr><td>";
-                    print_r("<span class='teaserSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition) . "</span><span class='showMore'><font color='lightblue' style='cursor: pointer;'>...Show more</font></span>");
-                    print_r("<span class='completeSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</span><span class='showLess'><font color='lightblue' style='cursor: pointer;'>...Show less</font></span>");
+                    print_r("<span class='teaserSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition) . "</span><span class='showMore'><font color='#ed7d7c' style='cursor: pointer;'>...Show more</font></span>");
+                    print_r("<span class='completeSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</span><span class='showLess'><font color='#ed7d7c' style='cursor: pointer;'>...Show less</font></span>");
                     echo "</td></tr>";
                   }
                 }
@@ -836,17 +835,19 @@ for($f = 7; $f < 22; $f++){
                   print_r("<tr><td>" . $seededArray[$currentCourse]['Synopsis'] . "</td></tr>");
                 }
 
-                echo "<tr><td class='closeQuotes'><img src='images/closeQuotes.png'></td></tr><tr><td class='closeQuotes'>-Taken from institute website</td></tr>";
+                echo "<tr><td class='closeQuotes'><img src='images/icons/RightQuotation.jpg'></td></tr><tr><td class='closeQuotes'>-Taken from institute website</td></tr>";
                 // print_r("<tr class='hiddenLink'><td class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></td></tr>");
                 //MAYBE JUST HIDE THIS? LIKE, HAVE IT ECHO OUT BUT MAKE IT HIDDEN AND SHOW THE BUTTON INSTEAD? IS DISTORTING BOX BUT IT HAS TO BE IN IT I THINK FOR AJAX TO WORK
-                print_r("<tr><td class='visitWebsite'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'><img src='images/visitWebsite.png'></a></td></tr>");
+                print_r("<tr><td class='visitWebsite'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'><img src='images/icons/visitWebsite_btn.png'></a></td></tr>");
+                
                 echo "</table>";
+                echo "</div>";
                 $currentCourse++;
                 mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
                 echo "<table class='saveNextButtons'><tr><td>";
-                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/nextCourse.png'></a>";
+                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png'></a>";
                 echo "</td><td>";
-                echo "<a href='javascript:{}' class='ajax'><img src='images/saveCourse.png'></a>";
+                echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
                 echo "</td></tr></table>";
               }
             }

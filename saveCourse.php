@@ -11,8 +11,10 @@ $userEmail = $user['Email'];
 
 $savedCode = $_POST["code"];
 $savedLevel = $_POST["level"];
+$savedLevel = trim($savedLevel, "Level: ");
 $savedTitle = $_POST["title"];
 $savedPoints = $_POST["points"];
+$savedPoints = trim($savedPoints, "Points: ");
 $savedCollege = $_POST["college"];
 $savedUrl = $_POST["url"];
 //echo $savedCode . $savedTitle . $savedCollege . $savedUrl;
@@ -41,12 +43,12 @@ if($j == 0){
 		}
 	}
 	mysql_query("INSERT INTO `savedCourses` (`Email`, `CourseCode`, `CourseLevel`, `CourseTitle`, `CoursePoints`, `CourseCollege`, `CourseURL`, `Position`) VALUES ('$userEmail', '$savedCode', '$savedLevel', '$savedTitle', '$savedPoints', '$savedCollege', '$savedUrl', '$newPosition')");
-	echo "<img src='images/savedCourse.png'>";
+	echo "<td><img src='images/icons/Saved_icon_Feedback.png'></td>";
 	$newAmountSaved = ($user['CoursesSaved'] + 1);
 	mysql_query("UPDATE `users` SET `CoursesSaved` = '$newAmountSaved' WHERE `Email` = '$userEmail'");
 }
 else{
-	echo "Already saved this course!";
+	echo "<td><img src='images/icons/AlreadySaved.png'></td>";
 }
 
 

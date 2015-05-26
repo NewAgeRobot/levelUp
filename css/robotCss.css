@@ -9,6 +9,13 @@ ROBOT…OR NOT?
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url(Lobster.otf);
+
+
+@font-face {
+    font-family: Lobster;
+    src: url(Lobster.otf);
+}
 
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,time,mark,audio,video { margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent; } 
 body { line-height:1; }
@@ -39,7 +46,7 @@ table { border-collapse:collapse;border-spacing:0; }
 body {
 	background: #303944;
 	color: #fff;
-	font: normal 100%/1.5 Calibri, Candara, "Gill Sans", "Gill Sans MT", sans-serif;
+	font: normal 100%/1.5 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
 }
 .ie7 body {
 	background: #303944;	/* Stupid IE7 bug is stupid. */
@@ -50,6 +57,7 @@ table {
 }
 select, input, textarea {
 	font: 99% sans-serif;
+	background-color: white;
 }
 a {
 	-moz-transition: color 0.3s linear;
@@ -218,6 +226,11 @@ img {
 
 
 
+
+
+    
+
+
 .navigationBar{
 	position: absolute;
 	top:0;
@@ -235,8 +248,6 @@ img {
 .logoTest{
 	text-align: left;
 }
-
-
 
 
 
@@ -279,7 +290,7 @@ img {
 	background: #000;
 	border-left: 12px solid #000;
 	color: #FFF;
-	font: normal 3.625em/0.9 "league-gothic-1", "league-gothic-2", "League Gothic", "Arial Narrow", Arial, sans-serif;	/* 58/16 */
+	font: normal 3.625em/0.9 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;	/* 58/16 */
 	margin-left: -12px;
 	margin-bottom: 0.15em;
 	padding: 12px 2.4691358% 6px;		/* 12 / 660 */
@@ -297,7 +308,7 @@ img {
 .lede {
 	background: #303944;
 	color: #F9E3CC;
-	font: normal 1.25em "league-gothic-1", "league-gothic-2", "League Gothic", "Arial Narrow", Arial, sans-serif;	/* 20px / 16px */
+	font: normal 1.25em 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;	/* 20px / 16px */
 	padding: 0.8em 5.33333333%;	/* 16px / 20px; 48px / 900px */
 	text-transform: uppercase;
 }
@@ -331,15 +342,16 @@ img {
 }
 
 
-
+.saveNextButtons{
+	width:100%;
+}
 .saveNextButtons td{
 	text-align: center;
 }
 .saveNextButtons img{
-	width:20%;
-	min-width: 75px;
+	width:50%;
+	min-width: 80px;
 }
-
 
 
 
@@ -352,7 +364,7 @@ img {
 	border-radius: 3px;
 	color: #FFF;
 	float: left;
-	font: normal 0.857142857em/1 "league-gothic-1", "league-gothic-2", "League Gothic", "Arial Narrow", Arial, sans-serif;	/* 12px / 14px */
+	font: normal 0.857142857em/1 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;	/* 12px / 14px */
 	letter-spacing: 0.075em;
 	margin: -2.25em 0 0 -17.2340425531%;		/* 81px / 470px */
 	padding: 0.75em 0;
@@ -366,9 +378,10 @@ img {
 	font-size: 3.83333333em;					/* 46px / 12px */
 }
 .title {
-	font: bold 1.07142857em "pill-gothic-600mg-1", "pill-gothic-600mg-2", Calibri, Candara, "Gill Sans", "Gill Sans MT", sans-serif;		/* 15px / 14px */
-	text-transform: uppercase;
+	font: 1.3em 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;		/* 15px / 14px */
+	/*text-transform: uppercase;*/
 	margin-bottom: 1em;
+	text-align: center;
 }
 .intro {
 	font-size: 1.14285714em;		/* 16/14 */
@@ -384,7 +397,7 @@ img {
 
 
 
-.intro .showCourses{
+/*.intro .showCourses{
 	text-align: left;
 	width: 100%;
 	background-color: white;
@@ -393,17 +406,22 @@ img {
 	border-radius: 15px;
 	margin: 15px;
 	color:#000;
-}
+}*/
 
 .intro .showCourses{
 	text-align: left;
 	width: 100%;
+	margin: 15px;
+	color:#000;
+}
+
+.showCoursesBorder{
 	background-color: white;
+	padding: 25px;
 	-moz-border-radius: 25px;
 	-webkit-border-radius: 25px;
 	border-radius: 25px;
-	margin: 15px;
-	color:#000;
+	padding-right: 30px;
 }
 
 .openQuotes img{
@@ -426,8 +444,8 @@ img {
 	visibility: hidden;
 }
 .backArrow img{
-	width: 5%;
-	min-width: 75px;
+	width: 25%;
+	min-width: 140px;
 }
 
 .thinnerCourses{
@@ -590,7 +608,7 @@ html {
 		width: auto;
 	}
 	.lede {
-		font-family: Calibri, Candara, "Gill Sans", "Gill Sans MT", sans-serif;
+		font-family: 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
 	}
 	.lede a {
 		font-size: 1em;

@@ -26,10 +26,10 @@ while($row = mysql_fetch_assoc($subjectScores)) {
 	foreach ($row as $col => $val) {
 		if ($col == 'ID' || $col == 'Date' || $col == 'Email') continue;
 
-			if ($val > 0) {
-				$subjectArray[] = $col;
+		if ($val > 0) {
+			$subjectArray[] = $col;
 				// echo $col . "<br />";
-			}
+		}
 	}
 }
 
@@ -98,7 +98,7 @@ arsort($subjectTotals);
 // $newSubjectArray = [];
 foreach($subjectTotals as $key => $value)
 {
-  $newSubjectArray[] = $key;
+	$newSubjectArray[] = $key;
 }
 $newSubjectAmount = sizeof($newSubjectArray);
 
@@ -495,7 +495,7 @@ arsort($interestTotals);
 // $newInterestsSortedArray = [];
 foreach($interestTotals as $key => $value)
 {
-  $newInterestsSortedArray[] = $key;
+	$newInterestsSortedArray[] = $key;
 }
 $newInterestAmount = sizeof($newInterestsSortedArray);
 
@@ -510,250 +510,261 @@ $newInterestAmount = sizeof($newInterestsSortedArray);
 <html lang="en">
 <head>
 
-<meta charset="utf-8" />
-<title>LevelUp</title>
+	<meta charset="utf-8" />
+	<title>LevelUp</title>
 
-<meta name="DC.creator" content="Ethan Marcotte - http://ethanmarcotte.com" />
-<meta name="robots" content="index, follow" />
-<meta name="description" content="A demonstration site for Ethan Marcotte's book, RESPONSIVE WEB DESIGN" /> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="LevelUp" content="Level Up - http://www.Levelup.ie" />
+	<meta name="description" content="A website to help students better discover what they enjoy and want to pursue after second level." /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
+	<link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
 
-<script src="http://use.typekit.com/daz7uli.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-  <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
-<link rel="stylesheet" href="css/jquery-mobile.css" />
-<script src="js/jquery-mobile.js"></script>
-<link rel="stylesheet" href="css/dropit.css" />
-<script src="js/dropit.js"></script>
-<script src="js/redirect.js"></script>
-  <script type="text/javascript" src="js/canvasjs.min.js"></script>
-  <script src="http://code.highcharts.com/highcharts.js"></script>
-  <script src="http://code.highcharts.com/modules/data.js"></script>
-  <script src="http://code.highcharts.com/modules/drilldown.js"></script>
-  <script type="text/javascript">
-$(function () { //change to have different name than container
-	
-	$(document).ready(function () {
+	<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+	<link rel="stylesheet" href="css/jquery-mobile.css" />
+	<script src="js/jquery-mobile.js"></script>
+	<link rel="stylesheet" href="css/dropit.css" />
+	<script src="js/dropit.js"></script>
+	<script src="js/redirect.js"></script>
+	<script type="text/javascript" src="js/canvasjs.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/modules/data.js"></script>
+	<script src="http://code.highcharts.com/modules/drilldown.js"></script>
+	<script type="text/javascript">
 
-        // Build the chart
-        $('#interestChart').highcharts({
-        	chart: {
-        		backgroundColor: '#2f3945',
-        		plotBackgroundColor: null,
-        		plotBorderWidth: null,
-        		plotShadow: false
-        	},
-        	colors: ['#98cad3','#35c0e1','#138699'],
-        	title: {
-        		text: 'Top 3 Interests',
-        		style: {
-	                color: '#FFF'
-	            }
-        	},
-        	tooltip: {
-        		// pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        		'labelFormatter':function () { 
-       var total = 0, percentage; 
-       $.each(this.series.data, function() { 
-          total+=this.y; 
-       }); 
-
-       percentage=((this.y/total)*100).toFixed(1); 
-       return this.name+' '+percentage+'%'; 
-    }
-        	},
-        	plotOptions: {
-        		pie: {
-        			allowPointSelect: true,
-        			cursor: 'pointer',
-        			dataLabels: {
-        				enabled: false
-        			},
-        			showInLegend: true
-        		},
-        		series: {
-                	// borderColor: '#00E5EE',
-                	// borderWidth: 1,
-                	borderWidth: 0,
-                	shadow: false
-            	}
-        	},
-        	legend: {
-            backgroundColor: '#fff'
-        },
-            series: [{
-            	type: 'pie',
-            	name: 'Points Allocated',
-            	data: [
-            	<?php
-            	for($o = 0; $o < 3; $o++){
-            		echo "['" . $newInterestsSortedArray[$o] . "' , " .  intval($interestTotals[$newInterestsSortedArray[$o]]) . "],";
-            	} 
-            	?>
-                    ]
-                }]
-            });
-});
-
-});
 
 
 $(function () { //change to have different name than container
 
 	$(document).ready(function () {
+		$('#interestChart').highcharts({
+			chart: {
+				backgroundColor: '#2f3945',
+				plotBackgroundColor: null,
+				plotBorderWidth: 0,
+				plotShadow: false
+			},
+			colors: ['#98cad3','#35c0e1','#138699'],
+			title: {
+				text: 'Interest Enjoyment',
+				style: {
+					color: '#FFF',
+					fontSize: '44px',
+					fontFamily: '"Lobster"'
+				},
+				y: 50
+			},
+			credits: {
+				enabled: false
+			},
+			tooltip: {
+				'labelFormatter':function () { 
+					var total = 0, percentage; 
+					$.each(this.series.data, function() { 
+						total+=this.y; 
+					}); 
 
-        // Build the chart
-        $('#subjectChart').highcharts({
-        	chart: {
-        		backgroundColor: '#2f3945',
-        		plotBackgroundColor: null,
-        		plotBorderWidth: null,
-        		plotShadow: false
-        	},
-        	colors: ['#f88c8c','#ec3837','#b02e2e'],
-        	title: {
-        		text: 'Top 3 Subjects',
-        		style: {
-	                color: '#FFF'
-	            }
-        	},
-        	tooltip: {
-        		// pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        		'labelFormatter':function () { 
-       var total = 0, percentage; 
-       $.each(this.series.data, function() { 
-          total+=this.y; 
-       }); 
-
-       percentage=((this.y/total)*100).toFixed(1); 
-       return this.name+' '+percentage+'%'; 
-    }
-        	},
-        	plotOptions: {
-        		pie: {
-        			allowPointSelect: true,
-        			cursor: 'pointer',
-        			dataLabels: {
-        				enabled: false
-        			},
-        			showInLegend: true
-        		},
-        		series: {
-        			// borderColor: '#F54D70',
-           //      	borderWidth: 1,
-                	borderWidth: 0,
-                	shadow: false
-            	}
-        	},
-        	legend: {
-            backgroundColor: '#fff'
-        },
-
-
-            series: [{
-            	type: 'pie',
-            	name: 'Points Allocated',
-            	data: [
-            	<?php
-            	for($o = 0; $o < 3; $o++){
-            		$temp = $newSubjectArray[$o];
-            		echo "['" . $newSubjectArray[$o] . "' , " . intval($subjectTotals[$temp]) . "],";
-            	} 
-            	?>
-                    ]
-                }]
-            });
+					percentage=((this.y/total)*100).toFixed(1); 
+					return this.name+' '+percentage+'%'; 
+				}
+			},
+			plotOptions: {
+				pie: {
+					dataLabels: {
+						enabled: true,
+						distance: -55,
+						style: {
+							fontWeight: 'bold',
+							color: 'white',
+							fontFamily: '"PT Sans"',
+							fontSize: '18px',
+							width: '100px'
+						}
+					},
+					borderWidth: 0,
+					startAngle: 0,
+					endAngle: 360,
+					center: ['50%', '50%']
+				}
+			},
+			series: [{
+				type: 'pie',
+				name: 'Points Allocated',
+				innerSize: '0%',
+				data: [
+				<?php
+				if ($noInterests) {
+					for($o = 0; $o < 3; $o++){
+						$tempInterest = $newInterestsSortedArray[$o];
+						$cleanName = str_replace("_"," ", $tempInterest);
+						echo "['" . $cleanName . "' , " .  intval($interestTotals[$tempInterest]) . "],";
+					} 
+				}
+				else{
+					echo "['No Data Yet',   45],
+					['No Data Yet',   45],
+					['No Data Yet',   45]";
+				}
+				?>
+				]
+			}]
+		});
+});
 });
 
+$(function () { //change to have different name than container
+
+	$(document).ready(function () {
+		$('#subjectChart').highcharts({
+			chart: {
+				backgroundColor: '#2f3945',
+				plotBackgroundColor: null,
+				plotBorderWidth: 0,
+				plotShadow: false
+			},
+			colors: ['#f88c8c','#ec3837','#b02e2e'],
+			title: {
+				text: 'Subject Enjoyment',
+				style: {
+					color: '#FFF',
+					fontSize: '44px',
+					fontFamily: '"Lobster"'
+				},
+				y: 50
+			},
+			credits: {
+				enabled: false
+			},
+			tooltip: {
+				'labelFormatter':function () { 
+					var total = 0, percentage; 
+					$.each(this.series.data, function() { 
+						total+=this.y; 
+					}); 
+
+					percentage=((this.y/total)*100).toFixed(1); 
+					return this.name+' '+percentage+'%'; 
+				}
+			},
+			plotOptions: {
+				pie: {
+					dataLabels: {
+						enabled: true,
+						distance: -55,
+						style: {
+							fontWeight: 'bold',
+							color: 'white',
+							fontFamily: '"PT Sans"',
+							fontSize: '18px',
+							width: '100px'
+						}
+					},
+					borderWidth: 0,
+					startAngle: 0,
+					endAngle: 360,
+					center: ['50%', '50%']
+				}
+			},
+			series: [{
+				type: 'pie',
+				name: 'Points Allocated',
+				innerSize: '0%',
+				data: [
+				<?php
+				if ($noSubjects) {
+					for($o = 0; $o < 3; $o++){
+						$tempSubject = $newSubjectArray[$o];
+						$cleanName = str_replace("_"," ", $tempSubject);
+						echo "['" . $cleanName . "' , " . intval($subjectTotals[$tempSubject]) . "],";
+					} 
+				}
+				else{
+					echo "['No Data Yet',   45],
+					['No Data Yet',   45],
+					['No Data Yet',   45]";
+				}
+				?>
+				]
+			}]
+		});
 });
 
+
+});
 
 
 </script>
 
 <script type="text/javascript">
-  $(document).ready(function() {
-    $('.menu').dropit();
-});
+	$(document).ready(function() {
+		$('.menu').dropit();
+	});
 </script>
 
 </head>
 
 <body>
 
-<div class="site">
+	<div class="site">
 
-	<div class="page">
-
-	
-		<div class="navigationBar">
-        <!-- <h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1> -->
-
-        <ul class="nav nav-primary bigMenu">
-          <div class="logoTest"><li id="logoImage"><a href="homepage.php" data-ajax='false'><img src="images/header-logo.png"></a></li></div>
-          <li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>&nbsp;&nbsp;Explore&nbsp;&nbsp;&nbsp;</a></li><li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>|&nbsp;&nbsp;Weekly Feedback&nbsp;&nbsp;</a></li><li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>|<b class="currentPage">&nbsp;&nbsp;Statistics&nbsp;&nbsp;</b></a></li><li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>|&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>|&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>|&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
-        </ul><!-- /end ul#nav-primary.nav -->
+		<div class="page">
 
 
-        <ul class="nav nav-primary smallMenu">
-          <img src="images/text-logo.png">
-          <ul class="menu">
-            <li>
-              <a href="#">&#9776; Menu</a>
-              <ul>
-                <li><a href="exploreInterests.php" data-ajax='false'><img src="images/explore-icon.png">Explore</a></li>
-                <li><a href="interestFeedback.php" data-ajax='false'><img src="images/feedback-icon.png">Weekly Feedback</a></li>
-                <li><a href="statistics.php" data-ajax='false'><img src="images/stats-icon.png">Statistics</a></li>
-                <li><a href="testimonials.php" data-ajax='false'><img src="images/testimonials-icon.png">Testimonials</a></li>
-                <li><a href="savedCourses.php" data-ajax='false'><img src="images/saved-icon.png">Saved Courses</a></li>
-                <li><a href="logout.php" data-ajax='false'><img src="images/account-icon.png">Log Out</a></li>
-              </ul>
-            </li>
-          </ul>
-        </ul><!-- /end ul#nav-primary.nav -->
-      </div>
+			<div class="navigationBar">
+				<!-- <h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1> -->
+
+				<ul class="nav nav-primary bigMenu">
+					<div class="logoTest"><li id="logoImage"><a href="homepage.php" data-ajax='false'><img src="images/icons/LOGO_withFont.png"></a></li></div>
+					<li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>&nbsp;&nbsp;Explore&nbsp;&nbsp;&nbsp;</a></li><li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>|&nbsp;&nbsp;Weekly Feedback&nbsp;&nbsp;</a></li><li id="nav-stats"><a href="statistics.php" data-ajax='false'>|<b class="currentPage">&nbsp;&nbsp;Statistics&nbsp;&nbsp;</b></a></li><li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>|&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>|&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>|&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
+				</ul><!-- /end ul#nav-primary.nav -->
 
 
-		
-		<hr />
+				<ul class="nav nav-primary smallMenu">
+					<img src="images/icons/LOGO_ForMobile.png">
+					<ul class="menu">
+						<li>
+							<a href="#">&#9776; Menu</a>
+							<ul>
+								<li><a href="exploreInterests.php" data-ajax='false'><img src="images/icons/icon_ExploreCourses.jpg">Explore</a></li>
+								<li><a href="interestFeedback.php" data-ajax='false'><img src="images/icons/icon_MyRecords.jpg">Weekly Feedback</a></li>
+								<li><a href="statistics.php" data-ajax='false'><img src="images/icons/icon_Statistics.jpg">Statistics</a></li>
+								<li><a href="testimonials.php" data-ajax='false'><img src="images/icons/icon_Testimonials.jpg">Testimonials</a></li>
+								<li><a href="savedCourses.php" data-ajax='false'><img src="images/icons/icon_SavedCourses.jpg">Saved Courses</a></li>
+								<li><a href="logout.php" data-ajax='false'><img src="images/icons/icon_LogOut.jpg">Log Out</a></li>
+							</ul>
+						</li>
+					</ul>
+				</ul><!-- /end ul#nav-primary.nav -->
+			</div>
 
-		<div class="blog section">
 
-			<div class="main">
-				<div class="article">
-					<div class="header">
-						<h1 class="title"></h1>
-					</div><!-- /end .header -->
 
-					
+			<hr />
 
-				<div class="intro">
-					<?php 
-      	if ($noInterests) {
-      		echo "<div id='interestChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>";
-      	}
-      	else {
-      		echo "<p>You must fill out some feedback on your interests before we can display the statistics.</p>";
-      	}
-      ?>
-					 <div class="meta section">
-							<?php
+			<div class="blog section">
 
-      	if ($noSubjects) {
-      		echo "<div id='subjectChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>";
-      	}
-      	else {
-      		echo "<p>You must fill out some feedback on your subjects before we can display the statistics.</p>";
-      	}
-							 ?>
-					</div> <!-- /end .meta.section -->
-				</div><!-- /end .article -->
-			</div><!-- /end .main -->
-		</div><!-- /end .blog.section -->
+				<div class="main">
+					<div class="article">
+						<div class="header">
+							<h1 class="title"></h1>
+						</div><!-- /end .header -->
 
-		<div id="footer">
+
+
+						<div class="intro">
+							<br />
+							<br />
+							<br />
+							<div id='interestChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>";
+							<div id='subjectChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>";
+
+
+							<div class="meta section">
+							</div> <!-- /end .meta.section -->
+						</div><!-- /end .article -->
+					</div><!-- /end .main -->
+				</div><!-- /end .blog.section -->
+
+				<div id="footer">
 			<!-- <p>Images &copy; their respective copyright holders.</p>
 
 			<p>The design and code is &copy; 2014 <a href="http://unstoppablerobotninja.com/">Ethan Marcotte</a>, supporting his book <cite><a href="http://www.abookapart.com/products/responsive-web-design">Responsive Web Design</a></cite>.</p>
@@ -761,7 +772,6 @@ $(function () { //change to have different name than container
 			<p>Beep boop beep.</p> -->
 		</div><!-- /end #footer -->
 	</div><!-- /end .page -->
-
 </div><!-- /end .site -->
 
 </body>

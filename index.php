@@ -47,7 +47,7 @@ if($logged == true){
 
 
   <div id="navigationBar">
-      <div id="logo"><a href="index.php"><img src="images/header-logo.png"></a></div>
+      <div id="logo"><a href="index.php"><img src="images/icons/LOGO_withFont.png"></a></div>
     </div>
 
   <div class="section hero">
