@@ -113,6 +113,38 @@ if($logged == true){
     </div>
   </div>
 
+  <div class="section get-help">
+    <div class="container">
+      <h3 class="section-heading">The Team</h3>
+      <div class="row">
+        <div class="three columns">
+        <img class="bioImages" src="images/Sinead.jpg">
+          <h5 class="value-heading">Sinéad</h5>
+          <h6 class="value-heading">Project Lead</h6>
+          <p class="value-description">Bio here would be nice this is just filler text to see what size the text would be and how much space can be allocated. I wonder will this be too much? Short and sweet would be best I think.</p>
+        </div>
+        <div class="three columns">
+        <img class="bioImages" src="images/Pauric.jpg">
+          <h5 class="value-heading">Pauric</h5>
+          <h6 class="value-heading">Content Developer</h6>
+          <p class="value-description">Bio here would be nice this is just filler text to see what size the text would be and how much space can be allocated. I wonder will this be too much? Short and sweet would be best I think.</p>
+        </div>
+        <div class="three columns">
+        <img class="bioImages" src="images/Sian.jpg">
+          <h5 class="value-heading">Sían</h5>
+          <h6 class="value-heading">Designer</h6>
+          <p class="value-description">Bio here would be nice this is just filler text to see what size the text would be and how much space can be allocated. I wonder will this be too much? Short and sweet would be best I think.</p>
+        </div>
+        <div class="three columns">
+        <img class="bioImages" src="images/Sean.jpg">
+          <h5 class="value-heading">Seán</h5>
+          <h6 class="value-heading">Programmer</h6>
+          <p class="value-description">Bio here would be nice this is just filler text to see what size the text would be and how much space can be allocated. I wonder will this be too much? Short and sweet would be best I think.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 

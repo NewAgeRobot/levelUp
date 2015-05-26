@@ -540,14 +540,14 @@ $(function () { //change to have different name than container
         // Build the chart
         $('#interestChart').highcharts({
         	chart: {
-        		backgroundColor: '#1b1b27',
+        		backgroundColor: '#2f3945',
         		plotBackgroundColor: null,
         		plotBorderWidth: null,
         		plotShadow: false
         	},
         	colors: ['#98cad3','#35c0e1','#138699'],
         	title: {
-        		text: 'Interest enjoyment over time',
+        		text: 'Top 3 Interests',
         		style: {
 	                color: '#FFF'
 	            }
@@ -581,7 +581,7 @@ $(function () { //change to have different name than container
             	}
         	},
         	legend: {
-            backgroundColor: 'grey'
+            backgroundColor: '#fff'
         },
             series: [{
             	type: 'pie',
@@ -607,14 +607,14 @@ $(function () { //change to have different name than container
         // Build the chart
         $('#subjectChart').highcharts({
         	chart: {
-        		backgroundColor: '#1b1b27',
+        		backgroundColor: '#2f3945',
         		plotBackgroundColor: null,
         		plotBorderWidth: null,
         		plotShadow: false
         	},
         	colors: ['#f88c8c','#ec3837','#b02e2e'],
         	title: {
-        		text: 'Subject enjoyment over time',
+        		text: 'Top 3 Subjects',
         		style: {
 	                color: '#FFF'
 	            }
@@ -648,7 +648,7 @@ $(function () { //change to have different name than container
             	}
         	},
         	legend: {
-            backgroundColor: 'grey'
+            backgroundColor: '#fff'
         },
 
 
@@ -688,45 +688,43 @@ $(function () { //change to have different name than container
 	<div class="page">
 
 	
-		<h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1>
+		<div class="navigationBar">
+        <!-- <h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1> -->
 
-		<ul class="nav nav-primary bigMenu">
-			<li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>Explore</a></li>
-			<li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>Weekly Feedback</a></li>
-			<li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>Statistics</a></li>
-			<li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>Testimonials</a></li>
-			<li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>Saved Courses</a></li>
-			<li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>Log Out</a></li>
-		</ul><!-- /end ul#nav-primary.nav -->
+        <ul class="nav nav-primary bigMenu">
+          <div class="logoTest"><li id="logoImage"><a href="homepage.php" data-ajax='false'><img src="images/header-logo.png"></a></li></div>
+          <li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>&nbsp;&nbsp;Explore&nbsp;&nbsp;&nbsp;</a></li><li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>|&nbsp;&nbsp;Weekly Feedback&nbsp;&nbsp;</a></li><li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>|&nbsp;&nbsp;Statistics&nbsp;&nbsp;</a></li><li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>|&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>|&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>|&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
+        </ul><!-- /end ul#nav-primary.nav -->
 
-		
-		<ul class="nav nav-primary smallMenu">
-		<img src="images/text-logo.png"></li><ul class="menu">
-				    <li>
-				        <a href="#">&#9776; Menu</a>
-				        <ul>
-				            <li><a href="exploreInterests.php" data-ajax='false'><img src="images/explore-icon.png">Explore</a></li>
-				            <li><a href="interestFeedback.php" data-ajax='false'><img src="images/feedback-icon.png">Weekly Feedback</a></li>
-				            <li><a href="statistics.php" data-ajax='false'><img src="images/stats-icon.png">Statistics</a></li>
-				            <li><a href="testimonials.php" data-ajax='false'><img src="images/testimonials-icon.png">Testimonials</a></li>
-				            <li><a href="savedCourses.php" data-ajax='false'><img src="images/saved-icon.png">Saved Courses</a></li>
-				            <li><a href="logout.php" data-ajax='false'><img src="images/account-icon.png">Log Out</a></li>
-				        </ul>
-				    </li>
-				</ul>
-		</ul><!-- /end ul#nav-primary.nav -->
+
+        <ul class="nav nav-primary smallMenu">
+          <img src="images/text-logo.png">
+          <ul class="menu">
+            <li>
+              <a href="#">&#9776; Menu</a>
+              <ul>
+                <li><a href="exploreInterests.php" data-ajax='false'><img src="images/explore-icon.png">Explore</a></li>
+                <li><a href="interestFeedback.php" data-ajax='false'><img src="images/feedback-icon.png">Weekly Feedback</a></li>
+                <li><a href="statistics.php" data-ajax='false'><img src="images/stats-icon.png">Statistics</a></li>
+                <li><a href="testimonials.php" data-ajax='false'><img src="images/testimonials-icon.png">Testimonials</a></li>
+                <li><a href="savedCourses.php" data-ajax='false'><img src="images/saved-icon.png">Saved Courses</a></li>
+                <li><a href="logout.php" data-ajax='false'><img src="images/account-icon.png">Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </ul><!-- /end ul#nav-primary.nav -->
+      </div>
 
 
 		
 		<hr />
 
 		<div class="blog section">
-			<h1 class="lede"><?php echo $prompts['Prompt'];?></h1>
 
 			<div class="main">
 				<div class="article">
 					<div class="header">
-						<h1 class="title">Tick up to 3 interests</h1>
+						<h1 class="title"></h1>
 					</div><!-- /end .header -->
 
 					
@@ -739,15 +737,17 @@ $(function () { //change to have different name than container
       	else {
       		echo "<p>You must fill out some feedback on your interests before we can display the statistics.</p>";
       	}
+      ?>
+					 <div class="meta section">
+							<?php
+
       	if ($noSubjects) {
       		echo "<div id='subjectChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>";
       	}
       	else {
       		echo "<p>You must fill out some feedback on your subjects before we can display the statistics.</p>";
       	}
-      ?>
-					 <div class="meta section">
-							
+							 ?>
 					</div> <!-- /end .meta.section -->
 				</div><!-- /end .article -->
 			</div><!-- /end .main -->
