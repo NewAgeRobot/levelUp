@@ -6,6 +6,10 @@ ROBOT…OR NOT?
 */
 
 /* html5doctor.com/html-5-reset-stylesheet/ */
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,time,mark,audio,video { margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent; } 
 body { line-height:1; }
 ol,ul { list-style:none; }
@@ -33,12 +37,12 @@ table { border-collapse:collapse;border-spacing:0; }
 /*-  BASE STYLES
 ----------------------------------------------------------------------*/
 body {
-	background: #2f3945;
+	background: #303944;
 	color: #fff;
 	font: normal 100%/1.5 Calibri, Candara, "Gill Sans", "Gill Sans MT", sans-serif;
 }
 .ie7 body {
-	background: #2f3945;	/* Stupid IE7 bug is stupid. */
+	background: #303944;	/* Stupid IE7 bug is stupid. */
 }
 table {
 	font-size:inherit;
@@ -167,9 +171,10 @@ img {
 }
 .nav-primary {
 	background: #1b1b27;
-	font: bold 14px "pill-gothic-300mg-1","pill-gothic-300mg-2", Calibri, Candara, "Gill Sans", "Gill Sans MT", sans-serif;
+	/*font: 18px "pill-gothic-300mg-1","pill-gothic-300mg-2", Calibri, Candara, "Gill Sans", "Gill Sans MT", sans-serif;*/
+	font: 18px 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
 	padding: 1.2em 1em 1em;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	text-align: right;
 	/*top: 100px;*/
 	z-index: 99;
@@ -183,7 +188,10 @@ img {
 }
 
 
-
+.currentPage{
+	font-size: 18px;
+	text-transform: uppercase;
+}
 
 
 
@@ -244,7 +252,7 @@ img {
 	display: inline;
 }
 .nav-primary a {
-	color: #EECBA5;
+	color: #fff;
 	padding:0;
 	margin:0;
 	position: relative;
@@ -284,10 +292,10 @@ img {
 	width: 93.75%;			/* 900/960 */
 }
 .blog {
-	background: #2f3945;	/* 568/900 */
+	background: #303944;	/* 568/900 */
 }
 .lede {
-	background: #2f3945;
+	background: #303944;
 	color: #F9E3CC;
 	font: normal 1.25em "league-gothic-1", "league-gothic-2", "League Gothic", "Arial Narrow", Arial, sans-serif;	/* 20px / 16px */
 	padding: 0.8em 5.33333333%;	/* 16px / 20px; 48px / 900px */
@@ -445,7 +453,7 @@ blockquote {
 	padding: 1.1em 0 0.1em;
 }
 .blog .figure {
-	background: #2f3945;
+	background: #303944;
 	color: #EEE;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
@@ -490,7 +498,7 @@ blockquote {
 	content: "";
 }
 .meta ul a {
-	background: #2f3945;
+	background: #303944;
 	-moz-border-radius: 0.4em;
 	-webkit-border-radius: 0.4em;
 	border-radius: 0.4em;
@@ -502,7 +510,7 @@ blockquote {
 	content: "#";
 }
 .meta ul a:hover {
-	background: #2f3945;
+	background: #303944;
 	color: #FFF;
 }
 
@@ -527,7 +535,7 @@ html {
 @media screen and (max-width: 845px), screen and (min-width: 1200px){
 	
 	.blog {
-		background: #2f3945;
+		background: #303944;
 	}
 	.blog .main,
 	.blog .other {
@@ -538,7 +546,7 @@ html {
 		margin-bottom: 0;
 	}
 	.blog .other {
-		background: #2f3945;
+		background: #303944;
 		padding: 20px 8.48057%;
 	}
 	.other .section {
@@ -558,10 +566,10 @@ html {
 		display: none;
 	}
 	body {
-		background: #2f3945;
+		background: #303944;
 	}
 	.ie7 body {
-		background: #2f3945;	/* Stupid IE7 bug is stupid. */
+		background: #303944;	/* Stupid IE7 bug is stupid. */
 	}
 	/*.page {
 		position: relative;

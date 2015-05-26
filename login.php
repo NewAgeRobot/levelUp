@@ -5,7 +5,7 @@ include "connect.php";
 include "algor.php";
 if($logged == true){
   die("You are already logged in!");
-  echo "<h1>you're logged in!</h1>";
+  // echo "<h1>you're logged in!</h1>";
 }
 if ($_POST['login']){
   if($_POST['email'] && $_POST['password']){
@@ -13,10 +13,10 @@ if ($_POST['login']){
     $password = mysql_real_escape_string(hash("sha512", $_POST['password']));
     $user = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Email`='$email'")); //get user by their email
     if($user == '0'){
-      die("That account doesn't exist, sorry!");
+      die("An account with that username and password does not exist. Please try another.");
     }
     if( $user['Password'] != $password){
-      die("Incorrect password, sorry brah");
+      die("Incorrect password. Please try another");
     }
     $salt = hash("sha512", rand() . rand() . rand());
     setcookie("c_user", hash("sha512", $email), time() + 12 * 60 * 60, "/");
@@ -74,13 +74,13 @@ if ($_POST['login']){
 
         <ul class="nav nav-primary bigMenu">
           <div class="logoTest"><li id="logoImage"><a href="homepage.php" data-ajax='false'><img src="images/header-logo.png"></a></li></div>
-          <li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>&nbsp;&nbsp;Explore&nbsp;&nbsp;&nbsp;</a></li><li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>|&nbsp;&nbsp;Weekly Feedback&nbsp;&nbsp;</a></li><li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>|&nbsp;&nbsp;Statistics&nbsp;&nbsp;</a></li><li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>|&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>|&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>|&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
-        </ul><!-- /end ul#nav-primary.nav -->
+          <div style="visibility:hidden;"><li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>&nbsp;&nbsp;Explore&nbsp;&nbsp;&nbsp;</a></li><li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>|&nbsp;&nbsp;Weekly Feedback&nbsp;&nbsp;</a></li><li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>|&nbsp;&nbsp;Statistics&nbsp;&nbsp;</a></li><li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>|&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>|&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>|&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
+        </div></ul><!-- /end ul#nav-primary.nav -->
 
 
         <ul class="nav nav-primary smallMenu">
           <img src="images/text-logo.png">
-          <ul class="menu">
+         <div style="visibility:hidden;"> <ul class="menu">
             <li>
               <a href="#">&#9776; Menu</a>
               <ul>
@@ -92,7 +92,7 @@ if ($_POST['login']){
                 <li><a href="logout.php" data-ajax='false'><img src="images/account-icon.png">Log Out</a></li>
               </ul>
             </li>
-          </ul>
+          </ul></div>
         </ul><!-- /end ul#nav-primary.nav -->
       </div>
 
