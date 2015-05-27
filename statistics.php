@@ -754,8 +754,9 @@ $(function () { //change to have different name than container
 							<br />
 							<br />
 							<br />
-							<div id='interestChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>";
-							<div id='subjectChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>";
+							<div id='interestChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>
+							<div class="Divider"><img src="images/icons/Divider.png"></div>
+							<div id='subjectChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>
 
 
 							<div class="meta section">
