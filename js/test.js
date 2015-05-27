@@ -1,5 +1,7 @@
 $(document).ready(function(){
     $("#reorder").click(function(){
+        $(".courseExpand").hide();
+        $(".courseExpandTitle").hide();
         var fixHelperModified = function(e, tr) {
             var $originals = tr.children();
             var $helper = tr.clone();

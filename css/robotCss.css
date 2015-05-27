@@ -250,6 +250,33 @@ img {
 }
 
 
+.courseInfoTable{
+	font: 18px 'PT Sans';
+	color: #000;
+	background-color: white;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	margin: 0 auto;
+	margin-bottom: 35px;
+}
+
+.grid{
+	width:50%;
+	max-width: 50%;
+	font: 18px 'PT Sans';
+	color: #000;
+	background-color: white;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	margin: 0 auto;
+}
+
+#sort{
+	max-width: 100%;
+}
+
 
 
 .nav-primary:after,
