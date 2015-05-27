@@ -790,7 +790,7 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                 echo "<tr><td class='closeQuotes'><img src='images/icons/RightQuotation.jpg'></td></tr>";
                 // print_r("<tr class='hiddenLink'><td class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></td></tr>"); //not working
                 //MAYBE JUST HIDE THIS? LIKE, HAVE IT ECHO OUT BUT MAKE IT HIDDEN AND SHOW THE BUTTON INSTEAD?
-                print_r("<tr><td class='visitWebsite'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'><img src='images/visitWebsite.png'></a></td></tr>");
+                print_r("<tr><td class='visitWebsite'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'><img src='images/icons/visitWebsite_btn.png'></a></td></tr>");
                 
                 echo "</table>";
                 echo "</div>";
