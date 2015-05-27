@@ -573,6 +573,7 @@ $(function () { //change to have different name than container
 						enabled: true,
 						distance: -55,
 						style: {
+          					textShadow: false, 
 							fontWeight: 'bold',
 							color: 'white',
 							fontFamily: '"PT Sans"',
@@ -651,6 +652,7 @@ $(function () { //change to have different name than container
 						enabled: true,
 						distance: -55,
 						style: {
+          					textShadow: false, 
 							fontWeight: 'bold',
 							color: 'white',
 							fontFamily: '"PT Sans"',

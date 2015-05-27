@@ -55,8 +55,11 @@ array_multisort($sortedArray, SORT_ASC, $array);
 $(document).ready(function(){
     $('.ajax').show();
     $(".ajax").click(function() {
-      var position = $(this).closest('tr').find('td:eq(0)').text();
-      var code = $(".jsCourseCode").eq(position).text();
+      // var position = $(this).closest('tr').find('div:eq(2)').text();
+      // alert($(this).parentsUntil('tr').children('.top_row').children('.jsCourseCode').text());
+      // alert(position);
+      var code = $(this).parentsUntil('tr').children('.top_row').children('.jsCourseCode').text();
+      alert(code);
         $.ajax({
           method: 'POST' ,
           url: 'deleteCourse.php' ,
@@ -88,38 +91,44 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
 
     <script type="text/javascript">
     $(document).ready(function(){
-      $(".courseExpand").hide();
-      $(".courseExpandTitle").hide();
+      $(".bot_title_row").hide();
+      $(".bot_row").hide();
 
 
-      $(".toggleExpand").click(function() {
-        $(".courseExpand").hide();
-        $(".courseExpandTitle").hide();
+      $(".top_title_row").click(function() {
+      $(".bot_title_row").hide();
+      $(".bot_row").hide();
 
         var $clicked = $(this);
-        var linkIndex = $clicked.index();
-        linkIndex -= 1;
-        $clicked.siblings(".courseExpand").eq(linkIndex).show();  
+        $clicked.siblings(".bot_row").show();  
 
 
         var $clickedTitle = $(this);
-        var linkIndexTitle = $clickedTitle.index();
-        linkIndexTitle -= 1;
-        $clickedTitle.siblings(".courseExpandTitle").eq(linkIndexTitle).show();  
+        $clickedTitle.siblings(".bot_title_row").show();  
       });
 
-      $(".toggleExpandTitle").click(function() {
-        $(".courseExpand").hide();
-        $(".courseExpandTitle").hide();
+      $(".top_row").click(function() {
+        $(".bot_title_row").hide();
+        $(".bot_row").hide();
 
         var $clicked = $(this);
-        var linkIndex = $clicked.index();
-        $clicked.siblings(".courseExpand").eq(linkIndex).show();  
+        $clicked.siblings(".bot_row").show();  
 
 
         var $clickedTitle = $(this);
-        var linkIndexTitle = $clickedTitle.index();
-        $clickedTitle.siblings(".courseExpandTitle").eq(linkIndexTitle).show();  
+        $clickedTitle.siblings(".bot_title_row").show();  
+      });
+
+      $(".corner_fix").click(function() {
+        $(".bot_title_row").hide();
+        $(".bot_row").hide();
+
+        var $clicked = $(this);
+        $clicked.siblings(".bot_row").show();  
+
+
+        var $clickedTitle = $(this);
+        $clickedTitle.siblings(".bot_title_row").show();  
       });
     });
       
@@ -176,24 +185,86 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
 
             <div class="intro">
             <div class="centeredIntro">
+
+
+<!-- <table border='1' width='100%' id='sort' class='grid'>
+    <tr>
+        <td>
+            <div class='top_row'>
+                <div>Hello</div>
+                <div>World</div>
+                <div>World</div>
+            </div>
+            <div class='bot_row'>
+                <div>Hello</div>
+                <div>World</div>
+                <div>Hello</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <div class='top_row'>
+                <div>Hello</div>
+                <div>Hello</div>
+                <div>Hello</div>
+            </div>
+            <div class='bot_row'>
+                <div>Hello</div>
+                <div>Hello</div>
+                <div>Hello</div>
+            </div>
+        </td>
+    </tr>
+</table>
+<button id='reorder'>Reorder Courses</button><a href='javascript:{}' class='reorderDone'><button>Save Order</button> -->
+
+
 <?php
   if(!$numCourses){
   echo "You have yet to save any courses.";
 }
 else{
-  echo "<table id='sort' class='grid'>
-  <thead><tr><td><b><u>No.</b></u></td><td><b><u>Course Code</b></u></td><td><b><u>Course Title</b></u></td><td><b><u>Level</b></u></td><td><b><u>Course Points</b></u></td><td><b><u>Institute</b></u></td><td><b><u>More Information</b></u></td><td><b><u>Delete?</b></u></td></tr>
-  </thead>
-  <tbody>";
- 
-  //might have to save amount of courses they've saved
+  echo "<table border='1' width='100%' id='sort' class='grid'>";
+
   for($counter = 0; $counter < $num_rows; $counter++){
-    print_r("<tr><td class='index'>" . $counter . "</td><td class='jsCourseCode'>" . $array[$counter]['CourseCode'] . "</td><td>" . $array[$counter]['CourseTitle'] . "</td><td>" . $array[$counter]['CourseLevel'] . "</td><td>" . $array[$counter]['CoursePoints'] . "</td><td>" . $array[$counter]['CourseCollege'] . "</td><td><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'><font color='lightblue'>Find out more</font></a></td><td><a href='javascript:{}' class='ajax'><font color='red'>Delete Course</font></a></td></tr>"); //not working
+    print_r("<tr>
+          <td>
+              <div class='top_title_row'>
+                  <div>#</div>
+                  <div>Code</div>
+                  <div>Title</div>
+                  <div>Institute</div>
+              </div>
+              <div class='top_row'>
+                  <div class='index'>" . $counter . "</div>
+                  <div class='jsCourseCode'>" . $array[$counter]['CourseCode'] . "</div>
+                  <div>" . $array[$counter]['CourseTitle'] . "</div>
+                  <div>" . $array[$counter]['CourseCollege'] . "</div>
+              </div>
+              <div class='bot_title_row'>
+                  <div>Level</div>
+                  <div>Points</div>
+                  <div>Link</div>
+                  <div>Delete?</div>
+              </div>
+              <div class='bot_row'>
+                  <div>" . $array[$counter]['CourseLevel'] . "</div>
+                  <div>" . $array[$counter]['CoursePoints'] . "</div>
+                  <div><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'><font color='lightblue'>Find out more</font></a></div>
+                  <div><a href='javascript:{}' class='ajax'><font color='red'>Delete Course</font></a></div>
+              </div>
+              <div class='corner_fix'>
+                  <div>&nbsp;</div>
+              </div>
+          </td>
+      </tr>");
   }
-  echo "</tbody></table>";
+  echo "</table>";
   echo "<button id='reorder'>Reorder Courses</button><a href='javascript:{}' class='reorderDone'><button>Save Order</button></a>";
 }
-?> 
+?>
 
 
 <!-- <div class='coursesList' id='sort' class='grid'>
