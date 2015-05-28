@@ -48,6 +48,21 @@ p {
 .bigBlock{
 }
 
+.whiteHeader{
+  margin-top: 160px;
+  height: 45px;
+  color: black;
+  background-color: white;
+  text-align: center;
+  font: 32px 'Lobster', 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
+/*REDUCE SIZEFOR MOBILE SCREENS */
+}
+
+@media screen and (max-width: 1200px) {
+  .whiteHeader{
+    font: 24px 'Lobster', 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
+  }
+}
 
 
 .wrapper { 
@@ -62,16 +77,16 @@ p {
 #one {
   background-color: #303944;
   float:left; 
-  width:32.5%;
+  width:33.33333%;
   /*border:2px dashed #ccc;*/
   min-height:170px;
   height: 475px;
 }
 #two { 
-  background-color: #303944;
+  background-color: #f18b37;
   float:left; 
   overflow:hidden;
-  width:32.5%;
+  width:33.33333%;
   /*border:2px dashed #ccc;*/
   min-height:170px;
   height: 475px;
@@ -80,7 +95,7 @@ p {
   background-color: #303944;
   float:left; 
   overflow:hidden;
-  width:32.5%;
+  width:33.33333%;
   /*border:2px dashed #ccc;*/
   min-height:170px;
   height: 475px;
@@ -91,40 +106,55 @@ p {
     float: none;
     display: block;
     margin-right:0;
-    width:auto;
+    margin: 0 auto;
+    max-width:600px;
+    width: 100%;
     border:0;
-    /*border-bottom:2px solid #000;  */  
+    border:2px solid #000;    
   }
     #two { 
     float: none;
-    width: 100%;
+    background-color: #f18b37;
     display: block;
     margin-right:0;
-    width:auto;
+    margin: 0 auto;
+    max-width:600px;
+    width: 100%;
     border:0;
-    /*border-bottom:2px solid #000;  */  
+    border:2px solid #000;    
   }
     #three { 
     float: none;
     display: block;
     margin-right:0;
-    width:auto;
+    margin: 0 auto;
+    max-width:600px;
+    width: 100%;
     border:0;
-    /*border-bottom:2px solid #000;  */  
+    border:2px solid #000;    
   }
+}
+
+.clndr-control-button{
+  cursor: pointer;
 }
 
 
 
 
+.event-item-name{
+  font-weight: bold;
+}
+
+.event-item-date{
+  color: #f18b37;
+  font-weight: bold;
+}
 
 
-
-
-
-
-
-
+.event-listing-title{
+  font-weight: bold;
+}
 
 .event-listing{
   font-family: 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
@@ -138,9 +168,9 @@ p {
   max-width: 100%;
   font-family: 'Droid Sans Mono';
   font-size: 14px;
-  background-color: #f18b37;
+  /*background-color: #f18b37;*/
   text-align: left;
-  padding: 15px;
+  /*padding: 15px;*/
 }
 .cal1 .clndr .clndr-controls {
   display: inline-block;
@@ -215,8 +245,10 @@ p {
 .cal1 .clndr .clndr-table .header-days .header-day {
   vertical-align: middle;
   text-align: center;
-  /*border-left: 1px solid #000000;
-  border-top: 1px solid #000000;*/
+  /*margin: 5px;*/
+  border-left: 1px solid #000000;
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
   color: #000;
 }
 .cal1 .clndr .clndr-table .header-days .header-day:last-child {

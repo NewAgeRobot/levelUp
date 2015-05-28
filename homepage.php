@@ -79,8 +79,8 @@ $amountSaved = $user['CoursesSaved'];
 <body>
 
   <div class="site">
-   
-    <div id="pass-in-events" class="cal1" style="margin-top:150px"></div>
+    <!-- <div class="whiteHeader">WEDNESDAY 16TH</div> -->
+    <div id="pass-in-events" class="cal1" style="margin-top:0px"></div>
     <div class="page">
 
       <div class="navigationBar">
@@ -126,8 +126,8 @@ $amountSaved = $user['CoursesSaved'];
             </div><!-- /end .header -->
 
             <!-- <div class="intro"> -->
-              <div class="meta section">
-                <?php
+              <!-- <div class="meta section"> -->
+               <!--  <?php
                 if ($amountSaved > 0){
                   $oneBadge = true;
                   echo "<img src='images/icons/OneCourse_Badge.png' height='150px' width='150px'>";
@@ -140,8 +140,8 @@ $amountSaved = $user['CoursesSaved'];
                   $tenBadge = true;
                   echo "<img src='images/icons/TenCourses_Badge.png' height='150px' width='150px'>";
                 }
-                ?>
-              </div> <!-- /end .meta.section -->
+                ?> -->
+              <!-- </div> --> <!-- /end .meta.section -->
             <!-- </div> --><!-- /end .article -->
           </div><!-- /end .main -->
         </div><!-- /end .blog.section -->

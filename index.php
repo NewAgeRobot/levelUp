@@ -54,7 +54,7 @@ if($logged == true){
     <div class="container">
       <div class="row">
         <div class="one-half column">
-          <h4 class="hero-heading">Explore courses that actually interest you, not just what's popular.</h4>
+          <h4 class="hero-heading">Your future, in your hands.</h4>
           <a class="button button-primary" href="register.php">Register</a>
           <a class="button button-primary" href="login.php">Log In</a>
         </div>
@@ -91,7 +91,8 @@ if($logged == true){
   <div class="section get-help">
     <div class="container">
       <h3 class="section-heading">Need help getting started?</h3>
-      <p class="section-description">We're here to help you! Just register, and get using the app. See the feedback within days, and track your progress towards happiness!</p>
+      <p class="section-description">Here at LevelUp we believe that by simply including your interests and hobbies in your search for courses, you will surprise yourself with the wide range of areas of study available in Ireland.
+As well as providing a new and engaging way to search for college courses, we also give information on the many other career and education paths available after school, information from professionals who have been through the experience, from PLC courses to apprenticeships to entrepreneurs.</p>
       <a class="button button-primary" href="register.php">Register</a>
     </div>
   </div>

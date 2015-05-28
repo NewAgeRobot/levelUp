@@ -40,43 +40,48 @@
   // This is the default calendar template. This can be overridden.
 
   var clndrTemplate = 
+  "<div class='whiteHeader'><span class='clndr-control-button'><span class='clndr-previous-button'>Previous</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= moment(event.date).format('DD') %> <%= month %> <%= year %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='clndr-control-button rightalign'><span class='clndr-next-button'>Next</span></div>" +
   "<div class='wrapper'>" +
-    "<div id='one'><span class='event-listing-title'>EVENTS THIS MONTH</span><br /><br />" +
-      "<% _.each(eventsThisMonth, function(event) { %>" +
+  "<div id='one'><span class='event-listing-title'>EVENTS THIS MONTH</span><br /><br />" +
+  "<% _.each(eventsThisMonth, function(event) { %>" +
    " <span class='event-item'>" +
-   " <span class='event-item-name'><%= moment(event.date).format('DD/MM/YYYY') %> : <%= event.title %></span><br /><br />" +
+   " <span class='event-item-date'><%= moment(event.date).format('DD/MM/YYYY') %></span>: <span class='event-item-name'><%= event.title %></span><br /><br />" +
    " </span>" +
    "<% }); %>" +
-    "</div>" +
-    "<div id='two'>" +
-    "<div class='clndr-controls'>" +
-    "<div class='clndr-control-button'><span class='clndr-previous-button'>Previous</span></div>" +
-    "<div class='month'><%= month %> <%= year %></div>" +
-    "<div class='clndr-control-button rightalign'><span class='clndr-next-button'>Next</span></div>" +
-    "</div>" +
-    "<table class='clndr-table' border='0' cellspacing='8' cellpadding='3'>" +
-    "<thead>" +
-    "<tr class='header-days'>" +
-    "<% for(var i = 0; i < daysOfTheWeek.length; i++) { %>" +
-    "<td class='header-day'><%= daysOfTheWeek[i] %></td>" +
-    "<% } %>" +
-    "</tr>" +
-    "</thead>" +
-    "<tbody>" +
-    "<% for(var i = 0; i < numberOfRows; i++){ %>" +
-    "<tr>" +
-    "<% for(var j = 0; j < 7; j++){ %>" +
-    "<% var d = j + i * 7; %>" +
-    "<td class='<%= days[d].classes %>'><div class='day-contents'><%= days[d].day %>" +
-    "</div></td>" +
-    "<% } %>" +
-    "</tr>" +
-    "<% } %>" +
-    "</tbody>" +
-    "</table>" +
-    "</div>" +
-    "<div id='three'>three</div>" +
-  "</div>";
+"</div>" +
+"<div id='two'>" +
+// "<div class='clndr-controls'>" +
+// "<div class='clndr-control-button'><span class='clndr-previous-button'>Previous</span></div>" +
+// "<div class='month'><%= month %> <%= year %></div>" +
+// "<div class='clndr-control-button rightalign'><span class='clndr-next-button'>Next</span></div>" +
+// "</div>" +
+"<table class='clndr-table' border='0' cellspacing='8' cellpadding='3'>" +
+"<thead>" +
+"<tr class='header-days'>" +
+"<% for(var i = 0; i < daysOfTheWeek.length; i++) { %>" +
+"<td class='header-day'><%= daysOfTheWeek[i] %></td>" +
+"<% } %>" +
+"</tr>" +
+"</thead>" +
+"<tbody>" +
+"<% for(var i = 0; i < numberOfRows; i++){ %>" +
+"<tr>" +
+"<% for(var j = 0; j < 7; j++){ %>" +
+"<% var d = j + i * 7; %>" +
+"<td class='<%= days[d].classes %>'><div class='day-contents'><%= days[d].day %>" +
+"</div></td>" +
+"<% } %>" +
+"</tr>" +
+"<% } %>" +
+"</tbody>" +
+"</table>" +
+"</div>" +
+"<div id='three'>" +
+"<img src='images/icons/OneCourse_Badge.png' width='120px'>" +
+"<img src='images/icons/FiveCourses_Badge.png' width='120px'>" +
+"<img src='images/icons/TenCourses_Badge.png' width='120px'>" +
+"</div>" +
+"</div>";
 
 
 
