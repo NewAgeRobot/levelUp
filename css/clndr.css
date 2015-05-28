@@ -267,6 +267,9 @@ p {
   width: 100%;
   height: inherit;
   background: #fff;
+  border-color: #f18b37;
+  border-style: solid;
+  border-width: 3px;
 }
 .cal1 .clndr .clndr-table tr .day:hover {
   background: white;

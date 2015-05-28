@@ -74,6 +74,14 @@ $amountSaved = $user['CoursesSaved'];
     $('.menu').dropit();
   });
 </script>
+
+ <script type="text/javascript">
+  $(document).ready(function(){
+      $(".smallMenu .header-image img").click(function() {
+        window.location.replace("homepage.php");
+      });
+    });
+</script>
 </head>
 
 <body>
@@ -93,7 +101,7 @@ $amountSaved = $user['CoursesSaved'];
 
 
         <ul class="nav nav-primary smallMenu">
-          <img src="images/icons/LOGO_ForMobile.png">
+          <li class="header-image"><img src="images/icons/LOGO_ForMobile.png"></li>
           <ul class="menu">
             <li>
               <a href="#">&#9776; Menu</a>

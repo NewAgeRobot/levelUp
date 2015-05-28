@@ -51,7 +51,7 @@ if ($_POST['login']){
   <script src="js/dropit.js"></script>
   <script src="js/redirect.js"></script>
 
-
+ -->
   <script type="text/javascript">
     $(document).ready(function() {
       $('.menu').dropit();
