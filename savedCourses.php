@@ -11,7 +11,7 @@ $userEmail = $user['Email'];
 $saveCheck = mysql_query("SELECT * FROM savedCourses WHERE `Email` = '$userEmail'");
 $num_rows = mysql_num_rows($saveCheck);
 for($i = 0; $array[$i] = mysql_fetch_assoc($saveCheck); $i++);
-array_pop($array);
+  array_pop($array);
 $numCourses = sizeOf($array);
 // print_r($array[2]);
 
@@ -21,7 +21,7 @@ $numCourses = sizeOf($array);
 $sortedArray = array();
 foreach ($array as $key => $row)
 {
-    $sortedArray[$key] = $row['Position'];
+  $sortedArray[$key] = $row['Position'];
 }
 array_multisort($sortedArray, SORT_ASC, $array);
 
@@ -29,121 +29,147 @@ array_multisort($sortedArray, SORT_ASC, $array);
 
 
 
-  <html lang="en">
-  <head>
+<html lang="en">
+<head>
 
-    <meta charset="utf-8" />
-    <title>LevelUp</title>
+  <meta charset="utf-8" />
+  <title>LevelUp</title>
 
-    <meta name="LevelUp" content="Level Up - http://www.Levelup.ie" />
+  <meta name="LevelUp" content="Level Up - http://www.Levelup.ie" />
   <meta name="description" content="A website to help students better discover what they enjoy and want to pursue after second level." /> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
 
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
-    <link rel="stylesheet" href="css/jquery-mobile.css" />
-    <script src="js/jquery-mobile.js"></script>
-    <link rel="stylesheet" href="css/dropit.css" />
-    <script src="js/dropit.js"></script>
-    <script src="js/redirect.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script src="js/jquery.ui.touch-punch.min.js"></script>
-<script src="js/test.js"></script>
+  <link rel="stylesheet" href="css/jquery-mobile.css" />
+  <script src="js/jquery-mobile.js"></script>
+  <link rel="stylesheet" href="css/dropit.css" />
+  <script src="js/dropit.js"></script>
+  <script src="js/redirect.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="js/jquery.ui.touch-punch.min.js"></script>
+  <script src="js/test.js"></script>
   <script language="Javascript" type="text/javascript">
-$(document).ready(function(){
-    $('.ajax').show();
-    $(".ajax").click(function() {
+    $(document).ready(function(){
+      $('.ajax').show();
+      $(".ajax").click(function() {
       // var position = $(this).closest('tr').find('div:eq(2)').text();
       // alert($(this).parentsUntil('tr').children('.top_row').children('.jsCourseCode').text());
       // alert(position);
       var code = $(this).parentsUntil('tr').children('.top_row').children('.jsCourseCode').text();
       alert(code);
-        $.ajax({
-          method: 'POST' ,
-          url: 'deleteCourse.php' ,
-          data: { code: code } ,
-          success: function(result)
-          {
-            $('.ajax').after(result);
-            $('.ajax').hide();
-            window.location.reload();
-           }
-          });
+      $.ajax({
+        method: 'POST' ,
+        url: 'deleteCourse.php' ,
+        data: { code: code } ,
+        success: function(result)
+        {
+          $('.ajax').after(result);
+          $('.ajax').hide();
+          window.location.reload();
+        }
       });
+    });
 
 /* this is to be used to send the ajax calls to the savedCourseOrder.php page
 GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH INSIDE ANOTHER FUNCTION
 */
-    
-
-  });
-
-</script>
 
 
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('.menu').dropit();
-      });
-    </script>
+});
 
-    <script type="text/javascript">
+  </script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.menu').dropit();
+    });
+  </script>
+
+  <script type="text/javascript">
     $(document).ready(function(){
       $(".bot_title_row").hide();
       $(".bot_row").hide();
+      $(".reorderDone").hide();
+      var reorderClicked = false;
 
 
       $(".top_title_row").click(function() {
-      $(".bot_title_row").hide();
-      $(".bot_row").hide();
+        if(reorderClicked == false){
+          $(".bot_title_row").hide();
+          $(".bot_row").hide();
 
-        var $clicked = $(this);
-        $clicked.siblings(".bot_row").show();  
+          var $clicked = $(this);
+          $clicked.siblings(".bot_row").show();  
 
 
-        var $clickedTitle = $(this);
-        $clickedTitle.siblings(".bot_title_row").show();  
+          var $clickedTitle = $(this);
+          $clickedTitle.siblings(".bot_title_row").show();  
+        };
       });
 
       $(".top_row").click(function() {
-        $(".bot_title_row").hide();
-        $(".bot_row").hide();
+        if(reorderClicked == false){
+          $(".bot_title_row").hide();
+          $(".bot_row").hide();
 
-        var $clicked = $(this);
-        $clicked.siblings(".bot_row").show();  
+          var $clicked = $(this);
+          $clicked.siblings(".bot_row").show();  
 
 
-        var $clickedTitle = $(this);
-        $clickedTitle.siblings(".bot_title_row").show();  
+          var $clickedTitle = $(this);
+          $clickedTitle.siblings(".bot_title_row").show();  
+        };
       });
 
       $(".corner_fix").click(function() {
+        if(reorderClicked == false){
+          $(".bot_title_row").hide();
+          $(".bot_row").hide();
+
+          var $clicked = $(this);
+          $clicked.siblings(".bot_row").show();  
+
+
+          var $clickedTitle = $(this);
+          $clickedTitle.siblings(".bot_title_row").show();  
+        };
+      });
+
+
+
+
+      $('#reorder').click(function(){
+        $(".bot_title_row").children().css("background", "#ec2f3a");
+        $(".top_title_row").children().css("background", "#ec2f3a");
         $(".bot_title_row").hide();
         $(".bot_row").hide();
+        $("#reorder").hide();
+        $(".reorderDone").show();
 
-        var $clicked = $(this);
-        $clicked.siblings(".bot_row").show();  
+        reorderClicked = true;
+      });
 
-
-        var $clickedTitle = $(this);
-        $clickedTitle.siblings(".bot_title_row").show();  
+      $('.reorderDone').click(function(){
+        reorderClicked = false;
       });
     });
-      
-    </script>
 
-  </head>
+</script>
 
-  <body>
+</head>
 
-    <div class="site">
+<body>
 
-      <div class="page">
+  <div class="site">
+
+    <div class="page">
 
 
-        <div class="navigationBar">
+      <div class="navigationBar">
         <!-- <h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1> -->
 
         <ul class="nav nav-primary bigMenu">
@@ -180,11 +206,11 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
         <div class="main">
           <div class="article">
             <div class="header">
-              <h1 class="title" style="color: #ed7d7c;">These are where courses you save while exploring are listed. Get exploring! </h1>
+              <h1 class="title" style="color: #ed7d7c;">These are your saved courses</h1>
             </div><!-- /end .header -->
 
             <div class="intro">
-            <div class="centeredIntro">
+              <div class="centeredIntro">
 
 
 <!-- <table border='1' width='100%' id='sort' class='grid'>
@@ -222,7 +248,7 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
 
 
 <?php
-  if(!$numCourses){
+if(!$numCourses){
   echo "You have yet to save any courses.";
 }
 else{
@@ -230,39 +256,39 @@ else{
 
   for($counter = 0; $counter < $num_rows; $counter++){
     print_r("<tr>
-          <td>
-              <div class='top_title_row'>
-                  <div>#</div>
-                  <div>Code</div>
-                  <div>Title</div>
-                  <div>Institute</div>
-              </div>
-              <div class='top_row'>
-                  <div class='index'>" . $counter . "</div>
-                  <div class='jsCourseCode'>" . $array[$counter]['CourseCode'] . "</div>
-                  <div>" . $array[$counter]['CourseTitle'] . "</div>
-                  <div>" . $array[$counter]['CourseCollege'] . "</div>
-              </div>
-              <div class='bot_title_row'>
-                  <div>Level</div>
-                  <div>Points</div>
-                  <div>Link</div>
-                  <div>Delete?</div>
-              </div>
-              <div class='bot_row'>
-                  <div>" . $array[$counter]['CourseLevel'] . "</div>
-                  <div>" . $array[$counter]['CoursePoints'] . "</div>
-                  <div><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'><font color='lightblue'>Find out more</font></a></div>
-                  <div><a href='javascript:{}' class='ajax'><font color='red'>Delete Course</font></a></div>
-              </div>
-              <div class='corner_fix'>
-                  <div>&nbsp;</div>
-              </div>
-          </td>
-      </tr>");
-  }
-  echo "</table>";
-  echo "<button id='reorder'>Reorder Courses</button><a href='javascript:{}' class='reorderDone'><button>Save Order</button></a>";
+      <td>
+        <div class='top_title_row'>
+          <div>#</div>
+          <div>Code</div>
+          <div>Title</div>
+          <div>Institute</div>
+        </div>
+        <div class='top_row'>
+          <div class='index'>" . $counter . "</div>
+          <div class='jsCourseCode'>" . $array[$counter]['CourseCode'] . "</div>
+          <div>" . $array[$counter]['CourseTitle'] . "</div>
+          <div>" . $array[$counter]['CourseCollege'] . "</div>
+        </div>
+        <div class='bot_title_row'>
+          <div>Level</div>
+          <div>Points</div>
+          <div>Link</div>
+          <div>Delete?</div>
+        </div>
+        <div class='bot_row'>
+          <div>" . $array[$counter]['CourseLevel'] . "</div>
+          <div>" . $array[$counter]['CoursePoints'] . "</div>
+          <div><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'><font color='lightblue'>Find out more</font></a></div>
+          <div><a href='javascript:{}' class='ajax'><font color='red'>Delete Course</font></a></div>
+        </div>
+        <div class='corner_fix'>
+          <div>&nbsp;</div>
+        </div>
+      </td>
+    </tr>");
+}
+echo "</table>";
+echo "<button id='reorder'>Reorder Courses</button><a href='javascript:{}' class='reorderDone'><button>Save Order</button></a>";
 }
 ?>
 
@@ -278,16 +304,16 @@ else{
 </div> -->
 
 
-              <div class="meta section">
+<div class="meta section">
 
-            </div> <!-- /end .meta.section -->
-            
-              </div>
-          </div><!-- /end .article -->
-        </div><!-- /end .main -->
-      </div><!-- /end .blog.section -->
+</div> <!-- /end .meta.section -->
 
-      <div id="footer">
+</div>
+</div><!-- /end .article -->
+</div><!-- /end .main -->
+</div><!-- /end .blog.section -->
+
+<div id="footer">
       <!-- <p>Images &copy; their respective copyright holders.</p>
 
       <p>The design and code is &copy; 2014 <a href="http://unstoppablerobotninja.com/">Ethan Marcotte</a>, supporting his book <cite><a href="http://www.abookapart.com/products/responsive-web-design">Responsive Web Design</a></cite>.</p>

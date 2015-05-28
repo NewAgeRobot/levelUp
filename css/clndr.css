@@ -44,22 +44,111 @@ p {
   border-bottom: 2px solid #414141;
   background: #f4f4f4;
 }*/
+
+.bigBlock{
+}
+
+
+
+.wrapper { 
+  border : 2px solid #000; 
+  overflow:hidden;
+  width: 100%;
+}
+
+.wrapper div {
+   /*min-height: 170px;*/
+}
+#one {
+  background-color: #303944;
+  float:left; 
+  width:32.5%;
+  /*border:2px dashed #ccc;*/
+  min-height:170px;
+  height: 475px;
+}
+#two { 
+  background-color: #303944;
+  float:left; 
+  overflow:hidden;
+  width:32.5%;
+  /*border:2px dashed #ccc;*/
+  min-height:170px;
+  height: 475px;
+}
+#three { 
+  background-color: #303944;
+  float:left; 
+  overflow:hidden;
+  width:32.5%;
+  /*border:2px dashed #ccc;*/
+  min-height:170px;
+  height: 475px;
+}
+
+@media screen and (max-width: 1200px) {
+   #one { 
+    float: none;
+    display: block;
+    margin-right:0;
+    width:auto;
+    border:0;
+    /*border-bottom:2px solid #000;  */  
+  }
+    #two { 
+    float: none;
+    width: 100%;
+    display: block;
+    margin-right:0;
+    width:auto;
+    border:0;
+    /*border-bottom:2px solid #000;  */  
+  }
+    #three { 
+    float: none;
+    display: block;
+    margin-right:0;
+    width:auto;
+    border:0;
+    /*border-bottom:2px solid #000;  */  
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.event-listing{
+  font-family: 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
+  color: white;
+  background-color: #292c3b;
+  float: left;
+}
+
 .cal1 {
   margin: 30px auto;
-  max-width: 600px;
+  max-width: 100%;
   font-family: 'Droid Sans Mono';
   font-size: 14px;
-  background-color: #f79941;
+  background-color: #f18b37;
   text-align: left;
   padding: 15px;
 }
 .cal1 .clndr .clndr-controls {
   display: inline-block;
+  float: left;
   width: 100%;
   position: relative;
   color: #1b1b1b;
   font-weight: bold;
-  margin-bottom: 10px;
 }
 .cal1 .clndr .clndr-controls .month {
   float: left;
@@ -115,6 +204,8 @@ p {
 .cal1 .clndr .clndr-table {
   table-layout: fixed;
   width: 100%;
+  max-width: 600px;
+  /* SIZE OF THE CALENDAR */
 }
 .cal1 .clndr .clndr-table .header-days {
   height: 30px;
@@ -145,15 +236,18 @@ p {
   background: #fff;
 }
 .cal1 .clndr .clndr-table tr .day:hover {
-  background: #ed7d7c;
+  background: white;
 }
 .cal1 .clndr .clndr-table tr .day.today,
 .cal1 .clndr .clndr-table tr .day.my-today {
-  background: #9AD6E3;
+  background: #f18b37;
+  border-color: #1b1b27;
+  border-style: solid;
+  border-width: 5px;
 }
 .cal1 .clndr .clndr-table tr .day.today:hover,
 .cal1 .clndr .clndr-table tr .day.my-today:hover {
-  background: #72c6f9;
+  background: #cecece;
 }
 .cal1 .clndr .clndr-table tr .day.today.event,
 .cal1 .clndr .clndr-table tr .day.my-today.event {
@@ -161,11 +255,11 @@ p {
 }
 .cal1 .clndr .clndr-table tr .day.event,
 .cal1 .clndr .clndr-table tr .day.my-event {
-  background: #B4E09F;
+  background: #ec3837;
 }
 .cal1 .clndr .clndr-table tr .day.event:hover,
 .cal1 .clndr .clndr-table tr .day.my-event:hover {
-  background: #96d478;
+  background: #f91c1c;
 }
 .cal1 .clndr .clndr-table tr .day.inactive,
 .cal1 .clndr .clndr-table tr .day.my-inactive {
@@ -189,14 +283,14 @@ p {
   border-top: 1px solid #000000;*/
   width: 100%;
   height: inherit;
-  background: #666;
+  background: #ffa54e;
   opacity: 1;
 }
 .cal1 .clndr .clndr-table tr .empty:hover,
 .cal1 .clndr .clndr-table tr .adjacent-month:hover,
 .cal1 .clndr .clndr-table tr .my-empty:hover,
 .cal1 .clndr .clndr-table tr .my-adjacent-month:hover {
-  background: #ed7d9f;
+  background: #cecece;
 }
 .cal1 .clndr .clndr-table tr .empty:last-child,
 .cal1 .clndr .clndr-table tr .adjacent-month:last-child,

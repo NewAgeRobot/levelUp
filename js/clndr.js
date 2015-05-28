@@ -19,7 +19,7 @@
  * Licensed under the MIT license
  */
 
-(function (factory) {
+ (function (factory) {
 
   if (typeof define === 'function' && define.amd) {
 
@@ -38,39 +38,91 @@
 }(function ($, moment) {
 
   // This is the default calendar template. This can be overridden.
-  var clndrTemplate = "<div class='clndr-controls'>" +
+
+  var clndrTemplate = 
+  "<div class='wrapper'>" +
+    "<div id='one'><span class='event-listing-title'>EVENTS THIS MONTH</span><br /><br />" +
+      "<% _.each(eventsThisMonth, function(event) { %>" +
+   " <span class='event-item'>" +
+   " <span class='event-item-name'><%= moment(event.date).format('DD/MM/YYYY') %> : <%= event.title %></span><br /><br />" +
+   " </span>" +
+   "<% }); %>" +
+    "</div>" +
+    "<div id='two'>" +
+    "<div class='clndr-controls'>" +
     "<div class='clndr-control-button'><span class='clndr-previous-button'>Previous</span></div>" +
     "<div class='month'><%= month %> <%= year %></div>" +
     "<div class='clndr-control-button rightalign'><span class='clndr-next-button'>Next</span></div>" +
     "</div>" +
-  "<table class='clndr-table' border='0' cellspacing='8' cellpadding='3'>" +
+    "<table class='clndr-table' border='0' cellspacing='8' cellpadding='3'>" +
     "<thead>" +
     "<tr class='header-days'>" +
     "<% for(var i = 0; i < daysOfTheWeek.length; i++) { %>" +
-      "<td class='header-day'><%= daysOfTheWeek[i] %></td>" +
+    "<td class='header-day'><%= daysOfTheWeek[i] %></td>" +
     "<% } %>" +
     "</tr>" +
     "</thead>" +
     "<tbody>" +
     "<% for(var i = 0; i < numberOfRows; i++){ %>" +
-      "<tr>" +
-      "<% for(var j = 0; j < 7; j++){ %>" +
-      "<% var d = j + i * 7; %>" +
-      "<td class='<%= days[d].classes %>'><div class='day-contents'><%= days[d].day %>" +
-      "</div></td>" +
-      "<% } %>" +
-      "</tr>" +
+    "<tr>" +
+    "<% for(var j = 0; j < 7; j++){ %>" +
+    "<% var d = j + i * 7; %>" +
+    "<td class='<%= days[d].classes %>'><div class='day-contents'><%= days[d].day %>" +
+    "</div></td>" +
+    "<% } %>" +
+    "</tr>" +
     "<% } %>" +
     "</tbody>" +
-  "</table>" +
-  "<div class='event-listing'>" +
-  "<div class='event-listing-title'>EVENTS THIS MONTH</div>" +
-  "<% _.each(eventsThisMonth, function(event) { %>" +
-     " <div class='event-item'>" +
-       " <div class='event-item-name'><%= moment(event.date).format('DD/MM/YYYY') %> : <%= event.title %></div>" +
-     " </div>" +
-    "<% }); %>" +
-"</div>";
+    "</table>" +
+    "</div>" +
+    "<div id='three'>three</div>" +
+  "</div>";
+
+
+
+
+//   var clndrTemplate = 
+//   "<div class='bigBlock'>" +
+//   "<div class='event-listing'>" +
+//   "<div class='event-listing-title'>EVENTS THIS MONTH</div>" +
+//   "<% _.each(eventsThisMonth, function(event) { %>" +
+//    " <div class='event-item'>" +
+//    " <div class='event-item-name'><%= moment(event.date).format('DD/MM/YYYY') %> : <%= event.title %></div>" +
+//    " </div>" +
+//    "<% }); %>" +
+// "</div>" +
+// "<div class='clndr-controls'>" +
+// "<div class='clndr-control-button'><span class='clndr-previous-button'>Previous</span></div>" +
+// "<div class='month'><%= month %> <%= year %></div>" +
+// "<div class='clndr-control-button rightalign'><span class='clndr-next-button'>Next</span></div>" +
+// "</div>" +
+// "<table class='clndr-table' border='0' cellspacing='8' cellpadding='3'>" +
+// "<thead>" +
+// "<tr class='header-days'>" +
+// "<% for(var i = 0; i < daysOfTheWeek.length; i++) { %>" +
+// "<td class='header-day'><%= daysOfTheWeek[i] %></td>" +
+// "<% } %>" +
+// "</tr>" +
+// "</thead>" +
+// "<tbody>" +
+// "<% for(var i = 0; i < numberOfRows; i++){ %>" +
+// "<tr>" +
+// "<% for(var j = 0; j < 7; j++){ %>" +
+// "<% var d = j + i * 7; %>" +
+// "<td class='<%= days[d].classes %>'><div class='day-contents'><%= days[d].day %>" +
+// "</div></td>" +
+// "<% } %>" +
+// "</tr>" +
+// "<% } %>" +
+// "</tbody>" +
+// "</table>" +
+// "</div>";
+
+
+
+
+
+
 
 //  "<div class='event-listing'>" +
 //   "<div class='event-listing-title'>EVENTS THIS MONTH</div>" +
@@ -90,53 +142,53 @@
 //     "<% }); %>" +
 // "</div>";
 
-  var pluginName = 'clndr';
+var pluginName = 'clndr';
 
-  var defaults = {
-    template: clndrTemplate,
-    weekOffset: 0,
-    startWithMonth: null,
-    clickEvents: {
-      click: null,
-      nextMonth: null,
-      previousMonth: null,
-      nextYear: null,
-      previousYear: null,
-      today: null,
-      onMonthChange: null,
-      onYearChange: null
-    },
-    targets: {
-      nextButton: 'clndr-next-button',
-      previousButton: 'clndr-previous-button',
-      nextYearButton: 'clndr-next-year-button',
-      previousYearButton: 'clndr-previous-year-button',
-      todayButton: 'clndr-today-button',
-      day: 'day',
-      empty: 'empty'
-    },
-    classes: {
-      today: "today",
-      event: "event",
-      past: "past",
-      lastMonth: "last-month",
-      nextMonth: "next-month",
-      adjacentMonth: "adjacent-month",
-      inactive: "inactive"
-    },
-    events: [],
-    extras: null,
-    dateParameter: 'date',
-    multiDayEvents: null,
-    doneRendering: null,
-    render: null,
-    daysOfTheWeek: null,
-    showAdjacentMonths: true,
-    adjacentDaysChangeMonth: false,
-    ready: null,
-    constraints: null,
-    forceSixRows: null
-  };
+var defaults = {
+  template: clndrTemplate,
+  weekOffset: 0,
+  startWithMonth: null,
+  clickEvents: {
+    click: null,
+    nextMonth: null,
+    previousMonth: null,
+    nextYear: null,
+    previousYear: null,
+    today: null,
+    onMonthChange: null,
+    onYearChange: null
+  },
+  targets: {
+    nextButton: 'clndr-next-button',
+    previousButton: 'clndr-previous-button',
+    nextYearButton: 'clndr-next-year-button',
+    previousYearButton: 'clndr-previous-year-button',
+    todayButton: 'clndr-today-button',
+    day: 'day',
+    empty: 'empty'
+  },
+  classes: {
+    today: "today",
+    event: "event",
+    past: "past",
+    lastMonth: "last-month",
+    nextMonth: "next-month",
+    adjacentMonth: "adjacent-month",
+    inactive: "inactive"
+  },
+  events: [],
+  extras: null,
+  dateParameter: 'date',
+  multiDayEvents: null,
+  doneRendering: null,
+  render: null,
+  daysOfTheWeek: null,
+  showAdjacentMonths: true,
+  adjacentDaysChangeMonth: false,
+  ready: null,
+  constraints: null,
+  forceSixRows: null
+};
 
   // The actual plugin constructor
   function Clndr( element, options ) {
@@ -265,17 +317,17 @@
         this.eventsThisMonth = $(this.options.events).filter( function() {
 //          return this._clndrStartDateObject.format("YYYY-MM") <= currentMonth.format("YYYY-MM")
 //          || currentMonth.format("YYYY-MM") <= this._clndrEndDateObject.format("YYYY-MM");
-            if ( this._clndrStartDateObject.format("YYYY-MM") === currentMonth.format("YYYY-MM")
-                    || this._clndrEndDateObject.format("YYYY-MM") === currentMonth.format("YYYY-MM") ) {
-                return true;
-            }
-            if ( this._clndrStartDateObject.format("YYYY-MM") <= currentMonth.format("YYYY-MM")
-                    && this._clndrEndDateObject.format("YYYY-MM") >= currentMonth.format("YYYY-MM") ) {
-                return true;
-            }
+if ( this._clndrStartDateObject.format("YYYY-MM") === currentMonth.format("YYYY-MM")
+  || this._clndrEndDateObject.format("YYYY-MM") === currentMonth.format("YYYY-MM") ) {
+  return true;
+}
+if ( this._clndrStartDateObject.format("YYYY-MM") <= currentMonth.format("YYYY-MM")
+  && this._clndrEndDateObject.format("YYYY-MM") >= currentMonth.format("YYYY-MM") ) {
+  return true;
+}
 
-            return false;
-        }).toArray();
+return false;
+}).toArray();
 
         if(this.options.showAdjacentMonths) {
           var lastMonth = currentMonth.clone().subtract(1, 'months');
@@ -283,32 +335,32 @@
           this.eventsLastMonth = $(this.options.events).filter( function() {
 //            return this._clndrStartDateObject.format("YYYY-MM") <= lastMonth.format("YYYY-MM")
 //          || lastMonth.format("YYYY-MM") <= this._clndrEndDateObject.format("YYYY-MM");
-            if ( this._clndrStartDateObject.format("YYYY-MM") === lastMonth.format("YYYY-MM")
-                    || this._clndrEndDateObject.format("YYYY-MM") === lastMonth.format("YYYY-MM") ) {
-                return true;
-            }
-            if ( this._clndrStartDateObject.format("YYYY-MM") <= lastMonth.format("YYYY-MM")
-                    && this._clndrEndDateObject.format("YYYY-MM") >= lastMonth.format("YYYY-MM") ) {
-                return true;
-            }
+if ( this._clndrStartDateObject.format("YYYY-MM") === lastMonth.format("YYYY-MM")
+  || this._clndrEndDateObject.format("YYYY-MM") === lastMonth.format("YYYY-MM") ) {
+  return true;
+}
+if ( this._clndrStartDateObject.format("YYYY-MM") <= lastMonth.format("YYYY-MM")
+  && this._clndrEndDateObject.format("YYYY-MM") >= lastMonth.format("YYYY-MM") ) {
+  return true;
+}
 
-            return false;
-          }).toArray();
+return false;
+}).toArray();
 
           this.eventsNextMonth = $(this.options.events).filter( function() {
 //            return this._clndrStartDateObject.format("YYYY-MM") <= nextMonth.format("YYYY-MM")
 //          || nextMonth.format("YYYY-MM") <= this._clndrEndDateObject.format("YYYY-MM");
-            if ( this._clndrStartDateObject.format("YYYY-MM") === nextMonth.format("YYYY-MM")
-                    || this._clndrEndDateObject.format("YYYY-MM") === nextMonth.format("YYYY-MM") ) {
-                return true;
-            }
-            if ( this._clndrStartDateObject.format("YYYY-MM") <= nextMonth.format("YYYY-MM")
-                    && this._clndrEndDateObject.format("YYYY-MM") >= nextMonth.format("YYYY-MM") ) {
-                return true;
-            }
+if ( this._clndrStartDateObject.format("YYYY-MM") === nextMonth.format("YYYY-MM")
+  || this._clndrEndDateObject.format("YYYY-MM") === nextMonth.format("YYYY-MM") ) {
+  return true;
+}
+if ( this._clndrStartDateObject.format("YYYY-MM") <= nextMonth.format("YYYY-MM")
+  && this._clndrEndDateObject.format("YYYY-MM") >= nextMonth.format("YYYY-MM") ) {
+  return true;
+}
 
-            return false;
-          }).toArray();
+return false;
+}).toArray();
         }
       }
 
@@ -419,36 +471,36 @@
         // Could be replaced if moment.js dependency upgraded to 2.9 with
         // if (day.isSame(start, 'day') || day.isBetween(start,end) || day.isSame(end, 'day'))
         if((day.isSame(start, 'day') || day.isAfter(start, 'day'))
-        && (day.isSame(end, 'day') || day.isBefore(end, 'day'))) {
+          && (day.isSame(end, 'day') || day.isBefore(end, 'day'))) {
           eventsToday.push(e);
-        }
-      }
-      else if (day.isSame(start, 'day')){
-        eventsToday.push(e);
       }
     }
+    else if (day.isSame(start, 'day')){
+      eventsToday.push(e);
+    }
+  }
 
-    var extraClasses = "";
+  var extraClasses = "";
 
-    if(now.format("YYYY-MM-DD") == day.format("YYYY-MM-DD")) {
-       extraClasses += (" " + this.options.classes.today);
-    }
-    if(day.isBefore(now, 'day')) {
-      extraClasses += (" " + this.options.classes.past);
-    }
-    if(eventsToday.length) {
-      extraClasses += (" " + this.options.classes.event);
-    }
-    if(this.month.month() > day.month()) {
-      extraClasses += (" " + this.options.classes.adjacentMonth);
-      extraClasses += (this.month.year() === day.year()) ?
-        (" " + this.options.classes.lastMonth) : (" " + this.options.classes.nextMonth);
+  if(now.format("YYYY-MM-DD") == day.format("YYYY-MM-DD")) {
+   extraClasses += (" " + this.options.classes.today);
+ }
+ if(day.isBefore(now, 'day')) {
+  extraClasses += (" " + this.options.classes.past);
+}
+if(eventsToday.length) {
+  extraClasses += (" " + this.options.classes.event);
+}
+if(this.month.month() > day.month()) {
+  extraClasses += (" " + this.options.classes.adjacentMonth);
+  extraClasses += (this.month.year() === day.year()) ?
+  (" " + this.options.classes.lastMonth) : (" " + this.options.classes.nextMonth);
 
-    } else if(this.month.month() < day.month()) {
-      extraClasses += (" " + this.options.classes.adjacentMonth);
-      extraClasses += (this.month.year() === day.year()) ?
-        (" " + this.options.classes.nextMonth) : (" " + this.options.classes.lastMonth);
-    }
+} else if(this.month.month() < day.month()) {
+  extraClasses += (" " + this.options.classes.adjacentMonth);
+  extraClasses += (this.month.year() === day.year()) ?
+  (" " + this.options.classes.nextMonth) : (" " + this.options.classes.lastMonth);
+}
 
     // if there are constraints, we need to add the inactive class to the days outside of them
     if(this.options.constraints) {
@@ -462,7 +514,7 @@
 
     // validate moment date
     if (!day.isValid() && day.hasOwnProperty('_d') && day._d != undefined) {
-        day = moment(day._d);
+      day = moment(day._d);
     }
 
     // we're moving away from using IDs in favor of classes, since when
@@ -594,11 +646,11 @@
 
     // bind the previous, next and today buttons
     $container
-      .on('click', '.'+this.options.targets.previousButton, { context: this }, this.backAction)
-      .on('click', '.'+this.options.targets.nextButton, { context: this }, this.forwardAction)
-      .on('click', '.'+this.options.targets.todayButton, { context: this }, this.todayAction)
-      .on('click', '.'+this.options.targets.nextYearButton, { context: this }, this.nextYearAction)
-      .on('click', '.'+this.options.targets.previousYearButton, { context: this }, this.previousYearAction);
+    .on('click', '.'+this.options.targets.previousButton, { context: this }, this.backAction)
+    .on('click', '.'+this.options.targets.nextButton, { context: this }, this.forwardAction)
+    .on('click', '.'+this.options.targets.todayButton, { context: this }, this.todayAction)
+    .on('click', '.'+this.options.targets.nextYearButton, { context: this }, this.nextYearAction)
+    .on('click', '.'+this.options.targets.previousYearButton, { context: this }, this.previousYearAction);
   }
 
   // If the user provided a click callback we'd like to give them something nice to work with.

@@ -79,7 +79,8 @@ $amountSaved = $user['CoursesSaved'];
 <body>
 
   <div class="site">
-
+   
+    <div id="pass-in-events" class="cal1" style="margin-top:150px"></div>
     <div class="page">
 
       <div class="navigationBar">
@@ -110,6 +111,9 @@ $amountSaved = $user['CoursesSaved'];
       </div>
 
 
+
+
+
       <hr />
 
       <div class="blog section">
@@ -121,8 +125,7 @@ $amountSaved = $user['CoursesSaved'];
               <h1 class="title"></h1>
             </div><!-- /end .header -->
 
-            <div class="intro">
-              <div id="pass-in-events" class="cal1"></div>
+            <!-- <div class="intro"> -->
               <div class="meta section">
                 <?php
                 if ($amountSaved > 0){
@@ -139,7 +142,7 @@ $amountSaved = $user['CoursesSaved'];
                 }
                 ?>
               </div> <!-- /end .meta.section -->
-            </div><!-- /end .article -->
+            <!-- </div> --><!-- /end .article -->
           </div><!-- /end .main -->
         </div><!-- /end .blog.section -->
 

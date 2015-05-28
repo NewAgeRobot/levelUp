@@ -203,6 +203,30 @@ img {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .first{
 	border-bottom: 10px solid #d2ff9e;
 	left:-2px;
@@ -276,10 +300,10 @@ img {
 }
 
 .top_title_row > div {
-  background-color: #ccc;
+  background-color: #8e53a2;
   color: #000;
   font-weight: bold;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
     display: table-cell;
     text-align: center;
     width: 20%;
@@ -302,10 +326,10 @@ img {
 }
 
 .bot_title_row > div {
-  background-color: #ccc;
+  background-color: #8e53a2;
   color: #000;
   font-weight: bold;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
     display: table-cell;
     text-align: center;
     width: 20%;
@@ -321,6 +345,8 @@ img {
   border-radius: 0px 0px 0px 0px;
   -moz-border-radius: 0px 0px 0px 0px;
 }
+
+
 
 
 
