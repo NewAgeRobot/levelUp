@@ -80,16 +80,17 @@ p {
   width:33.33333%;
   /*border:2px dashed #ccc;*/
   min-height:170px;
-  height: 475px;
+  height: 450px;
 }
 #two { 
   background-color: #f18b37;
   float:left; 
   overflow:hidden;
   width:33.33333%;
+  /*width:550px;*/
   /*border:2px dashed #ccc;*/
   min-height:170px;
-  height: 475px;
+  height: 450px;
 }
 #three { 
   background-color: #303944;
@@ -98,7 +99,7 @@ p {
   width:33.33333%;
   /*border:2px dashed #ccc;*/
   min-height:170px;
-  height: 475px;
+  height: 450px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -234,7 +235,7 @@ p {
 .cal1 .clndr .clndr-table {
   table-layout: fixed;
   width: 100%;
-  max-width: 600px;
+  /*max-width: 600px;*/
   /* SIZE OF THE CALENDAR */
 }
 .cal1 .clndr .clndr-table .header-days {

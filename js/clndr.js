@@ -42,10 +42,10 @@
   var clndrTemplate = 
   "<div class='whiteHeader'><span class='clndr-control-button'><span class='clndr-previous-button'>Previous</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= moment(event.date).format('DD') %> <%= month %> <%= year %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='clndr-control-button rightalign'><span class='clndr-next-button'>Next</span></div>" +
   "<div class='wrapper'>" +
-  "<div id='one'><span class='event-listing-title'>EVENTS THIS MONTH</span><br /><br />" +
+  "<div id='one'><span class='event-listing-title'>&nbsp;EVENTS THIS MONTH</span><br /><br />" +
   "<% _.each(eventsThisMonth, function(event) { %>" +
    " <span class='event-item'>" +
-   " <span class='event-item-date'><%= moment(event.date).format('DD/MM/YYYY') %></span>: <span class='event-item-name'><%= event.title %></span><br /><br />" +
+   " <span class='event-item-date'>&nbsp;<%= moment(event.date).format('DD/MM/YYYY') %></span>: <span class='event-item-name'><%= event.title %></span><br /><br />" +
    " </span>" +
    "<% }); %>" +
 "</div>" +
@@ -77,6 +77,7 @@
 "</table>" +
 "</div>" +
 "<div id='three'>" +
+"<span class='event-listing-title'>&nbsp;Badges earned so far</span><br /><br />" +
 "<img src='images/icons/OneCourse_Badge.png' width='120px'>" +
 "<img src='images/icons/FiveCourses_Badge.png' width='120px'>" +
 "<img src='images/icons/TenCourses_Badge.png' width='120px'>" +
