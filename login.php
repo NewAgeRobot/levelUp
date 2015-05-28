@@ -76,7 +76,7 @@ if ($_POST['login']){
 
 
         <ul class="nav nav-primary smallMenu">
-          <img src="images/icons/LOGO_ForMobile.png">
+          <li class="header-image"><img src="images/icons/LOGO_ForMobile.png"></li>
          <div style="visibility:hidden;"> <ul class="menu">
             <li>
               <a href="#">&#9776; Menu</a>

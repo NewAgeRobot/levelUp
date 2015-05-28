@@ -721,7 +721,7 @@ $(function () { //change to have different name than container
 
 
 				<ul class="nav nav-primary smallMenu">
-					<img src="images/icons/LOGO_ForMobile.png">
+          <li class="header-image"><img src="images/icons/LOGO_ForMobile.png"></li>
 					<ul class="menu">
 						<li>
 							<a href="#">&#9776; Menu</a>
