@@ -310,6 +310,7 @@ img {
 
 .top_title_row > div {
   background-color: #8e53a2;
+    cursor: pointer;
   color: #000;
   font-weight: bold;
   /*text-decoration: underline;*/
@@ -336,6 +337,7 @@ img {
 
 .bot_title_row > div {
   background-color: #8e53a2;
+    cursor: pointer;
   color: #000;
   font-weight: bold;
   /*text-decoration: underline;*/
@@ -367,6 +369,7 @@ img {
 
 .corner_fix > div {
   background-color: #fff;
+    cursor: pointer;
   color: #000;
     display: table-cell;
     text-align: center;
@@ -388,6 +391,7 @@ img {
 .top_row > div {
   background-color: #fff;
   color: #000;
+    cursor: pointer;
     display: table-cell;
     text-align: center;
     width: 20%;
@@ -412,6 +416,7 @@ img {
 .bot_row > div {
   background-color: #fff;
   color: #000;
+    cursor: pointer;
     display: table-cell;
     text-align: center;
     width: 20%;

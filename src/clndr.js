@@ -74,12 +74,13 @@
 "</table>" +
 "</div>" +
 "<div id='three'>" +
-"<span class='event-listing-title'>&nbsp;Badges earned so far</span><br /><br />" +
-"<img src='images/icons/OneCourse_Badge.png' width='120px'>" +
-"<img src='images/icons/FiveCourses_Badge.png' width='120px'>" +
-"<img src='images/icons/TenCourses_Badge.png' width='120px'>" +
+"<span class='event-listing-title'>&nbsp;Trophy Case</span><br /><br />" +
+// "<img src='images/icons/OneCourse_Badge.png' width='120px'>" +
+// "<img src='images/icons/FiveCourses_Badge.png' width='120px'>" +
+// "<img src='images/icons/TenCourses_Badge.png' width='120px'>" +
 "</div>" +
 "</div>";
+
 
   var pluginName = 'clndr';
 
@@ -297,7 +298,6 @@
                     && this._clndrEndDateObject.format("YYYY-MM") >= nextMonth.format("YYYY-MM") ) {
                 return true;
             }
-
             return false;
           }).toArray();
         }
@@ -473,6 +473,19 @@
   };
 
   Clndr.prototype.render = function() {
+            // alert("fsdfsdfsd");
+
+            //PUT THE AJAX FOR THE BADGES HERE
+
+  $.ajax({
+        url: 'badgeCheck.php',
+        success: function(data) {
+          $("#three").append(data);
+        }
+      });
+
+
+
     // get rid of the previous set of calendar parts.
     // TODO: figure out if this is the right way to ensure proper garbage collection?
     this.calendarContainer.children().remove();

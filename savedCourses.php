@@ -143,8 +143,8 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
 
 
       $('#reorder').click(function(){
-        $(".bot_title_row").children().css("background", "#ec2f3a");
-        $(".top_title_row").children().css("background", "#ec2f3a");
+        $(".bot_title_row").children().css({"background": "#ec2f3a"});
+        $(".top_title_row").children().css({"background": "#ec2f3a"});
         $(".bot_title_row").hide();
         $(".bot_row").hide();
         $("#reorder").hide();

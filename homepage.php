@@ -79,6 +79,16 @@ $amountSaved = $user['CoursesSaved'];
       $(".smallMenu .header-image img").click(function() {
         window.location.replace("homepage.php");
       });
+
+     
+
+      // $.ajax({
+      //   url: 'badgeCheck.php',
+      //   success: function(data) {
+      //     $("#three").append(data);
+      //   }
+      // });
+      
     });
 </script>
 </head>

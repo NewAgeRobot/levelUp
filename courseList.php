@@ -759,6 +759,8 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                 echo "<br />";
                 echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
                 echo "<table class='saveNextButtons'><tr><td>";
+                echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);'></a>";
+                echo "</td><td>";
                 echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
                 echo "</td><td>";
                 echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png'></a>";
@@ -779,18 +781,18 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                   $lastPeriodPosition = strpos($seededArray[$currentCourse]['Synopsis'], '.', 400); //there's no space after the 250 mark / this works but sometimes all you're seeing is 1 character more. Check if length is within 20
                   $synopsisLength = strlen($seededArray[$currentCourse]['Synopsis']);
                   if($synopsisLength <= 430){
-                    print_r("<tr><td>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</td></tr>");
+                    print_r("<tr><td>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</td></tr>"));
                   }
                   else{
                     echo "<tr><td>";
-                    print_r("<span class='teaserSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition) . "</span><span class='showMore'><font color='#ed7d7c' style='cursor: pointer;'>...Show more</font></span>");
-                    print_r("<span class='completeSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</span><span class='showLess'><font color='#ed7d7c' style='cursor: pointer;'>...Show less</font></span>");
+                    print_r("<span class='teaserSynopsis'>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition)) . "</span><span class='showMore'><font color='#ed7d7c' style='cursor: pointer;'>...Show more</font></span>");
+                    print_r("<span class='completeSynopsis'>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength)) . "</span><span class='showLess'><font color='#ed7d7c' style='cursor: pointer;'>...Show less</font></span>");
                     echo "</td></tr>";
                   }
 
                 }
                 else{
-                  print_r("<tr><td>" . $seededArray[$currentCourse]['Synopsis'] . "</td></tr>");
+                  print_r("<tr><td>" . utf8_encode($seededArray[$currentCourse]['Synopsis']) . "</td></tr>");
                 }
 
                 echo "<tr><td class='closeQuotes'><img src='images/icons/RightQuotation.jpg'></td></tr>";
@@ -802,8 +804,14 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                 echo "</div>";
                 $currentCourse++;
                 mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
+                
+                echo "</table>";
+                echo "</div>";
+                echo "<table class='saveNextButtons'><tr><td>";
                 echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/goBack_btn.png'></a>";
-
+                echo "</td><td>";
+                echo "<a href='savedCourses.php' data-ajax='false'><img src='images/icons/saveOrder_btn.png'></a>";
+                echo "</td></tr></table>";
               } else{
 				echo "That is all the courses that match your selection, please refine search for more options.";
 				echo "<br />";
