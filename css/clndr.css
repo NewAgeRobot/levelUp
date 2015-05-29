@@ -48,6 +48,16 @@ p {
 .bigBlock{
 }
 
+
+
+
+
+
+
+
+
+
+
 .whiteHeader{
   margin-top: 160px;
   height: 45px;
@@ -101,6 +111,7 @@ p {
   min-height:170px;
   height: 450px;
 }
+
 
 @media screen and (max-width: 1200px) {
    #one { 

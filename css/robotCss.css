@@ -544,7 +544,7 @@ img {
 	text-align: center;
 }
 .saveNextButtons img{
-	width:50%;
+	width:20%;
 	min-width: 80px;
 }
 
@@ -1101,7 +1101,7 @@ html {
 		padding: 10px 8.48057%;
 	}
 	.blog .article {
-		margin-top:130px;
+		margin-top:80px;
 	}
 }
 

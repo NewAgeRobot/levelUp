@@ -99,16 +99,11 @@ As well as providing a new and engaging way to search for college courses, we al
 
   <div class="section categories">
     <div class="container">
-      <h3 class="section-heading">Testimonials</h3>
-      <p class="section-description">Just an example of some of the options other than College.</p>
+      <h3 class="section-heading">Come see us at FÍS!</h3>
+      <p class="section-description"></p>
       <div class="row">
-        <div class="one-half column category">
-          <a href=""><img class="u-max-full-width" src="images/test1.jpg"></a>
-          <a class="button button-primary" href="">Further Reading</a>
-        </div>
-        <div class="one-half column category">
-          <a href=""><img class="u-max-full-width" src="images/test2.jpg"></a>
-          <a class="button button-primary" href="">Further Reading</a>
+        <div class="column category">
+          <a href="https://www.facebook.com/events/604487459691036/"><img class="u-max-full-width" src="images/Fis.jpg"></a>
         </div>
       </div>
     </div>

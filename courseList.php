@@ -57,6 +57,7 @@
 					 	// $('.ajax').after("Course Saved!");
 					 	$('.ajax').after(result);
 					 	$('.ajax').hide();
+         				nextCourse();
 					 }
 					});
 			});
@@ -755,9 +756,13 @@ $seededArray = sortArrayByArray($array, $newTest);
 mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
               if($currentCourse <= ($numCourses-1)){
                 print_r("<div class='hiddenLink'><div class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></div></div>");
-                echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/goBack_btn.png'></a>";
                 echo "<br />";
                 echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
+                echo "<table class='saveNextButtons'><tr><td>";
+                echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
+                echo "</td><td>";
+                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png'></a>";
+                echo "</td></tr></table>";
                 echo "<div class='showCoursesBorder'>";
                 echo "<table class='showCourses'>";
                 print_r("<tr><td class='jsCourseCode'><b>" . $seededArray[$currentCourse]['CourseCode'] . "</b></td></tr>");
@@ -782,6 +787,7 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                     print_r("<span class='completeSynopsis'>" . substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</span><span class='showLess'><font color='#ed7d7c' style='cursor: pointer;'>...Show less</font></span>");
                     echo "</td></tr>";
                   }
+
                 }
                 else{
                   print_r("<tr><td>" . $seededArray[$currentCourse]['Synopsis'] . "</td></tr>");
@@ -796,11 +802,8 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                 echo "</div>";
                 $currentCourse++;
                 mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
-                echo "<table class='saveNextButtons'><tr><td>";
-                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png'></a>";
-                echo "</td><td>";
-                echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
-                echo "</td></tr></table>";
+                echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/goBack_btn.png'></a>";
+
               } else{
 				echo "That is all the courses that match your selection, please refine search for more options.";
 				echo "<br />";
