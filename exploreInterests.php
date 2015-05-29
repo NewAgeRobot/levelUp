@@ -116,6 +116,14 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 			});
 		</script>
 
+ <script type="text/javascript">
+  $(document).ready(function(){
+      $(".smallMenu .header-image img").click(function() {
+        window.location.replace("homepage.php");
+      });
+    });
+</script>
+
 	</head>
 
 	<body>

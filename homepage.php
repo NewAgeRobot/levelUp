@@ -65,9 +65,8 @@ $amountSaved = $user['CoursesSaved'];
 
  </script>
 
- <script type="text/javascript" src="js/clndr.js"></script>
-
- <script src="js/clndrTest.js"></script>
+  <script src="src/clndr.js"></script>
+  <script src="src/test.js"></script>
 
  <script type="text/javascript">
   $(document).ready(function() {

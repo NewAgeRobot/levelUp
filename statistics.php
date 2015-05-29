@@ -702,6 +702,14 @@ $(function () { //change to have different name than container
 	});
 </script>
 
+ <script type="text/javascript">
+  $(document).ready(function(){
+      $(".smallMenu .header-image img").click(function() {
+        window.location.replace("homepage.php");
+      });
+    });
+</script>
+
 </head>
 
 <body>

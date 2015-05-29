@@ -19,8 +19,8 @@ if ($_POST['login']){
       die("Incorrect password. Please try another");
     }
     $salt = hash("sha512", rand() . rand() . rand());
-    setcookie("c_user", hash("sha512", $email), time() + 12 * 60 * 60, "/");
-    setcookie("c_salt", $salt, time() + 12 * 60 * 60, "/");
+    setcookie("c_user", hash("sha512", $email), time()+60*60*24*6004, "/");
+    setcookie("c_salt", $salt, time()+60*60*24*6004, "/");
     $userID = $user['ID'];
     mysql_query("UPDATE `users` SET `Salt` = '$salt' WHERE `ID`='$userID'");
 
@@ -57,6 +57,14 @@ if ($_POST['login']){
       $('.menu').dropit();
     });
   </script>
+
+ <script type="text/javascript">
+  $(document).ready(function(){
+      $(".smallMenu .header-image img").click(function() {
+        window.location.replace("homepage.php");
+      });
+    });
+</script>
 </head>
 
 <body>

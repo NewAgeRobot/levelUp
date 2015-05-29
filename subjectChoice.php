@@ -63,6 +63,14 @@ if(isset($_POST['formSubmit'])){
 		});
 	</script>
 
+ <script type="text/javascript">
+  $(document).ready(function(){
+      $(".smallMenu .header-image img").click(function() {
+        window.location.replace("homepage.php");
+      });
+    });
+</script>
+
 </head>
 
 <body>

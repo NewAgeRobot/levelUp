@@ -150,6 +150,14 @@ for($f = 7; $f < 22; $f++){
     });
 </script>
 
+ <script type="text/javascript">
+  $(document).ready(function(){
+      $(".smallMenu .header-image img").click(function() {
+        window.location.replace("homepage.php");
+      });
+    });
+</script>
+
 <script type="text/javascript">
   $(document).ready(function() {
     $('.menu').dropit();

@@ -192,7 +192,7 @@ img {
 .smallMenu img{
 	position: absolute;
     right: 0px;
-    top: 5px;
+    top: 0px;
     z-index: 99;
 }
 
@@ -849,7 +849,7 @@ html {
 		position: absolute;
 		bottom:0;
 	}
-	.smallMenu img{
+	.smallMenu .header-image img{
 	    right: 350px;
 	    top: 5px;
 	}
@@ -865,7 +865,7 @@ html {
 
 @media screen and (max-width: 780px) {
 	
-	.smallMenu img{
+	.smallMenu .header-image img{
 	    right: 350px;
 	    top: 5px;
 	}
@@ -873,7 +873,7 @@ html {
 
 @media screen and (max-width: 730px) {
 	
-	.smallMenu img{
+	.smallMenu .header-image img{
 	    right: 330px;
 	    top: 5px;
 	}
@@ -882,7 +882,7 @@ html {
 
 @media screen and (max-width: 655px) {
 	
-	.smallMenu img{
+	.smallMenu .header-image img{
 	    right: 300px;
 	    top: 5px;
 	}
@@ -901,7 +901,7 @@ html {
 
 @media screen and (max-width: 580px) {
 	
-	.smallMenu img{
+	.smallMenu .header-image img{
 	    right: 250px;
 	    top: 5px;
 	}
@@ -912,7 +912,7 @@ html {
 	.bigMenu {
 		display: none;
 	}
-	.smallMenu img{
+	.smallMenu .header-image img{
 	    right: 215px;
 	    top: 5px;
 	}
@@ -951,7 +951,7 @@ html {
 	.bigMenu {
 		display: none;
 	}
-	.smallMenu img{
+	.smallMenu .header-image img{
 	    right: 210px;
 	    top: 5px;
 	}
@@ -976,7 +976,7 @@ html {
 
 @media screen and (max-width: 445px) {
 	
-	.smallMenu img{
+	.smallMenu .header-image img{
 	    right: 180px;
 	    top: 5px;
 	}
@@ -984,7 +984,7 @@ html {
 
 @media screen and (max-width: 375px) {
 	
-	.smallMenu img{
+	.smallMenu .header-image img{
 	    right: 150px;
 	    top: 5px;
 	}
