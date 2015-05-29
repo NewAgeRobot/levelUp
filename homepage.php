@@ -39,28 +39,28 @@ $amountSaved = $user['CoursesSaved'];
   <script language="Javascript" type="text/javascript">
 
    var eventsArray = [
-   { date: moment().format('2015-11-05'), title: 'CAO online application & Change of Course Choices facilities open.' },
-   { date: moment().format('2015-1-20'), title: 'CAO - Apply before this date to avail of discounted fee of €25' },
-   { date: moment().format('2015-02-01'), title: 'CAO - Normal closing date for applications - 5:15pm' },
-   { date: moment().format('2015-02-05'), title: 'CAO - Change of Course Choices online facility opens - €10 fee' },
-   { date: moment().format('2015-02-15'), title: 'CAO - All Paper Applicants should have received a Statement of Course Choices by this date' },
+   { date: moment().format('2015-11-05'), title: '05/11/15 - CAO online application & Change of Course Choices facilities open.' },
+   { date: moment().format('2015-01-20'), title: '20/01/15 - CAO - Apply before this date to avail of discounted fee of €25' },
+   { date: moment().format('2015-02-01'), title: '01/02/15 - CAO - Normal closing date for applications - 5:15pm' },
+   { date: moment().format('2015-02-05'), title: '05/02/15 - CAO - Change of Course Choices online facility opens - €10 fee' },
+   { date: moment().format('2015-02-15'), title: '15/02/15 - CAO - All Paper Applicants should have received a Statement of Course Choices by this date' },
 
-   { date: moment().format('2015-02-28'), title: 'HPAT Test -  Undergraduate Entry to Medicine' },
-   { date: moment().format('2015-03-01'), title: 'CAO - Change of Course Choices CLOSES - 5:15pm' },
-   { date: moment().format('2015-03-01'), title: 'CAO - Final completion date for online HEAR/DARE forms - 5:15pm' },
-   { date: moment().format('2015-04-01'), title: 'CAO - Latest date for HEAR/DARE supporting documentation to arrive - 5:15pm' },
-   { date: moment().format('2015-05-01'), title: 'CAO - Last day for LATE applications - 5:15pm' },
+   { date: moment().format('2015-02-28'), title: '28/02/15 - HPAT Test -  Undergraduate Entry to Medicine' },
+   { date: moment().format('2015-03-01'), title: '01/03/15 - CAO - Change of Course Choices CLOSES - 5:15pm' },
+   { date: moment().format('2015-03-01'), title: '01/03/15 - CAO - Final completion date for online HEAR/DARE forms - 5:15pm' },
+   { date: moment().format('2015-04-01'), title: '01/04/15 - CAO - Latest date for HEAR/DARE supporting documentation to arrive - 5:15pm' },
+   { date: moment().format('2015-05-01'), title: '01/05/15 - CAO - Last day for LATE applications - 5:15pm' },
 
-   { date: moment().format('2015-05-05'), title: 'CAO - Online Change of Mind facility opens (free)' },
-   { date: moment().format('2015-05-15'), title: 'CAO - All LATE Paper Applicants should have received a Statement of Course Choices by this date' },
-   { date: moment().format('2015-05-31'), title: 'CAO - All applicants should have received a Statement of Application Record by this date' },
-   { date: moment().format('2015-07-01'), title: 'CAO - Change of Mind  closes - 5:15pm' },
-   { date: moment().format('2015-08-15'), title: 'Leaving Certificate results issued' },
+   { date: moment().format('2015-05-05'), title: '05/05/15 - CAO - Online Change of Mind facility opens (free)' },
+   { date: moment().format('2015-05-15'), title: '15/05/15 - CAO - All LATE Paper Applicants should have received a Statement of Course Choices by this date' },
+   { date: moment().format('2015-05-31'), title: '31/05/15 - CAO - All applicants should have received a Statement of Application Record by this date' },
+   { date: moment().format('2015-07-01'), title: '01/07/15 - CAO - Change of Mind  closes - 5:15pm' },
+   { date: moment().format('2015-08-15'), title: '15/08/15 - Leaving Certificate results issued' },
 
-   { date: moment().format('2015-08-17'), title: 'CAO - Round 1 offers issued' },
-   { date: moment().format('2015-08-24'), title: 'CAO - Round 1 acceptance closing date - 5:15pm' },
-   { date: moment().format('2015-08-26'), title: 'CAO - Round 2 offers issued' },
-   { date: moment().format('2015-09-02'), title: 'CAO - Round 2 acceptance closing date - 5:15pm' }
+   { date: moment().format('2015-08-17'), title: '17/08/15 - CAO - Round 1 offers issued' },
+   { date: moment().format('2015-08-24'), title: '24/08/15 - CAO - Round 1 acceptance closing date - 5:15pm' },
+   { date: moment().format('2015-08-26'), title: '26/08/15 - CAO - Round 2 offers issued' },
+   { date: moment().format('2015-09-02'), title: '02/09/15 - CAO - Round 2 acceptance closing date - 5:15pm' }
    ];
 
  </script>

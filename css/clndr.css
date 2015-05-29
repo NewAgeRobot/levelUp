@@ -204,6 +204,7 @@ p {
   /* IE10+ */
 }
 .cal1 .clndr .clndr-controls .clndr-control-button .clndr-next-button:hover {
+  cursor: pointer;
   color: #ddd;
 }
 .cal1 .clndr .clndr-controls .clndr-control-button .clndr-next-button.inactive {
@@ -224,6 +225,7 @@ p {
 }
 .cal1 .clndr .clndr-controls .clndr-control-button .clndr-previous-button:hover {
   color: #ddd;
+  cursor: pointer;
 }
 .cal1 .clndr .clndr-controls .clndr-control-button .clndr-previous-button.inactive {
   opacity: 0.5;
@@ -240,17 +242,18 @@ p {
 }
 .cal1 .clndr .clndr-table .header-days {
   height: 30px;
-  font-size: 15px;
+  font: bold 16px 'Lobster', 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
   font-weight: bold;
+  background-color: white;
 }
 .cal1 .clndr .clndr-table .header-days .header-day {
   vertical-align: middle;
   text-align: center;
   /*margin: 5px;*/
-  border-left: 1px solid #000000;
+ /* border-left: 1px solid #000000;
   border-top: 1px solid #000000;
-  border-right: 1px solid #000000;
-  color: #000;
+  border-right: 1px solid #000000;*/
+  color: #1b1b27;
 }
 .cal1 .clndr .clndr-table .header-days .header-day:last-child {
   /*border-right: 1px solid #000000;*/

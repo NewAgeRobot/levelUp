@@ -47,7 +47,7 @@
   "<div id='one'><span class='event-listing-title'>&nbsp;EVENTS THIS MONTH</span><br /><br />" +
   "<% _.each(eventsThisMonth, function(event) { %>" +
    " <span class='event-item'>" +
-   " <span class='event-item-name'><%= event.title %></span><br /><br />" +
+   " <span class='event-item-name'>&nbsp;<%= event.title %></span><br /><br />" +
    " </span>" +
    "<% }); %>" +
 "</div>" +
