@@ -1,6 +1,5 @@
   <link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
 
-  <script>try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="css/jquery-mobile.css" />
   <link rel="stylesheet" href="css/dropit.css" />
@@ -25,11 +24,19 @@
 
 	function nextCourse(cv){
 		// $("#myDiv").html("<img src='images/loader.gif'>").show();
-		var url="courseList.php";
+		var url="nextCourse.php";
 		$.post(url, {contentVar: cv}, function(data){
 			$(".thinnerCourses").html(data).show();
 		});
 	}
+
+    function previousCourse(cv){
+      // $("#myDiv").html("<img src='images/loader.gif'>").show();
+      var url="previousCourse.php";
+      $.post(url, {contentVar: cv}, function(data){
+        $(".thinnerCourses").html(data).show();
+      });
+    }
 
 
 
@@ -182,6 +189,12 @@ else if(!$level2){
 }
 
 $currentCourse = $userInterests['CurrentCourse'];
+$currentCourse++;
+mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
+
+
+
+
 switch($levelNumber){
 	case 0:
 	switch ($countyNumber) {
@@ -757,9 +770,14 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
               if($currentCourse <= ($numCourses-1)){
                 print_r("<div class='hiddenLink'><div class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></div></div>");
                 echo "<br />";
-                echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
+                echo "<div class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses) . "</div>";
                 echo "<table class='saveNextButtons'><tr><td>";
-                echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);'></a>";
+				if($currentCourse == 0){
+                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);visibility:hidden;'></a>";
+                }
+                else{
+                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);'></a>";
+                }                
                 echo "</td><td>";
                 echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
                 echo "</td><td>";
@@ -802,8 +820,6 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                 
                 echo "</table>";
                 echo "</div>";
-                $currentCourse++;
-                mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
                 
                 echo "</table>";
                 echo "</div>";

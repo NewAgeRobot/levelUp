@@ -553,6 +553,14 @@ img {
 	min-width: 80px;
 }
 
+.courseCounter{
+	font-family: 'Lobster';
+}
+
+
+
+
+
 
 
 
@@ -585,6 +593,7 @@ img {
 }
 .intro {
 	font-size: 1.14285714em;		/* 16/14 */
+	margin-top: 120px;
 }
 .intro table{
 	text-align: right;
@@ -642,6 +651,7 @@ img {
 }
 .hiddenLink{
 	visibility: hidden;
+	position: absolute;
 }
 .backArrow img{
 	width: 25%;

@@ -103,7 +103,15 @@ for($f = 7; $f < 22; $f++){
   <script language="Javascript" type="text/javascript">
     function nextCourse(cv){
       // $("#myDiv").html("<img src='images/loader.gif'>").show();
-      var url="courseList.php";
+      var url="nextCourse.php";
+      $.post(url, {contentVar: cv}, function(data){
+        $(".thinnerCourses").html(data).show();
+      });
+    }
+
+    function previousCourse(cv){
+      // $("#myDiv").html("<img src='images/loader.gif'>").show();
+      var url="previousCourse.php";
       $.post(url, {contentVar: cv}, function(data){
         $(".thinnerCourses").html(data).show();
       });
@@ -813,9 +821,14 @@ for($f = 7; $f < 22; $f++){
               if($currentCourse <= ($numCourses-1)){
                 print_r("<div class='hiddenLink'><div class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></div></div>");
                 echo "<br />";
-                echo "Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<br />";
+                echo "<div class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses) . "</div>";
                 echo "<table class='saveNextButtons'><tr><td>";
-                echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);'></a>";
+                if($currentCourse == 0){
+                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);visibility:hidden;'></a>";
+                }
+                else{
+                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);'></a>";
+                }
                 echo "</td><td>";
                 echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
                 echo "</td><td>";
@@ -863,8 +876,6 @@ for($f = 7; $f < 22; $f++){
                 echo "</td><td>";
                 echo "<a href='savedCourses.php' data-ajax='false'><img src='images/icons/saveOrder_btn.png'></a>";
                 echo "</td></tr></table>";
-                $currentCourse++;
-                mysql_query("UPDATE `storedInterests` SET `CurrentCourse` = '$currentCourse' WHERE `Email` = '$userEmail'");
                                 
 
               }
