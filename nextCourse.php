@@ -829,9 +829,6 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                 echo "<a href='savedCourses.php' class='backArrow' data-ajax='false'><img src='images/icons/savedCourses_btn.png'></a>";
                 echo "</td></tr></table>";
               } else{
-				echo "That is all the courses that match your selection, please refine search for more options.";
-				echo "<br />";
-				echo "<br />";
-				echo "<a href='exploreInterests.php' data-ajax='false'>Explore more Interests</a>";
+              echo "There are no more courses that match this selection.<br /> <a href='exploreInterests.php' data-ajax='false'><img src='images/icons/goBack_btn.png' style='width:20%; max-width:180px; min-width:180px;'></a>";
 			}
             ?>

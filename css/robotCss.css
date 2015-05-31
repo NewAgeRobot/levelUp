@@ -226,7 +226,13 @@ img {
 
 
 
-
+#noCourseWarning{
+	text-align: center;
+	color:#ed3437;
+	font-style: bold;
+	font-size: 18px;
+	/*visibility: hidden;*/
+}
 
 .homepageBody{
 	background-color: #1b1b27;
@@ -999,6 +1005,13 @@ html {
 	}
 }
 
+@media screen and (max-width: 430px) { /*BUTTONS ON SHOWCOURSES START TO GO OUTSIDE SCREEN */
+	.saveNextButtons img{
+		max-width: 20px;
+	}
+}
+
+
 @media screen and (max-width: 375px) {
 	
 	.smallMenu .header-image img{
@@ -1011,9 +1024,6 @@ html {
 	Tinier
 */
 @media screen and (max-width: 360px) {
-	.page {
-		margin: 20px 10px;
-	}
 	.bigMenu {
 		display: none;
 	}
@@ -1026,7 +1036,7 @@ html {
 	}
 
 	.blog .article {
-		margin-top:130px;
+		margin-top:60px;
 	}
 	.centeredIntro{
 		min-width:100%;
@@ -1037,9 +1047,6 @@ html {
 	.thinnerCourses{
 		width:100%;
 		margin: 0 auto;
-	}
-	.blog .article {
-		margin-top:60px;
 	}
 }
 
