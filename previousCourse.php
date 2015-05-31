@@ -773,22 +773,22 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                 echo "<div class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses) . "</div>";
                 echo "<table class='saveNextButtons'><tr><td>";
 				if($currentCourse == 0){
-                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);visibility:hidden;'></a>";
+                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/PreviousCourse_btn.png' style='visibility:hidden;'></a>";
                 }
                 else{
-                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);'></a>";
+                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/PreviousCourse_btn.png'></a>";
                 }                
                 echo "</td><td>";
                 echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
                 echo "</td><td>";
-                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png'></a>";
+                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_btn.png'></a>";
                 echo "</td></tr></table>";
                 echo "<div class='showCoursesBorder'>";
                 echo "<table class='showCourses'>";
                 print_r("<tr><td class='jsCourseCode'><b>" . $seededArray[$currentCourse]['CourseCode'] . "</b></td></tr>");
-                print_r("<tr><td class='jsCourseTitle'><b>" . $seededArray[$currentCourse]['CourseTitle'] . "</b></td></tr>");
+                print_r("<tr><td class='jsCourseTitle'><b>" . utf8_encode($seededArray[$currentCourse]['CourseTitle']) . "</b></td></tr>");
                 print_r("<tr><td class='jsCourseLevel'><b>Level: </b>" . $seededArray[$currentCourse]['CourseLevel'] . "</td></tr>");
-                print_r("<tr><td class='jsCourseCollege'>" . $seededArray[$currentCourse]['Institute'] . "</td></tr>");
+                print_r("<tr><td class='jsCourseCollege'>" . utf8_encode($seededArray[$currentCourse]['Institute']) . "</td></tr>");
                 print_r("<tr><td class='jsCoursePoints'><b>Points: </b>" . $seededArray[$currentCourse]['Points'] . "</td></tr>");
                 echo "<tr><td class='openQuotes'><img src='images/icons/LeftQuotation.jpg'></td></tr>";
 
@@ -813,7 +813,7 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                   print_r("<tr><td>" . utf8_encode($seededArray[$currentCourse]['Synopsis']) . "</td></tr>");
                 }
 
-                echo "<tr><td class='closeQuotes'><img src='images/icons/RightQuotation.jpg'></td></tr>";
+                echo "<tr><td class='closeQuotes'><img src='images/icons/RightQuotation.jpg'></td></tr><tr><td class='closeQuotes'>-Taken from institute website</td></tr>";
                 // print_r("<tr class='hiddenLink'><td class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></td></tr>"); //not working
                 //MAYBE JUST HIDE THIS? LIKE, HAVE IT ECHO OUT BUT MAKE IT HIDDEN AND SHOW THE BUTTON INSTEAD?
                 print_r("<tr><td class='visitWebsite'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'><img src='images/icons/visitWebsite_btn.png'></a></td></tr>");
@@ -826,7 +826,7 @@ mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Ema
                 echo "<table class='saveNextButtons'><tr><td>";
                 echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/goBack_btn.png'></a>";
                 echo "</td><td>";
-                echo "<a href='savedCourses.php' data-ajax='false'><img src='images/icons/saveOrder_btn.png'></a>";
+                echo "<a href='savedCourses.php' class='backArrow' data-ajax='false'><img src='images/icons/savedCourses_btn.png'></a>";
                 echo "</td></tr></table>";
               } else{
 				echo "That is all the courses that match your selection, please refine search for more options.";

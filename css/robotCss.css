@@ -228,16 +228,18 @@ img {
 
 
 
-
+.homepageBody{
+	background-color: #1b1b27;
+}
 
 
 
 .first{
-	border-bottom: 10px solid #d2ff9e;
+	border-bottom: 10px solid #f1b78f;
 	left:-2px;
 }
 .second{
-	border-bottom: 10px solid #f1b78f;
+	border-bottom: 10px solid #d2ff9e;
 }
 .third{
 	border-bottom: 10px solid #ed7d7c;
@@ -1015,7 +1017,7 @@ html {
 	.bigMenu {
 		display: none;
 	}
-	.smallMenu img{
+	.smallMenu .header-image img{
 	    right: 130px;
 	    top: 5px;
 	}

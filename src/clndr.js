@@ -39,18 +39,14 @@
 
   // This is the default calendar template. This can be overridden.
   var clndrTemplate = "<div class='whiteHeader'><span class='clndr-controls'>" +
-"<span class='clndr-previous-button' style='cursor: pointer;'>Previous</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+"<span class='clndr-previous-button' style='cursor: pointer;'><img src='images/icons/left_arrow_Calendar.png'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
 "<span class='current-month'><%= month %> <%= year %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-"<span class='clndr-next-button' style='cursor: pointer;'>Next</span>" +
+"<span class='clndr-next-button' style='cursor: pointer;'><img src='images/icons/right_arrow_Calendar.png'></span>" +
 "</span></div>" +
   "<div class='wrapper'>" +
-  "<div id='one'><span class='event-listing-title'>&nbsp;EVENTS THIS MONTH</span><br /><br />" +
-  "<% _.each(eventsThisMonth, function(event) { %>" +
-   " <span class='event-item'>" +
-   " <span class='event-item-name'>&nbsp;<%= event.title %></span><br /><br />" +
-   " </span>" +
-   "<% }); %>" +
-"</div>" +
+  "<div id='one'><div id='innerOne'>" +
+  "<div class='event-listing-title'>Achievements</div><br /><br />" +
+"</div></div>" +
 "<div id='two'>" +
 "<table class='clndr-table' border='0' cellspacing='8' cellpadding='3'>" +
 "<thead>" +
@@ -73,12 +69,13 @@
 "</tbody>" +
 "</table>" +
 "</div>" +
-"<div id='three'>" +
-"<span class='event-listing-title'>&nbsp;Trophy Case</span><br /><br />" +
-// "<img src='images/icons/OneCourse_Badge.png' width='120px'>" +
-// "<img src='images/icons/FiveCourses_Badge.png' width='120px'>" +
-// "<img src='images/icons/TenCourses_Badge.png' width='120px'>" +
-"</div>" +
+"<div id='three'><div id='innerThree'><div class='event-listing-title'>Upcoming Events</div><br /><br />" +
+  "<% _.each(eventsThisMonth, function(event) { %>" +
+   " <span class='event-item'>" +
+   " <span class='event-item-name'><span class='eventDateSpan'><%= event.title.substr(0,9) %></span><span class='eventInfoSpan'><%= event.title.substring(9) %></span></span><br /><br />" +
+   " </span>" +
+   "<% }); %>" +
+"</div></div>" +
 "</div>";
 
 
@@ -480,7 +477,7 @@
   $.ajax({
         url: 'badgeCheck.php',
         success: function(data) {
-          $("#three").append(data);
+          $("#innerOne").append(data);
         }
       });
 

@@ -129,7 +129,7 @@ As well as providing a new and engaging way to search for college courses, we al
         <img class="bioImages" src="images/Sian.jpg">
           <h5 class="value-heading">Sían</h5>
           <h6 class="value-heading">Designer</h6>
-          <p class="value-description">Bio here would be nice this is just filler text to see what size the text would be and how much space can be allocated. I wonder will this be too much? Short and sweet would be best I think.</p>
+          <p class="value-description">Sían is a freelance graphic designer with an Honours Degree in Communications in Creative Multimedia. Sían loves the use of colour in clean and contemporary web design.</p>
         </div>
         <div class="three columns">
         <img class="bioImages" src="images/Sean.jpg">

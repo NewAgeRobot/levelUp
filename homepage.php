@@ -32,9 +32,9 @@ $amountSaved = $user['CoursesSaved'];
   <script src="js/dropit.js"></script>
   <script src="js/redirect.js"></script>
   <link rel="stylesheet" href="css/clndr.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+  <script type="text/javascript" src="js/underscore.js"></script>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.js"></script>
+  <script type="text/javascript" src="src/moment-2.8.3.js"></script>
 
   <script language="Javascript" type="text/javascript">
 
@@ -93,7 +93,7 @@ $amountSaved = $user['CoursesSaved'];
 </script>
 </head>
 
-<body>
+<body class="homepageBody">
 
   <div class="site">
     <!-- <div class="whiteHeader">WEDNESDAY 16TH</div> -->
@@ -126,53 +126,5 @@ $amountSaved = $user['CoursesSaved'];
           </ul>
         </ul><!-- /end ul#nav-primary.nav -->
       </div>
-
-
-
-
-
-      <hr />
-
-      <div class="blog section">
-        <!-- <h1 class="lede"></h1> -->
-
-        <div class="main">
-          <div class="article">
-            <div class="header">
-              <h1 class="title"></h1>
-            </div><!-- /end .header -->
-
-            <!-- <div class="intro"> -->
-              <!-- <div class="meta section"> -->
-               <!--  <?php
-                if ($amountSaved > 0){
-                  $oneBadge = true;
-                  echo "<img src='images/icons/OneCourse_Badge.png' height='150px' width='150px'>";
-                }
-                if ($amountSaved >= 5){
-                  $fiveBadge = true;
-                  echo "<img src='images/icons/FiveCourses_Badge.png' height='150px' width='150px'>";
-                }
-                if ($amountSaved >= 10){
-                  $tenBadge = true;
-                  echo "<img src='images/icons/TenCourses_Badge.png' height='150px' width='150px'>";
-                }
-                ?> -->
-              <!-- </div> --> <!-- /end .meta.section -->
-            <!-- </div> --><!-- /end .article -->
-          </div><!-- /end .main -->
-        </div><!-- /end .blog.section -->
-
-        <div id="footer">
-      <!-- <p>Images &copy; their respective copyright holders.</p>
-
-      <p>The design and code is &copy; 2014 <a href="http://unstoppablerobotninja.com/">Ethan Marcotte</a>, supporting his book <cite><a href="http://www.abookapart.com/products/responsive-web-design">Responsive Web Design</a></cite>.</p>
-
-      <p>Beep boop beep.</p> -->
-    </div><!-- /end #footer -->
-  </div><!-- /end .page -->
-
-</div><!-- /end .site -->
-
 </body>
 </html>

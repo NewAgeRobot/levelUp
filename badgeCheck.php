@@ -12,14 +12,24 @@ $amountSaved = $user['CoursesSaved'];
 
 if ($amountSaved > 0){
 	$oneBadge = true;
-	echo "<img src='images/icons/OneCourse_Badge.png' width='120px'>";
+	echo "<span class='badgeBlock'><img src='images/icons/OneCourse_Saved_Positive.png'></span>";
 }
+else{
+	echo "<span class='badgeBlock'><img src='images/icons/OneCourse_Saved_Negative.png' style='opacity: 0.2;'></span>";
+}
+
 if ($amountSaved >= 5){
 	$fiveBadge = true;
-	echo "<img src='images/icons/FiveCourses_Badge.png' width='120px'>";
+	echo "<span class='badgeBlock'><img src='images/icons/FiveCourse_Saved_Positive.png'></span>";
+}
+else{
+	echo "<span class='badgeBlock'><img src='images/icons/FiveCourse_Saved_Negative.png' style='opacity: 0.2;'></span>";
 }
 if ($amountSaved >= 10){
 	$tenBadge = true;
-	echo "<img src='images/icons/TenCourses_Badge.png' width='120px'>";
+	echo "<span class='badgeBlock'><img src='images/icons/TenCourse_Saved_Positive.png'></span>";
+}
+else{
+	echo "<span class='badgeBlock'><img src='images/icons/TenCourse_Saved_Negative.png' style='opacity: 0.2;'></span>";
 }
 ?>

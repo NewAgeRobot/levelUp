@@ -59,7 +59,7 @@ array_multisort($sortedArray, SORT_ASC, $array);
       // alert($(this).parentsUntil('tr').children('.top_row').children('.jsCourseCode').text());
       // alert(position);
       var code = $(this).parentsUntil('tr').children('.top_row').children('.jsCourseCode').text();
-      alert(code);
+      // alert(code);
       $.ajax({
         method: 'POST' ,
         url: 'deleteCourse.php' ,
@@ -274,8 +274,8 @@ else{
         <div class='top_row'>
           <div class='index'>" . $counter . "</div>
           <div class='jsCourseCode'>" . $array[$counter]['CourseCode'] . "</div>
-          <div>" . $array[$counter]['CourseTitle'] . "</div>
-          <div>" . $array[$counter]['CourseCollege'] . "</div>
+          <div>" . utf8_encode($array[$counter]['CourseTitle']) . "</div>
+          <div>" . utf8_encode($array[$counter]['CourseCollege']) . "</div>
         </div>
         <div class='bot_title_row'>
           <div>Level</div>

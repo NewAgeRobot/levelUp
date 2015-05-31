@@ -824,22 +824,22 @@ for($f = 7; $f < 22; $f++){
                 echo "<div class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses) . "</div>";
                 echo "<table class='saveNextButtons'><tr><td>";
                 if($currentCourse == 0){
-                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);visibility:hidden;'></a>";
+                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/PreviousCourse_btn.png' style='visibility:hidden;'></a>";
                 }
                 else{
-                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png' style='transform:scale(-1,1);'></a>";
+                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/PreviousCourse_btn.png'></a>";
                 }
                 echo "</td><td>";
                 echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
                 echo "</td><td>";
-                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_Btn.png'></a>";
+                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_btn.png'></a>";
                 echo "</td></tr></table>";
                 echo "<div class='showCoursesBorder'>";
                 echo "<table class='showCourses'>";
                 print_r("<tr><td class='jsCourseCode'><b>" . $seededArray[$currentCourse]['CourseCode'] . "</b></td></tr>");
-                print_r("<tr><td class='jsCourseTitle'><b>" . $seededArray[$currentCourse]['CourseTitle'] . "</b></td></tr>");
+                print_r("<tr><td class='jsCourseTitle'><b>" . utf8_encode($seededArray[$currentCourse]['CourseTitle']) . "</b></td></tr>");
                 print_r("<tr><td class='jsCourseLevel'><b>Level: </b>" . $seededArray[$currentCourse]['CourseLevel'] . "</td></tr>");
-                print_r("<tr><td class='jsCourseCollege'>" . $seededArray[$currentCourse]['Institute'] . "</td></tr>");
+                print_r("<tr><td class='jsCourseCollege'>" . utf8_encode($seededArray[$currentCourse]['Institute']) . "</td></tr>");
                 print_r("<tr><td class='jsCoursePoints'><b>Points: </b>" . $seededArray[$currentCourse]['Points'] . "</td></tr>");
                 echo "<tr><td class='openQuotes'><img src='images/icons/LeftQuotation.jpg'></td></tr>";
 
@@ -854,14 +854,14 @@ for($f = 7; $f < 22; $f++){
                   }
                   else{
                     echo "<tr><td>";
-                    print_r("<span class='teaserSynopsis'>" . utf8_encode (substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition)) . "</span><span class='showMore'><font color='#ed7d7c' style='cursor: pointer;'>...Show more</font></span>");
-                    print_r("<span class='completeSynopsis'>" . utf8_encode (substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength)) . "</span><span class='showLess'><font color='#ed7d7c' style='cursor: pointer;'>...Show less</font></span>");
+                    print_r("<span class='teaserSynopsis'>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition)) . "</span><span class='showMore'><font color='#ed7d7c' style='cursor: pointer;'>...Show more</font></span>");
+                    print_r("<span class='completeSynopsis'>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength)) . "</span><span class='showLess'><font color='#ed7d7c' style='cursor: pointer;'>...Show less</font></span>");
                     echo "</td></tr>";
                   }
                   
                 }
                 else{
-                  print_r("<tr><td>" . utf8_encode ($seededArray[$currentCourse]['Synopsis']) . "</td></tr>");
+                  print_r("<tr><td>" . utf8_encode($seededArray[$currentCourse]['Synopsis']) . "</td></tr>");
                 }
 
                 echo "<tr><td class='closeQuotes'><img src='images/icons/RightQuotation.jpg'></td></tr><tr><td class='closeQuotes'>-Taken from institute website</td></tr>";
@@ -874,7 +874,7 @@ for($f = 7; $f < 22; $f++){
                 echo "<table class='saveNextButtons'><tr><td>";
                 echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/goBack_btn.png'></a>";
                 echo "</td><td>";
-                echo "<a href='savedCourses.php' data-ajax='false'><img src='images/icons/saveOrder_btn.png'></a>";
+                echo "<a href='savedCourses.php' class='backArrow' data-ajax='false'><img src='images/icons/savedCourses_btn.png'></a>";
                 echo "</td></tr></table>";
                                 
 
