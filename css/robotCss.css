@@ -253,7 +253,7 @@ img {
 	float: left;
 	width: 25%;
 	max-width: 150px;
-}
+}	
 
 
 
@@ -747,7 +747,7 @@ blockquote {
 	border-top: 1px solid #999;
 	padding: 1em 0;
 	color: #666;
-	text-align: right;
+	/*text-align: right;*/
 }
 .meta h1,
 .meta h2 {
