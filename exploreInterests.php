@@ -138,7 +138,7 @@ for($f = 7; $f < 22; $f++){
   }
 }
 
-$interest0 = $userInterests['Interest0'];
+            $interest0 = $userInterests['Interest0'];
             $interest1 = $userInterests['Interest1'];
             $interest2 = $userInterests['Interest2'];
 
@@ -747,6 +747,8 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 			        if(data == "0"){
 			        	// alert("That combination has no courses in common, try selecting some others.");
 			        	$("#noCourseWarning").show();
+
+
 			        	var target = $("#noCourseWarning");
 					      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 					      if (target.length) {
@@ -940,7 +942,17 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 
 								echo "</fieldset>";
 								echo "</div><br />";
-								echo "<div id='noCourseWarning'>That combination has no courses in common, try selecting some others.</div>";
+								echo "<div id='noCourseWarning'>";
+                if(!$interest1){
+                  echo "Sorry there are no courses available that cover " . $interest0 . ". You could try a different combination or select fewer categories.";
+                }
+                else if(!$interest2){
+                  echo "Sorry there are no courses available that cover " . $interest0 . " and " . $interest1 . ". You could try a different combination or select fewer categories.";
+                }
+                else if($interest2){
+                  echo "Sorry there are no courses available that cover " . $interest0 . ", " . $interest1 . ", and " . $interest2 . ". You could try a different combination or select fewer categories.";
+                }
+                echo "</div>";
 								echo "<input type='submit' id='submit' name='formSubmit' value='Submit'/>
 							</form>";
 							?>
