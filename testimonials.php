@@ -90,14 +90,23 @@ $userEmail = $user['Email'];
       <div class="main">
         <div class="article">
           <div class="header">
-            <h1 class="title"></h1>
+            <h1 class="title">Select which story you'd like to hear</h1>
           </div><!-- /end .header -->
 
           <div class="intro">
-          <img src="images/kevinTestimonial.jpg">
+          <div class="centeredIntro">
+          <div class="testimonialLinks">
+            <div class="testimonialBox1"><a href=""><img src="images/people/Andrea_Thumbnail.png"></a><div class="descriptionTitle">Andrea</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at volutpat mi. Phasellus vitae tortor ut dolor lacinia ullamcorper nec eget mi. Praesent sem ipsum, sollicitudin at ipsum nec, elementum malesuada ante. Vestibulum maximus elementum nulla dignissim finibus. Nulla consequat nisi in ipsum elementum, in aliquam risus ultrices. In hac habitasse platea dictumst. Duis sed bibendum leo.</div><br style="clear:both" />
+            <div class="testimonialBox2"><a href=""><img src="images/people/Monica_Thumbnail.png"></a><div class="descriptionTitle">Monica</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at volutpat mi. Phasellus vitae tortor ut dolor lacinia ullamcorper nec eget mi. Praesent sem ipsum, sollicitudin at ipsum nec, elementum malesuada ante. Vestibulum maximus elementum nulla dignissim finibus. Nulla consequat nisi in ipsum elementum, in aliquam risus ultrices. In hac habitasse platea dictumst. Duis sed bibendum leo.</div><br style="clear:both" />
+            <div class="testimonialBox3"><a href=""><img src="images/people/Kevin_Thumbnail.png"></a><div class="descriptionTitle">Kevin</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at volutpat mi. Phasellus vitae tortor ut dolor lacinia ullamcorper nec eget mi. Praesent sem ipsum, sollicitudin at ipsum nec, elementum malesuada ante. Vestibulum maximus elementum nulla dignissim finibus. Nulla consequat nisi in ipsum elementum, in aliquam risus ultrices. In hac habitasse platea dictumst. Duis sed bibendum leo.</div><br style="clear:both" />
+            <div class="testimonialBox4"><a href=""><img src="images/people/Fergal_Thumbnail.png"></a><div class="descriptionTitle">Fergal</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at volutpat mi. Phasellus vitae tortor ut dolor lacinia ullamcorper nec eget mi. Praesent sem ipsum, sollicitudin at ipsum nec, elementum malesuada ante. Vestibulum maximus elementum nulla dignissim finibus. Nulla consequat nisi in ipsum elementum, in aliquam risus ultrices. In hac habitasse platea dictumst. Duis sed bibendum leo.</div><br style="clear:both" />
+            <div class="testimonialBox5"><a href=""><img src="images/people/Paul_Thumbnail.png"></a><div class="descriptionTitle">Paul</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at volutpat mi. Phasellus vitae tortor ut dolor lacinia ullamcorper nec eget mi. Praesent sem ipsum, sollicitudin at ipsum nec, elementum malesuada ante. Vestibulum maximus elementum nulla dignissim finibus. Nulla consequat nisi in ipsum elementum, in aliquam risus ultrices. In hac habitasse platea dictumst. Duis sed bibendum leo.</div><br style="clear:both" />
+            <div class="testimonialBox6"><a href=""><img src="images/people/Gerard_Thumbnail.png"></a><div class="descriptionTitle">Gerard</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at volutpat mi. Phasellus vitae tortor ut dolor lacinia ullamcorper nec eget mi. Praesent sem ipsum, sollicitudin at ipsum nec, elementum malesuada ante. Vestibulum maximus elementum nulla dignissim finibus. Nulla consequat nisi in ipsum elementum, in aliquam risus ultrices. In hac habitasse platea dictumst. Duis sed bibendum leo.</div><br style="clear:both" />
+          </div>
            <div class="meta section">
             
            </div> <!-- /end .meta.section -->
+           </div>
          </div><!-- /end .article -->
        </div><!-- /end .main -->
      </div><!-- /end .blog.section -->

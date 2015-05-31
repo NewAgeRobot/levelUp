@@ -261,7 +261,104 @@ img {
 
 
 
+/*TESTIMONIAL SECTION*/
 
+.testimonialLinks{
+		display: inline-block;
+		text-align: left;
+	}
+
+.testimonialLinks img{
+	float: left;
+	max-width: 40%;
+	margin-right: 15px; 
+}
+
+.testimonialBox1{
+	margin-top: 20px;
+	background-color: #31c3ea;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding:10px;
+}
+.testimonialBox1 img{
+	background-color: white;
+	padding: 15px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	box-shadow: 5px 5px 0px 5px rgba(0, 0, 0, 0.5);
+
+}
+.testimonialBox2{
+	margin-top: 20px;
+	background-color: #8e53a3;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding:10px;
+}
+.testimonialBox2 img{
+	background-color: #8e53a3;
+	padding: 15px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	color: white;
+	box-shadow: 5px 5px 0px 5px;
+
+}
+.testimonialBox3{
+	margin-top: 20px;
+	background-color: white;
+	color: #1b1b27;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding:10px;
+}
+.testimonialBox3 img{
+	background-color: #2cb565;
+	padding: 15px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+
+}
+.testimonialBox4{
+	margin-top: 20px;
+	background-color: #ed2f3b;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding:10px;
+}
+.testimonialBox5{
+	margin-top: 20px;
+	background-color: #f69b40;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding:10px;
+}
+.testimonialBox6{
+	margin-top: 20px;
+	background-color: #ed2f3b;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding:10px;
+}
+
+.descriptionTitle{
+	font: 24px 'Lobster';
+}
+
+
+
+
+/*END OF TESTIMONIAL SECTION*/
 
 
 
@@ -644,7 +741,7 @@ img {
 }
 .intro {
 	font-size: 1.14285714em;		/* 16/14 */
-	margin-top: 120px;
+	margin-top: 20px;
 }
 .intro table{
 	text-align: right;
@@ -747,7 +844,7 @@ blockquote {
 	border-top: 1px solid #999;
 	padding: 1em 0;
 	color: #666;
-	/*text-align: right;*/
+	/*text-align: right;*/ 
 }
 .meta h1,
 .meta h2 {
@@ -1168,7 +1265,11 @@ html {
 		padding: 10px 8.48057%;
 	}
 	.blog .article {
-		margin-top:80px;
+		margin-top:150px;
+	}
+
+	.blog .intro {
+		margin-top:20px;
 	}
 }
 
