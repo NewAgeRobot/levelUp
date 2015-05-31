@@ -13,7 +13,7 @@ if ($_POST['login']){
     $password = mysql_real_escape_string(hash("sha512", $_POST['password']));
     $user = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Email`='$email'")); //get user by their email
     if($user == '0'){
-      die("An account with that username and password does not exist. Please try another.");
+      die("An account with that email and password does not exist. Please try another.");
     }
     if( $user['Password'] != $password){
       die("Incorrect password. Please try another");
