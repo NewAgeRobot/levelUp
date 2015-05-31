@@ -882,6 +882,14 @@ for($f = 7; $f < 22; $f++){
             }
             ?>
             <div class="meta section">
+             <p>Need some help? Click <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">here</a> for an explanation.</p>
+<div id="light" class="white_content">
+
+            <div class="imageLegend"><img src="images/icons/PreviousCourse_btn.png">This button goes to the previous course in the list.</div>
+            <div class="imageLegend"><img src="images/icons/SaveCourse_Btn.png">This button saves the current course to your Saved Courses section.</div>
+            <div class="imageLegend"><img src="images/icons/NextCourse_btn.png">This button goes to the next course in the list.</div>
+<div id="boxClose"><a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">X</a></div></div>
+        <div id="fade" class="black_overlay"></div>
             </div> <!-- /end .meta.section -->
             </div>
           </div><!-- /end .article -->
