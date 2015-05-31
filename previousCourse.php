@@ -44,6 +44,19 @@
       $(".completeSynopsis").hide();
       $(".showLess").hide(); 
 
+      var target = $(".courseCounter");
+      var screenSize = $(window).width();
+      // alert(screenSize);
+      if(screenSize < 845){
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 400);
+          return false;
+        }
+      };
+
       
 		$('.ajax').show();
 		$(".ajax").click(function() {

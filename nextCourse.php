@@ -5,24 +5,24 @@
   <link rel="stylesheet" href="css/dropit.css" />
 
   <style type="text/css">
-  .completeSynopsis{
-    display:none;
-}
+  	.completeSynopsis{
+  		display:none;
+  	}
 
-.teaserSynopsis{
-}
+  	.teaserSynopsis{
+  	}
 
-.showMoreSynopsis{
-    color:navy;
-    cursor:pointer;
-}
-</style>
-
-
-<script language="Javascript" type="text/javascript">
+  	.showMoreSynopsis{
+  		color:navy;
+  		cursor:pointer;
+  	}
+  </style>
 
 
-	function nextCourse(cv){
+  <script language="Javascript" type="text/javascript">
+
+
+  	function nextCourse(cv){
 		// $("#myDiv").html("<img src='images/loader.gif'>").show();
 		var url="nextCourse.php";
 		$.post(url, {contentVar: cv}, function(data){
@@ -30,29 +30,41 @@
 		});
 	}
 
-    function previousCourse(cv){
+	function previousCourse(cv){
       // $("#myDiv").html("<img src='images/loader.gif'>").show();
       var url="previousCourse.php";
       $.post(url, {contentVar: cv}, function(data){
-        $(".thinnerCourses").html(data).show();
+      	$(".thinnerCourses").html(data).show();
       });
-    }
+  }
 
 
 
-	$(document).ready(function(){
-      $(".completeSynopsis").hide();
-      $(".showLess").hide(); 
+  $(document).ready(function(){
+  	$(".completeSynopsis").hide();
+  	$(".showLess").hide(); 
 
-      
-		$('.ajax').show();
-		$(".ajax").click(function() {
-			var code = $(".jsCourseCode").text();
-			var level = $(".jsCourseLevel").text();
-			var title = $(".jsCourseTitle").text();
-			var points = $(".jsCoursePoints").text();
-			var college = $(".jsCourseCollege").text();
-			var url = $(".jsCourseURL").text();
+      var target = $(".courseCounter");
+      var screenSize = $(window).width();
+      // alert(screenSize);
+      if(screenSize < 845){
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 400);
+          return false;
+        }
+      };
+
+  	$('.ajax').show();
+  	$(".ajax").click(function() {
+  		var code = $(".jsCourseCode").text();
+  		var level = $(".jsCourseLevel").text();
+  		var title = $(".jsCourseTitle").text();
+  		var points = $(".jsCoursePoints").text();
+  		var college = $(".jsCourseCollege").text();
+  		var url = $(".jsCourseURL").text();
 				//alert(s);
 				$.ajax({
 					method: 'POST' ,
@@ -64,28 +76,28 @@
 					 	// $('.ajax').after("Course Saved!");
 					 	$('.ajax').after(result);
 					 	$('.ajax').hide();
-         				nextCourse();
+					 	nextCourse();
 					 }
 					});
 			});
 
-     $( ".showLess").click(function() {
-        $(".teaserSynopsis").show();  
-        $(".completeSynopsis").hide(); 
-        $(".showLess").hide(); 
-        $(".showMore").show(); 
+  	$( ".showLess").click(function() {
+  		$(".teaserSynopsis").show();  
+  		$(".completeSynopsis").hide(); 
+  		$(".showLess").hide(); 
+  		$(".showMore").show(); 
     // $(this).text("...Show More").siblings(".teaserSynopsis").hide();    
-  });
+});
 
-      $( ".showMore").click(function() {
-        $(".teaserSynopsis").hide();  
-        $(".completeSynopsis").show();
-        $(".showLess").show(); 
-        $(".showMore").hide(); 
+  	$( ".showMore").click(function() {
+  		$(".teaserSynopsis").hide();  
+  		$(".completeSynopsis").show();
+  		$(".showLess").show(); 
+  		$(".showMore").hide(); 
     // $(this).text("...Show less").siblings(".teaserSynopsis").show(); 
       // $(this).text("...Show less").siblings(".completeSynopsis").hide();
-    });
-    });
+  });
+  });
 
 
 </script>
@@ -767,68 +779,68 @@ $seededArray = sortArrayByArray($array, $newTest);
 
 
 mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
-              if($currentCourse <= ($numCourses-1)){
-                print_r("<div class='hiddenLink'><div class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></div></div>");
-                echo "<br />";
-                echo "<div class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses) . "</div>";
-                echo "<table class='saveNextButtons'><tr><td>";
-				if($currentCourse == 0){
-                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/PreviousCourse_btn.png' style='visibility:hidden;'></a>";
-                }
-                else{
-                  echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/PreviousCourse_btn.png'></a>";
-                }                
-                echo "</td><td>";
-                echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
-                echo "</td><td>";
-                echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_btn.png'></a>";
-                echo "</td></tr></table>";
-                echo "<div class='showCoursesBorder'>";
-                echo "<table class='showCourses'>";
-                print_r("<tr><td class='jsCourseCode'><b>" . $seededArray[$currentCourse]['CourseCode'] . "</b></td></tr>");
-                print_r("<tr><td class='jsCourseTitle'><b>" . utf8_encode($seededArray[$currentCourse]['CourseTitle']) . "</b></td></tr>");
-                print_r("<tr><td class='jsCourseLevel'><b>Level: </b>" . $seededArray[$currentCourse]['CourseLevel'] . "</td></tr>");
-                print_r("<tr><td class='jsCourseCollege'>" . utf8_encode($seededArray[$currentCourse]['Institute']) . "</td></tr>");
-                print_r("<tr><td class='jsCoursePoints'><b>Points: </b>" . $seededArray[$currentCourse]['Points'] . "</td></tr>");
-                echo "<tr><td class='openQuotes'><img src='images/icons/LeftQuotation.jpg'></td></tr>";
+if($currentCourse <= ($numCourses-1)){
+	print_r("<div class='hiddenLink'><div class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></div></div>");
+	echo "<br />";
+	echo "<div class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses) . "</div>";
+	echo "<table class='saveNextButtons'><tr><td>";
+	if($currentCourse == 0){
+		echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/PreviousCourse_btn.png' style='visibility:hidden;'></a>";
+	}
+	else{
+		echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/PreviousCourse_btn.png'></a>";
+	}                
+	echo "</td><td>";
+	echo "<a href='javascript:{}' class='ajax'><img src='images/icons/SaveCourse_Btn.png'></a>";
+	echo "</td><td>";
+	echo "<a href='#' onCLick='return false' onmousedown='javascript:nextCourse(" . $currentCourse . ");'><img src='images/icons/NextCourse_btn.png'></a>";
+	echo "</td></tr></table>";
+	echo "<div class='showCoursesBorder'>";
+	echo "<table class='showCourses'>";
+	print_r("<tr><td class='jsCourseCode'><b>" . $seededArray[$currentCourse]['CourseCode'] . "</b></td></tr>");
+	print_r("<tr><td class='jsCourseTitle'><b>" . utf8_encode($seededArray[$currentCourse]['CourseTitle']) . "</b></td></tr>");
+	print_r("<tr><td class='jsCourseLevel'><b>Level: </b>" . $seededArray[$currentCourse]['CourseLevel'] . "</td></tr>");
+	print_r("<tr><td class='jsCourseCollege'>" . utf8_encode($seededArray[$currentCourse]['Institute']) . "</td></tr>");
+	print_r("<tr><td class='jsCoursePoints'><b>Points: </b>" . $seededArray[$currentCourse]['Points'] . "</td></tr>");
+	echo "<tr><td class='openQuotes'><img src='images/icons/LeftQuotation.jpg'></td></tr>";
 
 
-                $synopsisSpaceCount =  substr_count($seededArray[$currentCourse]['Synopsis'], '.');
+	$synopsisSpaceCount =  substr_count($seededArray[$currentCourse]['Synopsis'], '.');
 // echo $synopsisSpaceCount;
-                if($synopsisSpaceCount >= 5){
+	if($synopsisSpaceCount >= 5){
                   $lastPeriodPosition = strpos($seededArray[$currentCourse]['Synopsis'], '.', 400); //there's no space after the 250 mark / this works but sometimes all you're seeing is 1 character more. Check if length is within 20
                   $synopsisLength = strlen($seededArray[$currentCourse]['Synopsis']);
                   if($synopsisLength <= 430){
-                    print_r("<tr><td>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</td></tr>"));
+                  	print_r("<tr><td>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength) . "</td></tr>"));
                   }
                   else{
-                    echo "<tr><td>";
-                    print_r("<span class='teaserSynopsis'>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition)) . "</span><span class='showMore'><font color='#ed7d7c' style='cursor: pointer;'>...Show more</font></span>");
-                    print_r("<span class='completeSynopsis'>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength)) . "</span><span class='showLess'><font color='#ed7d7c' style='cursor: pointer;'>...Show less</font></span>");
-                    echo "</td></tr>";
+                  	echo "<tr><td>";
+                  	print_r("<span class='teaserSynopsis'>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $lastPeriodPosition)) . "</span><span class='showMore'><font color='#ed7d7c' style='cursor: pointer;'>...Show more</font></span>");
+                  	print_r("<span class='completeSynopsis'>" . utf8_encode(substr($seededArray[$currentCourse]['Synopsis'], 0, $synopsisLength)) . "</span><span class='showLess'><font color='#ed7d7c' style='cursor: pointer;'>...Show less</font></span>");
+                  	echo "</td></tr>";
                   }
 
-                }
-                else{
-                  print_r("<tr><td>" . utf8_encode($seededArray[$currentCourse]['Synopsis']) . "</td></tr>");
-                }
+              }
+              else{
+              	print_r("<tr><td>" . utf8_encode($seededArray[$currentCourse]['Synopsis']) . "</td></tr>");
+              }
 
-                echo "<tr><td class='closeQuotes'><img src='images/icons/RightQuotation.jpg'></td></tr><tr><td class='closeQuotes'>-Taken from institute website</td></tr>";
+              echo "<tr><td class='closeQuotes'><img src='images/icons/RightQuotation.jpg'></td></tr><tr><td class='closeQuotes'>-Taken from institute website</td></tr>";
                 // print_r("<tr class='hiddenLink'><td class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></td></tr>"); //not working
                 //MAYBE JUST HIDE THIS? LIKE, HAVE IT ECHO OUT BUT MAKE IT HIDDEN AND SHOW THE BUTTON INSTEAD?
-                print_r("<tr><td class='visitWebsite'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'><img src='images/icons/visitWebsite_btn.png'></a></td></tr>");
-                
-                echo "</table>";
-                echo "</div>";
-                
-                echo "</table>";
-                echo "</div>";
-                echo "<table class='saveNextButtons'><tr><td>";
-                echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/goBack_btn.png'></a>";
-                echo "</td><td>";
-                echo "<a href='savedCourses.php' class='backArrow' data-ajax='false'><img src='images/icons/savedCourses_btn.png'></a>";
-                echo "</td></tr></table>";
-              } else{
-              echo "There are no more courses that match this selection.<br /> <a href='exploreInterests.php' data-ajax='false'><img src='images/icons/goBack_btn.png' style='width:20%; max-width:180px; min-width:180px;'></a>";
-			}
-            ?>
+              print_r("<tr><td class='visitWebsite'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'><img src='images/icons/visitWebsite_btn.png'></a></td></tr>");
+
+              echo "</table>";
+              echo "</div>";
+
+              echo "</table>";
+              echo "</div>";
+              echo "<table class='saveNextButtons'><tr><td>";
+              echo "<a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/goBack_btn.png'></a>";
+              echo "</td><td>";
+              echo "<a href='savedCourses.php' class='backArrow' data-ajax='false'><img src='images/icons/savedCourses_btn.png'></a>";
+              echo "</td></tr></table>";
+          } else{
+          	echo "There are no more courses that match this selection.<br /> <a href='exploreInterests.php' data-ajax='false'><img src='images/icons/goBack_btn.png' style='width:20%; max-width:180px; min-width:180px;'></a>";
+          }
+          ?>
