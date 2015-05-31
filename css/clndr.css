@@ -403,7 +403,7 @@ padding: 15px;
  /* border-left: 1px solid #000000;
   border-top: 1px solid #000000;
   border-right: 1px solid #000000;*/
-  color: #white;
+  color: white;
 }
 .cal1 .clndr .clndr-table .header-days .header-day:last-child {
   /*border-right: 1px solid #000000;*/

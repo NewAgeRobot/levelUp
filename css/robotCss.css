@@ -10,11 +10,17 @@ ROBOT…OR NOT?
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 @import url(Lobster.otf);
+@import url(Luna.ttf);
 
 
 @font-face {
     font-family: Lobster;
     src: url(Lobster.otf);
+}
+
+@font-face {
+    font-family: Luna;
+    src: url(Luna.ttf);
 }
 
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,time,mark,audio,video { margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent; } 
@@ -398,7 +404,7 @@ img {
 	text-align: center;
 }
 .testimonialBox4 img{
-	background-color: #ed2f3b;
+	background-color: #e6629e;
 	padding: 10px;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
@@ -450,12 +456,134 @@ img {
 	background-color: black;
 }
 
-	.leftBox{
-		text-align: left;
-	}
+.leftBox{
+	text-align: left;
+}
 
 /*END OF TESTIMONIAL SECTION*/
 
+/*START OF INDIVIDUAL TESTIMONY PAGES*/
+.testimoneyTopBox{
+	margin-top: 20px;
+	background-color: #1b2433;
+	color: #1b1b27;
+	-moz-border-radius: 25px 25px 0px 0px;
+	-webkit-border-radius: 25px 25px 0px 0px;
+	border-radius: 25px 25px 0px 0px;
+	padding:10px;
+	text-align: center;
+	color: white;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+}
+.testimoneyTopBox img{
+	background-color: #31c3ea;
+	padding: 10px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.constraint{
+	overflow: hidden;
+	width:500px;
+	display: block;
+}
+
+.testimonyName{
+	font: 36px 'Lobster';
+}
+
+.testimonyTitle{
+	font: 24px Times;
+}
+
+.titleRibbon{
+	background-color: #ed7d7c;
+	position: absolute;
+	left:45%;
+	margin-top: 5px;
+	font: 36px 'Lobster';
+
+}
+
+.WW{
+	background-color: #31c3ea;
+	color: #1b1b27;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	border-radius: 0px 0px 0px 0px;
+	padding:10px;
+	/*padding-left:80px;*/
+	text-align: center;
+  	border-top: 7px solid #151c26;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+}
+
+.WW table, tr, td{
+	text-align: center;
+	color: #1b1b27;
+	font: 22px Times;
+}
+
+.questionsBlock{
+	background-color: #323a45;
+	color: 'white';
+	-moz-border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	border-radius: 0px 0px 0px 0px;
+	padding:10px;
+	text-align: center;
+  	border-top: 7px solid #151c26;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+	font: 16px 'Luna';
+}
+
+.lightAnswerBlock{
+	background-color: #aadfef;
+	color: #1b1b27;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	border-radius: 0px 0px 0px 0px;
+	padding:10px;
+	text-align: center;
+  	border-top: 7px solid #151c26;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+	font: 16px 'PT Sans';
+}
+
+.darkAnswerBlock{
+	background-color: #31c3ea;
+	color: #1b1b27;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	border-radius: 0px 0px 0px 0px;
+	padding:10px;
+	text-align: center;
+  	border-top: 7px solid #151c26;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+	font: 16px 'PT Sans';
+}
+
+.bottomAnswerBlock{
+	background-color: #aadfef;
+	color: #1b1b27;
+	-moz-border-radius: 0px 0px 25px 25px;
+	-webkit-border-radius: 0px 0px 25px 25px;
+	border-radius: 0px 0px 25px 25px;
+	padding:10px;
+	text-align: center;
+  	border-top: 7px solid #151c26;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+	font: 16px 'PT Sans';
+}
+
+/*END OF INDIVIDUAL TESTIMONY PAGES*/
 
 
 
