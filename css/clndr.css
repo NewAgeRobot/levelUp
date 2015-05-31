@@ -415,8 +415,8 @@ padding: 15px;
   vertical-align: top;
 }
 .cal1 .clndr .clndr-table tr .day {
-  border-left: 9px solid #ed7d7c;
-  border-right: 9px solid #ed7d7c;
+  border: 5px solid #ed7d7c;
+  /*border-right: 5px solid #ed7d7c;*/
   width: 100%;
   height: inherit;
   background: #fff;
@@ -431,8 +431,8 @@ padding: 15px;
 .cal1 .clndr .clndr-table tr .day.my-today {
   /*background: #f18b37;*/
   /*border-color: #1b1b27;*/
-  border-top: 9px solid #1b1b27;
-  border-bottom: 9px solid #1b1b27;
+  border: 7px solid #1b1b27;
+  /*border-bottom: 9px solid #1b1b27;*/
 }
 .cal1 .clndr .clndr-table tr .day.today:hover,
 .cal1 .clndr .clndr-table tr .day.my-today:hover {
