@@ -268,6 +268,7 @@ img {
 		text-align: left;
 	}
 
+
 .testimonialLinks img{
 	/*float: left;*/
 	/*max-width: 40%;*/
@@ -282,6 +283,7 @@ img {
 	-webkit-border-radius: 25px;
 	border-radius: 25px;
 	padding:10px;
+	text-align: center;
 /*	display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -329,6 +331,7 @@ img {
 	-webkit-border-radius: 25px;
 	border-radius: 25px;
 	padding:10px;
+	text-align: center;
 }
 .testimonialBox2 img{
 	background-color: #8e53a3;
@@ -356,6 +359,7 @@ img {
 	-webkit-border-radius: 25px;
 	border-radius: 25px;
 	padding:10px;
+	text-align: center;
 }
 .testimonialBox3 img{
 	background-color: #2cb565;
@@ -391,6 +395,7 @@ img {
 	-webkit-border-radius: 25px;
 	border-radius: 25px;
 	padding:10px;
+	text-align: center;
 }
 .testimonialBox4 img{
 	background-color: #ed2f3b;
@@ -407,6 +412,7 @@ img {
 	-webkit-border-radius: 25px;
 	border-radius: 25px;
 	padding:10px;
+	text-align: center;
 }
 .testimonialBox5 img{
 	background-color: #f69b40;
@@ -424,6 +430,7 @@ img {
 	-webkit-border-radius: 25px;
 	border-radius: 25px;
 	padding:10px;
+	text-align: center;
 }
 .testimonialBox6 img{
 	/*float: left;*/
@@ -443,6 +450,9 @@ img {
 	background-color: black;
 }
 
+	.leftBox{
+		text-align: left;
+	}
 
 /*END OF TESTIMONIAL SECTION*/
 
