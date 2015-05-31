@@ -94,28 +94,28 @@ $userEmail = $user['Email'];
             </div><!-- /end .header -->
 
             <div class="intro">
-              <div class="testimoneyTopBox">
+              <div class="testimonyTopBox1">
                 <img src="../images/people/Andrea_Thumbnail.png">
                 <div class="testimonyName">Andrea McConnon</div>
                 <div class="testimonyTitle">Electrical Engineer</div>
                 <!-- <div class="titleRibbon">Apprenticeship</div> -->
               </div>
               
-              <div class="WW">
+              <div class="WW andreaWW">
                 <table>
                   <tr>
-                    <td>
+                    <td class="WWTD">
                       What:
                     </td>
-                    <td>
+                    <td class="WWTD">
                       Apprenticeship
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td class="WWTD">
                       Where
                     </td>
-                    <td>
+                    <td class="WWTD">
                       ESB Networks
                     </td>
                   </tr>
@@ -123,16 +123,16 @@ $userEmail = $user['Email'];
               </div>
                 <div class="questionsBlock">When you were finishing secondary school did
                   you always know what you wanted to do afterwards?</div>
-                  <div class="lightAnswerBlock">No, definitely not. I'd always said I wanted to be a PE teacher, and
+                  <div class="lightAnswerBlock andreaLight">No, definitely not. I'd always said I wanted to be a PE teacher, and
                     it wasn't until the day that I got my leaving cert results and got
                     the points for it that I realised I definitely didn't want it!</div>
                     <div class="questionsBlock">Is what you are doing now something
                       you always wanted to do?</div>
-                      <div class="darkAnswerBlock">It was something I'd always thought about doing because I wanted
+                      <div class="darkAnswerBlock andreaDark">It was something I'd always thought about doing because I wanted
                         to do something practical or hands-on, but I never thought I'd
                         enjoy it as much as I do.</div>
                         <div class="questionsBlock">What made you decide to do an apprenticeship?</div>
-                        <div class="lightAnswerBlock">When the career guidance teacher came around to my class to
+                        <div class="lightAnswerBlock andreaLight">When the career guidance teacher came around to my class to
                           mainly tell the lads that the ESB were recruiting, I contemplated
                           applying. When I was filling out the application form I never
                           intended to take the job, it was always just a back-up plan if
@@ -150,9 +150,9 @@ $userEmail = $user['Email'];
                           road I went down, but the option was also there to finish out the
                           apprenticeship and become a fully qualified electrician.</div>
                           <div class="questionsBlock">Where did you undertake this apprenticeship?</div>
-                          <div class="darkAnswerBlock">I did my apprenticeship with ESB Networks.</div>
+                          <div class="darkAnswerBlock andreaDark">I did my apprenticeship with ESB Networks.</div>
                           <div class="questionsBlock">How did you find the experience?</div>
-                          <div class="lightAnswerBlock">I've really enjoyed all of it. The apprenticeship is great because
+                          <div class="lightAnswerBlock andreaLight">I've really enjoyed all of it. The apprenticeship is great because
                             you learn while you work, you get to earn money so you get some
                             independence, and you don't spend too long in college at any one
                             time. Because ESB Networks is split into different areas of work, as
@@ -169,7 +169,7 @@ $userEmail = $user['Email'];
                             got to go straight into 2nd year of the ordinary degree, and then
                             following that, I went into 3rd year of the honours degree.</div>
                             <div class="questionsBlock">How has it benefited you personally?</div>
-                            <div class="darkAnswerBlock">By doing the apprenticeship first, I felt that it gave me a chance to
+                            <div class="darkAnswerBlock andreaDark">By doing the apprenticeship first, I felt that it gave me a chance to
                               mature and really think about what I wanted to do. So when I did
                               go to college to do the engineering degree I was really ready to
                               start studying. Whereas if I'd gone straight to college after school I
@@ -177,7 +177,7 @@ $userEmail = $user['Email'];
                               leaving cert to give college my all.</div>
                               <div class="questionsBlock">Did the apprenticeship involve any
                                 course work or further study?</div>
-                                <div class="lightAnswerBlock">The apprenticeship itself consists of 7 phases spread out over 4
+                                <div class="lightAnswerBlock andreaLight">The apprenticeship itself consists of 7 phases spread out over 4
                                   years. Phases 1, 3, 5 & 7 are on the job, and phases 2, 4 & 6 are in
                                   college. Phase 2 lasts 20 weeks, and takes place in FAS/SOLAS
                                   training centres. This phase is split 50/50 between theory and
@@ -190,7 +190,7 @@ $userEmail = $user['Email'];
                                   before and after completing Phase 4 of the apprenticeship.</div>
                                   <div class="questionsBlock">Have you always thought it was
                                     important to work at something you love?</div>
-                                    <div class="darkAnswerBlock">Definitely, if you enjoy what you're doing then you'll never dread
+                                    <div class="darkAnswerBlock andreaDark">Definitely, if you enjoy what you're doing then you'll never dread
                                       getting up for work in the morning.</div>
                                       <div class="questionsBlock">What advice would you give to current leaving cert
                                         students deciding on college courses/career paths?</div>
@@ -211,27 +211,6 @@ $userEmail = $user['Email'];
                                           want to be a PE teacher. Whatever it is that you want to do, it's
                                           not out of your reach. There are back ways into everything. So
                                           don't let the points dictate what career you choose.</div>
-
-              <!-- 
-              <div class="questionsBlock">When</div>
-              <div class="lightAnswerBlock">whn</div>
-              <div class="questionsBlock">When</div>
-              <div class="darkAnswerBlock">sfdfs</div>
-              <div class="questionsBlock">When</div>
-              <div class="lightAnswerBlock">whn</div>
-              <div class="questionsBlock">When</div>
-              <div class="darkAnswerBlock">sfdfs</div>
-              <div class="questionsBlock">When</div>
-              <div class="lightAnswerBlock">whn</div>
-              <div class="questionsBlock">When</div>
-              <div class="darkAnswerBlock">sfdfs</div>
-              <div class="questionsBlock">When</div>
-              <div class="lightAnswerBlock">whn</div>
-              <div class="questionsBlock">When</div>
-              <div class="darkAnswerBlock">sfdfs</div>
-              <div class="questionsBlock">When</div>
-              <div class="lightAnswerBlock">whn</div>
-               -->
 
 
                                           <!-- <div class="meta section">

@@ -463,7 +463,7 @@ img {
 /*END OF TESTIMONIAL SECTION*/
 
 /*START OF INDIVIDUAL TESTIMONY PAGES*/
-.testimoneyTopBox{
+.testimonyTopBox1{
 	margin-top: 20px;
 	background-color: #1b2433;
 	color: #1b1b27;
@@ -476,8 +476,108 @@ img {
   	border-left: 7px solid #151c26;
   	border-right: 7px solid #151c26;
 }
-.testimoneyTopBox img{
+.testimonyTopBox1 img{
 	background-color: #31c3ea;
+	padding: 10px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+.testimonyTopBox2{
+	margin-top: 20px;
+	background-color: #1b2433;
+	color: #1b1b27;
+	-moz-border-radius: 25px 25px 0px 0px;
+	-webkit-border-radius: 25px 25px 0px 0px;
+	border-radius: 25px 25px 0px 0px;
+	padding:10px;
+	text-align: center;
+	color: white;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+}
+.testimonyTopBox2 img{
+	background-color: #8e53a3;
+	padding: 10px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+.testimonyTopBox3{
+	margin-top: 20px;
+	background-color: #1b2433;
+	color: #1b1b27;
+	-moz-border-radius: 25px 25px 0px 0px;
+	-webkit-border-radius: 25px 25px 0px 0px;
+	border-radius: 25px 25px 0px 0px;
+	padding:10px;
+	text-align: center;
+	color: white;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+}
+.testimonyTopBox3 img{
+	background-color: #2cb565;
+	padding: 10px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+.testimonyTopBox4{
+	margin-top: 20px;
+	background-color: #1b2433;
+	color: #1b1b27;
+	-moz-border-radius: 25px 25px 0px 0px;
+	-webkit-border-radius: 25px 25px 0px 0px;
+	border-radius: 25px 25px 0px 0px;
+	padding:10px;
+	text-align: center;
+	color: white;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+}
+.testimonyTopBox4 img{
+	background-color: #e6629e;
+	padding: 10px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+.testimonyTopBox5{
+	margin-top: 20px;
+	background-color: #1b2433;
+	color: #1b1b27;
+	-moz-border-radius: 25px 25px 0px 0px;
+	-webkit-border-radius: 25px 25px 0px 0px;
+	border-radius: 25px 25px 0px 0px;
+	padding:10px;
+	text-align: center;
+	color: white;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+}
+.testimonyTopBox5 img{
+	background-color: #f69b40;
+	padding: 10px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+.testimonyTopBox6{
+	margin-top: 20px;
+	background-color: #1b2433;
+	color: #1b1b27;
+	-moz-border-radius: 25px 25px 0px 0px;
+	-webkit-border-radius: 25px 25px 0px 0px;
+	border-radius: 25px 25px 0px 0px;
+	padding:10px;
+	text-align: center;
+	color: white;
+  	border-left: 7px solid #151c26;
+  	border-right: 7px solid #151c26;
+}
+.testimonyTopBox6 img{
+	background-color: #ed2f3b;
 	padding: 10px;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
@@ -521,8 +621,8 @@ img {
   	border-right: 7px solid #151c26;
 }
 
-.WW table, tr, td{
-	text-align: center;
+.WW .WWTD{
+	text-align: left;
 	color: #1b1b27;
 	font: 22px Times;
 }
@@ -542,13 +642,13 @@ img {
 }
 
 .lightAnswerBlock{
-	background-color: #aadfef;
+	/*background-color: #aadfef;*/
 	color: #1b1b27;
 	-moz-border-radius: 0px 0px 0px 0px;
 	-webkit-border-radius: 0px 0px 0px 0px;
 	border-radius: 0px 0px 0px 0px;
 	padding:10px;
-	text-align: center;
+	text-align: left;
   	border-top: 7px solid #151c26;
   	border-left: 7px solid #151c26;
   	border-right: 7px solid #151c26;
@@ -556,13 +656,13 @@ img {
 }
 
 .darkAnswerBlock{
-	background-color: #31c3ea;
+	/*background-color: #31c3ea;*/
 	color: #1b1b27;
 	-moz-border-radius: 0px 0px 0px 0px;
 	-webkit-border-radius: 0px 0px 0px 0px;
 	border-radius: 0px 0px 0px 0px;
 	padding:10px;
-	text-align: center;
+	text-align: left;
   	border-top: 7px solid #151c26;
   	border-left: 7px solid #151c26;
   	border-right: 7px solid #151c26;
@@ -570,18 +670,108 @@ img {
 }
 
 .bottomAnswerBlock{
-	background-color: #aadfef;
+	/*background-color: #aadfef;*/
 	color: #1b1b27;
 	-moz-border-radius: 0px 0px 25px 25px;
 	-webkit-border-radius: 0px 0px 25px 25px;
 	border-radius: 0px 0px 25px 25px;
 	padding:10px;
-	text-align: center;
+	text-align: left;
   	border-top: 7px solid #151c26;
   	border-left: 7px solid #151c26;
   	border-right: 7px solid #151c26;
 	font: 16px 'PT Sans';
 }
+
+.marginText{
+	max-width:50%;
+	margin: 0 auto;
+}
+
+
+.andreaWW{
+	background-color: #31c3ea;
+}
+.andreaDark{
+	background-color: #31c3ea;
+}
+.andreaLight{
+	background-color: #aadfef;
+}
+.andreaBottom{
+	background-color: #aadfef;
+}
+
+
+.monicaWW{
+	background-color: #8e53a3;
+}
+.monicaDark{
+	background-color: #8e53a3;
+}
+.monicaLight{
+	background-color: #e9aff9;
+}
+.monicaBottom{
+	background-color: #8e53a3;
+}
+
+
+.kevinWW{
+	background-color: #2cb565;
+}
+.kevinDark{
+	background-color: #2cb565;
+}
+.kevinLight{
+	background-color: #d3ff9e;
+}
+.kevinBottom{
+	background-color: #2cb565;
+}
+
+
+.fergalWW{
+	background-color: #e6629e;
+}
+.fergalDark{
+	background-color: #e6629e;
+}
+.fergalLight{
+	background-color: #ec7f82;
+}
+.fergalBottom{
+	background-color: #e6629e;
+}
+
+
+.paulWW{
+	background-color: #f69b40;
+}
+.paulDark{
+	background-color: #f69b40;
+}
+.paulLight{
+	background-color: #ebb998;
+}
+.paulBottom{
+	background-color: #ebb998;
+}
+
+
+.gerardWW{
+	background-color: #ed2f3b;
+}
+.gerardDark{
+	background-color: #ed2f3b;
+}
+.gerardLight{
+	background-color: #ec7f82;
+}
+.gerardBottom{
+	background-color: #ec7f82;
+}
+
 
 /*END OF INDIVIDUAL TESTIMONY PAGES*/
 
