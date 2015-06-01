@@ -545,7 +545,7 @@ $(function () { //change to have different name than container
 			},
 			colors: ['#98cad3','#35c0e1','#138699'],
 			title: {
-				text: 'Interest Enjoyment',
+				text: 'Your Top 3 Interests',
 				style: {
 					color: '#FFF',
 					fontSize: '44px',
@@ -624,7 +624,7 @@ $(function () { //change to have different name than container
 			},
 			colors: ['#f88c8c','#ec3837','#b02e2e'],
 			title: {
-				text: 'Subject Enjoyment',
+				text: 'Your Top 3 Subjects',
 				style: {
 					color: '#FFF',
 					fontSize: '44px',
@@ -762,13 +762,16 @@ $(function () { //change to have different name than container
 
 
 						<div class="intro">
-							<br />
-							<br />
-							<br />
 							<div id='interestChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>
 							<div class="Divider"><img src="images/icons/Divider.png"></div>
 							<div id='subjectChart' style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto'></div>
-
+							<div style="text-align:center;font-size:18px;font-family:'PT Sans';">Above are your current top 3 interests and subjects. To update them just enter more ratings in the feedback section, or explore more courses based on these statistics.</div>
+			<table class='saveNextButtons savedCoursesButtons'>
+			<tr><td>
+                <a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/explore_btn.png'></a>
+                </td><td>
+                <a href='interestFeedback.php' class='backArrow' data-ajax='false'><img src='images/icons/savedCourgses_btn.png'>weekly feedback</a>
+                </td></tr></table>
 
 							<div class="meta section">
 							</div> <!-- /end .meta.section -->
