@@ -180,11 +180,9 @@ if ($_POST['login']){
                 <input type="password"  style="background: white;" name="password" placeholder="Password">
                 </td>
                 </tr>
-
               </table>
-              <table width="100%">
 
-              <tr><td><div class="meta section">
+              <div class="meta section">
               <div class="loginError"><?php 
                 if (isset($_COOKIE['noUser'])) {
                   echo "Invalid Email address entered. Please try again.";
@@ -193,12 +191,8 @@ if ($_POST['login']){
                   echo "An account with that Email and Password combination does not exist, please try again.";
                 }
                ?></div>
-                <input type="image" src="images/icons/logIn_btn.png" style="background:#303944; width: 50%; max-width:200px;" name="login" value="Log in" >
-              </form></td></tr>
-              </table>
-              <table class='saveNextButtons savedCoursesButtons'><tr><td>
-                <a href='index.php' class='backArrow' data-ajax='false'><img src='images/icons/back_btn.png'></a>
-                </td></tr></table>
+                <input type="submit" name="login" value="Log in">
+              </form>
             </div> <!-- /end .meta.section -->
             </div>
           </div><!-- /end .article -->

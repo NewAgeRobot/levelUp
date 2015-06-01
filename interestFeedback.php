@@ -198,9 +198,7 @@ if(isset($_POST['formSubmit'])){
               <div id='dupeCourseWarning'>
                 You must rank three separate Interests before submitting.
               </div>
-              <div style="text-align:center;">
-              <input type="image" id='submit' src="images/icons/submit_btn.png" style="background:#303944; width: 50%; max-width:200px;" name="formSubmit" value="Submit">
-                </div><!-- <input type='submit' id='submit' name='formSubmit' value='Submit'/> -->
+              <input type='submit' id='submit' name='formSubmit' value='Submit'/>
               </form>
             </div> <!-- /end .meta.section -->
             </div>

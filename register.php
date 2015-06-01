@@ -197,8 +197,8 @@ if ($_POST['register']){
                   echo "Username can't be more than 20 characters, sorry.";
                 }
                ?></div>
-                <!-- <input type="image" src="images/icons/logIn_btn.png" style="background:#303944; width: 50%; max-width:200px;" name="login" value="Log in" > -->
-                <input type="image" src="images/icons/logIn_btn.png" style="background:#303944; width: 50%; max-width:200px;" name="register" value="Register">
+                <input type="submit" name="register" value="Register">
+                <!-- <input type="image" src="images/icons/logIn_btn.png" style="background:#303944; width: 50%; max-width:200px;" name="register" value="Register"> -->
               </form></td></tr>
 
               </table>

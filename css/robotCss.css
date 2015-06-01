@@ -1558,8 +1558,8 @@ html {
 		bottom:0;
 	}
 	.smallMenu .header-image img{
-	    right: 350px;
-	    top: 5px;
+	    right: 35px;
+	    top: 10px;
 	}
 	.lede{
 		z-index: 50;
@@ -1574,16 +1574,16 @@ html {
 @media screen and (max-width: 780px) {
 	
 	.smallMenu .header-image img{
-	    right: 350px;
-	    top: 5px;
+	    right: 35px;
+	    top: 10px;
 	}
 }
 
 @media screen and (max-width: 730px) {
 	
 	.smallMenu .header-image img{
-	    right: 330px;
-	    top: 5px;
+	    right: 35px;
+	    top: 10px;
 	}
 }
 
@@ -1591,8 +1591,8 @@ html {
 @media screen and (max-width: 655px) {
 	
 	.smallMenu .header-image img{
-	    right: 300px;
-	    top: 5px;
+	    right: 35px;
+	    top: 10px;
 	}
 	.lede{
 		z-index: 50;
@@ -1610,8 +1610,8 @@ html {
 @media screen and (max-width: 580px) {
 	
 	.smallMenu .header-image img{
-	    right: 250px;
-	    top: 5px;
+	    right: 35px;
+	    top: 10px;
 	}
 }
 
@@ -1621,8 +1621,8 @@ html {
 		display: none;
 	}
 	.smallMenu .header-image img{
-	    right: 215px;
-	    top: 5px;
+	    right: 35px;
+	    top: 10px;
 	}
 	.lede{
 		z-index: 50;
@@ -1660,8 +1660,8 @@ html {
 		display: none;
 	}
 	.smallMenu .header-image img{
-	    right: 210px;
-	    top: 5px;
+	    right: 35px;
+	    top: 10px;
 	}
 	.lede{
 		z-index: 50;
@@ -1685,8 +1685,8 @@ html {
 @media screen and (max-width: 445px) {
 	
 	.smallMenu .header-image img{
-	    right: 180px;
-	    top: 5px;
+	    right: 35px;
+	    top: 10px;
 	}
 }
 
@@ -1700,8 +1700,8 @@ html {
 @media screen and (max-width: 375px) {
 	
 	.smallMenu .header-image img{
-	    right: 150px;
-	    top: 5px;
+	    right: 35px;
+	    top: 10px;
 	}
 }
 
@@ -1713,8 +1713,8 @@ html {
 		display: none;
 	}
 	.smallMenu .header-image img{
-	    right: 130px;
-	    top: 5px;
+	    right: 35px;
+	    top: 10px;
 	}
 	.lede{
 		z-index: 50;

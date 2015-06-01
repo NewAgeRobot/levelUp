@@ -106,10 +106,10 @@ $userEmail = $user['Email'];
                 <table>
                   <tr>
                     <td class="WWTD">
-                      What:
+                      Course:
                     </td>
                     <td class="WWTD">
-                      Apprenticeship
+                      Architectural Technology
                     </td>
                   </tr>
                   <tr>
@@ -117,7 +117,7 @@ $userEmail = $user['Email'];
                       Where
                     </td>
                     <td class="WWTD">
-                      ESB Networks
+                      DIT, Bolton St.
                     </td>
                   </tr>
                 </table>

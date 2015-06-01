@@ -956,8 +956,8 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
                   echo "Sorry there are no courses available that cover " . $interest0 . ", " . $interest1 . ", and " . $interest2 . ". You could try a different combination or select fewer categories.";
                 }
                 echo "</div>";
-								// echo "<input type='submit' id='submit' name='formSubmit' value='Submit'/>";
-                echo "<div style='text-align:center;'><input type='image' id='submit' src='images/icons/submit_btn.png' style='background:#303944; width: 50%; max-width:200px;' name='formSubmit' value='Submit'></div>";
+								echo "<input type='submit' id='submit' name='formSubmit' value='Submit'/>";
+                // echo "<div style='text-align:center;'><input type='image' id='submit' src='images/icons/submit_btn.png' style='background:#303944; width: 50%; max-width:200px;' name='formSubmit' value='Submit'></div>";
 							echo "</form>";
 							?>
 						</div> <!-- /end .meta.section -->
