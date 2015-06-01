@@ -126,6 +126,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
 <body>
 
   <div class="site">
+    <div class='whiteHeader'><span class="currentPageSpanLeft"><a href="homepage.php" data-ajax='false'><img src="images/icons/Home_Icon.png"></a></span><span class="currentPageSpanRight">Subject Feedback</span></div>
 
     <div class="page">
 

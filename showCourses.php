@@ -194,6 +194,7 @@ for($f = 7; $f < 22; $f++){
 <body>
 
   <div class="site">
+    <div class='whiteHeader'><span class="currentPageSpanLeft"><a href="homepage.php" data-ajax='false'><img src="images/icons/Home_Icon.png"></a></span><span class="currentPageSpanRight">Explore Interests</span></div>
 
     <div class="page">
 

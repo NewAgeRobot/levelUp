@@ -49,6 +49,7 @@ $userEmail = $user['Email'];
 <body>
 
   <div class="site">
+    <div class='whiteHeader'><span class="currentPageSpanLeft"><a href="../homepage.php" data-ajax='false'><img src="../images/icons/Home_Icon.png"></a></span><span class="currentPageSpanRight">Testimonials</span></div>
 
     <div class="page">
 

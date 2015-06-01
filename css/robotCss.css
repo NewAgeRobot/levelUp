@@ -263,7 +263,65 @@ img {
 
 
 
+/*START OF WHITE HEADER*/
 
+.currentPageSpanLeft{
+  position: absolute;
+  left:10px;
+}
+.currentPageSpanLeft img{
+  width: 75%;
+}
+.currentPageSpanRight{
+  position: absolute;
+  right:10px;
+}
+
+.whiteHeader{
+  margin-top: 160px;
+  height: 45px;
+  color: black;
+  background-color: white;
+  text-align: center;
+  font: 32px 'Lobster', 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
+}
+
+@media screen and (max-width: 1800px) {
+  .whiteHeader{
+    margin-top: 150px;
+  }
+}
+@media screen and (max-width: 1650px) {
+  .whiteHeader{
+    margin-top: 140px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .whiteHeader{
+    margin-top: 130px;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .whiteHeader{
+    margin-top: 120px;
+  }
+}
+@media screen and (max-width: 1185px) {
+  .whiteHeader{
+    margin-top: 110px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .whiteHeader{
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 845px) {
+  .whiteHeader{
+    margin-top: 65px;
+  }
+}
+/*END OF WHITE HEADER*/
 
 
 
@@ -1061,7 +1119,7 @@ img {
 
 .blog {
 	margin: 0 auto 53px;
-	margin-top: 150px;
+	margin-top: 50px;
 	width: 93.75%;			/* 900/960 */
 }
 .blog {
@@ -1679,7 +1737,7 @@ html {
 		padding: 10px 8.48057%;
 	}
 	.blog .article {
-		margin-top:150px;
+		margin-top:30px;
 	}
 
 	.blog .intro {

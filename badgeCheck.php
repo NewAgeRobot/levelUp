@@ -15,7 +15,7 @@ if ($amountSaved > 0){
 	echo "<span class='badgeBlock'><img src='images/icons/OneCourse_Saved_Positive.png'></span>";
 }
 else{
-	echo "<span class='badgeBlock'><img src='images/icons/OneCourse_Saved_Negative.png' style='opacity: 0.2;'></span>";
+	echo "<span class='badgeBlock'><img src='images/icons/OneCourse_Saved_Negative.png' style='opacity: 0.4;'></span>";
 }
 
 if ($amountSaved >= 5){
@@ -23,13 +23,20 @@ if ($amountSaved >= 5){
 	echo "<span class='badgeBlock'><img src='images/icons/FiveCourse_Saved_Positive.png'></span>";
 }
 else{
-	echo "<span class='badgeBlock'><img src='images/icons/FiveCourse_Saved_Negative.png' style='opacity: 0.2;'></span>";
+	echo "<span class='badgeBlock'><img src='images/icons/FiveCourse_Saved_Negative.png' style='opacity: 0.4;'></span>";
 }
 if ($amountSaved >= 10){
 	$tenBadge = true;
 	echo "<span class='badgeBlock'><img src='images/icons/TenCourse_Saved_Positive.png'></span>";
 }
 else{
-	echo "<span class='badgeBlock'><img src='images/icons/TenCourse_Saved_Negative.png' style='opacity: 0.2;'></span>";
+	echo "<span class='badgeBlock'><img src='images/icons/TenCourse_Saved_Negative.png' style='opacity: 0.4;'></span>";
+}
+if ($amountSaved >= 10){
+	$tenBadge = true;
+	echo "<span class='badgeBlock'><img src='images/icons/TwentyCourse_Saved_Positive.png'></span>";
+}
+else{
+	echo "<span class='badgeBlock'><img src='images/icons/TwentyCourse_Saved_Negative.png' style='opacity: 0.4;'></span>";
 }
 ?>

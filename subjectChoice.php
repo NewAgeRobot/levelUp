@@ -76,6 +76,7 @@ if(isset($_POST['formSubmit'])){
 <body>
 
 	<div class="site">
+    <div class='whiteHeader'><span class="currentPageSpanLeft"><a href="homepage.php" data-ajax='false'><img src="images/icons/Home_Icon.png"></a></span><span class="currentPageSpanRight">Subject Choice</span></div>
 
 		<div class="page">
 

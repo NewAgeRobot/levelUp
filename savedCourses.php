@@ -173,6 +173,7 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
 <body>
 
   <div class="site">
+    <div class='whiteHeader'><span class="currentPageSpanLeft"><a href="homepage.php" data-ajax='false'><img src="images/icons/Home_Icon.png"></a></span><span class="currentPageSpanRight">Saved Courses</span></div>
 
     <div class="page">
 
