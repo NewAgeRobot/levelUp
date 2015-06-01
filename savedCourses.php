@@ -97,10 +97,18 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
       var reorderClicked = false;
 
 
+      $("body").click(function() {
+        $(".bot_title_row").hide();
+        $(".bot_row").hide();
+        $(".corner_fix").children().replaceWith("<div>&#x25BC;</div>");
+      });
+
       $(".top_title_row").click(function() {
+        event.stopPropagation();
         if(reorderClicked == false){
           $(".bot_title_row").hide();
           $(".bot_row").hide();
+          $(".corner_fix").children().replaceWith("<div>&#x25BC;</div>");
 
           var $clicked = $(this);
           $clicked.siblings(".bot_row").show();  
@@ -108,13 +116,18 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
 
           var $clickedTitle = $(this);
           $clickedTitle.siblings(".bot_title_row").show();  
+
+          var $clickedCornerFix = $(this);
+          $clickedCornerFix.siblings(".corner_fix").children().replaceWith("<div>&nbsp;</div>");
         };
       });
 
       $(".top_row").click(function() {
+        event.stopPropagation();
         if(reorderClicked == false){
           $(".bot_title_row").hide();
           $(".bot_row").hide();
+          $(".corner_fix").children().replaceWith("<div>&#x25BC;</div>");
 
           var $clicked = $(this);
           $clicked.siblings(".bot_row").show();  
@@ -122,10 +135,14 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
 
           var $clickedTitle = $(this);
           $clickedTitle.siblings(".bot_title_row").show();  
+
+          var $clickedCornerFix = $(this);
+          $clickedCornerFix.siblings(".corner_fix").children().replaceWith("<div>&nbsp;</div>");
         };
       });
 
       $(".corner_fix").click(function() {
+        event.stopPropagation();
         if(reorderClicked == false){
           $(".bot_title_row").hide();
           $(".bot_row").hide();
@@ -135,14 +152,25 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
 
 
           var $clickedTitle = $(this);
-          $clickedTitle.siblings(".bot_title_row").show();  
+          $clickedTitle.siblings(".bot_title_row").show();
+
+          $(".corner_fix").children().replaceWith("<div>&#x25BC;</div>");
+          $(this).children().replaceWith("<div>&nbsp;</div>");
         };
       });
 
+      $(".bot_row").click(function() {
+        event.stopPropagation();
+      });
 
+      $(".bot_title_row").click(function() {
+        event.stopPropagation();
+      });
 
 
       $('#reorder').click(function(){
+        $(".title").replaceWith("<h1 class='title' style='color: #ed7d7c;'>You can now drag and drop each course to order them however you like.</h1>");
+        $(".corner_fix").children().replaceWith("<div>&#x25BC;</div>");
         $(".bot_title_row").children().css({"background": "#ec2f3a"});
         $(".top_title_row").children().css({"background": "#ec2f3a"});
         $(".bot_title_row").hide();
@@ -270,7 +298,7 @@ else{
           <div><a href='javascript:{}' class='ajax'><font color='red'><img src='images/icons/icon_Delete.png' style='width:20%;max-width:30px;min-width:20px;margin-top:5px;'></font></a></div>
         </div>
         <div class='corner_fix'>
-          <div class='arrow'>&#x25BC;</div>
+          <div>&#x25BC;</div>
         </div>
       </td>
     </tr>");

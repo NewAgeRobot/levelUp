@@ -54,6 +54,7 @@ $amountSaved = $user['CoursesSaved'];
    { date: moment().format('2015-05-05'), title: '05/05/15 - CAO - Online Change of Mind facility opens (free)' },
    { date: moment().format('2015-05-15'), title: '15/05/15 - CAO - All LATE Paper Applicants should have received a Statement of Course Choices by this date' },
    { date: moment().format('2015-05-31'), title: '31/05/15 - CAO - All applicants should have received a Statement of Application Record by this date' },
+   { date: moment().format('2015-06-03'), title: '03/06/15 - Best of Luck to everyone starting their Leaving Cert Exams today!' },
    { date: moment().format('2015-07-01'), title: '01/07/15 - CAO - Change of Mind  closes - 5:15pm' },
    { date: moment().format('2015-08-15'), title: '15/08/15 - Leaving Certificate results issued' },
 
