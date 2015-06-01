@@ -219,44 +219,11 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
             </div><!-- /end .header -->
 
             <div class="intro">
-              <div class="centeredIntro">
-
-
-<!-- <table border='1' width='100%' id='sort' class='grid'>
-    <tr>
-        <td>
-            <div class='top_row'>
-                <div>Hello</div>
-                <div>World</div>
-                <div>World</div>
-            </div>
-            <div class='bot_row'>
-                <div>Hello</div>
-                <div>World</div>
-                <div>Hello</div>
-            </div>
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            <div class='top_row'>
-                <div>Hello</div>
-                <div>Hello</div>
-                <div>Hello</div>
-            </div>
-            <div class='bot_row'>
-                <div>Hello</div>
-                <div>Hello</div>
-                <div>Hello</div>
-            </div>
-        </td>
-    </tr>
-</table>
-<button id='reorder'>Reorder Courses</button><a href='javascript:{}' class='reorderDone'><button>Save Order</button> -->
-
+              <div class="centeredIntro savedCenter">
+              
 
 <?php
+echo "<button id='reorder'>Reorder Courses</button><a href='javascript:{}' class='reorderDone'><button>Save Order</button></a>";
 if(!$numCourses){
   echo "You have yet to save any courses.";
 }
@@ -272,9 +239,21 @@ else{
           <div>Title</div>
           <div>Institute</div>
         </div>
-        <div class='top_row'>
-          <div class='index'>" . $counter . "</div>
-          <div class='jsCourseCode'>" . $array[$counter]['CourseCode'] . "</div>
+        <div class='top_row'>");
+        if($counter == 0){
+          print_r("<div class='index'><div class='firstCourse'>" . ($counter+1). "</div></div>");
+        }
+        else if($counter == 1){
+          print_r("<div class='index'><div class='secondCourse'>" . ($counter+1). "</div></div>");
+        }
+        else if($counter == 2){
+          print_r("<div class='index'><div class='thirdCourse'>" . ($counter+1). "</div></div>");
+        }
+        else{
+          print_r("<div class='index'>" . ($counter+1). "</div>");
+        }
+          // "<div class='index'>" . ($counter+1). "</div>
+          print_r("<div class='jsCourseCode'>" . $array[$counter]['CourseCode'] . "</div>
           <div>" . utf8_encode($array[$counter]['CourseTitle']) . "</div>
           <div>" . utf8_encode($array[$counter]['CourseCollege']) . "</div>
         </div>
@@ -287,17 +266,16 @@ else{
         <div class='bot_row'>
           <div>" . $array[$counter]['CourseLevel'] . "</div>
           <div>" . $array[$counter]['CoursePoints'] . "</div>
-          <div><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'><font color='lightblue'>Find out more</font></a></div>
-          <div><a href='javascript:{}' class='ajax'><font color='red'>Delete Course</font></a></div>
+          <div><a href='" . $array[$counter]['CourseURL'] . "' target='_blank'><font color='#31c3ea'>Find out more</font></a></div>
+          <div><a href='javascript:{}' class='ajax'><font color='red'><img src='images/icons/icon_Delete.png' style='width:20%;max-width:30px;min-width:20px;margin-top:5px;'></font></a></div>
         </div>
         <div class='corner_fix'>
-          <div>&nbsp;</div>
+          <div class='arrow'>&#x25BC;</div>
         </div>
       </td>
     </tr>");
 }
 echo "</table>";
-echo "<button id='reorder'>Reorder Courses</button><a href='javascript:{}' class='reorderDone'><button>Save Order</button></a>";
 }
 ?>
 
@@ -314,7 +292,17 @@ echo "<button id='reorder'>Reorder Courses</button><a href='javascript:{}' class
 
 
 <div class="meta section">
-
+<table class='saveNextButtons savedCoursesButtons'><tr><td>
+                <a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/explore_btn.png'></a>
+                </td><td>
+                <a href='interestFeedback.php' class='backArrow' data-ajax='false'><img src='images/icons/savedCourgses_btn.png'>weekly feedback</a>
+                </td></tr></table>
+                <p>Need some help? Click <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">here</a> for an explanation.</p>
+<div id="light" class="white_content">
+<div>To drag and drop the courses into your preferred order just hit the Reorder Courses button.</div>
+<div>You can also click on the boxes to expand them for more information on the selected course.</div>
+<div id="boxClose"><a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">X</a></div></div>
+        <div id="fade" class="black_overlay"></div>
 </div> <!-- /end .meta.section -->
 
 </div>

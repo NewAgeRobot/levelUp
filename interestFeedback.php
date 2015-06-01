@@ -55,6 +55,8 @@ if(isset($_POST['formSubmit'])){
   <script type="text/javascript">
     $(document).ready(function() {
       $('.menu').dropit();
+
+          $("#dupeCourseWarning").hide();
     });
   </script>
   <script language="Javascript" type="text/javascript">
@@ -93,9 +95,11 @@ if(isset($_POST['formSubmit'])){
 
         if(duplicates.length > 0){
           $("#submit").attr("disabled", "disabled");
+          $("#dupeCourseWarning").show();
         }
         else{
           $("#submit").removeAttr("disabled");
+          $("#dupeCourseWarning").hide();
         }
       });
     }
@@ -158,7 +162,7 @@ if(isset($_POST['formSubmit'])){
       <div class="main">
         <div class="article">
           <div class="header">
-            <h1 class="title">Pick your three favourite interests of this week.Remember to check the statistics page to see how your interests have changed over time!</h1>
+            <h1 class="title">Pick your three favourite interests of this week. Remember to check the statistics page to see how your interests have changed over time!</h1>
           </div><!-- /end .header -->
 
           <div class="intro">
@@ -166,6 +170,7 @@ if(isset($_POST['formSubmit'])){
             <div class="centeredIntro">
             <form action='' method='post' name='subjectFavourites' class='formText' data-ajax='false'>
               <select class="subjectClass" id="first" name="subjectList[]">
+                <option value="" disabled selected>Select your 1st Interest</option>
                 <?php 
                 for($j = 4; $j < $itemsSize; $j++){
                   print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
@@ -173,6 +178,7 @@ if(isset($_POST['formSubmit'])){
                 ?>
               </select>
               <select class="subjectClass" id="second" name="subjectList[]">
+                <option value="" disabled selected>Select your 2nd Interest</option>
                 <?php 
                 for($j = 4; $j < $itemsSize; $j++){
                   print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
@@ -180,6 +186,7 @@ if(isset($_POST['formSubmit'])){
                 ?>
               </select>
               <select class="subjectClass" id="third" name="subjectList[]">
+                <option value="" disabled selected>Select your 3rd Interest</option>
                 <?php 
                 for($j = 4; $j < $itemsSize; $j++){
                   print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
@@ -188,6 +195,9 @@ if(isset($_POST['formSubmit'])){
               </select>
 
               <div class="meta section">
+              <div id='dupeCourseWarning'>
+                You must rank three separate Interests before submitting.
+              </div>
                 <input type='submit' id='submit' name='formSubmit' value='Submit'/>
               </form>
             </div> <!-- /end .meta.section -->

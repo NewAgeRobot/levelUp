@@ -31,7 +31,7 @@ if(isset($_POST['formSubmit'])){
 				}
 			}
 			mysql_query("UPDATE `users` SET `SubAmount` = '$subAmount', `CoursesPicked` = '1' WHERE `Email` = '$userEmail'");
-			header('Location: index.php');
+			header('Location: tutorial.php');
 		}
 	}
 }
@@ -66,7 +66,7 @@ if(isset($_POST['formSubmit'])){
  <script type="text/javascript">
   $(document).ready(function(){
       $(".smallMenu .header-image img").click(function() {
-        window.location.replace("homepage.php");
+        window.location.replace("tutorial.php");
       });
     });
 </script>
@@ -118,7 +118,7 @@ if(isset($_POST['formSubmit'])){
 			<div class="main">
 				<div class="article">
 					<div class="header">
-						<h1 class="title">Tick all the subjects you do to finalise your registration then we can get started!</h1>
+						<h1 class="title">Select all the subjects you do and then we can get you started.</h1>
 					</div><!-- /end .header -->
 					
 

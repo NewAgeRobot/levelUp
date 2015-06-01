@@ -62,6 +62,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
   <script type="text/javascript">
     $(document).ready(function() {
       $('.menu').dropit();
+          $("#dupeCourseWarning").hide();
     });
   </script>
   <script language="Javascript" type="text/javascript">
@@ -103,9 +104,11 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
 
         if(duplicates.length > 0){
           $("#submit").attr("disabled", "disabled");
+          $("#dupeCourseWarning").show();
         }
         else{
           $("#submit").removeAttr("disabled");
+          $("#dupeCourseWarning").hide();
         }
       });
     }
@@ -176,6 +179,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
           <p>Rank your six favourite subjects to keep track of your enjoyment. Check out the statistics page to see what you liked all year round!</p>
             <form action='' method='post' name='subjectFavourites' class = 'formText' data-ajax='false'>
               <select class="subjectClass" id="first" name="subjectList[]">
+                <option value="" disabled selected>Select your 1st Subject</option>
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
                   print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
@@ -183,6 +187,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 ?>
               </select>
               <select class="subjectClass" id="second" name="subjectList[]">
+                <option value="" disabled selected>Select your 2nd Subject</option>
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
                   print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
@@ -190,6 +195,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 ?>
               </select>
               <select class="subjectClass" id="third" name="subjectList[]">
+                <option value="" disabled selected>Select your 3rd Subject</option>
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
                   print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
@@ -197,6 +203,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 ?>
               </select>
               <select class="subjectClass" id="fourth" name="subjectList[]">
+                <option value="" disabled selected>Select your 4th Subject</option>
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
                   print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
@@ -204,6 +211,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 ?>
               </select>
               <select class="subjectClass" id="fifth" name="subjectList[]">
+                <option value="" disabled selected>Select your 5th Subject</option>
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
                   print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
@@ -211,6 +219,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
                 ?>
               </select>
               <select class="subjectClass" id="sixth" name="subjectList[]">
+                <option value="" disabled selected>Select your 6th Subject</option>
                 <?php 
                 for($j = 1; $j < $itemsSize; $j++){
                   print_r("<option value='" . $items[$j] . "'>" . $items[$j] . "</option>");
@@ -219,6 +228,9 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `S
               </select>
 
               <div class="meta section">
+              <div id='dupeCourseWarning'>
+                You must rank six separate Subjects before submitting.
+              </div>
                 
                 <input type='submit' id='submit' name='formSubmit' value='Submit'/>
               </form>

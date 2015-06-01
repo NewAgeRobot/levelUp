@@ -51,7 +51,7 @@ if ($_POST['login']){
   <script src="js/dropit.js"></script>
   <script src="js/redirect.js"></script>
 
- -->
+
   <script type="text/javascript">
     $(document).ready(function() {
       $('.menu').dropit();
@@ -70,21 +70,21 @@ if ($_POST['login']){
 <body>
 
   <div class="site">
-    <div class='whiteHeader'><span class="currentPageSpanLeft"><a href="homepage.php" data-ajax='false'><img src="images/icons/Home_Icon.png"></a></span><span class="currentPageSpanRight">Log In</span></div>
+    <div class='whiteHeader'><span class="currentPageSpanLeft"><a href="homepage.php" data-ajax='false'><img src="images/icons/Home_Icon.png"></a></span><span class="currentPageSpanRight">Login</span></div>
 
     <div class="page">
 
-
+      
       <div class="navigationBar">
         <!-- <h1 class="logo"><a href="homepage.php"><img src="images/header-logo.png" /></a></h1> -->
 
         <ul class="nav nav-primary bigMenu">
           <div class="logoTest"><li id="logoImage"><a href="homepage.php" data-ajax='false'><img src="images/icons/LOGO_withFont.png"></a></li></div>
           <div style="visibility:hidden;"><li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>&nbsp;&nbsp;Explore&nbsp;&nbsp;&nbsp;</a></li><li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>|&nbsp;&nbsp;Weekly Feedback&nbsp;&nbsp;</a></li><li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>|&nbsp;&nbsp;Statistics&nbsp;&nbsp;</a></li><li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>|&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>|&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>|&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
-        </div></ul><!-- /end ul#nav-primary.nav -->
+       </div> </ul><!-- /end ul#nav-primary.nav -->
 
 
-        <ul class="nav nav-primary smallMenu">
+       <ul class="nav nav-primary smallMenu">
           <li class="header-image"><img src="images/icons/LOGO_ForMobile.png"></li>
          <div style="visibility:hidden;"> <ul class="menu">
             <li>
@@ -112,7 +112,7 @@ if ($_POST['login']){
       <div class="main">
         <div class="article">
           <div class="header">
-            <h1 class="title">Log In</h1>
+            <h1 class="title">Login Form</h1>
           </div><!-- /end .header -->
 
           <div class="intro">

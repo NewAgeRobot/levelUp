@@ -22,10 +22,10 @@ if($logged == true){
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/robotCss.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/custom.css">
@@ -68,6 +68,7 @@ if($logged == true){
 
   <div class="section values">
     <div class="container">
+
       <div class="row">
         <div class="one-third column value">
           <h2 class="value-multiplier">10%</h2>
@@ -102,9 +103,12 @@ As well as providing a new and engaging way to search for college courses, we al
       <h3 class="section-heading">Come see us at FÍS!</h3>
       <p class="section-description"></p>
       <div class="row">
-        <div class="column category">
-          <a href="https://www.facebook.com/events/604487459691036/"><img class="u-max-full-width" src="images/Fis.jpg"></a>
-        </div>
+      <div class="videoWrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RfM24d1hboE" frameborder="0" allowfullscreen></iframe>
+      </div>
+      
+        <!-- <div class="column category">
+        </div> -->
       </div>
     </div>
   </div>

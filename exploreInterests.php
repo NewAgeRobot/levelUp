@@ -849,7 +849,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 					<div class="article">
 						<div class="header">
 							<h1 class="title" style="color: #ed7d7c;">Please explore courses that might suit with your personal interests. You can choose up to 3 interests to search</h1>
-							<h1 class="title"><?php echo $prompts['Prompt'];?></h1>
+							<h1 class="title"><div class="roundedPrompt"><?php echo $prompts['Prompt'];?></div></h1>
 						</div><!-- /end .header -->
 
 						<div class="intro">
@@ -943,7 +943,10 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 								echo "</fieldset>";
 								echo "</div><br />";
 								echo "<div id='noCourseWarning'>";
-                if(!$interest1){
+                if(!$interest0){
+                  echo "Sorry, but you haven't selected any interests. Please select at least one and try again.";
+                }
+                else if(!$interest1){
                   echo "Sorry there are no courses available that cover " . $interest0 . ". You could try a different combination or select fewer categories.";
                 }
                 else if(!$interest2){
