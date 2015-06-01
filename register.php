@@ -2,6 +2,11 @@
 ini_set('display_errors', 0); 
 error_reporting(E_ALL);
 include "connect.php";
+include "algor.php";
+if($logged == true){
+    header('Location: index.php');
+  // echo "<h1>you're logged in!</h1>";
+}
 if ($_POST['register']){
   if($_POST['username'] && $_POST['password'] && $_POST['year'] && $_POST['email']){
     $username = mysql_real_escape_string($_POST['username']);
@@ -10,10 +15,32 @@ if ($_POST['register']){
     $email = mysql_real_escape_string($_POST['email']);
     $check = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Email`='$email'"));
     if ($check != '0'){
-      die("That Email address is already in use.");
+      // die("That Email address is already in use.");
+      if (isset($_COOKIE['existingUser'])) {
+        unset($_COOKIE['existingUser']);
+        setcookie('existingUser', null, -1, '/');
+      }
+      if (isset($_COOKIE['usernameTooLong'])) {
+        unset($_COOKIE['usernameTooLong']);
+        setcookie('usernameTooLong', null, -1, '/');
+      }
+      setcookie("existingUser", "1", time()+10, "/");
+      header('Location: register.php');
+      die();
     }
     if(strlen($username) > 20){
-      die("Username can't be more than 20 characters, sorry");
+      // die("Username can't be more than 20 characters, sorry");
+      if (isset($_COOKIE['existingUser'])) {
+        unset($_COOKIE['existingUser']);
+        setcookie('existingUser', null, -1, '/');
+      }
+      if (isset($_COOKIE['usernameTooLong'])) {
+        unset($_COOKIE['usernameTooLong']);
+        setcookie('usernameTooLong', null, -1, '/');
+      }
+      setcookie("usernameTooLong", "1", time()+10, "/");
+      header('Location: register.php');
+      die();
     }
     $salt = hash("sha512", rand() . rand() . rand());
     mysql_query("INSERT INTO `users` (`Username`, `Password`, `Year`, `Email`, `Salt`) VALUES ('$username', '$password', '$year', '$email', '$salt')");
@@ -162,7 +189,16 @@ if ($_POST['register']){
               </table>
               <table width="100%">
               <tr><td><div class="meta section">
-                <input type="submit" name="register" value="Register">
+              <div class="loginError"><?php 
+                if (isset($_COOKIE['existingUser'])) {
+                  echo "That Email address is already in use.";
+                }
+                else if (isset($_COOKIE['usernameTooLong'])) {
+                  echo "Username can't be more than 20 characters, sorry.";
+                }
+               ?></div>
+                <!-- <input type="image" src="images/icons/logIn_btn.png" style="background:#303944; width: 50%; max-width:200px;" name="login" value="Log in" > -->
+                <input type="image" src="images/icons/logIn_btn.png" style="background:#303944; width: 50%; max-width:200px;" name="register" value="Register">
               </form></td></tr>
 
               </table>

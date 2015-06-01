@@ -950,7 +950,11 @@ img {
 }
 
 
-    
+.loginError{
+	color: #ed2f3b;
+	font-weight: bold;
+	font-size: 24px;
+} 
 
 
 .navigationBar{
@@ -1285,7 +1289,7 @@ img {
 	margin-top: 20px;
 }
 .intro table{
-	text-align: right;
+	text-align: left;
 }
 .intro table td{
 	padding: 8px 25px 8px 25px;

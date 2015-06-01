@@ -58,7 +58,7 @@ $userEmail = $user['Email'];
         <!-- <h1 class="logo"><a href="../homepage.php"><img src="../images/header-logo.png" /></a></h1> -->
 
         <ul class="nav nav-primary bigMenu">
-          <div class="logoTest"><li id="logoImage"><a href="../../homepage.php" data-ajax='false'><img src="../images/icons/LOGO_withFont.png"></a></li></div>
+          <div class="logoTest"><li id="logoImage"><a href="../homepage.php" data-ajax='false'><img src="../images/icons/LOGO_withFont.png"></a></li></div>
           <li id="nav-explore" class="first"><a href="../exploreInterests.php" data-ajax='false'>&nbsp;&nbsp;Explore&nbsp;&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="../savedCourses.php" data-ajax='false'>>&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-feedback" class="second"><a href="../interestFeedback.php" data-ajax='false'>>&nbsp;&nbsp;Weekly Feedback&nbsp;&nbsp;</a></li><li id="nav-stats" class="third"><a href="../statistics.php" data-ajax='false'>>&nbsp;&nbsp;Statistics&nbsp;&nbsp;</a></li><li id="nav-test"><a href="../testimonials.php" data-ajax='false'>><b class="currentPage">&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</b></a></li><li id="nav-log" class="sixth"><a href="../logout.php" data-ajax='false'>>&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
         </ul><!-- /end ul#nav-primary.nav -->
 
@@ -170,7 +170,7 @@ make sure it is right for you, and you alone.
 If it doesnt work out, there is always something else you can try.</div>
               <div class="questionsBlock">Now that your Gap Year is over,
 What are you currently working at?</div>
-              <div class="bottomAnswerBlock">I now work in the Guiness Storehouse in Dublin,
+              <div class="bottomAnswerBlock fergalBottom">I now work in the Guiness Storehouse in Dublin,
 It’s currently Irelands busiest tourist attraction.
 I absolutley love it, I get to meet people from all over the world
 everyday.</div>

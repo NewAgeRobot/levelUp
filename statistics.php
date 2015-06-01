@@ -770,7 +770,7 @@ $(function () { //change to have different name than container
 			<tr><td>
                 <a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/explore_btn.png'></a>
                 </td><td>
-                <a href='interestFeedback.php' class='backArrow' data-ajax='false'><img src='images/icons/savedCourgses_btn.png'>weekly feedback</a>
+                <a href='interestFeedback.php' class='backArrow' data-ajax='false'><img src='images/icons/feedbackPage_btn.png'></a>
                 </td></tr></table>
 
 							<div class="meta section">

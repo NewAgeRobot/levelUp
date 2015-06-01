@@ -251,7 +251,8 @@ GOING TO HAVE TO BE COMBINED SOMEHOW WITH PREVIOUS FUNCTION - MAYBE WRAP EACH IN
               
 
 <?php
-echo "<button id='reorder'>Reorder Courses</button><a href='javascript:{}' class='reorderDone'><button>Save Order</button></a>";
+// <input type="image" src="images/icons/logIn_btn.png" style="background:#303944; width: 50%; max-width:200px;" name="register" value="Register">
+echo "<div id='reorder' style='text-align:center;'><img src='images/icons/changeOrder_btn.png' style='background:#303944; width: 50%; max-width:200px;'></div><a href='javascript:{}' class='reorderDone' style='text-align:center;'><div><img src='images/icons/saveOrder_btn.png' style='background:#303944; width: 50%; max-width:200px;'></div></a>";
 if(!$numCourses){
   echo "You have yet to save any courses.";
 }
@@ -323,7 +324,7 @@ echo "</table>";
 <table class='saveNextButtons savedCoursesButtons'><tr><td>
                 <a href='exploreInterests.php' class='backArrow' data-ajax='false'><img src='images/icons/explore_btn.png'></a>
                 </td><td>
-                <a href='interestFeedback.php' class='backArrow' data-ajax='false'><img src='images/icons/savedCourgses_btn.png'>weekly feedback</a>
+                <a href='interestFeedback.php' class='backArrow' data-ajax='false'><img src='images/icons/feedbackPage_btn.png'></a>
                 </td></tr></table>
                 <p>Need some help? Click <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">here</a> for an explanation.</p>
 <div id="light" class="white_content">

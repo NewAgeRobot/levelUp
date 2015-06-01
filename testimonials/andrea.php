@@ -58,7 +58,7 @@ $userEmail = $user['Email'];
         <!-- <h1 class="logo"><a href="../homepage.php"><img src="../images/header-logo.png" /></a></h1> -->
 
         <ul class="nav nav-primary bigMenu">
-          <div class="logoTest"><li id="logoImage"><a href="../../homepage.php" data-ajax='false'><img src="../images/icons/LOGO_withFont.png"></a></li></div>
+          <div class="logoTest"><li id="logoImage"><a href="../homepage.php" data-ajax='false'><img src="../images/icons/LOGO_withFont.png"></a></li></div>
           <li id="nav-explore" class="first"><a href="../exploreInterests.php" data-ajax='false'>&nbsp;&nbsp;Explore&nbsp;&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="../savedCourses.php" data-ajax='false'>>&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-feedback" class="second"><a href="../interestFeedback.php" data-ajax='false'>>&nbsp;&nbsp;Weekly Feedback&nbsp;&nbsp;</a></li><li id="nav-stats" class="third"><a href="../statistics.php" data-ajax='false'>>&nbsp;&nbsp;Statistics&nbsp;&nbsp;</a></li><li id="nav-test"><a href="../testimonials.php" data-ajax='false'>><b class="currentPage">&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</b></a></li><li id="nav-log" class="sixth"><a href="../logout.php" data-ajax='false'>>&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
         </ul><!-- /end ul#nav-primary.nav -->
 
@@ -195,7 +195,7 @@ $userEmail = $user['Email'];
                                       getting up for work in the morning.</div>
                                       <div class="questionsBlock">What advice would you give to current leaving cert
                                         students deciding on college courses/career paths?</div>
-                                        <div class="bottomAnswerBlock">Whether you know what you want to do or not, aim to get the
+                                        <div class="bottomAnswerBlock andreaBottom">Whether you know what you want to do or not, aim to get the
                                           highest points you possibly can. That way if like me you decide
                                           you don't want to do what you thought you wanted to do, you'll
                                           have left yourself with as many opportunities as you possibly can.

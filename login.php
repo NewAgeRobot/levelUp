@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 include "connect.php";
 include "algor.php";
 if($logged == true){
-  die("You are already logged in!");
+    header('Location: index.php');
   // echo "<h1>you're logged in!</h1>";
 }
 if ($_POST['login']){
@@ -13,14 +13,48 @@ if ($_POST['login']){
     $password = mysql_real_escape_string(hash("sha512", $_POST['password']));
     $user = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE `Email`='$email'")); //get user by their email
     if($user == '0'){
-      die("An account with that email and password does not exist. Please try another.");
+      if (isset($_COOKIE['noUser'])) {
+        unset($_COOKIE['noUser']);
+        // setcookie('noUser', '', time() - 3600); // empty value and old timestamp
+        setcookie('noUser', null, -1, '/');
+      }
+      if (isset($_COOKIE['wrongPassword'])) {
+        unset($_COOKIE['wrongPassword']);
+        // setcookie('wrongPassword', '', time() - 3600); // empty value and old timestamp
+        setcookie('wrongPassword', null, -1, '/');
+      }
+      setcookie("noUser", "1", time()+10, "/");
+      header('Location: login.php');
+      die();
     }
     if( $user['Password'] != $password){
-      die("Incorrect password. Please try another");
+      if (isset($_COOKIE['noUser'])) {
+        unset($_COOKIE['noUser']);
+        // setcookie('noUser', '', time() - 3600); // empty value and old timestamp
+        setcookie('noUser', null, -1, '/');
+      }
+      if (isset($_COOKIE['wrongPassword'])) {
+        unset($_COOKIE['wrongPassword']);
+        // setcookie('wrongPassword', '', time() - 3600); // empty value and old timestamp
+        setcookie('wrongPassword', null, -1, '/');
+      }
+      setcookie("wrongPassword", "1", time()+10, "/");
+      header('Location: login.php');
+      die();
     }
     $salt = hash("sha512", rand() . rand() . rand());
     setcookie("c_user", hash("sha512", $email), time()+60*60*24*6004, "/");
     setcookie("c_salt", $salt, time()+60*60*24*6004, "/");
+    if (isset($_COOKIE['noUser'])) {
+        unset($_COOKIE['noUser']);
+        // setcookie('noUser', '', time() - 3600); // empty value and old timestamp
+        setcookie('noUser', null, -1, '/');
+      }
+      if (isset($_COOKIE['wrongPassword'])) {
+        unset($_COOKIE['wrongPassword']);
+        // setcookie('wrongPassword', '', time() - 3600); // empty value and old timestamp
+        setcookie('wrongPassword', null, -1, '/');
+      }
     $userID = $user['ID'];
     mysql_query("UPDATE `users` SET `Salt` = '$salt' WHERE `ID`='$userID'");
 
@@ -29,6 +63,16 @@ if ($_POST['login']){
     mysql_query("INSERT INTO `visitStats` (`Email`, `CurrentLogin`) VALUES ('$email', '1')");
     header('Location: index.php');
     //die("You are now logged in as $username!");
+
+
+// if (isset($_COOKIE['noUser'])) {
+//   unset($_COOKIE['noUser']);
+//   setcookie('noUser', '', time() - 3600); // empty value and old timestamp
+// }
+// if (isset($_COOKIE['wrongPassword'])) {
+//   unset($_COOKIE['wrongPassword']);
+//   setcookie('wrongPassword', '', time() - 3600); // empty value and old timestamp
+// }
   }
 };
 ?>
@@ -141,10 +185,20 @@ if ($_POST['login']){
               <table width="100%">
 
               <tr><td><div class="meta section">
-                <input type="submit"  style="background: white;" name="login" value="Log in">
+              <div class="loginError"><?php 
+                if (isset($_COOKIE['noUser'])) {
+                  echo "Invalid Email address entered. Please try again.";
+                }
+                else if (isset($_COOKIE['wrongPassword'])) {
+                  echo "An account with that Email and Password combination does not exist, please try again.";
+                }
+               ?></div>
+                <input type="image" src="images/icons/logIn_btn.png" style="background:#303944; width: 50%; max-width:200px;" name="login" value="Log in" >
               </form></td></tr>
-
               </table>
+              <table class='saveNextButtons savedCoursesButtons'><tr><td>
+                <a href='index.php' class='backArrow' data-ajax='false'><img src='images/icons/back_btn.png'></a>
+                </td></tr></table>
             </div> <!-- /end .meta.section -->
             </div>
           </div><!-- /end .article -->
