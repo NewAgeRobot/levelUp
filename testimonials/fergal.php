@@ -129,7 +129,7 @@ always know what you wanted to do afterwards?</div>
               <div class="lightAnswerBlock fergalLight">Not really, it did kind of worry me at the time. A lot of people I
 knew had this really clear plan of what they wanted to do and the
 fact that I didn’t made me feel a lot of pressure.</div>
-              <div class="questionsBlock">What course did you do? and In what
+              <div class="questionsBlock">What course did you do? and in what
 college did you do it?</div>
               <div class="darkAnswerBlock fergalDark">I did the Hospitality and Bar management course in Dundalk
 Institute of Technology.</div>
