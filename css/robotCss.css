@@ -307,16 +307,27 @@ img {
 	max-width: 150px;
 }	
 
-
+.promptTitle{
+	text-align: center;
+	color: #ed2f3b;
+  	font: 48px 'Lobster', 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
+}
+.promptBody{
+	text-align: center;
+	color: #1b1b27;
+  	font: 24px 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
+}
 
 /*START OF WHITE HEADER*/
 
 .currentPageSpanLeft{
   position: absolute;
   left:10px;
+  min-width:50px;
 }
 .currentPageSpanLeft img{
   width: 75%;
+  min-width:50px;
 }
 .currentPageSpanRight{
   position: absolute;

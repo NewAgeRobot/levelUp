@@ -775,7 +775,14 @@ function sortArrayByArray(Array $array, Array $orderArray) {
 }
 
 $seededArray = sortArrayByArray($array, $newTest);
+if($currentCourse%15==0){
+              echo "<div class='showCoursesBorder'>";
+  echo "<div class='promptTitle'>Don't forget!</div>";
+  echo "<div class='promptBody'>College is not the only option after school. Check out the Testimonials page to explore other options.</div>";
+    echo "<div style='width: 15%; min-width:130px;max-width:180px;'><a href='testimonials.php' data-ajax='false'><img src='images/icons/testimonials_btn.png'></a></div>";
 
+              echo "</div>";
+            }
 
 
 mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");

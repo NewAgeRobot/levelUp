@@ -830,6 +830,7 @@ for($f = 7; $f < 22; $f++){
 
 
 
+            
 
             if(!$numCourses){
               echo "There are no more courses that match this selection.<br /> <a href='exploreInterests.php' data-ajax='false'><img src='images/icons/goBack_btn.png' style='width:50%; max-width:50px;'></a>";
