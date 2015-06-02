@@ -280,9 +280,9 @@ img {
 
  #boxClose{
     position: absolute;
-    right: 0;
+    right: 5;
     top: 0;
-    font-size: 24px;
+  	font: 48px 'Lobster', 'PT Sans', 'Droid Sans', Calibri, Candara, sans-serif;
 }
 
 .white_content {
@@ -1070,9 +1070,21 @@ img {
 }
 
 
+.teamTitle{
+	text-align: center;
+	color:#1b1b27;
+	font: 48px 'Lobster';
 
+}
 
-
+.textPart{
+	background:#fff;
+	color:#1b1b27;
+	-moz-border-radius: 0px 0px 15px 15px;
+	-webkit-border-radius: 0px 0px 15px 15px;
+	border-radius: 0px 0px 15px 15px;
+	padding:30px;
+}
 
 .corner_fix {
     display: table;
@@ -1415,7 +1427,7 @@ img {
 	width:100%;
 	position: absolute;
 	left:0;
-	z-index: -5;
+	z-index: 0;
 	background-color: #f69a41;
 }
 

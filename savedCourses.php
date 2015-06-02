@@ -25,6 +25,7 @@ foreach ($array as $key => $row)
 }
 array_multisort($sortedArray, SORT_ASC, $array);
 
+  setcookie("seenSavedHelp", "1", time()+60*60*24*6004, "/");
 ?>
 
 
@@ -327,11 +328,30 @@ echo "</table>";
                 <a href='interestFeedback.php' class='backArrow' data-ajax='false'><img src='images/icons/feedbackPage_btn.png'></a>
                 </td></tr></table>
                 <p>Need some help? Click <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">here</a> for an explanation.</p>
-<div id="light" class="white_content">
+
+
+<div id="light" class="white_content" 
+<?php 
+  if (isset($_COOKIE['seenSavedHelp'])) {
+    echo "style='display:none;'";
+  }
+  else{
+    echo "style='display:inline-block;'";
+  }
+?>>
 <div>To drag and drop the courses into your preferred order just hit the Reorder Courses button.</div>
 <div>You can also click on the boxes to expand them for more information on the selected course.</div>
 <div id="boxClose"><a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">X</a></div></div>
-        <div id="fade" class="black_overlay"></div>
+<div id="fade" class="black_overlay" 
+<?php 
+  if (isset($_COOKIE['seenSavedHelp'])) {
+    echo "style='display:none;'";
+  }
+  else{
+    echo "style='display:block;'";
+  }
+?>></div>
+
 </div> <!-- /end .meta.section -->
 
 </div>

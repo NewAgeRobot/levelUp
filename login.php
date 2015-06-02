@@ -169,7 +169,7 @@ if ($_POST['login']){
                 Email:
                 </td>
                 <td>
-                <input type="text"  style="background: white;" name="email" placeholder="User@email.com">
+                <input type="email"  style="background: white;" name="email" placeholder="User@email.com">
                 </td>
                 </tr>
                 <tr>

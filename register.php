@@ -162,7 +162,7 @@ if ($_POST['register']){
                     Email: 
                   </td>
                   <td>
-                    <input type="text"  style="background: white;" name="email" placeholder="student@email.com">
+                    <input type="email"  style="background: white;" name="email" placeholder="student@email.com">
                   </td>
                 </tr>
                 <!-- <tr>

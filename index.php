@@ -48,9 +48,15 @@ if($logged == true){
    $(window).resize(orangeBox);
 
    function orangeBox(){
+      var screenWidth = $(window).width();
       var divHeight = $('iframe').height(); 
       // alert(divHeight);
-      $('#testOrangeBox').css('height', (divHeight+30)+'px');
+      if(screenWidth > 845){
+        $('#testOrangeBox').css('height', (divHeight+35)+'px');
+      }
+      else{
+        $('#testOrangeBox').css('height', (divHeight+80)+'px');
+      }
    }
   </script>
 </head>
@@ -114,6 +120,7 @@ if($logged == true){
 
               <div id="testOrangeBox">&nbsp;
               </div>
+              <br />
             <div class="meta section" style="background:#1b1b27;">
               <div class="videoWrapper">
                 <iframe width="560" height="315" src="https://www.youtube.com/v/RfM24d1hboE&vq=hd720" frameborder="0" allowfullscreen="1"></iframe>
@@ -122,6 +129,7 @@ if($logged == true){
 
             <div class="meta section" style="background:#fff;">
               <a name="team"></a>
+              <div class="teamTitle">The Team</div>
               <div class="row">
                 <div class="three columns">
                   <img class="bioImages" src="images/Sinead.jpg">

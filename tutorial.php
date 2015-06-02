@@ -99,8 +99,11 @@ $userEmail = $user['Email'];
               <div class="videoWrapper">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/RfM24d1hboE" frameborder="0" allowfullscreen></iframe>
             </div>
-              <a href="homepage.php" data-ajax='false'><img src="images/icons/Home_Icon.png"></a> Click this icon at any time to bring you to the homepage.
-              <div class="meta section">
+              <div class="textPart"><a href="homepage.php" data-ajax='false'><img src="images/icons/Home_Icon.png"></a> Click this icon at any time to bring you to the homepage.
+              <br /><br />
+              <div style="text-align:left;">Check out the <span style="color:#ed2f3b">Help</span> button at the bottom of some pages if you don't know what to do.</div>
+              </div>
+             <!--  <div class="meta section">
             </div> <!-- /end .meta.section -->
             
               </div>
