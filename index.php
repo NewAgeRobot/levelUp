@@ -99,7 +99,7 @@ if($logged == true){
 <table class='saveNextButtons savedCoursesButtons'><tr><td>
                 <a href='login.php' class='backArrow' data-ajax='false'><img src='images/icons/logIn_btn.png'></a>
                 </td><td>
-                <a href='register.php' class='backArrow' data-ajax='false'><img src='images/icons/logIn_btn.png'></a>
+                <a href='register.php' class='backArrow' data-ajax='false'><img src='images/icons/register_btn.png'></a>
                 </td></tr></table>
           </div>
           <div class="slideshow">
