@@ -16,7 +16,7 @@ while($row = mysql_fetch_array($currentLogin)){
 	$currentLoginTime = $row['LoginTime'];
 }
 
-print_r($currentLogin['LoginTime']);
+// print_r($currentLogin['LoginTime']);
 
 
 $i = 0;

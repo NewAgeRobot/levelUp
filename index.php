@@ -29,15 +29,19 @@ if($logged == true){
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/custom.css">
+<!-- bxSlider CSS file -->
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
 
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
+<!-- bxSlider Javascript file -->
+<script src="js/jquery.bxslider.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.bxslider').bxSlider();
+  });
+</script>
 </head>
 <body>
 
@@ -69,23 +73,14 @@ if($logged == true){
   <div class="section values">
     <div class="container">
 
-      <div class="row">
-        <div class="one-third column value">
-          <h2 class="value-multiplier">10%</h2>
-          <h5 class="value-heading">Secondary School Students</h5>
-          <p class="value-description">Drop out before the Leaving Certificate.</p>
-        </div>
-        <div class="one-third column value">
-          <h2 class="value-multiplier">10%</h2>
-          <h5 class="value-heading">Third Level Students</h5>
-          <p class="value-description">Drop out of College each year.</p>
-        </div>
-        <div class="one-third column value">
-          <h2 class="value-multiplier">100%</h2>
-          <h5 class="value-heading">People</h5>
-          <p class="value-description">Would rather be doing what they love.</p>
-        </div>
-      </div>
+      <ul class="bxslider">
+        <li><img src="images/slideshow/WebsiteStat01.jpg" width="100%" /></li>
+        <li><img src="images/slideshow/WebsiteStat02.jpg" width="100%" /></li>
+        <li><img src="images/slideshow/WebsiteStat03.jpg" width="100%" /></li>
+        <li><img src="images/slideshow/WebsiteStat04.png" width="100%" /></li>
+        <li><img src="images/slideshow/WebsiteStat05.png" width="100%" /></li>
+      </ul>
+
     </div>
   </div>
 
@@ -121,25 +116,25 @@ As well as providing a new and engaging way to search for college courses, we al
         <img class="bioImages" src="images/Sinead.jpg">
           <h5 class="value-heading">Sinéad</h5>
           <h6 class="value-heading">Project Lead</h6>
-          <p class="value-description">Bio here would be nice this is just filler text to see what size the text would be and how much space can be allocated. I wonder will this be too much? Short and sweet would be best I think.</p>
+          <p class="value-description">Sinéad Duffy is a freelance Graphic Designer and Animator. Recent work includes re-branding of the DkIT Music Department and various eLearning projects for educational publishers including Gill & Macmillan and Folens.</p>
         </div>
         <div class="three columns">
         <img class="bioImages" src="images/Pauric.jpg">
           <h5 class="value-heading">Pauric</h5>
           <h6 class="value-heading">Content Developer</h6>
-          <p class="value-description">Bio here would be nice this is just filler text to see what size the text would be and how much space can be allocated. I wonder will this be too much? Short and sweet would be best I think.</p>
+          <p class="value-description">Pauric Martin is a graduate of Communications in Creative Multimedia. Having studied in a wide variety of areas such as design, audio and video, he has used these to create high quality projects both individually and as part of a group.</p>
         </div>
         <div class="three columns">
         <img class="bioImages" src="images/Sian.jpg">
           <h5 class="value-heading">Sían</h5>
           <h6 class="value-heading">Designer</h6>
-          <p class="value-description">Sían is a freelance graphic designer with an Honours Degree in Communications in Creative Multimedia. Sían loves the use of colour in clean and contemporary web design.</p>
+          <p class="value-description">Sían is a freelance graphic designer with a Degree in Communications in Creative Multimedia. Sían loves the use of colour in clean and contemporary web design.</p>
         </div>
         <div class="three columns">
         <img class="bioImages" src="images/Sean.jpg">
           <h5 class="value-heading">Seán</h5>
           <h6 class="value-heading">Programmer</h6>
-          <p class="value-description">Bio here would be nice this is just filler text to see what size the text would be and how much space can be allocated. I wonder will this be too much? Short and sweet would be best I think.</p>
+          <p class="value-description">Seán McDonnell is a freelance web developer with a Degree in Communications in Creative Multimedia. He has worked as lead programmer on several commercial products and enjoys new challenges.</p>
         </div>
       </div>
     </div>

@@ -1371,6 +1371,36 @@ img {
 }
 
 
+.blurb{
+	text-align: left;
+	max-width: 40%;
+	display: inline-block;
+	font: 28px 'PT Sans';
+}
+
+.slideshow{
+	display: inline-block;
+	vertical-align: top;
+	max-width: 50%;
+}
+
+@media screen and (max-width: 845px) {
+	.blurb{
+		display: inline;
+	}
+
+	.slideshow{
+		display: inline;
+	}
+}
+
+
+
+
+
+
+
+
 
 blockquote,
 .blog .figure {
