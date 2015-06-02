@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 include "connect.php";
 include "algor.php";
 if($logged == true){
-    header('Location: index.php');
+    header('Location: homepage.php');
   // echo "<h1>you're logged in!</h1>";
 }
 if ($_POST['login']){

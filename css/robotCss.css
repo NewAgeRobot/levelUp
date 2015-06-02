@@ -1395,7 +1395,9 @@ img {
 }
 
 
-
+.meetTheTeam{
+	font: 28px 'Lobster';
+}
 
 
 
@@ -1580,7 +1582,7 @@ html {
 	.nav-primary {
 		padding: 1.2em 0 1em;
 		padding-left: 30px;
-		margin-bottom: 20px;
+		margin-bottom: 0px;
 		top: auto;
 		left:0;
 		text-align: left;

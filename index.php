@@ -1,3 +1,10 @@
+<?php
+include "connect.php";
+include "algor.php";
+if($logged == true){
+  header('Location: homepage.php');
+}
+?>
 <html lang="en">
 <head>
 
@@ -35,20 +42,13 @@
     });
 </script>
 <!-- bxSlider Javascript file -->
-<script src="js/jquery.bxslider.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.bxslider').bxSlider({
-      auto: true
-    });
-  });
-</script>
+
 </head>
 
 <body style="background:#fff;">
 
   <div class="site">
-    <div class='whiteHeader'><span class="currentPageSpanLeft"><a href="homepage.php" data-ajax='false'><img src="images/icons/Home_Icon.png"></a></span><span class="currentPageSpanRight"><a href="#team">Meet the Team</a></span></div>
+    <div class='whiteHeader'><!--<span class="currentPageSpanLeft"><a href="homepage.php" data-ajax='false'><img src="images/icons/Home_Icon.png"></a></span><span class="currentPageSpanRight"><a href="#team">Meet the Team</a></span>--></div>
 
     <div class="page">
 
@@ -58,8 +58,8 @@
 
         <ul class="nav nav-primary bigMenu">
           <div class="logoTest"><li id="logoImage"><a href="homepage.php" data-ajax='false'><img src="images/icons/LOGO_withFont.png"></a></li></div>
-          <div style="visibility:hidden;"><li id="nav-explore" class="first"><a href="exploreInterests.php" data-ajax='false'>&nbsp;&nbsp;Explore&nbsp;&nbsp;&nbsp;</a></li><li id="nav-feedback" class="second"><a href="interestFeedback.php" data-ajax='false'>|&nbsp;&nbsp;Rate&nbsp;&nbsp;</a></li><li id="nav-stats" class="third"><a href="statistics.php" data-ajax='false'>|&nbsp;&nbsp;Statistics&nbsp;&nbsp;</a></li><li id="nav-test" class="fourth"><a href="testimonials.php" data-ajax='false'>|&nbsp;&nbsp;Testimonials&nbsp;&nbsp;</a></li><li id="nav-saved" class="fifth"><a href="savedCourses.php" data-ajax='false'>|&nbsp;&nbsp;Saved Courses&nbsp;&nbsp;</a></li><li id="nav-log" class="sixth"><a href="logout.php" data-ajax='false'>|&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a></li>
-       </div> </ul><!-- /end ul#nav-primary.nav -->
+          <li id="nav-explore" class="meetTheTeam"><a href="#team" data-ajax='false'>&nbsp;&nbsp;Meet the Team&nbsp;&nbsp;&nbsp;</a></li>
+       </ul><!-- /end ul#nav-primary.nav -->
 
 
        <ul class="nav nav-primary smallMenu">
@@ -161,6 +161,13 @@
   </div><!-- /end .page -->
 
 </div><!-- /end .site -->
-
+<script src="js/jquery.bxslider.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.bxslider').bxSlider({
+      auto: true
+    });
+  });
+</script>
 </body>
 </html>
