@@ -895,8 +895,22 @@ img {
 	font: 28px 'Lobster';
 }
 
+.smallMenu{
+	height:22px;
+}
 
+.menu{
+	position: absolute;
+	right: 45px;
+}
 
+.menuLi{
+	padding-right: 45px;
+}
+
+.smallMenu{
+	/*padding-right: 45px;*/
+}
 
 #dupeCourseWarning{
 	text-align: center;
@@ -1558,7 +1572,7 @@ html {
 		bottom:0;
 	}
 	.smallMenu .header-image img{
-	    right: 35px;
+	    left: 35px;
 	    top: 10px;
 	}
 	.lede{
@@ -1574,7 +1588,7 @@ html {
 @media screen and (max-width: 780px) {
 	
 	.smallMenu .header-image img{
-	    right: 35px;
+	    left: 35px;
 	    top: 10px;
 	}
 }
@@ -1582,7 +1596,7 @@ html {
 @media screen and (max-width: 730px) {
 	
 	.smallMenu .header-image img{
-	    right: 35px;
+	    left: 35px;
 	    top: 10px;
 	}
 }
@@ -1591,7 +1605,7 @@ html {
 @media screen and (max-width: 655px) {
 	
 	.smallMenu .header-image img{
-	    right: 35px;
+	    left: 35px;
 	    top: 10px;
 	}
 	.lede{
@@ -1610,7 +1624,7 @@ html {
 @media screen and (max-width: 580px) {
 	
 	.smallMenu .header-image img{
-	    right: 35px;
+	    left: 35px;
 	    top: 10px;
 	}
 }
@@ -1621,7 +1635,7 @@ html {
 		display: none;
 	}
 	.smallMenu .header-image img{
-	    right: 35px;
+	    left: 35px;
 	    top: 10px;
 	}
 	.lede{
@@ -1660,7 +1674,7 @@ html {
 		display: none;
 	}
 	.smallMenu .header-image img{
-	    right: 35px;
+	    left: 35px;
 	    top: 10px;
 	}
 	.lede{
@@ -1685,7 +1699,7 @@ html {
 @media screen and (max-width: 445px) {
 	
 	.smallMenu .header-image img{
-	    right: 35px;
+	    left: 35px;
 	    top: 10px;
 	}
 }
@@ -1700,7 +1714,7 @@ html {
 @media screen and (max-width: 375px) {
 	
 	.smallMenu .header-image img{
-	    right: 35px;
+	    left: 35px;
 	    top: 10px;
 	}
 }
@@ -1713,7 +1727,7 @@ html {
 		display: none;
 	}
 	.smallMenu .header-image img{
-	    right: 35px;
+	    left: 35px;
 	    top: 10px;
 	}
 	.lede{
