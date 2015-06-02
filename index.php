@@ -64,19 +64,8 @@ if($logged == true){
 
        <ul class="nav nav-primary smallMenu">
           <li class="header-image"><img src="images/icons/LOGO_ForMobile.png"></li>
-         <div style="visibility:hidden;"> <ul class="menu">
-            <li>
-              <a href="#">&#9776; Menu</a>
-              <ul>
-                <li><a href="exploreInterests.php" data-ajax='false'><img src="images/icons/icon_ExploreCourses.jpg">Explore</a></li>
-                <li><a href="savedCourses.php" data-ajax='false'><img src="images/icons/icon_SavedCourses.jpg">Saved Courses</a></li>
-                <li><a href="interestFeedback.php" data-ajax='false'><img src="images/icons/icon_MyRecords.jpg">Rate</a></li>
-                <li><a href="statistics.php" data-ajax='false'><img src="images/icons/icon_Statistics.jpg">Statistics</a></li>
-                <li><a href="testimonials.php" data-ajax='false'><img src="images/icons/icon_Testimonials.jpg">Testimonials</a></li>
-                <li><a href="logout.php" data-ajax='false'><img src="images/icons/icon_LogOut.jpg">Log Out</a></li>
-              </ul>
-            </li>
-          </ul></div>
+         <ul class="menu"><li id="nav-explore" class="meetTheTeam"><a href="#team" data-ajax='false'>&nbsp;&nbsp;Meet the Team</a></li>
+          </ul>
         </ul><!-- /end ul#nav-primary.nav -->
       </div>
 
@@ -95,7 +84,7 @@ if($logged == true){
 
           <div class="intro" style="background:#fff;">
           <div class="blurb" style="padding:25px;color:#1b1b27;">
-            Here at LevelUp we provide a new and engaging way to search for college courses, we also give information on the many other career and education paths available after school, as well as information from professionals who have been through the experience - from PLC courses to apprenticeships to entrepreneurs.
+            Here at LevelUp, we provide a new and engaging way to search for college courses. We also offer information on  the many various career and education paths available after the Leaving Cert by providing testimonials from working professionals who have been through a PLC course, apprenticeship or entrepreneurship.
 <table class='saveNextButtons savedCoursesButtons'><tr><td>
                 <a href='login.php' class='backArrow' data-ajax='false'><img src='images/icons/logIn_btn.png'></a>
                 </td><td>
