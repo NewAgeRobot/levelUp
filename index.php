@@ -16,16 +16,16 @@ if($logged == true){
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="css/robotCss.css" media="screen, projection" />
-
-  <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="css/jquery-mobile.css" />
-  <script src="js/jquery-mobile.js"></script>
   <link rel="stylesheet" href="css/dropit.css" />
   <!-- bxSlider CSS file -->
   <link href="css/jquery.bxslider.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+  <script src="js/jquery-mobile.js"></script>
   <script src="js/dropit.js"></script>
   <script src="js/redirect.js"></script>
-  <link rel="stylesheet" href="css/skeleton.css">
 
 
   <script type="text/javascript">
