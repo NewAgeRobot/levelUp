@@ -31,6 +31,19 @@ if($logged == true){
   <script type="text/javascript">
     $(document).ready(function() {
       $('.menu').dropit();
+
+      $(".meetTheTeam").click(function(){
+      var target = $(".team");
+      var screenSize = $(window).width();
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 400);
+          return false;
+        }
+      });
+      
     });
   </script>
 
@@ -74,13 +87,13 @@ if($logged == true){
 
         <ul class="nav nav-primary bigMenu">
           <div class="logoTest"><li id="logoImage"><a href="homepage.php" data-ajax='false'><img src="images/icons/LOGO_withFont.png"></a></li></div>
-          <li id="nav-explore" class="meetTheTeam"><a href="#team" data-ajax='false'>&nbsp;&nbsp;Meet the Team&nbsp;&nbsp;&nbsp;</a></li>
+          <li id="nav-explore" class="meetTheTeam"><a>&nbsp;&nbsp;Meet the Team&nbsp;&nbsp;&nbsp;</a></li>
         </ul><!-- /end ul#nav-primary.nav -->
 
 
         <ul class="nav nav-primary smallMenu">
           <li class="header-image"><img src="images/icons/LOGO_ForMobile.png"></li>
-          <ul class="menu"><li id="nav-explore" class="meetTheTeam"><a href="#team" data-ajax='false'>&nbsp;&nbsp;Meet the Team</a></li>
+          <ul class="menu"><li id="nav-explore" class="meetTheTeam"><a>&nbsp;&nbsp;Meet the Team</a></li>
           </ul>
         </ul><!-- /end ul#nav-primary.nav -->
       </div>
@@ -128,7 +141,7 @@ if($logged == true){
             </div> <!-- /end .meta.section -->
 
             <div class="meta section" style="background:#fff;">
-              <a name="team"></a>
+              <span class='team'></span>
               <div class="teamTitle">The Team</div>
               <div class="row">
                 <div class="three columns">

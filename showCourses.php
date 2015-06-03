@@ -840,7 +840,17 @@ for($f = 7; $f < 22; $f++){
               if($currentCourse <= ($numCourses-1)){
                 print_r("<div class='hiddenLink'><div class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></div></div>");
                 echo "<br />";
-                echo "<div class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses) . "</div>";
+                echo "<div class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses) . "<span>&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;";
+                if(!$interest1){
+                  echo $interest0;
+                }
+                else if(!$interest2){
+                  echo $interest0 . ", " . $interest1;
+                }
+                else if($interest2){
+                  echo $interest0 . ", " . $interest1 . ", and " . $interest2;
+                };
+                echo "</span></div>";
                 echo "<table class='saveNextButtons'><tr><td>";
                 if($currentCourse == 0){
                   echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/PreviousCourse_btn.png' style='visibility:hidden;'></a>";

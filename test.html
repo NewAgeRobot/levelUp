@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="src/clndr.css">
+</head>
+<body>
+
+    <p>clndr.passInEvents ~ Pass in events.</p>
+    <div id="pass-in-events" class="cal1"></div>
+
+
+  <script type="text/template" id="clndr-template">
+    <div class="clndr-controls">
+      <div class="clndr-previous-button">&lsaquo;</div>
+      <div class="month"><%= moment(event.date).format('DD') %><%= month %></div>
+      <div class="clndr-next-button">&rsaquo;</div>
+    </div>
+    <div class="clndr-grid">
+      <div class="days-of-the-week">
+        <% _.each(daysOfTheWeek, function(day) { %>
+          <div class="header-day"><%= day %></div>
+        <% }); %>
+        <div class="days">
+          <% _.each(days, function(day) { %>
+            <div class="<%= day.classes %>"><%= day.day %></div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+    <div class="clndr-today-button">Today</div>
+  </script>
+
+
+  <script src="src/json2.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+  <script src="src/moment-2.8.3.js"></script>
+
+  <script src="src/clndr.js"></script>
+  <script src="src/test.js"></script>
+
+  <!-- Enable live-reloading in the browser without an extension -->
+</body>
+</html>
