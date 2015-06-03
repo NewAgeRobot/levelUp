@@ -113,7 +113,7 @@ if($logged == true){
 
             <div class="intro" style="background:#fff;">
             <div class="blurb">
-                Here at LevelUp we provide a new and engaging way to search for college courses. We also offer information on  the many various career and education paths available after the Leaving Cert by providing testimonials from working professionals who have been through a PLC course, apprenticeship or entrepreneurship.
+                Here at LevelUp we provide a new and engaging way to search for college courses. We also offer information on  the many career and education paths available after the Leaving Cert by providing testimonials from working professionals who have been through a PLC course, apprenticeship or entrepreneurship.
                 <table class='saveNextButtons savedCoursesButtons'><tr><td>
                     <a href='login.php' class='backArrow' data-ajax='false'><img src='images/icons/logIn_btn.png'></a>
                   </td><td>
@@ -136,7 +136,7 @@ if($logged == true){
               <br />
             <div class="meta section" style="background:#1b1b27;">
               <div class="videoWrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/v/RfM24d1hboE&vq=hd720" frameborder="0" allowfullscreen="1"></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/mimPZ3PghDQ" frameborder="0" allowfullscreen="1"></iframe>
               </div>
             </div> <!-- /end .meta.section -->
 
@@ -176,11 +176,8 @@ if($logged == true){
       </div><!-- /end .blog.section -->
 
       <div id="footer">
-      <!-- <p>Images &copy; their respective copyright holders.</p>
-
-      <p>The design and code is &copy; 2014 <a href="http://unstoppablerobotninja.com/">Ethan Marcotte</a>, supporting his book <cite><a href="http://www.abookapart.com/products/responsive-web-design">Responsive Web Design</a></cite>.</p>
-
-      <p>Beep boop beep.</p> -->
+      Contact us <a href="mailto:levelupireland@gmail.com?Subject=Hi%20LevelUp" target="_top">@LevelUpIreland</a><br />
+      Tweet us <a href="https://twitter.com/LevelUpDkIT">@LevelUpDkIT</a>
     </div><!-- /end #footer -->
   </div><!-- /end .page -->
 

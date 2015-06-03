@@ -222,6 +222,8 @@ $userEmail = $user['Email'];
                                     </div><!-- /end .blog.section -->
 
                                     <div id="footer">
+      Contact us <a href="mailto:levelupireland@gmail.com?Subject=Hi%20LevelUp" target="_top">@LevelUpIreland</a><br />
+      Tweet us <a href="https://twitter.com/LevelUpDkIT">@LevelUpDkIT</a>
                                     </div><!-- /end #footer -->
                                   </div><!-- /end .page -->
 

@@ -44,7 +44,7 @@
   	$(".completeSynopsis").hide();
   	$(".showLess").hide(); 
 
-      var target = $(".courseCounter");
+      var target = $(".sliderPos");
       var screenSize = $(window).width();
       // alert(screenSize);
       if(screenSize < 845){
@@ -788,8 +788,23 @@ if($currentCourse%15==0){
 mysql_query("UPDATE `storedInterests` SET `NumCourse` = '$numCourses' WHERE `Email` = '$userEmail'");
 if($currentCourse <= ($numCourses-1)){
 	print_r("<div class='hiddenLink'><div class='jsCourseURL'><a href='" . $seededArray[$currentCourse]['Hyperlink'] . "'target='_blank'>" . $array[$currentCourse]['Hyperlink'] . "</a></div></div>");
-	echo "<br />";
-	echo "<div class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses) . "</div>";
+	// echo "<br />";
+	echo "<table style='width:100%'><tr><td class='courseCounter'>";
+	echo "You chose: ";
+	if(!$interest1){
+	  echo $interest0;
+	}
+	else if(!$interest2){
+	  echo $interest0 . " and " . $interest1;
+	}
+	else if($interest2){
+	  echo $interest0 . ", " . $interest1 . ", and " . $interest2;
+	};
+	echo "</td></tr>";
+	echo "<tr><td class='sliderPos'>";
+	echo "<span class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses);
+	echo "</td></tr>";
+	echo "</table>";
 	echo "<table class='saveNextButtons'><tr><td>";
 	if($currentCourse == 0){
 		echo "<a href='#' onCLick='return false' onmousedown='javascript:previousCourse(" . $currentCourse . ");'><img src='images/icons/PreviousCourse_btn.png' style='visibility:hidden;'></a>";

@@ -207,11 +207,8 @@ if(isset($_POST['formSubmit'])){
       </div><!-- /end .blog.section -->
 
       <div id="footer">
-      <!-- <p>Images &copy; their respective copyright holders.</p>
-
-      <p>The design and code is &copy; 2014 <a href="http://unstoppablerobotninja.com/">Ethan Marcotte</a>, supporting his book <cite><a href="http://www.abookapart.com/products/responsive-web-design">Responsive Web Design</a></cite>.</p>
-
-      <p>Beep boop beep.</p> -->
+      Contact us <a href="mailto:levelupireland@gmail.com?Subject=Hi%20LevelUp" target="_top">@LevelUpIreland</a><br />
+      Tweet us <a href="https://twitter.com/LevelUpDkIT">@LevelUpDkIT</a>
     </div><!-- /end #footer -->
   </div><!-- /end .page -->
 
