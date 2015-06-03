@@ -114,11 +114,10 @@ if($logged == true){
             <div class="intro" style="background:#fff;">
             <div class="blurb">
                 Here at LevelUp we provide a new and engaging way to search for college courses. We also offer information on  the many career and education paths available after the Leaving Cert by providing testimonials from working professionals who have been through a PLC course, apprenticeship or entrepreneurship.
-                <table class='saveNextButtons savedCoursesButtons'><tr><td>
+                <div class='saveNextButtons savedCoursesButtons'>
                     <a href='login.php' class='backArrow' data-ajax='false'><img src='images/icons/logIn_btn.png'></a>
-                  </td><td>
-                  <a href='register.php' class='backArrow' data-ajax='false'><img src='images/icons/register_btn.png'></a>
-                </td></tr></table>
+                  <a href='register.php' class='backArrow' data-ajax='false'><img src='images/icons/register_btn.png'>
+                </a></div>
               </div>
                 <div class="slideshow">
               <ul class="bxslider">
@@ -148,24 +147,28 @@ if($logged == true){
                   <img class="bioImages" src="images/Sinead.jpg">
                   <h5 class="value-heading">Sinéad</h5>
                   <h6 class="value-heading">Project Lead</h6>
+                  <h6 class="value-heading"><a href="https://www.behance.net/sineadjudeduffy">Portfolio</a></h6>
                   <p class="value-description">Sinéad Duffy is a freelance Graphic Designer and Animator. Recent work includes re-branding of the DkIT Music Department and various eLearning projects for educational publishers including Gill & Macmillan and Folens.</p>
                 </div>
                 <div class="three columns">
                   <img class="bioImages" src="images/Pauric.jpg">
                   <h5 class="value-heading">Pauric</h5>
                   <h6 class="value-heading">Content Developer</h6>
+                  <h6 class="value-heading"><a href="https://www.behance.net/PauricMartin">Portfolio</a></h6>
                   <p class="value-description">Pauric Martin is a graduate of Communications in Creative Multimedia. Having studied in a wide variety of areas such as design, audio and video, he has used these to create high quality projects both individually and as part of a group.</p>
                 </div>
                 <div class="three columns">
                   <img class="bioImages" src="images/Sian.jpg">
                   <h5 class="value-heading">Sían</h5>
                   <h6 class="value-heading">Designer</h6>
+                  <h6 class="value-heading"><a href="https://www.behance.net/SIanGilsenan">Portfolio</a></h6>
                   <p class="value-description">Sían is a freelance graphic designer with a Degree in Communications in Creative Multimedia. Sían loves the use of colour in clean and contemporary web design.</p>
                 </div>
                 <div class="three columns">
                   <img class="bioImages" src="images/Sean.jpg">
                   <h5 class="value-heading">Seán</h5>
                   <h6 class="value-heading">Programmer</h6>
+                  <h6 class="value-heading"><a href="https://www.behance.net/seanmcdonnell90">Portfolio</a></h6>
                   <p class="value-description">Seán McDonnell is a freelance web developer with a Degree in Communications in Creative Multimedia. He has worked as lead programmer on several commercial products and enjoys new challenges.</p>
                 </div>
               </div>
@@ -184,9 +187,12 @@ if($logged == true){
 </div><!-- /end .site -->
 <script src="js/jquery.bxslider.min.js"></script>
 <script type="text/javascript">
-  $(document).ready(function(){
+  $(window).load(function(){
     $('.bxslider').bxSlider({
-      auto: true
+      auto: true,
+      minSlides: 1,
+      maxSlides: 6,
+      slideWidth: 600
     });
   });
 </script>

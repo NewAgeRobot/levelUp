@@ -16,6 +16,9 @@ while($row = mysql_fetch_array($currentLogin)){
 	$currentLoginTime = $row['LoginTime'];
 }
 
+mysql_query("UPDATE `storedInterests` SET `AnyCourses` = '1' WHERE `Email` = '$userEmail'");
+$storedSet = mysql_fetch_array(mysql_query("SELECT * FROM  `storedInterests` WHERE `Email` = '$userEmail'"));
+$defaultStored = $storedSet['AnyCourses'];
 // print_r($currentLogin['LoginTime']);
 
 
@@ -703,7 +706,7 @@ for($f = 7; $f < 22; $f++){
               array_pop($array);
             $numCourses = sizeOf($array);
             if(!$numCourses){
-				mysql_query("UPDATE `storedInterests` SET `AnyCourses` = '0' WHERE `Email` = '$userEmail'");
+				     mysql_query("UPDATE `storedInterests` SET `AnyCourses` = '0' WHERE `Email` = '$userEmail'");
             }
             else{
             	header('Location: showCourses.php');
@@ -739,8 +742,40 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 			$(document).ready(function() {
 				$('.menu').dropit();
 
+      //   function getCookie(name) {
+      //     var dc = document.cookie;
+      //     var prefix = name + "=";
+      //     var begin = dc.indexOf("; " + prefix);
+      //     if (begin == -1) {
+      //         begin = dc.indexOf(prefix);
+      //         if (begin != 0) return null;
+      //     }
+      //     else
+      //     {
+      //         begin += 2;
+      //         var end = document.cookie.indexOf(";", begin);
+      //         if (end == -1) {
+      //         end = dc.length;
+      //         }
+      //     }
+      //     return unescape(dc.substring(begin + prefix.length, end));
+      // } 
+
+      // function doSomething() {
+      //     var myCookie = getCookie("MyCookie");
+
+      //     if (myCookie == null) {
+      //         // do cookie doesn't exist stuff;
+      //         checkAnyCourses();
+      //     }
+      // }
+
+
+
+
 				checkAnyCourses();
 				function checkAnyCourses(){
+          // alert("fs");
 			      var url="courseCheck.php";
 			      $.post(url, function(data){
 			      	// alert(data);
@@ -943,13 +978,13 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 								echo "</fieldset>";
 								echo "</div><br />";
 								echo "<div id='noCourseWarning'>";
-                if(!$interest0){
+                if(!$defaultStored){
                   echo "Sorry, but you haven't selected any interests. Please select at least one and try again.";
                 }
-                else if(!$interest1){
+                else if($interest0 && !$interest1){
                   echo "Sorry there are no courses available that cover " . $interest0 . ". You could try a different combination or select fewer categories.";
                 }
-                else if(!$interest2){
+                else if($interest1 && !$interest2){
                   echo "Sorry there are no courses available that cover " . $interest0 . " and " . $interest1 . ". You could try a different combination or select fewer categories.";
                 }
                 else if($interest2){

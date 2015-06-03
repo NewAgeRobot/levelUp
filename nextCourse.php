@@ -791,15 +791,15 @@ if($currentCourse <= ($numCourses-1)){
 	// echo "<br />";
 	echo "<table style='width:100%'><tr><td class='courseCounter'>";
 	echo "You chose: ";
-	if(!$interest1){
-	  echo $interest0;
-	}
-	else if(!$interest2){
-	  echo $interest0 . " and " . $interest1;
-	}
-	else if($interest2){
-	  echo $interest0 . ", " . $interest1 . ", and " . $interest2;
-	};
+                if(!$interest1){
+                  echo "<span style='color:#31c3ea;'>" . $interest0 . "</span>";
+                }
+                else if(!$interest2){
+                  echo "<span style='color:#31c3ea;'>" . $interest0 . "</span> and <span style='color:#2cb565;'>" . $interest1 . "</span>";
+                }
+                else if($interest2){
+                  echo "<span style='color:#31c3ea;'>" . $interest0 . "</span>, <span style='color:#2cb565;'>" . $interest1 . "</span>, and <span style='color:#f69b40;'>" . $interest2 . "</span>";
+                };
 	echo "</td></tr>";
 	echo "<tr><td class='sliderPos'>";
 	echo "<span class='courseCounter'>Course " . ($currentCourse + 1) . " of " . ($numCourses);
