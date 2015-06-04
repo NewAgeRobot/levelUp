@@ -300,6 +300,7 @@ switch ($interestAmount){
 	$interest11 = $interestArray[11];
 	$interest12 = $interestArray[12];
 	$interest13 = $interestArray[13];
+	$interest14 = $interestArray[14];
 
 	$interestQuery = mysql_query("SELECT sum($interest1) as $interestArray[1], sum($interest2) as $interestArray[2], sum($interest3) as $interestArray[3], sum($interest4) as $interestArray[4], sum($interest5) as $interestArray[5], sum($interest6) as $interestArray[6], sum($interest7) as $interestArray[7], sum($interest8) as $interestArray[8], sum($interest9) as $interestArray[9], sum($interest10) as $interestArray[10], sum($interest11) as $interestArray[11], sum($interest12) as $interestArray[12], sum($interest13) as $interestArray[13], sum($interest14) as $interestArray[14] FROM interestFeedback WHERE `Email` = '$userEmail'");
 	break;
@@ -319,6 +320,7 @@ switch ($interestAmount){
 	$interest12 = $interestArray[12];
 	$interest13 = $interestArray[13];
 	$interest14 = $interestArray[14];
+	$interest15 = $interestArray[15];
 
 	$interestQuery = mysql_query("SELECT sum($interest1) as $interestArray[1], sum($interest2) as $interestArray[2], sum($interest3) as $interestArray[3], sum($interest4) as $interestArray[4], sum($interest5) as $interestArray[5], sum($interest6) as $interestArray[6], sum($interest7) as $interestArray[7], sum($interest8) as $interestArray[8], sum($interest9) as $interestArray[9], sum($interest10) as $interestArray[10], sum($interest11) as $interestArray[11], sum($interest12) as $interestArray[12], sum($interest13) as $interestArray[13], sum($interest14) as $interestArray[14], sum($interest15) as $interestArray[15] FROM interestFeedback WHERE `Email` = '$userEmail'");
 	break;
@@ -339,6 +341,7 @@ switch ($interestAmount){
 	$interest13 = $interestArray[13];
 	$interest14 = $interestArray[14];
 	$interest15 = $interestArray[15];
+	$interest16 = $interestArray[16];
 
 	$interestQuery = mysql_query("SELECT sum($interest1) as $interestArray[1], sum($interest2) as $interestArray[2], sum($interest3) as $interestArray[3], sum($interest4) as $interestArray[4], sum($interest5) as $interestArray[5], sum($interest6) as $interestArray[6], sum($interest7) as $interestArray[7], sum($interest8) as $interestArray[8], sum($interest9) as $interestArray[9], sum($interest10) as $interestArray[10], sum($interest11) as $interestArray[11], sum($interest12) as $interestArray[12], sum($interest13) as $interestArray[13], sum($interest14) as $interestArray[14], sum($interest15) as $interestArray[15], sum($interest16) as $interestArray[16] FROM interestFeedback WHERE `Email` = '$userEmail'");
 	break;
@@ -360,6 +363,7 @@ switch ($interestAmount){
 	$interest14 = $interestArray[14];
 	$interest15 = $interestArray[15];
 	$interest16 = $interestArray[16];
+	$interest17 = $interestArray[17];
 
 	$interestQuery = mysql_query("SELECT sum($interest1) as $interestArray[1], sum($interest2) as $interestArray[2], sum($interest3) as $interestArray[3], sum($interest4) as $interestArray[4], sum($interest5) as $interestArray[5], sum($interest6) as $interestArray[6], sum($interest7) as $interestArray[7], sum($interest8) as $interestArray[8], sum($interest9) as $interestArray[9], sum($interest10) as $interestArray[10], sum($interest11) as $interestArray[11], sum($interest12) as $interestArray[12], sum($interest13) as $interestArray[13], sum($interest14) as $interestArray[14], sum($interest15) as $interestArray[15], sum($interest16) as $interestArray[16], sum($interest17) as $interestArray[17] FROM interestFeedback WHERE `Email` = '$userEmail'");
 	break;
@@ -382,6 +386,7 @@ switch ($interestAmount){
 	$interest15 = $interestArray[15];
 	$interest16 = $interestArray[16];
 	$interest17 = $interestArray[17];
+	$interest18 = $interestArray[18];
 
 	$interestQuery = mysql_query("SELECT sum($interest1) as $interestArray[1], sum($interest2) as $interestArray[2], sum($interest3) as $interestArray[3], sum($interest4) as $interestArray[4], sum($interest5) as $interestArray[5], sum($interest6) as $interestArray[6], sum($interest7) as $interestArray[7], sum($interest8) as $interestArray[8], sum($interest9) as $interestArray[9], sum($interest10) as $interestArray[10], sum($interest11) as $interestArray[11], sum($interest12) as $interestArray[12], sum($interest13) as $interestArray[13], sum($interest14) as $interestArray[14], sum($interest15) as $interestArray[15], sum($interest16) as $interestArray[16], sum($interest17) as $interestArray[17], sum($interest18) as $interestArray[18] FROM interestFeedback WHERE `Email` = '$userEmail'");
 	break;
@@ -405,6 +410,7 @@ switch ($interestAmount){
 	$interest16 = $interestArray[16];
 	$interest17 = $interestArray[17];
 	$interest18 = $interestArray[18];
+	$interest19 = $interestArray[19];
 
 	$interestQuery = mysql_query("SELECT sum($interest1) as $interestArray[1], sum($interest2) as $interestArray[2], sum($interest3) as $interestArray[3], sum($interest4) as $interestArray[4], sum($interest5) as $interestArray[5], sum($interest6) as $interestArray[6], sum($interest7) as $interestArray[7], sum($interest8) as $interestArray[8], sum($interest9) as $interestArray[9], sum($interest10) as $interestArray[10], sum($interest11) as $interestArray[11], sum($interest12) as $interestArray[12], sum($interest13) as $interestArray[13], sum($interest14) as $interestArray[14], sum($interest15) as $interestArray[15], sum($interest16) as $interestArray[16], sum($interest17) as $interestArray[17], sum($interest18) as $interestArray[18], sum($interest19) as $interestArray[19] FROM interestFeedback WHERE `Email` = '$userEmail'");
 	break;
@@ -429,6 +435,7 @@ switch ($interestAmount){
 	$interest17 = $interestArray[17];
 	$interest18 = $interestArray[18];
 	$interest19 = $interestArray[19];
+	$interest20 = $interestArray[20];
 
 	$interestQuery = mysql_query("SELECT sum($interest1) as $interestArray[1], sum($interest2) as $interestArray[2], sum($interest3) as $interestArray[3], sum($interest4) as $interestArray[4], sum($interest5) as $interestArray[5], sum($interest6) as $interestArray[6], sum($interest7) as $interestArray[7], sum($interest8) as $interestArray[8], sum($interest9) as $interestArray[9], sum($interest10) as $interestArray[10], sum($interest11) as $interestArray[11], sum($interest12) as $interestArray[12], sum($interest13) as $interestArray[13], sum($interest14) as $interestArray[14], sum($interest15) as $interestArray[15], sum($interest16) as $interestArray[16], sum($interest17) as $interestArray[17], sum($interest18) as $interestArray[18], sum($interest19) as $interestArray[19], sum($interest20) as $interestArray[20] FROM interestFeedback WHERE `Email` = '$userEmail'");
 	break;
@@ -454,7 +461,7 @@ switch ($interestAmount){
 	$interest18 = $interestArray[18];
 	$interest19 = $interestArray[19];
 	$interest20 = $interestArray[20];
-	$interest20 = $interestArray[21];
+	$interest21 = $interestArray[21];
 
 	$interestQuery = mysql_query("SELECT sum($interest1) as $interestArray[1], sum($interest2) as $interestArray[2], sum($interest3) as $interestArray[3], sum($interest4) as $interestArray[4], sum($interest5) as $interestArray[5], sum($interest6) as $interestArray[6], sum($interest7) as $interestArray[7], sum($interest8) as $interestArray[8], sum($interest9) as $interestArray[9], sum($interest10) as $interestArray[10], sum($interest11) as $interestArray[11], sum($interest12) as $interestArray[12], sum($interest13) as $interestArray[13], sum($interest14) as $interestArray[14], sum($interest15) as $interestArray[15], sum($interest16) as $interestArray[16], sum($interest17) as $interestArray[17], sum($interest18) as $interestArray[18], sum($interest19) as $interestArray[19], sum($interest20) as $interestArray[20], sum($interest21) as $interestArray[21] FROM interestFeedback WHERE `Email` = '$userEmail'");
 	break;
@@ -498,6 +505,8 @@ foreach($interestTotals as $key => $value)
 	$newInterestsSortedArray[] = $key;
 }
 $newInterestAmount = sizeof($newInterestsSortedArray);
+
+// print_r($interestTotals);
 
 // print_r($interestTotals);
 // print_r($subjectTotals);
