@@ -707,6 +707,7 @@ for($f = 7; $f < 22; $f++){
             $numCourses = sizeOf($array);
             if(!$numCourses){
 				     mysql_query("UPDATE `storedInterests` SET `AnyCourses` = '0' WHERE `Email` = '$userEmail'");
+             setcookie("submitHit", "1", time()+5, "/");
             }
             else{
             	header('Location: showCourses.php');
@@ -978,7 +979,7 @@ $prompts = mysql_fetch_array(mysql_query("SELECT * FROM feedbackPrompts WHERE `I
 								echo "</fieldset>";
 								echo "</div><br />";
 								echo "<div id='noCourseWarning'>";
-                if(!$defaultStored){
+                if (isset($_COOKIE['submitHit'])) {
                   echo "Sorry, but you haven't selected any interests. Please select at least one and try again.";
                 }
                 else if($interest0 && !$interest1){
