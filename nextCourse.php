@@ -53,7 +53,7 @@
           $('html,body').animate({
             scrollTop: target.offset().top
           }, 400);
-          return false;
+          // return false;
         }
       };
 

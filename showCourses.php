@@ -128,7 +128,7 @@ for($f = 7; $f < 22; $f++){
           $('html,body').animate({
             scrollTop: target.offset().top
           }, 400);
-          return false;
+          // return false;
         }
       };
       
@@ -151,12 +151,12 @@ for($f = 7; $f < 22; $f++){
         url: 'saveCourse.php' ,
         data: { code: code, level: level, title: title, points: points, college: college, url: url } ,
         success: function(result)
-        {
-         $('.ajax').after(result);
-         $('.ajax').hide();
-         nextCourse();
-       }
-     });
+          {
+           $('.ajax').after(result);
+           $('.ajax').hide();
+           nextCourse();
+         }
+       });
      });
       $( ".showLess").click(function() {
         $(".teaserSynopsis").show();  
